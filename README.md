@@ -23,3 +23,14 @@ Vorschlag für Features und Roadmap (Philipp):
        Abhängigkeit des Aufschlagsbereiches erhalten)
 7. Game-Modes: turn-based multiplayer, real-time 2-player, stop-watch
 8. KI
+
+
+Florian:
+Features:
+verschiedene arten von fahrzeugen(panzer(schwer, langsam),jeeps(schnell, hält wenig aus), flugzeuge(schwer zu treffen, one-shot-kill), schiffe(sehr begrenzter bewegungsraum(wasser am rand oderso), schwere waffen))
+spezialangriffe(externe feuerquellen, starke windbeinflussung)
+Wetter(wind, nebel, regen(senkt reichweite), sandsturm(schädigt))
+Teams(koop gegen Ki, mehrspieler 2 vs 2 online)
+terrain-physik(einsturz wenn unterhölt usw.)
+terrainattacken(erdbeben)
+3d-grafik(killcams, matchvorschau)
