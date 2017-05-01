@@ -14,9 +14,9 @@ Ideen-Sammlung: (vielleicht fächern wirs nicht auf, sondern packen jeweils unse
 Vorschlag für Features und Roadmap (Philipp):
 1. flache Ebene, Kasten-Tank, eine Sorte Shells (Kreis), one hit-nur ziel treffen, single player, fixed position
 2. 2-player, turn-based
-3. terrainmodifikation
-4. Health + Damage
-5. simple Menuführung
+3. Health + Damage
+4. terrainmodifikation / sound
+5. simple Menuführung  (in Abhängigkeit der Möglichkeiten)
 6. Level u./o. Speicher-Feature u./o. bewegliche Tanks u./o. verschiedene Shells
    (bzgl. der Shells könnte ich mir für den Anfang was in Richtung
        armor-piercing und high-explosive vorstellen, die Schadensmodifikation in
