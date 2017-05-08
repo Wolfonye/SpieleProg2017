@@ -15,8 +15,13 @@ Philipp:
     ✔ GitHub Account anlegen @done(2017-04-24 20:14) @project(Philipp)
     ✔ README.me um Ideen erweitern @done(2017-04-26 18:22) @project(Philipp)
     ✔ erste Einarbeitung in Unity @done(2017-04-30 10:05) @project(Philipp)
-    ☐ Fahrzeugtemplates
+    ✔ Fahrzeugtemplates @done(2017-05-08 21:39) @project(Philipp)
     ✔ Ordnerstruktur (Basis) @done(2017-05-01 11:57) @project(Philipp)
+    ✔ Rotation von Shells während des Fluges @done(2017-05-08 21:39) @project(Philipp)
+    ☐ Base-Terrain
+    ☐ Radphysik
+    ☐ Abfrage auf Lane-Wechsel
+    ☐ Skalierung der Spielobjekte
 
 
 WayPoints:
