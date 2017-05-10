@@ -10,11 +10,17 @@ ModelImporter:
     100004: //RootNode
     100006: TurretBase
     100008: Wheels
+    100010: Armature
+    100012: Bone
+    100014: Tank1
     400000: Base
     400002: Muzzle
     400004: //RootNode
     400006: TurretBase
     400008: Wheels
+    400010: Armature
+    400012: Bone
+    400014: Tank1
     2300000: Base
     2300002: Muzzle
     2300004: TurretBase
@@ -29,6 +35,7 @@ ModelImporter:
     4300006: Base
     7400000: Default Take
     9500000: //RootNode
+    13700000: Muzzle
   materials:
     importMaterials: 1
     materialName: 0

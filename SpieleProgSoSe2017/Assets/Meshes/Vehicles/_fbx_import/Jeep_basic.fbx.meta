@@ -1,0 +1,139 @@
+fileFormatVersion: 2
+guid: 26907abaaffa16b439ae59a1917fffce
+timeCreated: 1494447074
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Chassy
+    100002: Felge
+    100004: Felge.001
+    100006: Felge.002
+    100008: Felge.003
+    100010: //RootNode
+    100012: Lenkrad
+    100014: Rad
+    100016: Rad.001
+    100018: Rad.002
+    100020: Rad.003
+    100022: Reifen
+    100024: Reifen.001
+    100026: Reifen.002
+    100028: Reifen.003
+    100030: Wheel
+    400000: Chassy
+    400002: Felge
+    400004: Felge.001
+    400006: Felge.002
+    400008: Felge.003
+    400010: //RootNode
+    400012: Lenkrad
+    400014: Rad
+    400016: Rad.001
+    400018: Rad.002
+    400020: Rad.003
+    400022: Reifen
+    400024: Reifen.001
+    400026: Reifen.002
+    400028: Reifen.003
+    400030: Wheel
+    2300000: Chassy
+    2300002: Felge
+    2300004: Felge.001
+    2300006: Felge.002
+    2300008: Felge.003
+    2300010: Lenkrad
+    2300012: Reifen
+    2300014: Reifen.001
+    2300016: Reifen.002
+    2300018: Reifen.003
+    3300000: Chassy
+    3300002: Felge
+    3300004: Felge.001
+    3300006: Felge.002
+    3300008: Felge.003
+    3300010: Lenkrad
+    3300012: Reifen
+    3300014: Reifen.001
+    3300016: Reifen.002
+    3300018: Reifen.003
+    4300000: Reifen.003
+    4300002: Felge.003
+    4300004: Felge.002
+    4300006: Reifen.002
+    4300008: Reifen.001
+    4300010: Felge.001
+    4300012: Reifen
+    4300014: Felge
+    4300016: Chassy
+    4300018: Lenkrad
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
