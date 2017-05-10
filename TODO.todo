@@ -22,6 +22,11 @@ Philipp:
     ☐ Radphysik
     ☐ Abfrage auf Lane-Wechsel
     ☐ Skalierung der Spielobjekte
+    ✔ Git Setup für Version 0.0 um Prototyp zu ermöglichen einschließlich Dok-Branch @done(2017-05-10 22:49) @project(Philipp)
+    ✔ Erweiterung Ordnerstruktur für verbessertes Meshhandling @done(2017-05-10 22:47) @project(Philipp)
+    ✔ Base-scripts für Tank_Basic @done(2017-05-10 22:49) @project(Philipp)
+    ☐ Scripts objektspezifisch benennen, falls sie nur einem bestimmten Objekttyp dienen sollen
+    ☐ Terrain-Objekte-Models
 
 
 WayPoints:
