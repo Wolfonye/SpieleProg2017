@@ -1,41 +1,44 @@
 fileFormatVersion: 2
-guid: e44c04c7096779b4f92d8673964bbf2a
-timeCreated: 1493639712
+guid: 459cd780e37fbeb4a9ce28c351d2faaf
+timeCreated: 1494354504
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Base
-    100002: Muzzle
-    100004: //RootNode
-    100006: TurretBase
-    100008: Wheels
-    100010: Armature
-    100012: Bone
-    100014: Tank1
-    400000: Base
-    400002: Muzzle
-    400004: //RootNode
-    400006: TurretBase
-    400008: Wheels
-    400010: Armature
-    400012: Bone
-    400014: Tank1
-    2300000: Base
-    2300002: Muzzle
-    2300004: TurretBase
-    2300006: Wheels
-    3300000: Base
-    3300002: Muzzle
-    3300004: TurretBase
-    3300006: Wheels
-    4300000: Muzzle
-    4300002: Wheels
-    4300004: TurretBase
-    4300006: Base
+    100000: //RootNode
+    100002: Chassie
+    100004: Fahrwerk
+    100006: Fluegel
+    100008: Heckfluegel
+    100010: Heckleitwerk
+    100012: Propeller
+    400000: //RootNode
+    400002: Chassie
+    400004: Fahrwerk
+    400006: Fluegel
+    400008: Heckfluegel
+    400010: Heckleitwerk
+    400012: Propeller
+    2300000: Chassie
+    2300002: Fahrwerk
+    2300004: Fluegel
+    2300006: Heckfluegel
+    2300008: Heckleitwerk
+    2300010: Propeller
+    3300000: Chassie
+    3300002: Fahrwerk
+    3300004: Fluegel
+    3300006: Heckfluegel
+    3300008: Heckleitwerk
+    3300010: Propeller
+    4300000: Fluegel
+    4300002: Propeller
+    4300004: Fahrwerk
+    4300006: Heckfluegel
+    4300008: Heckleitwerk
+    4300010: Chassie
     7400000: Default Take
     9500000: //RootNode
-    13700000: Muzzle
   materials:
     importMaterials: 1
     materialName: 0

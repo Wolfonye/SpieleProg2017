@@ -13,6 +13,9 @@ ModelImporter:
     100010: //RootNode
     100012: TurretBase
     100014: Wheels
+    100016: Armature
+    100018: Bone
+    100020: Bone_end
     400000: Base
     400002: Camera
     400004: Lamp
@@ -21,6 +24,9 @@ ModelImporter:
     400010: //RootNode
     400012: TurretBase
     400014: Wheels
+    400016: Armature
+    400018: Bone
+    400020: Bone_end
     2300000: Base
     2300002: Muzzle
     2300004: TurretBase
