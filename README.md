@@ -1,14 +1,42 @@
 SpieleProgrammierungSoSe2017
+--------------------------------------------------------------------------------
+UPDATE 12.05.2017:
+Anleitung zum todo
+Alle Dateien, denen ihr die Dateiendung todo gebt, werden automatisch von dem
+Atom-Plugin "tasks" in schöner Weise verarbeitet.
+Eine Zeile, die von einem Doppelpunkt beendet wird, gilt als Überschrift.
+Diese ist maßgeblich dafür, was beim Abhaken eines Punktes anotiert wird.
+Daher stehen auch immer schön eure Namen hinter den Häkchen
 
-Schaut mal bitte, ob ihr das TODO.todo file, was ich erstellt habe irgendwie aufbekommt.
-Ich hab da ein sehr nices Plug-In für Atom, wo ich da überall schön Häkchen setzen kann,
-wenn ein todo erreicht ist, wobei auch automatisch die Zeit eingetragen wird usw.
-Wenn ihr das nicht könnt werd ich vielleicht versuchen das alleine bissl aktuell
-zu halten, aber ich fänds ganz nice, wenn wir son paar waypoints hätten, wo wir automatisch
-später dran sehen können, wie wir vorankommen und nachvollziehen können, welche
-Schritte wir eigentlich unternommen haben. Das sollte eine gute Unterstützung für unsere
-Dokumentation und einen etwaigen Vortrag darstellen.
+- ein todo-Punkt wird durch Strg + Enter hinzugefügt
+- ein todo-Punkt wird durch Strg + D abgehakt
 
+Updates des Readmes am besten mit Datum einfach oben einfügen
+
+Ich habe weiterhin den dev-vehicles gelöscht, da der im Moment nicht mehr aktiv
+benötigt wird als Branch. Der ist bereits vollständig in Test_Game enthalten
+und die Commits sind natürlich noch da.
+
+Schaut euch vielleicht mal die Datei .gitignore an, da seht ihr wie ihr eure
+persönlichen Ordner eintragt, die nicht getrackt werden sollen innerhalb des
+Repos. Pfadangeben sind relativ zum Ort, wo die .gitignore liegt. Ich hab mir
+da also nen eigenen Ordner Philipp gemacht, in dem Bilder für die Modellierung
+und solche Sachen liegen.
+
+Branches für eure Features bitte am aktuellsten Knoten von Test_Game aufmachen.
+Heißt: pull machen; Test_Game auschecken; letzten Knoten aus Test_Game rechts
+klicken; Create Branch here; bennen und Spass haben.
+
+Wichtig: "checkout branchxy" ist eure lokale Version.
+         "checkout origin/branchxy" ist die Version unseres Online-Repos
+
+         Wir sollten diese parallel aktuell halten, während wir nicht gerade
+         aktiv am Computer sind und an was arbeiten. (Siehe meine Kommentare
+         vorhin zum squashing von einzelnen Commits)
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
 Ideen-Sammlung: (vielleicht fächern wirs nicht auf, sondern packen jeweils unseren Namen einfach hinten an)
 
 Vorschlag für Features und Roadmap (Philipp):

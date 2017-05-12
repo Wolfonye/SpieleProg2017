@@ -1,14 +1,21 @@
 Christian:
     ✔ GitHub Account anlegen @done(2017-04-25 22:20) @project(Christian)
-    ☐ README.me um Ideen erweitern
-    ☐ erste Einarbeitung in Unity
+    ✔ erste Einarbeitung in Unity @done(2017-05-12 14:49) @project(Christian)
+    ☐ Overlay
+    ☐ Klickbarkeit, Exit
+    ☐ Szenenpausierung
+    ☐ Szenenwechsel
+    ☐ Tasks-Plugin Atom
 
 
 
 Florian:
     ✔ GitHub Account anlegen @done(2017-04-26 18:22) @project(Florian)
     ✔ README.me um Ideen erweitern @done(2017-05-01 08:38) @project(Florian)
-    ☐ erste Einarbeitung in Unity
+    ✔ erste Einarbeitung in Unity @done(2017-05-12 14:48) @project(Florian)
+    ☐ Radphysik und Bewegung mittels Radphysik(Collider-Wheel?)
+    ☐ Tasks-Plugin Atom
+    ☐ Atom auf Lappi ziehen
 
 
 Philipp:
@@ -19,17 +26,20 @@ Philipp:
     ✔ Ordnerstruktur (Basis) @done(2017-05-01 11:57) @project(Philipp)
     ✔ Rotation von Shells während des Fluges @done(2017-05-08 21:39) @project(Philipp)
     ☐ Base-Terrain
-    ☐ Radphysik
     ☐ Abfrage auf Lane-Wechsel
+    ✔ Skalierung der Fahrzeuge @done(2017-05-12 14:51) @project(Philipp)
     ☐ Skalierung der Spielobjekte
     ✔ Git Setup für Version 0.0 um Prototyp zu ermöglichen einschließlich Dok-Branch @done(2017-05-10 22:49) @project(Philipp)
     ✔ Erweiterung Ordnerstruktur für verbessertes Meshhandling @done(2017-05-10 22:47) @project(Philipp)
     ✔ Base-scripts für Tank_Basic @done(2017-05-10 22:49) @project(Philipp)
     ☐ Scripts objektspezifisch benennen, falls sie nur einem bestimmten Objekttyp dienen sollen
     ☐ Terrain-Objekte-Models
+    ☐ Shell-Rotation und Collider
+    ☐ Shell-Explosion (Partikel oder Comicboom)
 
 
 WayPoints:
     ☐ konspiratives Grillen
-    ☐ MinimalPrototyp zur Physik
-    ☐ Aufgabenverteilung
+    ✔ MinimalPrototyp zur Physik @done(2017-05-12 14:52) @project(WayPoints)
+    ✔ Aufgabenverteilung @done(2017-05-12 14:52) @project(WayPoints)
+    ☐ erweiterter Prototyp Version 0.1 (beweglicher Tank, Shell-Collisions-Trigger, minimales Overlay)
