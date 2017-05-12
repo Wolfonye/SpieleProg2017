@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShellSpawn2 : MonoBehaviour {
+public class ShellSpawn : MonoBehaviour {
     //Drag in the Bullet Emitter from the Component Inspector.
     public GameObject Bullet_Emitter;
     Vector3 emitterOffset = new Vector3(0, 0, 0);

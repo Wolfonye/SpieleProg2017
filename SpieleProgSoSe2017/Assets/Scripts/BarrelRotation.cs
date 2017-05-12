@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretRotation2 : MonoBehaviour
+public class BarrelRotation : MonoBehaviour
 {
     public int barrelLiftSpeed;
     public int minAnglePositive;
     public int maxAnglePosositive;
+
     Quaternion originalRot;
     // Use this for initialization
     void Start()
@@ -24,14 +25,15 @@ public class TurretRotation2 : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             //hier muss man bissl aufpassen, weil der einem die winkel nur positiv gibt, daher nicht 0 wäre noch zu überlegen, was man macht, wenn man fahrzeuge hat, die nach unten zielen können
-            if (Vector3.Angle(transform.up, Vector3.right) > minAnglePositive)
+            if (Vector3.Angle(transform.up, Vector3.left) > minAnglePositive)
             {
                 transform.rotation = originalRot * Quaternion.AngleAxis(barrelLiftSpeed * Time.deltaTime, Vector3.left);
             }
         }
+
         if (Input.GetKey(KeyCode.D))
         {
-            if (Vector3.Angle(transform.up, Vector3.right) < maxAnglePosositive) {
+            if (Vector3.Angle(transform.up, Vector3.left) < maxAnglePosositive) {
                 transform.rotation = originalRot * Quaternion.AngleAxis(-barrelLiftSpeed * Time.deltaTime, Vector3.left);
             }
         }
