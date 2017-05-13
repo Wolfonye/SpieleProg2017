@@ -19,9 +19,9 @@ public class ShellRotation : MonoBehaviour
         if (!collisionDetected)
         {
             vel = GetComponent<Rigidbody>().velocity;
-            print("velocity" + vel);
+            //print("velocity" + vel);
             float angle = Mathf.Atan2(vel.y, vel.x) * Mathf.Rad2Deg + 180;
-            print("winkel" + angle);
+            //print("winkel" + angle);
             newRot.z = angle;
             transform.eulerAngles = newRot;
         }
