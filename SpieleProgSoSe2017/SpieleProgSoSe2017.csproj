@@ -79,8 +79,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BarrelAngle.cs" />
-    <Compile Include="Assets\Scripts\BarrelRotation.cs" />
     <Compile Include="Assets\Scripts\OnCOlliionTest.cs" />
+    <Compile Include="Assets\Scripts\ShellDestruction.cs" />
     <Compile Include="Assets\Scripts\ShellRotation.cs" />
     <Compile Include="Assets\Scripts\ShellSpawn.cs" />
   </ItemGroup>
