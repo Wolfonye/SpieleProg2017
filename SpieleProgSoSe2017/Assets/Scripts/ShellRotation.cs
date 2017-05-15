@@ -6,7 +6,9 @@ public class ShellRotation : MonoBehaviour
 {
     Vector3 vel;
     Vector3 newRot;
-    Vector3 boomOffset = new Vector3(0, 2.5f, 0);
+
+    //bissl randomisierter Offset um einen größeren Coolnesswert zu generieren
+    Vector3 boomOffset;
     bool exploded = false;
     public GameObject explosion;
     GameObject boom;
@@ -15,6 +17,7 @@ public class ShellRotation : MonoBehaviour
 
     private void Start()
     {
+        boomOffset = new Vector3(Random.Range(-3f, 3f), 2.5f + Random.Range(0f, 3f), 0);
         newRot = new Vector3(0, 0, 0);
     }
 
