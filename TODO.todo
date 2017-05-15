@@ -35,9 +35,12 @@ Philipp:
     ☐ Scripts objektspezifisch benennen, falls sie nur einem bestimmten Objekttyp dienen sollen
     ☐ Terrain-Objekte-Models
     ✔ Shell-Rotation und Collider @done(2017-05-12 20:06) @project(Philipp)
-    ☐ Shell-Explosion (Partikel oder Comicboom)
+    ✔ Shell-Explosion (Partikel oder Comicboom) @done(2017-05-15 09:55) @project(Philipp)
     ✔ Readme mit Atom-Anleitung @done(2017-05-12 20:07) @project(Philipp)
     ✔ Barrel-Angle-Skript anpassen für beide Richtungen @done(2017-05-15 08:44) @project(Philipp)
+    ☐ Shell-Trail
+    ☐ Randomisierung des Entstehungsortes der Comic-Booms
+    ☐ Comic-Booms ins Hauptprojekt importieren und auf Shells anpassen
 
 
 WayPoints:
