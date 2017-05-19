@@ -1,4 +1,27 @@
 SpieleProgrammierungSoSe2017
+
+--------------------------------------------------------------------------------
+UPDATE 19.05.2017
+Timer läuft jetzt; den werden wir wohl für den Rest noch anpassen müssen.
+Ich definier schonmal paar Interfaces für die Kommunikation zwischen dem Skript,
+was die Kontrolle vergibt und den Fahrzeugen; sprich Sachen in Bezug auf
+Schaden und Zerstörbarkeit und son Zeug.
+
+Ich hab übrigens nen Weg finden können per online-Suche, wie der Mesh-Austausch
+für mich bissl simpler wird. Wir können uns da also durchaus irgendwann mal
+zusammensetzen und schauen, wies uns am besten gefällt.
+
+Wir sollten versuchen nächste Woche bissl mehr abzuarbeiten als diese.
+
+Zur Dokumentation unserer letzten Absprachen, damit wir später weniger Arbeit
+haben; wir haben beschlossen, dass:
+
+-wir zunächst auf Beschleunigung verzichten wollen
+-wir das Höhenmuster auf allen lanes gleich halten wollen (zumindest vorerst)
+-wir als erstes die rundenbasierte Version anfangen wollen, da wenig Zeit ist
+ und wir zunächst Tastaturprobleme vermeiden wollen und zu wenig Kapazitätten
+ haben, um direkt den Online-Multiplayer anzugehen
+
 --------------------------------------------------------------------------------
 UPDATE 12.05.2017:
 Anleitung zum todo
