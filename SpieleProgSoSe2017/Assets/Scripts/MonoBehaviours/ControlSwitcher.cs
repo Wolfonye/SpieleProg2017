@@ -11,6 +11,11 @@ public class ControlSwitcher : MonoBehaviour
     public GameObject player1;
     public GameObject player2;
 
+    void Start()
+    {
+        roundTimer.setControlSwitcher(this);    
+    }
+
 
     public void timerZero()
     {
