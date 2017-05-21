@@ -8,6 +8,55 @@ public class CarMovement : MonoBehaviour
     public float maxMotorTorque; // maximum torque the motor can apply to wheel
     public float maxSteeringAngle; // maximum steer angle the wheel can have
 
+    /*public void Update()
+    {
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            foreach (AxleInfo axleInfo in axleInfos)
+            {
+                if (axleInfo.motor)
+                {
+                    axleInfo.leftWheel.motorTorque = -maxMotorTorque;
+                    axleInfo.rightWheel.motorTorque = -maxMotorTorque;
+                }
+            }
+        }
+        else
+        {
+            foreach (AxleInfo axleInfo in axleInfos)
+            {
+                if (axleInfo.motor)
+                {
+                    axleInfo.leftWheel.motorTorque = 0;
+                    axleInfo.rightWheel.motorTorque = 0;
+                }
+            }
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            foreach (AxleInfo axleInfo in axleInfos)
+            {
+                if (axleInfo.motor)
+                {
+                    axleInfo.leftWheel.motorTorque = maxMotorTorque;
+                    axleInfo.rightWheel.motorTorque = maxMotorTorque;
+                }
+            }
+        }
+        else
+        {
+            foreach (AxleInfo axleInfo in axleInfos)
+            {
+                if (axleInfo.motor)
+                {
+                    axleInfo.leftWheel.motorTorque = 0;
+                    axleInfo.rightWheel.motorTorque = 0;
+                }
+            }
+        }
+    }*/
+
     public void FixedUpdate()
     {
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
@@ -25,7 +74,15 @@ public class CarMovement : MonoBehaviour
                 axleInfo.leftWheel.motorTorque = motor;
                 axleInfo.rightWheel.motorTorque = motor;
             }
+            if (Input.GetKey(KeyCode.X))
+            {
+                axleInfo.leftWheel.brakeTorque = 600f;
+                axleInfo.rightWheel.brakeTorque = 600f;
+            }
         }
+
+     
+        
     }
 }
 
