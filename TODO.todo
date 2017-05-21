@@ -45,9 +45,9 @@ Philipp:
     ☐ Booms skalieren?
     ☐ Mündungsfeuer/wolke
     ☐ Normierung der Lane-Breite
-    ☐ Kontrollübergabe zwischen Spielern
+    ✔ Kontrollübergabe zwischen Spielern @done(2017-05-21 10:28) @project(Philipp)
     ✔ Timer-Skript Rohfassung @done(2017-05-19 18:36) @project(Philipp)
-    ☐ Interface-Konzeption für Schadensmodell
+    ✔ Interface-Konzeption für Schadensmodell @done(2017-05-21 10:28) @project(Philipp)
 
 
 WayPoints:

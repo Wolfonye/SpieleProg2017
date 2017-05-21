@@ -1,6 +1,26 @@
 SpieleProgrammierungSoSe2017
 
 --------------------------------------------------------------------------------
+UPDATE 21.05.2017
+WICHTIG: ich habe ein bissl was bei den Kontrollskripten gemacht.
+Ich glaube meine jetztige Lösung ist um einiges eleganter als die letzte.
+Um deren Funktionalität zu wahren ist allerdings eine Sache entscheidend.
+Um weniger performante Zugriffe auf die einzelnen steuernden Skripts eines
+Fahrzeugs zu vermeiden, habe ich für die Tanks bereits ein Kindobjekt
+geschaffen, welches lediglich sämtliche Steuerskripte des Fahrzeugs enthält.
+Das hat folgende Vorteile:
+
+-bessere Übersichtlichkeit
+
+-Möglichkeit indexiert zuzugreifen ohne unnötig viel Reflection nutzen zu müssen
+
+-alle Skripte können gleichzeit durch die Deaktivierung des Vaterelementes
+ ausgeschaltet werden
+
+ Damit das klappt verwende ich folgende Konvention (das ist das Wichtige):
+ Das "Skriptsammelkind" muss das erste Kind in der Hierarchie unterhalb des
+ Wurzelknotens des Fahrzeugs sein. Siehe TankBasic-Prefab als Referenz.
+--------------------------------------------------------------------------------
 UPDATE 19.05.2017
 Timer läuft jetzt; den werden wir wohl für den Rest noch anpassen müssen.
 Ich definier schonmal paar Interfaces für die Kommunikation zwischen dem Skript,
