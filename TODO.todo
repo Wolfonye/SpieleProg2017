@@ -17,6 +17,9 @@ Florian:
     ☐ fixen der Rotation und halten auf einer Geraden
     ☐ Tasks-Plugin Atom
     ☐ Atom auf Lappi ziehen
+    ☐ Seitenbewegung fixen
+    ☐ Shell Collision erzeugt Damage
+    ☐ lane-Wechsel nicht instant sondern fließend
 
 
 Philipp:
@@ -48,6 +51,7 @@ Philipp:
     ✔ Kontrollübergabe zwischen Spielern @done(2017-05-21 10:28) @project(Philipp)
     ✔ Timer-Skript Rohfassung @done(2017-05-19 18:36) @project(Philipp)
     ✔ Interface-Konzeption für Schadensmodell @done(2017-05-21 10:28) @project(Philipp)
+    ☐ Radphysik in den Griff bekommen
 
 
 WayPoints:
