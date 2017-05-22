@@ -32,14 +32,28 @@ public class HoldLineScript : MonoBehaviour {
         {
             if (leftFree == true)
             {
-                holdPos = holdPos + 5;
+                if(holdVec == 90)
+                {
+                    holdPos = holdPos + 5;
+                }
+                if (holdVec == 270)
+                {
+                    holdPos = holdPos - 5;
+                }
             }
         }
         if (Input.GetKeyDown("d"))
         {
             if (rightFree == true)
             {
-                holdPos = holdPos - 5;
+                if (holdVec == 90)
+                {
+                    holdPos = holdPos - 5;
+                }
+                if (holdVec == 270)
+                {
+                    holdPos = holdPos + 5;
+                }
             }           
         }
     }
