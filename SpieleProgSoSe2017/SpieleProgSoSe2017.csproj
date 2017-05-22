@@ -83,6 +83,7 @@
     <Compile Include="Assets\LeftCollTest.cs" />
     <Compile Include="Assets\RightCollTest.cs" />
     <Compile Include="Assets\Scripts\BarrelAngle.cs" />
+    <Compile Include="Assets\Scripts\CarCenterOfMass.cs" />
     <Compile Include="Assets\Scripts\CarMovement.cs" />
     <Compile Include="Assets\Scripts\CarMovementAlternative.cs" />
     <Compile Include="Assets\Scripts\OnCOlliionTest.cs" />
