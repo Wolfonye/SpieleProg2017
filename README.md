@@ -23,7 +23,7 @@ Vorschlag für Features und Roadmap (Philipp):
        Abhängigkeit des Aufschlagsbereiches erhalten)
 7. Game-Modes: turn-based multiplayer, real-time 2-player, stop-watch
 8. KI
-
+-
 
 Florian:
 Features:
