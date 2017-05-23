@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 024664d73cc813047a79ee955e2daa2e
-timeCreated: 1495566474
+guid: 1ba54b76bc82d784c82557b3d2b607de
+timeCreated: 1495566466
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube
+    4300000: Hedgehogs
   materials:
     importMaterials: 1
     materialName: 0
