@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDestructible.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviours\BarrelAngle.cs" />
+     <Compile Include="Assets\Scripts\MonoBehaviours\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviours\ControlSwitcher.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviours\RoundTimer.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviours\ShellDestruction.cs" />
