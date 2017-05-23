@@ -4,13 +4,14 @@ UPDATE 23.05.2017 (Philipp)
 Bezüglich der Vorträge am Montag wollte ich hier schonmal festhalten, was ich
 vorhabe zu machen bzw. worüber mindestens einer von uns reden sollte:
 
-- Shell-Flugbahn und Rotation (insbesondere Fehlschlag des ersten Ansatzes)
-- Blender-Objekte und Animation Standartisierung der Models
-- Probleme mit der Barrel Bewegung
-- WheelCollider (Verwerfung der Zweitidee)
-- Timer und Kontrollwechsel
-- Verwerfung Echtzeit für den Anfang
-- Lane-Idee kam später hinzu
+* Shell-Flugbahn und Rotation (insbesondere Fehlschlag des ersten Ansatzes)
+* Blender-Objekte und Animation Standartisierung der Models
+* Probleme mit der Barrel Bewegung
+* WheelCollider (Verwerfung der Zweitidee)
+* Timer und Kontrollwechsel
+* Verwerfung Echtzeit für den Anfang
+* Lane-Idee kam später hinzu
+* Dokumentationsphilosophie
 
 --------------------------------------------------------------------------------
 UPDATE 21.05.2017 (Philipp)
@@ -22,11 +23,11 @@ Fahrzeugs zu vermeiden, habe ich für die Tanks bereits ein Kindobjekt
 geschaffen, welches lediglich sämtliche Steuerskripte des Fahrzeugs enthält.
 Das hat folgende Vorteile:
 
--bessere Übersichtlichkeit
+* bessere Übersichtlichkeit
 
--Möglichkeit indexiert zuzugreifen ohne unnötig viel Reflection nutzen zu müssen
+* Möglichkeit indexiert zuzugreifen ohne unnötig viel Reflection nutzen zu müssen
 
--alle Skripte können gleichzeit durch die Deaktivierung des Vaterelementes
+* alle Skripte können gleichzeit durch die Deaktivierung des Vaterelementes
  ausgeschaltet werden
 
  Damit das klappt verwende ich folgende Konvention (das ist das Wichtige):
@@ -48,9 +49,9 @@ Wir sollten versuchen nächste Woche bissl mehr abzuarbeiten als diese.
 Zur Dokumentation unserer letzten Absprachen, damit wir später weniger Arbeit
 haben; wir haben beschlossen, dass:
 
--wir zunächst auf Beschleunigung verzichten wollen
--wir das Höhenmuster auf allen lanes gleich halten wollen (zumindest vorerst)
--wir als erstes die rundenbasierte Version anfangen wollen, da wenig Zeit ist
+* wir zunächst auf Beschleunigung verzichten wollen
+* wir das Höhenmuster auf allen lanes gleich halten wollen (zumindest vorerst)
+* wir als erstes die rundenbasierte Version anfangen wollen, da wenig Zeit ist
  und wir zunächst Tastaturprobleme vermeiden wollen und zu wenig Kapazitätten
  haben, um direkt den Online-Multiplayer anzugehen
 
@@ -63,8 +64,8 @@ Eine Zeile, die von einem Doppelpunkt beendet wird, gilt als Überschrift.
 Diese ist maßgeblich dafür, was beim Abhaken eines Punktes anotiert wird.
 Daher stehen auch immer schön eure Namen hinter den Häkchen
 
-- ein todo-Punkt wird durch Strg + Enter hinzugefügt
-- ein todo-Punkt wird durch Strg + D abgehakt
+* ein todo-Punkt wird durch Strg + Enter hinzugefügt
+* ein todo-Punkt wird durch Strg + D abgehakt
 
 Updates des Readmes am besten mit Datum einfach oben einfügen
 
@@ -92,10 +93,12 @@ Wichtig: "checkout branchxy" ist eure lokale Version.
 
 
 --------------------------------------------------------------------------------
-Ideen-Sammlung: (vielleicht fächern wirs nicht auf, sondern packen jeweils unseren Namen einfach hinten an)
+Ideen-Sammlung: (vielleicht fächern wirs nicht auf, sondern packen jeweils
+                 unseren Namen einfach hinten an)
 
 Vorschlag für Features und Roadmap (Philipp):
-1. flache Ebene, Kasten-Tank, eine Sorte Shells (Kreis), one hit-nur ziel treffen, single player, fixed position
+1. flache Ebene, Kasten-Tank, eine Sorte Shells (Kreis), one hit-nur ziel treffen,
+   single player, fixed position
 2. 2-player, turn-based
 3. Health + Damage
 4. terrainmodifikation / sound
@@ -110,7 +113,9 @@ Vorschlag für Features und Roadmap (Philipp):
 
 Florian:
 Features:
-verschiedene arten von fahrzeugen(panzer(schwer, langsam),jeeps(schnell, hält wenig aus), flugzeuge(schwer zu treffen, one-shot-kill), schiffe(sehr begrenzter bewegungsraum(wasser am rand oderso), schwere waffen))
+verschiedene arten von fahrzeugen(panzer(schwer, langsam),jeeps(schnell,
+hält wenig aus), flugzeuge(schwer zu treffen, one-shot-kill), schiffe(sehr
+begrenzter bewegungsraum(wasser am rand oderso), schwere waffen))
 spezialangriffe(externe feuerquellen, starke windbeinflussung)
 Wetter(wind, nebel, regen(senkt reichweite), sandsturm(schädigt))
 Teams(koop gegen Ki, mehrspieler 2 vs 2 online)
