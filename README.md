@@ -1,7 +1,19 @@
 SpieleProgrammierungSoSe2017
+--------------------------------------------------------------------------------
+UPDATE 23.05.2017 (Philipp)
+Bezüglich der Vorträge am Montag wollte ich hier schonmal festhalten, was ich
+vorhabe zu machen bzw. worüber mindestens einer von uns reden sollte:
+
+- Shell-Flugbahn und Rotation (insbesondere Fehlschlag des ersten Ansatzes)
+- Blender-Objekte und Animation Standartisierung der Models
+- Probleme mit der Barrel Bewegung
+- WheelCollider (Verwerfung der Zweitidee)
+- Timer und Kontrollwechsel
+- Verwerfung Echtzeit für den Anfang
+- Lane-Idee kam später hinzu
 
 --------------------------------------------------------------------------------
-UPDATE 21.05.2017
+UPDATE 21.05.2017 (Philipp)
 WICHTIG: ich habe ein bissl was bei den Kontrollskripten gemacht.
 Ich glaube meine jetztige Lösung ist um einiges eleganter als die letzte.
 Um deren Funktionalität zu wahren ist allerdings eine Sache entscheidend.
@@ -21,7 +33,7 @@ Das hat folgende Vorteile:
  Das "Skriptsammelkind" muss das erste Kind in der Hierarchie unterhalb des
  Wurzelknotens des Fahrzeugs sein. Siehe TankBasic-Prefab als Referenz.
 --------------------------------------------------------------------------------
-UPDATE 19.05.2017
+UPDATE 19.05.2017 (Philipp)
 Timer läuft jetzt; den werden wir wohl für den Rest noch anpassen müssen.
 Ich definier schonmal paar Interfaces für die Kommunikation zwischen dem Skript,
 was die Kontrolle vergibt und den Fahrzeugen; sprich Sachen in Bezug auf
@@ -43,7 +55,7 @@ haben; wir haben beschlossen, dass:
  haben, um direkt den Online-Multiplayer anzugehen
 
 --------------------------------------------------------------------------------
-UPDATE 12.05.2017:
+UPDATE 12.05.2017: (Philipp)
 Anleitung zum todo
 Alle Dateien, denen ihr die Dateiendung todo gebt, werden automatisch von dem
 Atom-Plugin "tasks" in schöner Weise verarbeitet.
