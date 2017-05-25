@@ -7,6 +7,10 @@ public class CarMovement : MonoBehaviour
     public List<AxleInfo> axleInfos; // the information about each individual axle
     public float maxMotorTorque; // maximum torque the motor can apply to wheel
     public float maxSteeringAngle; // maximum steer angle the wheel can have
+	public float brakePower;
+	private float motor;
+	//private float steering;
+	private bool brakeOn;
 
     /*public void Update()
     {
@@ -57,28 +61,39 @@ public class CarMovement : MonoBehaviour
         }
     }*/
 
+	/*
+	GetAxisRaw liefert nur Werte -1,0,1
+	wenn dieser Wert 0 ist, sprich nciht aktiv gas gegeben wird, soll die Bremse reinhauen
+	*/
     public void FixedUpdate()
     {
-        float motor = maxMotorTorque * Input.GetAxis("Vertical");
-        float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
-
+        motor = maxMotorTorque * Input.GetAxis("Vertical");
+        //steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+		if (Input.GetAxisRaw ("Vertical") == 0) {
+			brakeOn = true;
+		} else {
+			brakeOn = false;
+		}
         foreach (AxleInfo axleInfo in axleInfos)
         {
-            if (axleInfo.steering)
+			
+            /*if (axleInfo.steering)
             {
                 axleInfo.leftWheel.steerAngle = steering;
                 axleInfo.rightWheel.steerAngle = steering;
-            }
+            }*/
             if (axleInfo.motor)
             {
                 axleInfo.leftWheel.motorTorque = motor;
                 axleInfo.rightWheel.motorTorque = motor;
             }
-            if (Input.GetKey(KeyCode.X))
-            {
-                axleInfo.leftWheel.brakeTorque = 600f;
-                axleInfo.rightWheel.brakeTorque = 600f;
-            }
+			if (brakeOn) {
+				axleInfo.leftWheel.brakeTorque = brakePower;
+				axleInfo.rightWheel.brakeTorque = brakePower;
+			} else {
+				axleInfo.leftWheel.brakeTorque = 0;
+				axleInfo.rightWheel.brakeTorque = 0;
+			}
         }
 
      
