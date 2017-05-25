@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f8da68fcb66e4034ba752bd929df8bd3
-timeCreated: 1495665320
+guid: b816a61e9e1578e4294977bc2d6f4457
+timeCreated: 1495741012
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -15,14 +15,8 @@ ModelImporter:
     100014: Rail2
     100016: Rail3
     100018: RailStomps1
-    100020: RailStomps1_MeshPart0
-    100022: RailStomps1_MeshPart1
-    100024: RailStomps2
-    100026: RailStomps2_MeshPart0
-    100028: RailStomps2_MeshPart1
-    100030: RailStomps3
-    100032: RailStomps3_MeshPart0
-    100034: RailStomps3_MeshPart1
+    100020: RailStomps2
+    100022: RailStomps3
     400000: BigStomps12
     400002: BigStomps23
     400004: //RootNode
@@ -33,14 +27,8 @@ ModelImporter:
     400014: Rail2
     400016: Rail3
     400018: RailStomps1
-    400020: RailStomps1_MeshPart0
-    400022: RailStomps1_MeshPart1
-    400024: RailStomps2
-    400026: RailStomps2_MeshPart0
-    400028: RailStomps2_MeshPart1
-    400030: RailStomps3
-    400032: RailStomps3_MeshPart0
-    400034: RailStomps3_MeshPart1
+    400020: RailStomps2
+    400022: RailStomps3
     2300000: BigStomps12
     2300002: BigStomps23
     2300004: Ground1
@@ -49,15 +37,9 @@ ModelImporter:
     2300010: Rail1
     2300012: Rail2
     2300014: Rail3
-    2300016: RailStomps1_MeshPart0
-    2300018: RailStomps1_MeshPart1
-    2300020: RailStomps2_MeshPart0
-    2300022: RailStomps2_MeshPart1
-    2300024: RailStomps3_MeshPart0
-    2300026: RailStomps3_MeshPart1
-    2300028: RailStomps1
-    2300030: RailStomps2
-    2300032: RailStomps3
+    2300016: RailStomps1
+    2300018: RailStomps2
+    2300020: RailStomps3
     3300000: BigStomps12
     3300002: BigStomps23
     3300004: Ground1
@@ -66,15 +48,9 @@ ModelImporter:
     3300010: Rail1
     3300012: Rail2
     3300014: Rail3
-    3300016: RailStomps1_MeshPart0
-    3300018: RailStomps1_MeshPart1
-    3300020: RailStomps2_MeshPart0
-    3300022: RailStomps2_MeshPart1
-    3300024: RailStomps3_MeshPart0
-    3300026: RailStomps3_MeshPart1
-    3300028: RailStomps1
-    3300030: RailStomps2
-    3300032: RailStomps3
+    3300016: RailStomps1
+    3300018: RailStomps2
+    3300020: RailStomps3
     4300000: Ground3
     4300002: Ground2
     4300004: Ground1
@@ -82,18 +58,10 @@ ModelImporter:
     4300008: BigStomps12
     4300010: Rail3
     4300012: Rail2
-    4300014: RailStomps3_MeshPart0
-    4300016: RailStomps3_MeshPart1
-    4300018: RailStomps2_MeshPart0
-    4300020: RailStomps2_MeshPart1
-    4300022: RailStomps1_MeshPart0
-    4300024: RailStomps1_MeshPart1
-    4300026: Rail1
-    4300028: RailStomps3
-    4300030: RailStomps2
-    4300032: RailStomps1
-    7400000: Default Take
-    9500000: //RootNode
+    4300014: RailStomps3
+    4300016: RailStomps2
+    4300018: RailStomps1
+    4300020: Rail1
   materials:
     importMaterials: 1
     materialName: 0
@@ -158,7 +126,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
