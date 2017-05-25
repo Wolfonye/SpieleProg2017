@@ -86,6 +86,13 @@
     <Compile Include="Assets\Scripts\MonoBehaviours\ShellDestruction.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviours\ShellRotation.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviours\ShellSpawn.cs" />
+    <Compile Include="Assets\Scripts\CarCenterOfMass.cs" />
+    <Compile Include="Assets\Scripts\CarMovement.cs" />
+    <Compile Include="Assets\RightCollTest.cs" />
+    <Compile Include="Assets\LeftCollTest.cs" />
+    <Compile Include="Assets\HoldLineScript.cs" />
+    <Compile Include="Assets\CarMoveTest.cs" />
+    <Compile Include="Assets\Scripts\CarMovementAlternative.cs" />
     <Compile Include="Assets\Scripts\OnCOlliionTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
