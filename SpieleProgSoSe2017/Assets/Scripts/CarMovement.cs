@@ -36,8 +36,6 @@ public class CarMovement : MonoBehaviour
         //steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 		if (Input.GetAxisRaw ("Vertical") == 0) {
 			brakeOn = true;
-			//Debug.Log ("Vehikel velo" + vehicleRigBody.velocity * 0.8F);
-			//Debug.Log ("vehikel contravelo" + vehicleRigBody.velocity * 2F);
 		} else {
 			brakeOn = false;
 		}
@@ -74,7 +72,6 @@ public class CarMovement : MonoBehaviour
 				axleInfo.leftWheel.brakeTorque = brakePower;
 				axleInfo.rightWheel.brakeTorque = brakePower;
 			} else {
-				Debug.Log ("bremse raus");
 				axleInfo.leftWheel.brakeTorque = 0;
 				axleInfo.rightWheel.brakeTorque = 0;
 			}
