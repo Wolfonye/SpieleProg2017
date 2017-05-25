@@ -46,6 +46,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CarMoveTest.cs" />
+     <Compile Include="Assets\HoldLineScript.cs" />
+     <Compile Include="Assets\LeftCollTest.cs" />
+     <Compile Include="Assets\RightCollTest.cs" />
+     <Compile Include="Assets\Scripts\CarCenterOfMass.cs" />
+     <Compile Include="Assets\Scripts\CarMovement.cs" />
+     <Compile Include="Assets\Scripts\CarMovementAlternative.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDestructible.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviours\BarrelAngle.cs" />
