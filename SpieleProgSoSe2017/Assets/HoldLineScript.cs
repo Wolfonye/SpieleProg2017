@@ -8,7 +8,7 @@ public class HoldLineScript : MonoBehaviour {
     Vector3 rotVector;
     Vector3 posVector;
 	public bool rightFree;
-	public bool leftFree;
+	public bool leftFree;	bool spin;
     // Use this for initialization
     void Start () {
         rotVector = transform.rotation.eulerAngles;
@@ -16,13 +16,13 @@ public class HoldLineScript : MonoBehaviour {
         posVector = transform.position;
         holdPos = posVector.z;
         rightFree = true;
-        leftFree = true;
+        leftFree = true;		spin = false;
 }
 	
 	// Update is called once per frame
 	void Update () {
         rotVector = transform.rotation.eulerAngles;
-        rotVector.y = holdVec;
+        rotVector.y = holdVec;		if(spin == true)		{			rotVector.x = -rotVector.x;			spin = false;	 			}
         transform.rotation = Quaternion.Euler(rotVector);
         posVector = transform.position;
         posVector.z = holdPos;
@@ -56,10 +56,14 @@ public class HoldLineScript : MonoBehaviour {
                 }
             }           
 		}
+		if (Input.GetKeyDown("r"))
+		{
+			this.Spin();
+		}
     }
 	public void Spin()
 	{
-		holdVec = (holdVec + 180) % 360;
+		holdVec = (holdVec + 180) % 360; 			spin = true;
 	}
 }
 
