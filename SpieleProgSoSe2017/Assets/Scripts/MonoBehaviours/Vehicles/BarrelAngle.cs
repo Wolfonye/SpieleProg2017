@@ -31,17 +31,17 @@ public class BarrelAngle : MonoBehaviour
         //netterweise ist der * Operator in Unity für Quaternionen so überladen, dass wir das linke Argument um das rechte rotieren 
         //können (um, nicht um Sinne von Drehachse, sondern Winkel)
         originalRot = barrel.transform.rotation;
-        if (Input.GetKey(KeyCode.A))
+		if (Input.GetKey(KeyCode.DownArrow))
         {
-            if (Vector3.Angle(barrel.transform.up, -origin.transform.right) > minAnglePositive)
+			if (Vector3.Angle(barrel.transform.up, origin.transform.forward) > minAnglePositive)
             {
                 barrel.transform.rotation = originalRot * Quaternion.AngleAxis(barrelLiftSpeed * Time.deltaTime, Vector3.left);
             }
         }
 
-        if (Input.GetKey(KeyCode.D))
+		if (Input.GetKey(KeyCode.UpArrow))
         {
-            if (Vector3.Angle(barrel.transform.up, -origin.transform.right) < maxAnglePosositive)
+			if (Vector3.Angle(barrel.transform.up, origin.transform.forward) < maxAnglePosositive)
             {
                 barrel.transform.rotation = originalRot * Quaternion.AngleAxis(-barrelLiftSpeed * Time.deltaTime, Vector3.left);
             }
