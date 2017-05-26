@@ -30,7 +30,7 @@ public class CarMovement : MonoBehaviour
     public void FixedUpdate()
     {
 		speed = vehicleRigBody.velocity.magnitude * 3.6f;
-		Debug.Log ("speed in km/h:" + speed);
+		//Debug.Log ("speed in km/h:" + speed);
 
 		isGrounded = false;
 		//Hier stelle ich fest, ob mein Vehicle in irgendeiner Form Bodenkontakt hat
@@ -47,8 +47,8 @@ public class CarMovement : MonoBehaviour
 		}
         //steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 		leftRightInputInfo = Input.GetAxisRaw("Horizontal");
-		Debug.Log ("rawaxis" + leftRightInputInfo);
-		Debug.Log ("transform x" + vehicleRigBody.transform.forward.x);
+		//Debug.Log ("rawaxis" + leftRightInputInfo);
+		//Debug.Log ("transform x" + vehicleRigBody.transform.forward.x);
 		if (leftRightInputInfo == 0) {
 			brakeOn = true;
 		} else {
