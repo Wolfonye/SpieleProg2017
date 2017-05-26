@@ -16,17 +16,19 @@ public class CarMovement : MonoBehaviour
 	private float motor;
 	//private float steering;
 
+	private float leftRightInputInfo;
 	private float speed;
 	private bool brakeOn;
 	private bool isGrounded;
 	private WheelHit hit;
+
+	private bool otherDirectionPressed = false;
 	/*
 	GetAxisRaw liefert nur Werte -1,0,1
 	wenn dieser Wert 0 ist, sprich nciht aktiv gas gegeben wird, soll die Bremse reinhauen
 	*/
     public void FixedUpdate()
     {
-
 		speed = vehicleRigBody.velocity.magnitude * 3.6f;
 		Debug.Log ("speed in km/h:" + speed);
 
@@ -39,12 +41,24 @@ public class CarMovement : MonoBehaviour
 			}
 		}
 	
-        motor = maxMotorTorque * Input.GetAxis("Vertical");
+        motor = maxMotorTorque * Input.GetAxis("Horizontal");
+		if (vehicleRigBody.transform.forward.x > 0) {
+			motor = -motor;
+		}
         //steering = maxSteeringAngle * Input.GetAxis("Horizontal");
-		if (Input.GetAxisRaw ("Vertical") == 0) {
+		leftRightInputInfo = Input.GetAxisRaw("Horizontal");
+		Debug.Log ("rawaxis" + leftRightInputInfo);
+		Debug.Log ("transform x" + vehicleRigBody.transform.forward.x);
+		if (leftRightInputInfo == 0) {
 			brakeOn = true;
 		} else {
 			brakeOn = false;
+			if ((vehicleRigBody.transform.forward.x > 0) && (leftRightInputInfo == 1)) {
+				vehicleRigBody.transform.Rotate (new Vector3 (0, 180, 0));
+			}
+			if ((vehicleRigBody.transform.forward.x < 0) && (leftRightInputInfo == -1)) {
+				vehicleRigBody.transform.Rotate (new Vector3 (0, 180, 0));
+			}
 		}
 
 		if (isGrounded && brakeOn)
