@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RightCollTest : MonoBehaviour {
-
+	//HoldLineScript myParent = transform.parent.GetComponent<HoldLineScript>();
 	// Use this for initialization
 	void Start () {
 		
@@ -16,17 +16,17 @@ public class RightCollTest : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        HoldLineScript.rightFree = false;
+		this.transform.parent.GetComponent<HoldLineScript>().rightFree = false;
         Debug.Log("Coll");
     }
     private void OnTriggerStay(Collider other)
     {
-        HoldLineScript.rightFree = false;
+		this.transform.parent.GetComponent<HoldLineScript>().rightFree = false;
         Debug.Log("Coll");
     }
     private void OnTriggerExit(Collider other)
     {
-        HoldLineScript.rightFree = true;
+		this.transform.parent.GetComponent<HoldLineScript>().rightFree = true;
         Debug.Log("CollEx");
     }
 }

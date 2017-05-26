@@ -4,47 +4,61 @@ using System.Collections.Generic;
 
 public class CarMovement : MonoBehaviour
 {
-    public List<AxleInfo> axleInfos; // the information about each individual axle
+    public List<Axle> axleInfos; // the information about each individual axle
     public float maxMotorTorque; // maximum torque the motor can apply to wheel
     public float maxSteeringAngle; // maximum steer angle the wheel can have
 	public float brakePower;
 	public float brakeFactor = 0.8f;
 	public float speedDampingThreshold;
 
-
+	public HoldLineScript holdLine;
 	public Rigidbody vehicleRigBody;
 	private float motor;
 	//private float steering;
 
+	private float leftRightInputInfo;
 	private float speed;
 	private bool brakeOn;
 	private bool isGrounded;
 	private WheelHit hit;
+
+	private bool otherDirectionPressed = false;
 	/*
 	GetAxisRaw liefert nur Werte -1,0,1
 	wenn dieser Wert 0 ist, sprich nciht aktiv gas gegeben wird, soll die Bremse reinhauen
 	*/
     public void FixedUpdate()
     {
-
 		speed = vehicleRigBody.velocity.magnitude * 3.6f;
 		Debug.Log ("speed in km/h:" + speed);
 
 		isGrounded = false;
 		//Hier stelle ich fest, ob mein Vehicle in irgendeiner Form Bodenkontakt hat
-		foreach (AxleInfo axle in axleInfos) {
+		foreach (Axle axle in axleInfos) {
 			if(axle.leftWheel.GetGroundHit(out hit) == true || axle.rightWheel.GetGroundHit(out hit) == true){
 				isGrounded = true;
 				break;
 			}
 		}
 	
-        motor = maxMotorTorque * Input.GetAxis("Vertical");
+        motor = maxMotorTorque * Input.GetAxis("Horizontal");
+		if (vehicleRigBody.transform.forward.x > 0) {
+			motor = -motor;
+		}
         //steering = maxSteeringAngle * Input.GetAxis("Horizontal");
-		if (Input.GetAxisRaw ("Vertical") == 0) {
+		leftRightInputInfo = Input.GetAxisRaw("Horizontal");
+		Debug.Log ("rawaxis" + leftRightInputInfo);
+		Debug.Log ("transform x" + vehicleRigBody.transform.forward.x);
+		if (leftRightInputInfo == 0) {
 			brakeOn = true;
 		} else {
 			brakeOn = false;
+			if ((vehicleRigBody.transform.forward.x > 0) && (leftRightInputInfo == 1)) {
+				holdLine.Spin();
+			}
+			if ((vehicleRigBody.transform.forward.x < 0) && (leftRightInputInfo == -1)) {
+				holdLine.Spin();
+			}
 		}
 
 		if (isGrounded && brakeOn)
@@ -62,7 +76,7 @@ public class CarMovement : MonoBehaviour
 			vehicleRigBody.AddForce(-vehicleRigBody.velocity * vehicleRigBody.mass * brakeFactor);
 		}
 
-        foreach (AxleInfo axleInfo in axleInfos)
+		foreach (Axle axle in axleInfos)
         {
 			
             /*if (axleInfo.steering)
@@ -70,26 +84,26 @@ public class CarMovement : MonoBehaviour
                 axleInfo.leftWheel.steerAngle = steering;
                 axleInfo.rightWheel.steerAngle = steering;
             }*/
-			if (axleInfo.motor && (speed < speedDampingThreshold)) {
-				axleInfo.leftWheel.motorTorque = motor;
-				axleInfo.rightWheel.motorTorque = motor;
+			if (axle.motor && (speed < speedDampingThreshold)) {
+				axle.leftWheel.motorTorque = motor;
+				axle.rightWheel.motorTorque = motor;
 			} else {
-				axleInfo.leftWheel.motorTorque = 0;
-				axleInfo.rightWheel.motorTorque = 0;
+				axle.leftWheel.motorTorque = 0;
+				axle.rightWheel.motorTorque = 0;
 			}
 			if (brakeOn) {
-				axleInfo.leftWheel.brakeTorque = brakePower;
-				axleInfo.rightWheel.brakeTorque = brakePower;
+				axle.leftWheel.brakeTorque = brakePower;
+				axle.rightWheel.brakeTorque = brakePower;
 			} else {
-				axleInfo.leftWheel.brakeTorque = 0;
-				axleInfo.rightWheel.brakeTorque = 0;
+				axle.leftWheel.brakeTorque = 0;
+				axle.rightWheel.brakeTorque = 0;
 			}
         }
     }
 }
 
 [System.Serializable]
-public class AxleInfo
+public class Axle
 {
     public WheelCollider leftWheel;
     public WheelCollider rightWheel;
