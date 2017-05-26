@@ -1,5 +1,13 @@
 SpieleProgrammierungSoSe2017
 --------------------------------------------------------------------------------
+UPDATE 26.05.2017 (Philipp)
+Bezüglich Beschleunigung, MaxSpeed, Bremsweg steht das Skript zur Bewegung.
+Als nächstes mache ich mich daran das Umdrehen auf einer Lane zu skripten.
+
+So wie das aktuelle Skript arbeitet, würde vermutlich der Bremsweg beim Umdrehen
+etwas länger als beim stoppen. Ich bin noch nicht sicher, ob ich das am Ende
+so haben will. Das müssen wir dann schauen.
+--------------------------------------------------------------------------------
 UPDATE 23.05.2017 (Philipp)
 Bezüglich der Vorträge am Montag wollte ich hier schonmal festhalten, was ich
 vorhabe zu machen bzw. worüber mindestens einer von uns reden sollte:

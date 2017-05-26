@@ -13,8 +13,8 @@ Florian:
     ✔ GitHub Account anlegen @done(2017-04-26 18:22) @project(Florian)
     ✔ README.me um Ideen erweitern @done(2017-05-01 08:38) @project(Florian)
     ✔ erste Einarbeitung in Unity @done(2017-05-12 14:48) @project(Florian)
-(   ☐ Radphysik und Bewegung mittels Radphysik(Collider-Wheel?)   )
-    ☐ fixen der Rotation und halten auf einer Geraden
+    ☐ fixen der Rotation
+    ✔ Halten auf einer Geraden @done(2017-05-26 08:36) @project(Florian)
     ☐ Tasks-Plugin Atom
     ☐ Atom auf Lappi ziehen
     ☐ Seitenbewegung fixen
@@ -47,11 +47,11 @@ Philipp:
     ✔ Comic-Booms ins Hauptprojekt importieren und auf Shells anpassen @done(2017-05-15 21:53) @project(Philipp)
     ☐ Booms skalieren?
     ☐ Mündungsfeuer/wolke
-    ☐ Normierung der Lane-Breite
+    ✔ Normierung der Lane-Breite @done(2017-05-26 08:35) @project(Philipp)
     ✔ Kontrollübergabe zwischen Spielern @done(2017-05-21 10:28) @project(Philipp)
     ✔ Timer-Skript Rohfassung @done(2017-05-19 18:36) @project(Philipp)
     ✔ Interface-Konzeption für Schadensmodell @done(2017-05-21 10:28) @project(Philipp)
-    ☐ Radphysik in den Griff bekommen
+    ✔ Radphysik in den Griff bekommen @done(2017-05-26 08:35) @project(Philipp)
 
 
 WayPoints:
