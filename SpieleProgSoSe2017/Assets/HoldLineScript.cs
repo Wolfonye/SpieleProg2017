@@ -59,7 +59,7 @@ public class HoldLineScript : MonoBehaviour {
     }
 	public void Spin()
 	{
-	holdVec = (holdVec + 180) % 360;           
+		holdVec = (holdVec + 180) % 360;
 	}
 }
 

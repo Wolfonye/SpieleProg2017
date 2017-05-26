@@ -11,7 +11,7 @@ public class CarMovement : MonoBehaviour
 	public float brakeFactor = 0.8f;
 	public float speedDampingThreshold;
 
-
+	public HoldLineScript holdLine;
 	public Rigidbody vehicleRigBody;
 	private float motor;
 	//private float steering;
@@ -54,10 +54,10 @@ public class CarMovement : MonoBehaviour
 		} else {
 			brakeOn = false;
 			if ((vehicleRigBody.transform.forward.x > 0) && (leftRightInputInfo == 1)) {
-				vehicleRigBody.transform.Rotate (new Vector3 (0, 180, 0));
+				holdLine.Spin();
 			}
 			if ((vehicleRigBody.transform.forward.x < 0) && (leftRightInputInfo == -1)) {
-				vehicleRigBody.transform.Rotate (new Vector3 (0, 180, 0));
+				holdLine.Spin();
 			}
 		}
 
