@@ -7,8 +7,8 @@ public class HoldLineScript : MonoBehaviour {
     float holdPos;
     Vector3 rotVector;
     Vector3 posVector;
-    public static bool rightFree;
-    public static bool leftFree;
+	public bool rightFree;
+	public bool leftFree;
     // Use this for initialization
     void Start () {
         rotVector = transform.rotation.eulerAngles;
@@ -45,7 +45,7 @@ public class HoldLineScript : MonoBehaviour {
         if (Input.GetKeyDown("d"))
         {
             if (rightFree == true)
-            {
+			{
                 if (holdVec == 90)
                 {
                     holdPos = holdPos - 5;
@@ -55,8 +55,12 @@ public class HoldLineScript : MonoBehaviour {
                     holdPos = holdPos + 5;
                 }
             }           
-        }
+		}
     }
+	public void Spin()
+	{
+	holdVec = (holdVec + 180) % 360;           
+	}
 }
 
 /*[System.Serializable]
