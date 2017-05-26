@@ -21,7 +21,7 @@ Florian:
     ☐ Shell Collision erzeugt Damage
     ☐ lane-Wechsel nicht instant sondern fließend
     ✔ fix der Rotationsprobleme bei turn auf Rampe @done(2017-05-26 12:39) @project(Florian)
-    ☐ Abfrage auf Seitenbewegung
+    ✔ Abfrage auf Seitenbewegung @done(2017-05-26 12:41) @project(Florian)
 
 
 Philipp:
