@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class CarMoveTest : MonoBehaviour {
 
-    public List<AxleInfo> axleInfos; // the information about each individual axle
+    public List<Axle> axleInfos; // the information about each individual axle
     public float maxMotorTorque; // maximum torque the motor can apply to wheel
     public float maxSteeringAngle; // maximum steer angle the wheel can have
 
@@ -16,7 +16,7 @@ public class CarMoveTest : MonoBehaviour {
             motor = 0;
 
         }
-            foreach (AxleInfo axleInfo in axleInfos)
+            foreach (Axle axleInfo in axleInfos)
         {
           
             if (axleInfo.motor)
