@@ -22,7 +22,6 @@ public class CarMovement : MonoBehaviour
 	private bool isGrounded;
 	private WheelHit hit;
 
-	private bool otherDirectionPressed = false;
 	/*
 	GetAxisRaw liefert nur Werte -1,0,1
 	wenn dieser Wert 0 ist, sprich nciht aktiv gas gegeben wird, soll die Bremse reinhauen
@@ -30,7 +29,7 @@ public class CarMovement : MonoBehaviour
     public void FixedUpdate()
     {
 		speed = vehicleRigBody.velocity.magnitude * 3.6f;
-		Debug.Log ("speed in km/h:" + speed);
+		//Debug.Log ("speed in km/h:" + speed);
 
 		isGrounded = false;
 		//Hier stelle ich fest, ob mein Vehicle in irgendeiner Form Bodenkontakt hat
@@ -47,8 +46,6 @@ public class CarMovement : MonoBehaviour
 		}
         //steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 		leftRightInputInfo = Input.GetAxisRaw("Horizontal");
-		Debug.Log ("rawaxis" + leftRightInputInfo);
-		Debug.Log ("transform x" + vehicleRigBody.transform.forward.x);
 		if (leftRightInputInfo == 0) {
 			brakeOn = true;
 		} else {
@@ -100,6 +97,14 @@ public class CarMovement : MonoBehaviour
 			}
         }
     }
+
+	public void FullBrake(){
+		vehicleRigBody.AddForce(-vehicleRigBody.velocity * vehicleRigBody.mass * brakeFactor);
+		foreach (Axle axle in axleInfos) {
+			axle.leftWheel.brakeTorque = brakePower;
+			axle.rightWheel.brakeTorque = brakePower;
+		}
+	}
 }
 
 [System.Serializable]

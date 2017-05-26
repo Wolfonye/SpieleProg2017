@@ -37,10 +37,9 @@ public class RoundTimer : MonoBehaviour
     {
         while (true)
         {
-            print(actualTime);
             timer.text = actualTime.ToString();
             actualTime = actualTime - 1;
-            if (actualTime == 0)
+            if (actualTime == -1)
             {
                 actualTime = timePerRound;
                 controlSwitcher.timerZero();

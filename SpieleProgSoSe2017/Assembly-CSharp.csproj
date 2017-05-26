@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\MonoBehaviours\Vehicles\CarCenterOfMass.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviours\Vehicles\CarMovement.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviours\Vehicles\HoldLineScript.cs" />
+     <Compile Include="Assets\Scripts\MonoBehaviours\Vehicles\HoldLineVersion2.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviours\Vehicles\LeftCollTest.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviours\Vehicles\RightCollTest.cs" />
  <Reference Include="UnityEngine.UI">

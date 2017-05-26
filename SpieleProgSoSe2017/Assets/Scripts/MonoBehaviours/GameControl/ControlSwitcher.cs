@@ -11,6 +11,10 @@ public class ControlSwitcher : MonoBehaviour
     public GameObject player1;
     public GameObject player2;
 
+	private GameObject tempGameObject;
+	private Rigidbody tempRigBody;
+	private CarMovement carMovement;
+
     void Start()
     {
         roundTimer.setControlSwitcher(this);    
@@ -20,9 +24,24 @@ public class ControlSwitcher : MonoBehaviour
     public void timerZero()
     {
         //print("Deine Zeit ist abgelaufen");
-        GameObject tempGameObject = player1.transform.GetChild(0).gameObject;
-        tempGameObject.SetActive(!tempGameObject.activeSelf);
-        tempGameObject = player2.transform.GetChild(0).gameObject;
-        tempGameObject.SetActive(!tempGameObject.activeSelf);
-    }
+        tempGameObject = player1.transform.GetChild(0).gameObject;
+		tempRigBody = player1.GetComponent<Rigidbody> ();
+		tempGameObject.SetActive(!tempGameObject.activeSelf);
+		carMovement = player1.GetComponentInChildren<CarMovement>();
+
+		//hier wird das CarMovementskript in siener aktivität getoggelt und danach noch fullbrake angewandt, damit bei kontrollwechsel ein 
+		//realistischer bremsweg erzeugt wird.
+		carMovement.enabled = !carMovement.enabled;
+		carMovement.FullBrake();
+		//tempRigBody.velocity = new Vector3(0,0,0);
+        
+		tempGameObject = player2.transform.GetChild(0).gameObject;
+		tempRigBody = player2.GetComponent<Rigidbody> ();
+		tempGameObject.SetActive(!tempGameObject.activeSelf);
+		carMovement = player2.GetComponentInChildren<CarMovement>();
+
+		carMovement.enabled = !carMovement.enabled;
+		carMovement.FullBrake();
+		//tempRigBody.velocity = new Vector3(0,0,0);
+	}
 }
