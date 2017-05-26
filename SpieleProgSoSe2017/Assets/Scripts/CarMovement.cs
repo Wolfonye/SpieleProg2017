@@ -9,11 +9,14 @@ public class CarMovement : MonoBehaviour
     public float maxSteeringAngle; // maximum steer angle the wheel can have
 	public float brakePower;
 	public float brakeFactor = 0.8f;
+	public float speedDampingThreshold;
 
 
 	public Rigidbody vehicleRigBody;
 	private float motor;
 	//private float steering;
+
+	private float speed;
 	private bool brakeOn;
 	private bool isGrounded;
 	private WheelHit hit;
@@ -23,6 +26,10 @@ public class CarMovement : MonoBehaviour
 	*/
     public void FixedUpdate()
     {
+
+		speed = vehicleRigBody.velocity.magnitude * 3.6f;
+		Debug.Log ("speed in km/h:" + speed);
+
 		isGrounded = false;
 		//Hier stelle ich fest, ob mein Vehicle in irgendeiner Form Bodenkontakt hat
 		foreach (AxleInfo axle in axleInfos) {
@@ -63,11 +70,13 @@ public class CarMovement : MonoBehaviour
                 axleInfo.leftWheel.steerAngle = steering;
                 axleInfo.rightWheel.steerAngle = steering;
             }*/
-            if (axleInfo.motor)
-            {
-                axleInfo.leftWheel.motorTorque = motor;
-                axleInfo.rightWheel.motorTorque = motor;
-            }
+			if (axleInfo.motor && (speed < speedDampingThreshold)) {
+				axleInfo.leftWheel.motorTorque = motor;
+				axleInfo.rightWheel.motorTorque = motor;
+			} else {
+				axleInfo.leftWheel.motorTorque = 0;
+				axleInfo.rightWheel.motorTorque = 0;
+			}
 			if (brakeOn) {
 				axleInfo.leftWheel.brakeTorque = brakePower;
 				axleInfo.rightWheel.brakeTorque = brakePower;
@@ -76,9 +85,6 @@ public class CarMovement : MonoBehaviour
 				axleInfo.rightWheel.brakeTorque = 0;
 			}
         }
-
-     
-        
     }
 }
 
