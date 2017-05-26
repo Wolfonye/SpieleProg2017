@@ -17,9 +17,11 @@ Florian:
     ✔ Halten auf einer Geraden @done(2017-05-26 08:36) @project(Florian)
     ☐ Tasks-Plugin Atom
     ☐ Atom auf Lappi ziehen
-    ☐ Seitenbewegung fixen
+    ✔ Seitenbewegung fixen @done(2017-05-26 12:39) @project(Florian)
     ☐ Shell Collision erzeugt Damage
     ☐ lane-Wechsel nicht instant sondern fließend
+    ✔ fix der Rotationsprobleme bei turn auf Rampe @done(2017-05-26 12:39) @project(Florian)
+    ☐ Abfrage auf Seitenbewegung
 
 
 Philipp:
@@ -30,7 +32,6 @@ Philipp:
     ✔ Ordnerstruktur (Basis) @done(2017-05-01 11:57) @project(Philipp)
     ✔ Rotation von Shells während des Fluges @done(2017-05-08 21:39) @project(Philipp)
     ☐ Base-Terrain
-    ☐ Abfrage auf Lane-Wechsel
     ✔ Skalierung der Fahrzeuge @done(2017-05-12 14:51) @project(Philipp)
     ☐ Skalierung der Spielobjekte
     ✔ Git Setup für Version 0.0 um Prototyp zu ermöglichen einschließlich Dok-Branch @done(2017-05-10 22:49) @project(Philipp)
