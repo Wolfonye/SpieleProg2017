@@ -15,10 +15,21 @@ public class ControlSwitcher : MonoBehaviour
 	private GameObject tempGameObject;
 	private Rigidbody tempRigBody;
 	private CarMovement carMovement;
+	private HoldLineScript holdLine;
 
     void Start()
     {
-        roundTimer.setControlSwitcher(this);    
+        roundTimer.setControlSwitcher(this);  
+
+		/*
+		 * Sehr seltsam: wenn ich nicht eines AKTIV auf deaktiviert setze, dann funzt das aus/einschalten der
+		 * Lanewechselfunktion nicht OBWOHL im inspector acive und inactive gesetzt werden.
+		 * --> extrem seltsam; ich vermute, dass eine Unity Designentscheidung dahinter steht ooooder
+		 * es ist ein feature/bug
+		 */
+		player1.transform.GetChild (0).gameObject.SetActive (false);
+		player1.GetComponentInChildren<CarMovement> ().enabled = false;
+		player1.GetComponentInChildren<HoldLineScript> ().enabled = false;
     }
 
 
@@ -31,6 +42,8 @@ public class ControlSwitcher : MonoBehaviour
 		//seltsam, dass ich carmovement nicht kriege wenn das script im ersten kind sitzt...extrem seltsam da gibts nen nullpointer
 		//würde mich mal interessieren, warum das so ist,insbesondere, da das level in der heirarchie das gleiche war...
 		carMovement = player1.GetComponentInChildren<CarMovement>();
+		holdLine = player1.GetComponent<HoldLineScript> ();
+		holdLine.enabled = !holdLine.enabled;
 
 		//hier wird das CarMovementskript in siener aktivität getoggelt und danach noch fullbrake angewandt, damit bei kontrollwechsel ein 
 		//realistischer bremsweg erzeugt wird.
@@ -42,6 +55,8 @@ public class ControlSwitcher : MonoBehaviour
 		tempRigBody = player2.GetComponent<Rigidbody> ();
 		tempGameObject.SetActive(!tempGameObject.activeSelf);
 		carMovement = player2.GetComponentInChildren<CarMovement>();
+		holdLine = player2.GetComponent<HoldLineScript> ();
+		holdLine.enabled = !holdLine.enabled;
 
 		carMovement.enabled = !carMovement.enabled;
 		carMovement.FullBrake();
