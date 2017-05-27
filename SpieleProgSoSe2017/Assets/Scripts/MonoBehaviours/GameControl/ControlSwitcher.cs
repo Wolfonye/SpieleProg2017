@@ -5,6 +5,7 @@ using UnityEngine;
 public class ControlSwitcher : MonoBehaviour
 {
 
+	public Camera mainCam;
     //noch nicht ausgereift; hier werden erstmal nur zwei SPieler reingezogen, zwischen denen die Kontrolle in Abhängigkeit
     //des Timers getogglet wird. Ich habe das als einfache Variante des Observer-Patterns realisiert
     public RoundTimer roundTimer;
