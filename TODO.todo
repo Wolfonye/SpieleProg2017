@@ -15,10 +15,10 @@ Florian:
     ✔ erste Einarbeitung in Unity @done(2017-05-12 14:48) @project(Florian)
     ☐ fixen der Rotation
     ✔ Halten auf einer Geraden @done(2017-05-26 08:36) @project(Florian)
-    ☐ Tasks-Plugin Atom
-    ☐ Atom auf Lappi ziehen
+    ✔ Tasks-Plugin Atom @done(2017-05-27 09:22) @project(Florian)
+    ✔ Atom auf Lappi ziehen @done(2017-05-27 09:22) @project(Florian)
     ✔ Seitenbewegung fixen @done(2017-05-26 12:39) @project(Florian)
-    ☐ Shell Collision erzeugt Damage
+    ✔ Shell Collision erzeugt Damage @done(2017-05-27 09:22) @project(Florian)
     ☐ lane-Wechsel nicht instant sondern fließend
     ✔ fix der Rotationsprobleme bei turn auf Rampe @done(2017-05-26 12:39) @project(Florian)
     ✔ Abfrage auf Seitenbewegung @done(2017-05-26 12:41) @project(Florian)
@@ -31,9 +31,9 @@ Philipp:
     ✔ Fahrzeugtemplates @done(2017-05-08 21:39) @project(Philipp)
     ✔ Ordnerstruktur (Basis) @done(2017-05-01 11:57) @project(Philipp)
     ✔ Rotation von Shells während des Fluges @done(2017-05-08 21:39) @project(Philipp)
-    ☐ Base-Terrain
+    ✔ Base-Terrain @done(2017-05-27 09:23) @project(Philipp)
     ✔ Skalierung der Fahrzeuge @done(2017-05-12 14:51) @project(Philipp)
-    ☐ Skalierung der Spielobjekte
+    ✔ Skalierung der Spielobjekte @done(2017-05-27 09:23) @project(Philipp)
     ✔ Git Setup für Version 0.0 um Prototyp zu ermöglichen einschließlich Dok-Branch @done(2017-05-10 22:49) @project(Philipp)
     ✔ Erweiterung Ordnerstruktur für verbessertes Meshhandling @done(2017-05-10 22:47) @project(Philipp)
     ✔ Base-scripts für Tank_Basic @done(2017-05-10 22:49) @project(Philipp)
@@ -59,4 +59,5 @@ WayPoints:
     ☐ konspiratives Grillen
     ✔ MinimalPrototyp zur Physik @done(2017-05-12 14:52) @project(WayPoints)
     ✔ Aufgabenverteilung @done(2017-05-12 14:52) @project(WayPoints)
-    ☐ erweiterter Prototyp Version 0.1 (beweglicher Tank, Shell-Collisions-Trigger, minimales Overlay)
+(   ☐ erweiterter Prototyp Version 0.1 (beweglicher Tank, Shell-Collisions-Trigger, minimales Overlay)   OUTDATED)
+    ☐ Prototyp zur Präsentation (Kontrollwechsel, bewegliche Tanks, Kamera beweglich, Shell-Damage) 
