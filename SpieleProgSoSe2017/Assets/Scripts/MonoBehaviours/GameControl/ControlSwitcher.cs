@@ -27,6 +27,8 @@ public class ControlSwitcher : MonoBehaviour
         tempGameObject = player1.transform.GetChild(0).gameObject;
 		tempRigBody = player1.GetComponent<Rigidbody> ();
 		tempGameObject.SetActive(!tempGameObject.activeSelf);
+		//seltsam, dass ich carmovement nicht kriege wenn das script im ersten kind sitzt...extrem seltsam da gibts nen nullpointer
+		//würde mich mal interessieren, warum das so ist,insbesondere, da das level in der heirarchie das gleiche war...
 		carMovement = player1.GetComponentInChildren<CarMovement>();
 
 		//hier wird das CarMovementskript in siener aktivität getoggelt und danach noch fullbrake angewandt, damit bei kontrollwechsel ein 
