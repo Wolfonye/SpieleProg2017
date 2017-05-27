@@ -22,6 +22,7 @@ Florian:
     ☐ lane-Wechsel nicht instant sondern fließend
     ✔ fix der Rotationsprobleme bei turn auf Rampe @done(2017-05-26 12:39) @project(Florian)
     ✔ Abfrage auf Seitenbewegung @done(2017-05-26 12:41) @project(Florian)
+    ☐ Trennung HoldLine und Lane-Wechsel (Wichtig)
 
 
 Philipp:
@@ -54,6 +55,7 @@ Philipp:
     ✔ Interface-Konzeption für Schadensmodell @done(2017-05-21 10:28) @project(Philipp)
     ✔ Radphysik in den Griff bekommen @done(2017-05-26 08:35) @project(Philipp)
     ☐ Shell Abweichung bei schief stehenden Tanks fixen
+    ☐ SPrit-Modus
 
 
 WayPoints:
