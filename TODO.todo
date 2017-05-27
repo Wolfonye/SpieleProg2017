@@ -23,6 +23,8 @@ Florian:
     ✔ fix der Rotationsprobleme bei turn auf Rampe @done(2017-05-26 12:39) @project(Florian)
     ✔ Abfrage auf Seitenbewegung @done(2017-05-26 12:41) @project(Florian)
     ☐ Trennung HoldLine und Lane-Wechsel (Wichtig)
+    ☐ Wind recherchieren
+    ☐ Sphere Explosion
 
 
 Philipp:
@@ -56,6 +58,8 @@ Philipp:
     ✔ Radphysik in den Griff bekommen @done(2017-05-26 08:35) @project(Philipp)
     ☐ Shell Abweichung bei schief stehenden Tanks fixen
     ☐ SPrit-Modus
+    ☐ Terrain flatten !!!!!
+    ☐ Verhindern Error durch NullRef fehlendes Objekt
 
 
 WayPoints:
