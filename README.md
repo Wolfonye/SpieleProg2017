@@ -1,5 +1,49 @@
 SpieleProgrammierungSoSe2017
 --------------------------------------------------------------------------------
+UPDATE 27.05.2017 (Philipp)
+Zusammenfassung der heutigen Ergebnisse + Grobeinteilung für die Präsentation:
+
+Zusammen am Anfang:
+* relevantes der Gruppe
+    * Konzeption (warum dieses Spiel; Skalierbarkeit)
+    * Veränderungen: Lane-Idee, Diskussionen über multiplayer
+    * Ideen-Sammlung (ungeachtet fehlender Vorkenntnisse)
+    * frühe Einigung auf grobe Naming-Conventions
+* kurzer Überblick über Dokumentations und Versionierungsstrategie
+
+Florian beginnt:
+* haben zunächst mit Movement angefangen, daraus entstand wegen der Lane-Idee
+  die Notwendigkeit sich um Schwierigkeiten der Abweichung von Pos und Rot zu
+  kümmern; Verweis an Philipp bzgl. des Movements
+* HoldLine und Lane-Wechsel
+* Erste Idee für Kollisionsabfrage
+    * daraus resultierende Problematik
+    * daraus entstandene Gegenstrategie
+* Shell-Damage
+
+Philipp:
+* Movement (kurzer Verweis auf Shell-Rotation und Barrel-Movement)
+    * Relativität von Koordinatensystemen
+    * Wahl geeigneter Bezugssysteme
+    * Testphasen
+    * Bremsschwierigkeiten
+    * Schwierigkeiten durch Kontrollübergabe (Hinweis auf seltsame Effekte in
+      Unity bzgl Aktiviertheit von einzelnen Skripten/Komponenten)
+    * Kombination diverser Ansätze
+* Modellierung und Animation
+    * Normierung
+* Timer-Skript und Kontrollwechsel
+
+Christian:
+* Overlay
+
+
+Ausblick:
+* Versuch Lane-Wechsel fließend zu machen
+* variablere Variante des Kontrollwechsels, da der nur POC ist
+* Sprit-Modus als Variante zur Zeitsteuerung soll getestet werden
+* Explosionsradien für Shells
+--------------------------------------------------------------------------------
 UPDATE 26.05.2017 (Philipp)
 Bezüglich Beschleunigung, MaxSpeed, Bremsweg steht das Skript zur Bewegung.
 Als nächstes mache ich mich daran das Umdrehen auf einer Lane zu skripten.
