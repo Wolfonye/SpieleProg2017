@@ -38,14 +38,13 @@ public class CameraMovement : MonoBehaviour {
 			tempPosition = transform.position;
 			tempPosition.x = tempPosition.x - scrollSpeed * Time.deltaTime;
 			transform.position = tempPosition;
-			Debug.Log ("amRand");
 		}
 
 		if (Input.mousePosition.x < activateScrollOffset) {
 			tempPosition = transform.position;
 			tempPosition.x = tempPosition.x + scrollSpeed * Time.deltaTime;
 			transform.position = tempPosition;
-			Debug.Log ("amRand");
+			//Debug.Log ("amRand");
 		}
 	}
 }

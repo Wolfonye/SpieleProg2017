@@ -112,6 +112,5 @@ public class Axle
 {
     public WheelCollider leftWheel;
     public WheelCollider rightWheel;
-    public bool motor; // is this wheel attached to motor?
-    public bool steering; // does this wheel apply steer angle?
+    public bool motor; // ist das Wheelam Motor oder nicht
 }

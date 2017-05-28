@@ -19,7 +19,7 @@ public class CarMoveTest : MonoBehaviour {
             foreach (Axle axleInfo in axleInfos)
         {
           
-            if (axleInfo.motor)
+			if (axleInfo.motor)
             {
                 axleInfo.leftWheel.motorTorque = motor;
                 axleInfo.rightWheel.motorTorque = motor;
