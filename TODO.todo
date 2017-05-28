@@ -56,6 +56,7 @@ Philipp:
     ✔ Timer-Skript Rohfassung @done(2017-05-19 18:36) @project(Philipp)
     ✔ Interface-Konzeption für Schadensmodell @done(2017-05-21 10:28) @project(Philipp)
     ✔ Radphysik in den Griff bekommen @done(2017-05-26 08:35) @project(Philipp)
+    ☐ Bzgl. seltsamer Skalierungsunterschiede investigativ tätig werden!!!
     ☐ Shell Abweichung bei schief stehenden Tanks fixen
     ☐ SPrit-Modus
     ☐ Terrain flatten !!!!!
@@ -67,5 +68,4 @@ WayPoints:
     ☐ konspiratives Grillen
     ✔ MinimalPrototyp zur Physik @done(2017-05-12 14:52) @project(WayPoints)
     ✔ Aufgabenverteilung @done(2017-05-12 14:52) @project(WayPoints)
-(   ☐ erweiterter Prototyp Version 0.1 (beweglicher Tank, Shell-Collisions-Trigger, minimales Overlay)   OUTDATED)
-    ☐ Prototyp zur Präsentation (Kontrollwechsel, bewegliche Tanks, Kamera beweglich, Shell-Damage)
+    ✔ Prototyp zur Präsentation (Kontrollwechsel, bewegliche Tanks, Kamera beweglich, Shell-Damage) @done(2017-05-28 10:02) @project(WayPoints)
