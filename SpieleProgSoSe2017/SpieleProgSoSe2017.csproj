@@ -78,22 +78,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CarMoveTest.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDestructible.cs" />
-    <Compile Include="Assets\Scripts\MonoBehaviours\BarrelAngle.cs" />
-    <Compile Include="Assets\Scripts\MonoBehaviours\ControlSwitcher.cs" />
-    <Compile Include="Assets\Scripts\MonoBehaviours\RoundTimer.cs" />
-    <Compile Include="Assets\Scripts\MonoBehaviours\ShellDestruction.cs" />
-    <Compile Include="Assets\Scripts\MonoBehaviours\ShellRotation.cs" />
-    <Compile Include="Assets\Scripts\MonoBehaviours\ShellSpawn.cs" />
-    <Compile Include="Assets\Scripts\CarCenterOfMass.cs" />
-    <Compile Include="Assets\Scripts\CarMovement.cs" />
-    <Compile Include="Assets\RightCollTest.cs" />
-    <Compile Include="Assets\LeftCollTest.cs" />
-    <Compile Include="Assets\HoldLineScript.cs" />
-    <Compile Include="Assets\CarMoveTest.cs" />
-    <Compile Include="Assets\Scripts\CarMovementAlternative.cs" />
-    <Compile Include="Assets\Scripts\OnCOlliionTest.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\GameControl\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\GameControl\ControlSwitcher.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\GameControl\RoundTimer.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\Shells\ShellDamage.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\Shells\ShellDestruction.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\Shells\ShellRotation.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\Shells\ShellSpawn.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\Vehicles\BarrelAngle.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\Vehicles\CarCenterOfMass.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\Vehicles\CarMovement.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\Vehicles\HoldLineScript.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\Vehicles\HoldLineVersion2.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\Vehicles\LeftCollTest.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\Vehicles\RightCollTest.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\Vehicles\TakeDamage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
