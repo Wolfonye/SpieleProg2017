@@ -25,7 +25,8 @@ Florian:
     ☐ Trennung HoldLine und Lane-Wechsel (Wichtig)
     ☐ Wind recherchieren
     ☐ Sphere Explosion
-
+    ☐ HoldLine fixen für Panzer die auf Lane  1 und 3 nebeneinander stehen und auf 2 wollen !!!
+    ☐ HoldLine und damit zusammenhängendes mit Philipps Cycle Arbeit kombinieren und testen!!
 
 Philipp:
     ✔ GitHub Account anlegen @done(2017-04-24 20:14) @project(Philipp)
@@ -58,11 +59,12 @@ Philipp:
     ✔ Radphysik in den Griff bekommen @done(2017-05-26 08:35) @project(Philipp)
     ☐ Bzgl. seltsamer Skalierungsunterschiede investigativ tätig werden!!!
     ☐ Shell Abweichung bei schief stehenden Tanks fixen
-    ☐ SPrit-Modus
+    ☐ Sprit-Modus
     ☐ Terrain flatten !
     ☐ Collider in Level 1 fertig machen !!
     ☐ Verhindern Error durch NullRef fehlendes Objekt
-    ☐ Control Cycle Skript !!!
+    ✔ Control Cycle Skript !!! @done(2017-06-10 12:30) @project(Philipp)
+    ☐ Control Cyle mit Flos Arbeit kombinieren und testen!!
 
 
 WayPoints:
