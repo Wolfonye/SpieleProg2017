@@ -59,9 +59,10 @@ Philipp:
     ☐ Bzgl. seltsamer Skalierungsunterschiede investigativ tätig werden!!!
     ☐ Shell Abweichung bei schief stehenden Tanks fixen
     ☐ SPrit-Modus
-    ☐ Terrain flatten !!!!!
-    ☐ Collider in Level 1 fertig machen !!!!!
+    ☐ Terrain flatten !
+    ☐ Collider in Level 1 fertig machen !!
     ☐ Verhindern Error durch NullRef fehlendes Objekt
+    ☐ Control Cycle Skript !!!
 
 
 WayPoints:
