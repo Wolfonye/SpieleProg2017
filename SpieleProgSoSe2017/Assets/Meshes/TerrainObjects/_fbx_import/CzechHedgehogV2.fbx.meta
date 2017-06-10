@@ -1,67 +1,15 @@
 fileFormatVersion: 2
-guid: d48f07212b56ad845a8bba6614626c64
-timeCreated: 1497099176
+guid: 37bdea4d9b82f9e40a8eb3932ac53b0c
+timeCreated: 1497099037
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Base
-    100002: Chimney
-    100004: GarageBase
-    100006: //RootNode
-    100008: Roof1
-    100010: Roof2
-    100012: Triangle1
-    100014: Triangle2
-    100016: WindowRoof
-    100018: WindowRoof.001
-    100020: WindowRoof.002
-    100022: WindowRoof.003
-    400000: Base
-    400002: Chimney
-    400004: GarageBase
-    400006: //RootNode
-    400008: Roof1
-    400010: Roof2
-    400012: Triangle1
-    400014: Triangle2
-    400016: WindowRoof
-    400018: WindowRoof.001
-    400020: WindowRoof.002
-    400022: WindowRoof.003
-    2300000: Base
-    2300002: Chimney
-    2300004: GarageBase
-    2300006: Roof1
-    2300008: Roof2
-    2300010: Triangle1
-    2300012: Triangle2
-    2300014: WindowRoof
-    2300016: WindowRoof.001
-    2300018: WindowRoof.002
-    2300020: WindowRoof.003
-    3300000: Base
-    3300002: Chimney
-    3300004: GarageBase
-    3300006: Roof1
-    3300008: Roof2
-    3300010: Triangle1
-    3300012: Triangle2
-    3300014: WindowRoof
-    3300016: WindowRoof.001
-    3300018: WindowRoof.002
-    3300020: WindowRoof.003
-    4300000: WindowRoof.003
-    4300002: WindowRoof.002
-    4300004: WindowRoof.001
-    4300006: WindowRoof
-    4300008: Chimney
-    4300010: GarageBase
-    4300012: Triangle2
-    4300014: Triangle1
-    4300016: Roof2
-    4300018: Roof1
-    4300020: Base
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Hedgehogs
   materials:
     importMaterials: 1
     materialName: 0
