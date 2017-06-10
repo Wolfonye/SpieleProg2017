@@ -50,8 +50,10 @@
      <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDestructible.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviours\GameControl\CameraMovement.cs" />
+     <Compile Include="Assets\Scripts\MonoBehaviours\GameControl\ControlCycler.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviours\GameControl\ControlSwitcher.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviours\GameControl\RoundTimer.cs" />
+     <Compile Include="Assets\Scripts\MonoBehaviours\GameControl\TempRoundTimer.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviours\Shells\ShellDamage.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviours\Shells\ShellDestruction.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviours\Shells\ShellRotation.cs" />

@@ -73,7 +73,7 @@ public class HoldLineScript : MonoBehaviour {
         if (Input.GetKeyDown("q"))
 
         {
-
+			
             if (leftFree == true)
 
             {
