@@ -57,7 +57,7 @@ Philipp:
     ✔ Timer-Skript Rohfassung @done(2017-05-19 18:36) @project(Philipp)
     ✔ Interface-Konzeption für Schadensmodell @done(2017-05-21 10:28) @project(Philipp)
     ✔ Radphysik in den Griff bekommen @done(2017-05-26 08:35) @project(Philipp)
-    ☐ Bzgl. seltsamer Skalierungsunterschiede investigativ tätig werden!!!
+    ✔ Bzgl. seltsamer Skalierungsunterschiede investigativ tätig werden!!! @done(2017-06-10 16:40) @project(Philipp)
     ☐ Shell Abweichung bei schief stehenden Tanks fixen
     ☐ Sprit-Modus
     ☐ Terrain flatten !
@@ -65,6 +65,8 @@ Philipp:
     ☐ Verhindern Error durch NullRef fehlendes Objekt
     ✔ Control Cycle Skript !!! @done(2017-06-10 12:30) @project(Philipp)
     ☐ Control Cyle mit Flos Arbeit kombinieren und testen!!
+    ☐ Unwraps für UVMaps erstellen
+    ☐ Texturen erstellen
 
 
 WayPoints:
