@@ -1,6 +1,9 @@
 SpieleProgrammierungSoSe2017
 --------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
 UPDATE 11.06.2017 (Philipp)
+--------------------------------------------------------------------------------
 Zur Dokumentation eines wichtigen heutigen Lerneffektes:
 
 Wenn ein Objekt zum Zeitpunkt des ersten Importes (der hoffentlich in Unity
@@ -20,8 +23,8 @@ Der obige Weg stellt insbesondere sicher, dass nicht zig neue Dateien angelegt
 werden müssen und dürfte generell ne gute Möglichkeit sein vorhandene Meshes
 per se auszutauschen.
 
---------------------------------------------------------------------------------
 UPDATE 27.05.2017 (Philipp)
+--------------------------------------------------------------------------------
 Zusammenfassung der heutigen Ergebnisse + Grobeinteilung für die Präsentation:
 
 Zusammen am Anfang:
@@ -64,16 +67,19 @@ Ausblick:
 * variablere Variante des Kontrollwechsels, da der nur POC ist
 * Sprit-Modus als Variante zur Zeitsteuerung soll getestet werden
 * Explosionsradien für Shells
---------------------------------------------------------------------------------
+
 UPDATE 26.05.2017 (Philipp)
+--------------------------------------------------------------------------------
 Bezüglich Beschleunigung, MaxSpeed, Bremsweg steht das Skript zur Bewegung.
 Als nächstes mache ich mich daran das Umdrehen auf einer Lane zu skripten.
 
 So wie das aktuelle Skript arbeitet, würde vermutlich der Bremsweg beim Umdrehen
 etwas länger als beim stoppen. Ich bin noch nicht sicher, ob ich das am Ende
 so haben will. Das müssen wir dann schauen.
---------------------------------------------------------------------------------
+
+
 UPDATE 23.05.2017 (Philipp)
+--------------------------------------------------------------------------------
 Bezüglich der Vorträge am Montag wollte ich hier schonmal festhalten, was ich
 vorhabe zu machen bzw. worüber mindestens einer von uns reden sollte:
 
@@ -86,8 +92,9 @@ vorhabe zu machen bzw. worüber mindestens einer von uns reden sollte:
 * Lane-Idee kam später hinzu
 * Dokumentationsphilosophie
 
---------------------------------------------------------------------------------
+
 UPDATE 21.05.2017 (Philipp)
+--------------------------------------------------------------------------------
 WICHTIG: ich habe ein bissl was bei den Kontrollskripten gemacht.
 Ich glaube meine jetztige Lösung ist um einiges eleganter als die letzte.
 Um deren Funktionalität zu wahren ist allerdings eine Sache entscheidend.
@@ -106,8 +113,9 @@ Das hat folgende Vorteile:
  Damit das klappt verwende ich folgende Konvention (das ist das Wichtige):
  Das "Skriptsammelkind" muss das erste Kind in der Hierarchie unterhalb des
  Wurzelknotens des Fahrzeugs sein. Siehe TankBasic-Prefab als Referenz.
---------------------------------------------------------------------------------
+
 UPDATE 19.05.2017 (Philipp)
+--------------------------------------------------------------------------------
 Timer läuft jetzt; den werden wir wohl für den Rest noch anpassen müssen.
 Ich definier schonmal paar Interfaces für die Kommunikation zwischen dem Skript,
 was die Kontrolle vergibt und den Fahrzeugen; sprich Sachen in Bezug auf
@@ -128,8 +136,8 @@ haben; wir haben beschlossen, dass:
  und wir zunächst Tastaturprobleme vermeiden wollen und zu wenig Kapazitätten
  haben, um direkt den Online-Multiplayer anzugehen
 
---------------------------------------------------------------------------------
 UPDATE 12.05.2017: (Philipp)
+--------------------------------------------------------------------------------
 Anleitung zum todo
 Alle Dateien, denen ihr die Dateiendung todo gebt, werden automatisch von dem
 Atom-Plugin "tasks" in schöner Weise verarbeitet.
@@ -162,6 +170,7 @@ Wichtig: "checkout branchxy" ist eure lokale Version.
          Wir sollten diese parallel aktuell halten, während wir nicht gerade
          aktiv am Computer sind und an was arbeiten. (Siehe meine Kommentare
          vorhin zum squashing von einzelnen Commits)
+         
 --------------------------------------------------------------------------------
 
 
