@@ -2,15 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 /*
- * Grundidee des Skripts: stelle die aktuelle Position des Mauszeigers fest.
+ * Grundidee des Skripts fürs Scrollen: stelle die aktuelle Position des Mauszeigers fest.
  * Wenn dieser sich innerhalb eines bestimmten Offsets zum Bildschirmrand befindet,
  * soll der Scrollprozess gestartet werden.
  * Was erstmal etwas seltsam wirkt sind die Vorzeichen bezüglich der x-Achse; das liegt an der Ausrichtung
  * der globalen x-Achse.
+ * 
+ * Grundidee des Skripts fürs Zoomen: bei MouseWheeldrehung fahre Camera in gewissen Boundaries an
+ * der eigenen Vorwärts-Achse entlang nach vorne oder hinten.
  */
 public class CameraMovement : MonoBehaviour {
 	public int activateScrollOffset;
 	public int scrollSpeed;
+	public float zoomSpeed;
+
+	//wie viel wir gemessen an der Startposition raus/reinzoomen duerfen
+	public float maxZoomOffset;
+	//dort befinden wir uns aktuell (wird für den Anfang auf 0 gesetzt) das heißt die Startkamerapos sollte in der Mitte der Range liegen
+	private float currentZoom;
+
+	//soweit darf die Cam nach links oder rechts fahren
+	//die sind in Abhaengigkeit des Levels festzulegen, daher public
+	public int leftBoundary;
+	public int rightBoundary;
+
+	private float mouseWheelInput;
 
 	private int screenWidth;
 	//Ist zu überlegen, ob man auch in der Höhe steuern lässt
@@ -20,6 +36,7 @@ public class CameraMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		currentZoom = 0;
 		Cursor.visible = true;
 		screenWidth = Screen.width;
 		//screenHeight = Screen.height;
@@ -34,17 +51,36 @@ public class CameraMovement : MonoBehaviour {
 		//was hier noch fehlt ist die Beschränkung nach links und rechts irgendwann
 		//falls alle level gleich groß sind ist es easy, da dann lediglich eine beschränkung in x Richtung abgefragt werden muss
 		//für den dynamischen Fall müssten wir uns noch was überlegen
-		if (Input.mousePosition.x > screenWidth - activateScrollOffset) {
-			tempPosition = transform.position;
+		tempPosition = transform.position;
+		//nach rechts fahren
+		if ((Input.mousePosition.x > screenWidth - activateScrollOffset) && (tempPosition.x > rightBoundary)) {
 			tempPosition.x = tempPosition.x - scrollSpeed * Time.deltaTime;
 			transform.position = tempPosition;
 		}
 
-		if (Input.mousePosition.x < activateScrollOffset) {
-			tempPosition = transform.position;
+		//nach links fahren
+		if ((Input.mousePosition.x < activateScrollOffset) && (tempPosition.x < leftBoundary)) {
 			tempPosition.x = tempPosition.x + scrollSpeed * Time.deltaTime;
 			transform.position = tempPosition;
 			//Debug.Log ("amRand");
 		}
+
+		//suuuuuuu, zoomen sollte man ja auch können; das versuche ich im Folgenden
+		mouseWheelInput = Input.GetAxis("Mouse ScrollWheel");
+		if (mouseWheelInput < 0) {
+			mouseWheelInput = -1;
+		}
+		if (mouseWheelInput > 0) {
+			mouseWheelInput = 1;
+		}
+		if (mouseWheelInput == -1 && currentZoom > -maxZoomOffset) {
+			transform.Translate (0, 0, mouseWheelInput * zoomSpeed);
+			currentZoom = currentZoom - zoomSpeed;
+		}
+		if (mouseWheelInput == 1 && currentZoom < maxZoomOffset) {
+			transform.Translate (0, 0, mouseWheelInput * zoomSpeed);
+			currentZoom = currentZoom + zoomSpeed;
+		}
+
 	}
 }
