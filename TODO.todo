@@ -69,6 +69,7 @@ Philipp:
     ☐ Texturen erstellen
     ✔ Camera Movement verbessern @done(2017-06-11 10:07) @project(Philipp)
     ☐ Life/Fuel-Bars
+    ☐ Seitencollider für Rampe hinzufügen, damit Tank nicht abstürzt
 
 
 WayPoints:
