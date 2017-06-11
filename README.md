@@ -1,5 +1,25 @@
 SpieleProgrammierungSoSe2017
 --------------------------------------------------------------------------------
+UPDATE 11.06.2017 (Philipp)
+Zur Dokumentation eines wichtigen heutigen Lerneffektes:
+
+Wenn ein Objekt zum Zeitpunkt des ersten Importes (der hoffentlich in Unity
+auf Basis eines Blender-Exportes nach .fbx geschehen ist) noch keine
+UV-Koordinaten besessen hat, ist es moeglich, die mit mittelmäßigem Aufwand
+später noch einzupflegen. Der Vorgang ist wie folgt:
+
+1. Erstellen des UV Unwraps in Blender auf dem .blend
+2. Erneutes Exportieren des Objektes via Blender nach .fbx
+   !!!es ist KEIN erneuter Import in Unity nötig!!!
+3. Die fraglichen MESHES des neuen Exportes werden auf die zu ersetzenden
+   Meshes gezogen und sind danach mit entsprechenden Texturen belegbar (zb png)
+
+Wichtige Erkenntnis dabei: offensichtlich ist die Information der UV-Koordinaten
+im Mesh gespeichert.
+Der obige Weg stellt insbesondere sicher, dass nicht zig neue Dateien angelegt
+werden müssen und dürfte generell ne gute Möglichkeit sein vorhandene Meshes
+per se auszutauschen.
+--------------------------------------------------------------------------------
 UPDATE 27.05.2017 (Philipp)
 Zusammenfassung der heutigen Ergebnisse + Grobeinteilung für die Präsentation:
 
