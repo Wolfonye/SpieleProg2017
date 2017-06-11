@@ -22,7 +22,6 @@ Der obige Weg stellt insbesondere sicher, dass nicht zig neue Dateien angelegt
 werden müssen und dürfte generell ne gute Möglichkeit sein vorhandene Meshes
 per se auszutauschen.
 
---------------------------------------------------------------------------------
 UPDATE 27.05.2017 (Philipp)
 --------------------------------------------------------------------------------
 Zusammenfassung der heutigen Ergebnisse + Grobeinteilung für die Präsentation:
@@ -136,6 +135,7 @@ haben; wir haben beschlossen, dass:
  und wir zunächst Tastaturprobleme vermeiden wollen und zu wenig Kapazitätten
  haben, um direkt den Online-Multiplayer anzugehen
 
+--------------------------------------------------------------------------------
 UPDATE 12.05.2017: (Philipp)
 --------------------------------------------------------------------------------
 Anleitung zum todo
