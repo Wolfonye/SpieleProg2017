@@ -1,6 +1,5 @@
 SpieleProgrammierungSoSe2017
 --------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 
 UPDATE 11.06.2017 (Philipp)
 --------------------------------------------------------------------------------
@@ -23,6 +22,7 @@ Der obige Weg stellt insbesondere sicher, dass nicht zig neue Dateien angelegt
 werden müssen und dürfte generell ne gute Möglichkeit sein vorhandene Meshes
 per se auszutauschen.
 
+--------------------------------------------------------------------------------
 UPDATE 27.05.2017 (Philipp)
 --------------------------------------------------------------------------------
 Zusammenfassung der heutigen Ergebnisse + Grobeinteilung für die Präsentation:
@@ -167,10 +167,10 @@ klicken; Create Branch here; bennen und Spass haben.
 Wichtig: "checkout branchxy" ist eure lokale Version.
          "checkout origin/branchxy" ist die Version unseres Online-Repos
 
-         Wir sollten diese parallel aktuell halten, während wir nicht gerade
-         aktiv am Computer sind und an was arbeiten. (Siehe meine Kommentare
-         vorhin zum squashing von einzelnen Commits)
-         
+Wir sollten diese parallel aktuell halten, während wir nicht gerade
+aktiv am Computer sind und an was arbeiten. (Siehe meine Kommentare
+vorhin zum squashing von einzelnen Commits)
+
 --------------------------------------------------------------------------------
 
 
