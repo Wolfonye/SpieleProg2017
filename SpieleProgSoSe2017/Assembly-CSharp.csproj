@@ -66,6 +66,10 @@
      <Compile Include="Assets\Scripts\MonoBehaviours\Vehicles\LeftCollTest.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviours\Vehicles\RightCollTest.cs" />
      <Compile Include="Assets\Scripts\MonoBehaviours\Vehicles\TakeDamage.cs" />
+     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
+     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
+     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+     <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Programmierung/Unity3D/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
