@@ -15,14 +15,14 @@ public class TakeDamage : MonoBehaviour {
 	}
 
 	void OnCollisionEnter (Collision col){
-		if(col.gameObject.name == "ShellBasic(Clone)" && col.collider.name == "ShellBasic(Clone)"){
+		if(col.gameObject.tag == "Shell"){
 			Life = Life - col.gameObject.GetComponent<ShellDamage>().Damage;
-			Debug.Log("Treffer");
-			Debug.Log(col.collider.name);
+			//Debug.Log("Treffer");
+			//Debug.Log(col.collider.name);
 		}
 		if(Life <= 0){
-			Destroy (gameObject);
-			Debug.Log("Destroy");
+			gameObject.SetActive(false);
+			//Debug.Log("Destroy");
 		}
 	}
 }

@@ -76,18 +76,22 @@ public class ControlCycler : MonoBehaviour
 	 */
 	private void activateNextVehicleOfPlayer(int playerNumber, List<GameObject> vehicles){
 		if (vehicles == null) {
-			Debug.Log ("Dieser Spieler hat bereits...verloren...");
+			//Debug.Log ("Dieser Spieler hat bereits...verloren...");
 		} else {
-			while (vehicles [currentVehicleIndexOfPlayer [playerNumber]].activeSelf == false) {
+			//whileIterations soll helfen ne Endlosschleife abzufangen, falls bei Zerstörung aller Tanks eines Teams keine Siegbedingung getriggert wird
+			//so haben wir dann keinen stress, auch, wenn noch kein win screen implementiert ist. natürlich sollte da real betrachtet das spiel beendet werden
+			int whileIterations = numberOfVehiclesPerPlayer;
+			while (vehicles [currentVehicleIndexOfPlayer [playerNumber]].activeSelf == false && (whileIterations > 0)) {
 				currentVehicleIndexOfPlayer [playerNumber] = (currentVehicleIndexOfPlayer [playerNumber] + 1) % numberOfVehiclesPerPlayer;
-				Debug.Log ("currentvehidleindex of player " + playerNumber + "is " + currentVehicleIndexOfPlayer [playerNumber]);
+				whileIterations--;
+				//Debug.Log ("currentvehidleindex of player " + playerNumber + "is " + currentVehicleIndexOfPlayer [playerNumber]);
 			}
 
 			if (playerNumber == 0) {
 				activateVehicle (player0Vehicles [currentVehicleIndexOfPlayer [0]]);
 			} else {
 				activateVehicle (player1Vehicles [currentVehicleIndexOfPlayer [1]]);
-				Debug.Log ("Vehicle activated");
+				//Debug.Log ("Vehicle activated");
 			}
 			currentVehicleIndexOfPlayer [playerNumber] = (currentVehicleIndexOfPlayer [playerNumber] + 1) % numberOfVehiclesPerPlayer;
 		}
@@ -104,7 +108,9 @@ public class ControlCycler : MonoBehaviour
 		}
 	}
 		
-	/* Auslagerung der Tankdeaktivierung*/
+	/* Auslagerung der Tankdeaktivierung
+	 * CHECK
+	 */
 	private void deactivateVehicle(GameObject vehicle){
 		vehicle.transform.GetChild (0).gameObject.SetActive (false);
 		carMovement = vehicle.GetComponentInChildren<CarMovement> ();
@@ -113,7 +119,9 @@ public class ControlCycler : MonoBehaviour
 		vehicle.GetComponentInChildren<HoldLineScript> ().enabled = false;
 	}
 
-	/*Auslagerung der Tankaktivierung*/
+	/*Auslagerung der Tankaktivierung
+	 * CHECK
+	 */
 	private void activateVehicle(GameObject vehicle){
 		vehicle.transform.GetChild (0).gameObject.SetActive (true);
 		vehicle.GetComponentInChildren<CarMovement> ().enabled = true;
