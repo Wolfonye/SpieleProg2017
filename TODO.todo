@@ -62,14 +62,15 @@ Philipp:
     ☐ Sprit-Modus
     ☐ Terrain flatten !
     ☐ Collider in Level 1 fertig machen !!
-    ☐ Verhindern Error durch NullRef fehlendes Objekt
+    ✔ Verhindern Error durch NullRef fehlendes Objekt @done(2017-06-13 23:05) @project(Philipp)
     ✔ Control Cycle Skript !!! @done(2017-06-10 12:30) @project(Philipp)
-    ☐ Control Cyle mit Flos Arbeit kombinieren und testen!!
+    ✔ Control Cyle mit Flos Arbeit kombinieren und testen!! @done(2017-06-13 23:03) @project(Philipp)
     ☐ Unwraps für UVMaps erstellen
     ☐ Texturen erstellen
     ✔ Camera Movement verbessern @done(2017-06-11 10:07) @project(Philipp)
     ☐ Life/Fuel-Bars
     ☐ Seitencollider für Rampe hinzufügen, damit Tank nicht abstürzt
+    ☐ Siegbedingungen
 
 
 WayPoints:
