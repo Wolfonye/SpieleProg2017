@@ -3,7 +3,8 @@ using UnityEngine;
 
 
 //memo: unity schafft noch keine listen in listen im inspector; extrem aergerlich, sonst haette ich das hier
-//mit geringem mehraufwand adaptiver gestalten koennen
+//mit geringem mehraufwand adaptiver gestalten koennen; ich sollte irgendwann mal den editor dahingehend umschreiben
+//pluginnen oder wasweißich. soll ja editierbar sein angeblich...
 public class ControlCycler : MonoBehaviour
 {
 
