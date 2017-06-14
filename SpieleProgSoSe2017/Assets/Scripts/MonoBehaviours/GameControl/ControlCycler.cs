@@ -19,10 +19,6 @@ public class ControlCycler : MonoBehaviour
 	private int numberOfPlayers = 2;
 	public int numberOfVehiclesPerPlayer;
 
-
-	public GameObject testVehicle;
-	public GameObject testVehicle2;
-
 	//welches Fahrzeug ist gerade das aktive
 	private int[] currentVehicleIndexOfPlayer;
 
@@ -32,7 +28,6 @@ public class ControlCycler : MonoBehaviour
 	public TempRoundTimer roundTimer;
 				
 		private GameObject tempGameObject;
-		private Rigidbody tempRigBody;
 		private CarMovement carMovement;
 		private HoldLineScript holdLine;
 
