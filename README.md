@@ -1,6 +1,28 @@
 SpieleProgrammierungSoSe2017
 --------------------------------------------------------------------------------
 
+UPDATE 14.06.2017 (Philipp)
+--------------------------------------------------------------------------------
+Kurzes Tutorial wie ein Level gestaltet werden muss um nach aktuellem Stand
+der Entwicklung lauffähig zu sein bzw. ansatzweise sinnig zu sein.
+
+Ein Level benötigt:
+* einen Gamemaster2000
+* ein ModeHUD(zur Zeit nur TimeMode verfügbar)
+* eine als solche getagte MainCamera
+* ein directional light
+* ein Terrain(oder eine andere "Spielfläche")
+* die Tanks beider spieler
+* Skript TempRoundTimer im Gamemaster2000 benötigt eine ref auf den Counter-Text
+  (das gilt nur für den TimeMode)
+* Skript ControlCycler im Gamemaster2000 braucht cam ref + refs auf alle tanks
+* Levelconstraints für die Tankbewegung (ohne lauffähig aber wenig sinnig)
+* MainCamera benötigt ein CameraMovement-Skript mit gesetzten Werten
+
+Bei dem ersten Level1 scheint es zu einer Korruption des Zustandes gekommen zu
+sein, der ein richtiges Arbeiten des CycleSkripts verhindert. In einer
+Neuauflage funktioniert bis jetzt alles nach Plan.
+
 UPDATE 11.06.2017 (Philipp)
 --------------------------------------------------------------------------------
 Zur Dokumentation eines wichtigen heutigen Lerneffektes:
