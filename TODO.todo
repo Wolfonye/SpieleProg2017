@@ -1,14 +1,3 @@
-Christian:
-    ✔ GitHub Account anlegen @done(2017-04-25 22:20) @project(Christian)
-    ✔ erste Einarbeitung in Unity @done(2017-05-12 14:49) @project(Christian)
-    ☐ Overlay
-    ☐ Klickbarkeit, Exit
-    ☐ Szenenpausierung
-    ☐ Szenenwechsel
-    ☐ Tasks-Plugin Atom
-
-
-
 Florian:
     ✔ GitHub Account anlegen @done(2017-04-26 18:22) @project(Florian)
     ✔ README.me um Ideen erweitern @done(2017-05-01 08:38) @project(Florian)
@@ -72,8 +61,22 @@ Philipp:
     ☐ Siegbedingungen!!!
     ☐ Levels entwerfen und mit Basics ausstatten, siehe dazu Readme vom 14.6. (Tutorial)
     ✔ ActivePointer  @done(2017-06-15 18:05) @project(Philipp)
-    ☐ Todo-Auswertungs-Programm auf Hauptrechner laden
+    ✔ Todo-Auswertungs-Programm auf Hauptrechner laden @done(2017-06-15 22:22) @project(Philipp)
+    ✔ Käthe als Collaborator für das Projekt eintragen @done(2017-06-15 22:47) @project(Philipp)
 
+Katya:
+    ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
+    ✔ Atom auf Lappi laden @done(2017-06-15 22:26) @project(Katya)
+    ☐ Tasks-Plugin für Atom ziehen
+    ✔ GitKraken auf Lappi laden @done(2017-06-15 22:26) @project(Katya)
+    ✔ Erste Einarbeitung in Unity @done(2017-06-15 22:26) @project(Katya)
+    ☐ MainMenu
+        ☐ laden von Szenen (Levels)
+        ☐ Optionen
+        ☐ Beenden
+    ☐ Levelauswahlmenu
+        ☐ Modusauswahl
+    ☐ Match finished Screen
 
 WayPoints:
     ☐ konspiratives Grillen
