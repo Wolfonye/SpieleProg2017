@@ -24,7 +24,7 @@ Florian:
     ✔ Abfrage auf Seitenbewegung @done(2017-05-26 12:41) @project(Florian)
     ☐ Trennung HoldLine und Lane-Wechsel (Wichtig)
     ☐ Wind recherchieren
-    ☐ Sphere Explosion
+    ☐ Sphere Explosion !!!
     ☐ HoldLine fixen für Panzer die auf Lane  1 und 3 nebeneinander stehen und auf 2 wollen !!!
     ☐ HoldLine und damit zusammenhängendes mit Philipps Cycle Arbeit kombinieren und testen!!
 
@@ -61,7 +61,6 @@ Philipp:
     ☐ Shell Abweichung bei schief stehenden Tanks fixen
     ☐ Sprit-Modus
     ☐ Terrain flatten !
-    ☐ Collider in Level 1 fertig machen !!
     ✔ Verhindern Error durch NullRef fehlendes Objekt @done(2017-06-13 23:05) @project(Philipp)
     ✔ Control Cycle Skript !!! @done(2017-06-10 12:30) @project(Philipp)
     ✔ Control Cyle mit Flos Arbeit kombinieren und testen!! @done(2017-06-13 23:03) @project(Philipp)
@@ -70,7 +69,10 @@ Philipp:
     ✔ Camera Movement verbessern @done(2017-06-11 10:07) @project(Philipp)
     ✔ Life/Fuel-Bars @done(2017-06-14 20:32) @project(Philipp)
     ☐ Seitencollider für Rampe hinzufügen, damit Tank nicht abstürzt
-    ☐ Siegbedingungen
+    ☐ Siegbedingungen!!!
+    ☐ Levels entwerfen und mit Basics ausstatten, siehe dazu Readme vom 14.6. (Tutorial)
+    ✔ ActivePointer  @done(2017-06-15 18:05) @project(Philipp)
+    ☐ Todo-Auswertungs-Programm auf Hauptrechner laden
 
 
 WayPoints:
