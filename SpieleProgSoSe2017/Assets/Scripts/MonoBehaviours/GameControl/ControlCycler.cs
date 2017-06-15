@@ -19,6 +19,14 @@ public class ControlCycler : MonoBehaviour
 	private int numberOfPlayers = 2;
 	public int numberOfVehiclesPerPlayer;
 
+
+
+	//ich will jeweils auhc anzeigen, was das aktive Vehicle ist; dazu rbauche ich ne Ref auf den ActivePointer um den zu instanzieren
+	public GameObject activePointer;
+	private GameObject tempActivePointer; //das gerade instanzierte ActivePointerObjekt
+	private Vector3 activePointerOffset = new Vector3 (0, 5, 0);
+
+
 	//welches Fahrzeug ist gerade das aktive
 	private int[] currentVehicleIndexOfPlayer;
 
@@ -102,6 +110,7 @@ public class ControlCycler : MonoBehaviour
 		for (int i = 0; i < vehicles.Count; i++) {
 			deactivateVehicle (vehicles [i]);
 		}
+		Destroy(tempActivePointer);
 	}
 		
 	/* Auslagerung der Tankdeaktivierung
@@ -120,6 +129,9 @@ public class ControlCycler : MonoBehaviour
 	 */
 	private void activateVehicle(GameObject vehicle){
 		vehicle.transform.GetChild (0).gameObject.SetActive (true);
+		//Multiplikation mit Quaternion um 90 Grad draufzuaddieren, damit die Ausrichtung stimmt bzgl unserer Ebenenkonvention
+		tempActivePointer = Instantiate(activePointer, vehicle.transform.position + activePointerOffset, vehicle.transform.rotation * Quaternion.Euler(0,90,0)) as GameObject;
+		tempActivePointer.transform.parent = vehicle.transform;
 		vehicle.GetComponentInChildren<CarMovement> ().enabled = true;
 		vehicle.GetComponentInChildren<HoldLineScript> ().enabled = true;
 	}
