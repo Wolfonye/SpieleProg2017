@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 200bca628aff61048aae6383a5e56fba
-timeCreated: 1497277019
+guid: 3ea86af1d0c449d47981bf5d7af6e9d4
+timeCreated: 1497537820
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -17,6 +17,11 @@ ModelImporter:
     3300002: PointerOutside
     4300000: PointerOutside
     4300002: PointerInside
+    7400000: PointerOutside|PointerInsideAction
+    7400002: PointerOutside|PointerOutsideAction
+    7400004: PointerInside|PointerInsideAction
+    7400006: PointerInside|PointerOutsideAction
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -81,7 +86,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
