@@ -130,12 +130,15 @@ public class ControlCycler : MonoBehaviour
 	private void activateVehicle(GameObject vehicle){
 		vehicle.transform.GetChild (0).gameObject.SetActive (true);
 		//Multiplikation mit Quaternion um 90 Grad draufzuaddieren, damit die Ausrichtung stimmt bzgl unserer Ebenenkonvention
-		tempActivePointer = Instantiate(activePointer, vehicle.transform.position + activePointerOffset, vehicle.transform.rotation * Quaternion.Euler(0,90,0)) as GameObject;
+		tempActivePointer = Instantiate (activePointer, vehicle.transform.position + activePointerOffset, vehicle.transform.rotation * Quaternion.Euler (0, 90, 0)) as GameObject;
 		tempActivePointer.transform.parent = vehicle.transform;
 		vehicle.GetComponentInChildren<CarMovement> ().enabled = true;
 		vehicle.GetComponentInChildren<HoldLineScript> ().enabled = true;
 
-		//Anzahl gemachter Schüsse zu Beginn eines Zuges für ein Vehicle wieder auf 0 setzen
+		//Camera auf gerade aktiviertem Vehicle zentrieren; praktisch: wir können so die rictige maincamera abgreifen, da wir nur eine haben. das spart unnötige variablen
+		Camera.main.GetComponent<CameraMovement>().centerOnVehicle(vehicle);
+
+		//Anzahl gemachter Schüsse zu Begi	nn eines Zuges für ein Vehicle wieder auf 0 setzen
 		vehicle.GetComponentInChildren<ShellSpawn>().resetCurrentNumberOfShots ();
 	}
 

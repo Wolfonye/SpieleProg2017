@@ -12,9 +12,14 @@ using UnityEngine;
  * der eigenen Vorwärts-Achse entlang nach vorne oder hinten.
  */
 public class CameraMovement : MonoBehaviour {
+	//wie viel distanz zum rand reicht um den seitlichen scroll auszuläsen
 	public int activateScrollOffset;
+	//wei schnell wir scrollen
 	public int scrollSpeed;
+	//wie tief ein klick reinzoomed bzw raus
 	public float zoomSpeed;
+	//wie schnell die camera auf ein object zentriert falls noch raum sein sollte ne fliessende camera einzubauen
+	//public float cameraCenteringSpeed;
 
 	//wie viel wir gemessen an der Startposition raus/reinzoomen duerfen
 	public float maxZoomOffset;
@@ -26,6 +31,7 @@ public class CameraMovement : MonoBehaviour {
 	public int leftBoundary;
 	public int rightBoundary;
 
+	//wir wollen messen ob wir zoomen wollten
 	private float mouseWheelInput;
 
 	private int screenWidth;
@@ -83,4 +89,11 @@ public class CameraMovement : MonoBehaviour {
 		}
 
 	}
+
+	public void centerOnVehicle(GameObject vehicle){
+		tempPosition = transform.position;
+		tempPosition.x = vehicle.transform.position.x;
+		transform.position = tempPosition;
+	}
 }
+

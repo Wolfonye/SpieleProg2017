@@ -17,16 +17,16 @@ public class RightCollTest : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
 		this.transform.parent.GetComponent<HoldLineScript>().rightFree = false;
-        Debug.Log("Coll");
+        //Debug.Log("Coll");
     }
     private void OnTriggerStay(Collider other)
     {
 		this.transform.parent.GetComponent<HoldLineScript>().rightFree = false;
-        Debug.Log("Coll");
+        //Debug.Log("Coll");
     }
     private void OnTriggerExit(Collider other)
     {
 		this.transform.parent.GetComponent<HoldLineScript>().rightFree = true;
-        Debug.Log("CollEx");
+        //Debug.Log("CollEx");
     }
 }

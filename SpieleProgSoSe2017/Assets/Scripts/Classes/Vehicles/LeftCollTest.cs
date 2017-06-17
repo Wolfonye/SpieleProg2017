@@ -16,16 +16,16 @@ public class LeftCollTest : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
 		this.transform.parent.GetComponent<HoldLineScript>().leftFree = false;
-        Debug.Log("Coll");
+        //Debug.Log("Coll");
     }
     private void OnTriggerStay(Collider other)
     {
 		this.transform.parent.GetComponent<HoldLineScript>().leftFree = false;
-        Debug.Log("Coll");
+        //Debug.Log("Coll");
     }
     private void OnTriggerExit(Collider other)
     {
 		this.transform.parent.GetComponent<HoldLineScript>().leftFree = true;
-        Debug.Log("CollEx");
+        //Debug.Log("CollEx");
     }
 }
