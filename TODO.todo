@@ -55,7 +55,7 @@ Philipp:
     ☐ Texturen erstellen
     ✔ Camera Movement verbessern @done(2017-06-11 10:07) @project(Philipp)
     ✔ Life/Fuel-Bars @done(2017-06-14 20:32) @project(Philipp)
-    ☐ Seitencollider für Rampe hinzufügen, damit Tank nicht abstürzt
+    ✔ Seitencollider für Rampe hinzufügen, damit Tank nicht abstürzt @done(2017-06-17 22:59) @project(Philipp)
     ✔ Siegbedingungen!!! @done(2017-06-17 21:14) @project(Philipp)
     ☐ Levels entwerfen und mit Basics ausstatten, siehe dazu Readme vom 14.6. (Tutorial)
     ✔ ActivePointer  @done(2017-06-15 18:05) @project(Philipp)
@@ -66,6 +66,8 @@ Philipp:
     ✔ ungewollte vorzeitige Explosion der Shells fixen @done(2017-06-17 18:45) @project(Philipp)
     ✔ ein Schuss pro Runde implementieren @done(2017-06-17 18:46) @project(Philipp)
     ☐ Camerawinkel soll abhängig von Zoom-Level sein
+    ✔ camera zentriert auf aktiv werdendes vehikel @done(2017-06-17 22:59) @project(Philipp)
+    ☐ SmoothCameraScroll für Centering beim Aktivieren eines vehicles
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
