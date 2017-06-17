@@ -18,8 +18,8 @@ public class CameraMovement : MonoBehaviour {
 	public int scrollSpeed;
 	//wie tief ein klick reinzoomed bzw raus
 	public float zoomSpeed;
-	//wie schnell die camera auf ein object zentriert falls noch raum sein sollte ne fliessende camera einzubauen
-	//public float cameraCenteringSpeed;
+	//Zeit, die centerOnVehicle benötigt
+	public float cameraCenteringTime;
 
 	//wie viel wir gemessen an der Startposition raus/reinzoomen duerfen
 	public float maxZoomOffset;
@@ -91,9 +91,39 @@ public class CameraMovement : MonoBehaviour {
 	}
 
 	public void centerOnVehicle(GameObject vehicle){
-		tempPosition = transform.position;
-		tempPosition.x = vehicle.transform.position.x;
-		transform.position = tempPosition;
-	}
-}
+		//Zielposition soll die x koordinate des vehicles haben, aber y und z der camera beibehalten
+		Vector3 targetPosition = vehicle.transform.position;
+		targetPosition.y = transform.position.y;
+		targetPosition.z = transform.position.z;
 
+		//wir koennen hier nicht in update aufrufen, also machen wir ne coroutine auf
+		StartCoroutine (moveToPosition (transform, targetPosition, cameraCenteringTime));
+
+	}
+
+	public IEnumerator moveToPosition(Transform transform, Vector3 targetPosition, float timeToMove)
+	{
+		Vector3 currentPosition = transform.position;
+		float normedElapsedTime = 0f;
+		while(normedElapsedTime < 1)
+		{
+			//wir schauen, wie viel zeit vergangen ist, allerdings normiert
+			//die Teilung der verstrichenen Zeit durch timeToMove bewirkt eine Normierung
+			//joa...warum normierung...wegen der Funktionsweise von Lerp. Das ist ne lineare
+			//Interpolation, die den wert im dritten argument nach [0,1]clampt und anhand dessen
+			//berechnet, welchen wert zwischen A und B es ausgibt. wenn wirs nicht sleber normieren könnte es blödsinn machen.
+			//damit ich mir später noch denken kann, dass das mathestudium zu irgendwas nutze war
+			//sage ich mir selbst hier, dass ich davon ausgehe, dass das was im stil der beschreibung
+			//der konvexen hülle zweier punkte ist, also sowas: a*r + b*(1-r) mit 0<r<1
+			normedElapsedTime = normedElapsedTime + Time.deltaTime / timeToMove;
+			transform.position = Vector3.Lerp(currentPosition, targetPosition, normedElapsedTime);
+
+
+			//insgesamt ein nettes Beispiel, wie man couroutienne einsetzen kann, wir steigen hier am ende der schleife nochmal
+			//ein beim folgenden frame, sodass wir die solange durchlaufen, bis wir unsere normierte elapsed time "voll" haben..
+			//nette dinger die coroutinen..
+			yield return null;
+		}
+	}
+
+}
