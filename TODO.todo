@@ -31,7 +31,7 @@ Philipp:
     ✔ Erweiterung Ordnerstruktur für verbessertes Meshhandling @done(2017-05-10 22:47) @project(Philipp)
     ✔ Base-scripts für Tank_Basic @done(2017-05-10 22:49) @project(Philipp)
     ☐ Scripts objektspezifisch benennen, falls sie nur einem bestimmten Objekttyp dienen sollen
-    ☐ Terrain-Objekte-Models
+    ✔ Basic-Terrain-Objekte-Models @done(2017-06-17 21:16) @project(Philipp)
     ✔ Shell-Rotation und Collider @done(2017-05-12 20:06) @project(Philipp)
     ✔ Shell-Explosion (Partikel oder Comicboom) @done(2017-05-15 09:55) @project(Philipp)
     ✔ Readme mit Atom-Anleitung @done(2017-05-12 20:07) @project(Philipp)
@@ -47,9 +47,7 @@ Philipp:
     ✔ Interface-Konzeption für Schadensmodell @done(2017-05-21 10:28) @project(Philipp)
     ✔ Radphysik in den Griff bekommen @done(2017-05-26 08:35) @project(Philipp)
     ✔ Bzgl. seltsamer Skalierungsunterschiede investigativ tätig werden!!! @done(2017-06-10 16:40) @project(Philipp)
-    ☐ Shell Abweichung bei schief stehenden Tanks fixen
     ☐ Sprit-Modus
-    ☐ Terrain flatten !
     ✔ Verhindern Error durch NullRef fehlendes Objekt @done(2017-06-13 23:05) @project(Philipp)
     ✔ Control Cycle Skript !!! @done(2017-06-10 12:30) @project(Philipp)
     ✔ Control Cyle mit Flos Arbeit kombinieren und testen!! @done(2017-06-13 23:03) @project(Philipp)
@@ -58,7 +56,7 @@ Philipp:
     ✔ Camera Movement verbessern @done(2017-06-11 10:07) @project(Philipp)
     ✔ Life/Fuel-Bars @done(2017-06-14 20:32) @project(Philipp)
     ☐ Seitencollider für Rampe hinzufügen, damit Tank nicht abstürzt
-    ☐ Siegbedingungen!!!
+    ✔ Siegbedingungen!!! @done(2017-06-17 21:14) @project(Philipp)
     ☐ Levels entwerfen und mit Basics ausstatten, siehe dazu Readme vom 14.6. (Tutorial)
     ✔ ActivePointer  @done(2017-06-15 18:05) @project(Philipp)
     ✔ Todo-Auswertungs-Programm auf Hauptrechner laden @done(2017-06-15 22:22) @project(Philipp)
@@ -67,6 +65,7 @@ Philipp:
         ☐ mit Flo wegen Anpassung seiner Skripts auf verbessertes Konzept sprechen
     ✔ ungewollte vorzeitige Explosion der Shells fixen @done(2017-06-17 18:45) @project(Philipp)
     ✔ ein Schuss pro Runde implementieren @done(2017-06-17 18:46) @project(Philipp)
+    ☐ Camerawinkel soll abhängig von Zoom-Level sein
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
