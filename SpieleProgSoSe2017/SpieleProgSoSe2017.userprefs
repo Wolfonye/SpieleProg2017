@@ -1,13 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MonoBehaviours\Vehicles\HoldLineScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Classes\Vehicles\TakeDamage.cs">
     <Files>
-      <File FileName="Assets\Scripts\MonoBehaviours\GameControl\ControlCycler.cs" Line="30" Column="37" />
-      <File FileName="Assets\Scripts\MonoBehaviours\GameControl\TempRoundTimer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MonoBehaviours\Vehicles\HoldLineScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MonoBehaviours\GameControl\CameraMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MonoBehaviours\Vehicles\TakeDamage.cs" Line="12" Column="1" />
-      <File FileName="Assets\Scripts\MonoBehaviours\Vehicles\CarMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Classes\GameControl\VictoryDefeatEvaluator.cs" Line="48" Column="41" />
+      <File FileName="Assets\Scripts\Classes\Vehicles\TakeDamage.cs" Line="19" Column="43" />
+      <File FileName="Assets\Scripts\Classes\GameControl\InputConfiguration.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Classes\GameControl\ControlCycler.cs" Line="148" Column="17" />
+      <File FileName="Assets\Scripts\Classes\GameControl\TempRoundTimer.cs" Line="55" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

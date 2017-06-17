@@ -138,5 +138,14 @@ public class ControlCycler : MonoBehaviour
 		//Anzahl gemachter Schüsse zu Beginn eines Zuges für ein Vehicle wieder auf 0 setzen
 		vehicle.GetComponentInChildren<ShellSpawn>().resetCurrentNumberOfShots ();
 	}
+
+
+	public List<GameObject> getPlayer0Vehicles(){
+		return player0Vehicles;
+	}
+
+	public List<GameObject> getPlayer1Vehicles(){
+		return player1Vehicles;
+	}
 }
 	

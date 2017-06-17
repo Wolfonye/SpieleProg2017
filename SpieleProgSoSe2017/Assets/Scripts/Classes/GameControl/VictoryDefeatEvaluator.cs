@@ -1,0 +1,76 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class VictoryDefeatEvaluator : MonoBehaviour {
+
+	//Refs auf die Listen der Spieler, damit ein check-up durchgeführt werden kann
+	private List<GameObject> player0Vehicles;
+	private List<GameObject> player1Vehicles;
+
+	private bool player0HasActiveVehicles;
+	private bool player1HasActiveVehicles;
+
+	//die Refs besorgen wir uns aaaaaus...dem zuständigen ControlCycler für das heweilge Level, 
+	//da der ja verwaltet, wer gerade aktiv ist und daher die Listen mit den Tank-Refs besitzt
+	public ControlCycler controlCycler;
+
+	// Use this for initialization
+	void Start () {
+		//zu beginn schnappen wir uns die mit der methode aus controlCycler
+		//das hat den vorteil, dass das schön adaptiv ist
+		//der controlcycler sit ja teil des gamemasters 2000, was auf dieses skript auch zutreffen
+		//wird. das heißt, wenn der gamemaster200 einmal dahingehend konfiguriert wurde muss nichts
+		//mehr getan werden unabhängig vom level...juhuuuuu!
+		player0Vehicles = controlCycler.getPlayer0Vehicles ();
+		player1Vehicles = controlCycler.getPlayer1Vehicles ();
+
+		player0HasActiveVehicles = true;
+		player1HasActiveVehicles = true;
+	}
+
+	public void evaluateVictoryDefeat(){
+		//wollen feststellen, ob bei player0 noch wenigstens ein Vehicle nicht zerstört wurde
+		//remember zerstören heißt bei uns gameobject deaktivieren
+		//das dürfte nicht viel overhead erzeugen, da es nur sehr wenige objekte sind und diese
+		//höchstens einmal deaktiviert werden; die vereinfachung an code an anderer stelle sollte
+		//das also mehr als aufwiegen; wir nehmen also mal an es gibt keine aktiven mehr, setzen
+		//auf false und schauen dann nach, obs nicht doch ein aktives gibt
+		player0HasActiveVehicles = false;
+		foreach (GameObject vehicle in player0Vehicles) {
+			if (vehicle.activeSelf) {
+				player0HasActiveVehicles = true;
+			}
+		}
+
+		//siehe oben
+		player1HasActiveVehicles = false;
+		foreach (GameObject vehicle in player1Vehicles) {
+			if (vehicle.activeSelf) {
+				player1HasActiveVehicles = true;
+			}
+		}
+
+
+		//jetzt müssen wir die verschiedenen Kombinationen bewerten
+		if (player0HasActiveVehicles && player1HasActiveVehicles) {
+			Debug.Log ("alles noch offen");
+			return;
+		}
+
+		if (!player0HasActiveVehicles && !player1HasActiveVehicles) {
+			Debug.Log ("unentschieden");
+			return;
+		}
+
+		if (!player0HasActiveVehicles) {
+			Debug.Log ("Spieler 2 gewinnt");
+			return;
+		}
+
+		if (!player1HasActiveVehicles) {
+			Debug.Log ("Spieler 1 gewinnt");
+			return;
+		}
+	}
+}

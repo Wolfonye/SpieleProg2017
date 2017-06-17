@@ -52,7 +52,7 @@ public class TempRoundTimer : MonoBehaviour
 	}
 
 	void Update(){
-		if(Input.GetKeyDown(fire)){
+		if(Input.GetKeyDown(fire) && actualTime > 3){
 			actualTime = 3;
 		}
 	}
