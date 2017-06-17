@@ -15,11 +15,16 @@ public class ShellSpawn : MonoBehaviour {
     public GameObject shell;
     public float shellSpeed;
     Vector3 emitterOffset = new Vector3(0, 0, 0);
+	//wird aus InputConfiguration beim Start einmal vorgeladen um unnötige Kontextwechsel zur Laufzeit zur vermeiden
+	private string fireKey;
 
+	void Start(){
+		fireKey = InputConfiguration.getFireKey ();
+	}
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+		if (Input.GetKeyDown(fireKey))
         {
             //Wir benötigen eine Referenz auf die neu erzeugte Shell um mit ihr arbeiten zu können (addForce und so...)
             GameObject tempShell;

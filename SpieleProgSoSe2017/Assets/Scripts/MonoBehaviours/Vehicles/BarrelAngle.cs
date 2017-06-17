@@ -18,9 +18,18 @@ public class BarrelAngle : MonoBehaviour
     public GameObject barrel;
     public GameObject origin;
 
+	//wird aus InputConfiguration beim Start einmal vorgeladen um unnötige Kontextwechsel zur Laufzeit zur vermeiden
+	string barrelUp;
+	string barrelDown;
+
     //Basis-Rotation für die Rotationsberechnung des bones in jedem Frame; außerhalb deklariert um unnötige Objekterzeugung zu vermeiden
     //die wird zunächst in jedem update mit dem aktuellen Rotations-Stand des bones "gefüttert"
     Quaternion originalRot;
+
+	void Start(){
+		barrelDown = InputConfiguration.getBarrelDownKey ();
+		barrelUp = InputConfiguration.getBarrelUpKey ();
+	}
 
     // Update is called once per frame
     void Update()
@@ -31,7 +40,7 @@ public class BarrelAngle : MonoBehaviour
         //netterweise ist der * Operator in Unity für Quaternionen so überladen, dass wir das linke Argument um das rechte rotieren 
         //können (um, nicht um Sinne von Drehachse, sondern Winkel)
         originalRot = barrel.transform.rotation;
-		if (Input.GetKey(KeyCode.DownArrow))
+		if (Input.GetKey(barrelDown))
         {
 			if (Vector3.Angle(barrel.transform.up, origin.transform.forward) > minAnglePositive)
             {
@@ -39,7 +48,7 @@ public class BarrelAngle : MonoBehaviour
             }
         }
 
-		if (Input.GetKey(KeyCode.UpArrow))
+		if (Input.GetKey(barrelUp))
         {
 			if (Vector3.Angle(barrel.transform.up, origin.transform.forward) < maxAnglePosositive)
             {
