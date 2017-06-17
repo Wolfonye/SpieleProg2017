@@ -17,14 +17,19 @@ public class ShellSpawn : MonoBehaviour {
     Vector3 emitterOffset = new Vector3(0, 0, 0);
 	//wird aus InputConfiguration beim Start einmal vorgeladen um unnötige Kontextwechsel zur Laufzeit zur vermeiden
 	private string fireKey;
+	//Anzahl getätigter Schüsse in dieser Runde und maximale Anzahl pro Runde; falls ich später auf potentiell mehrere Schüsse pro Runde erweitern will
+	private int currentNumberOfShots;
+	private int maxNumberOfShots;
 
 	void Start(){
 		fireKey = InputConfiguration.getFireKey ();
+		currentNumberOfShots = 0;
+		maxNumberOfShots = 1;
 	}
     // Update is called once per frame
     void Update()
     {
-		if (Input.GetKeyDown(fireKey))
+		if (Input.GetKeyDown(fireKey) && currentNumberOfShots < maxNumberOfShots)
         {
             //Wir benötigen eine Referenz auf die neu erzeugte Shell um mit ihr arbeiten zu können (addForce und so...)
             GameObject tempShell;
@@ -38,8 +43,16 @@ public class ShellSpawn : MonoBehaviour {
             //einfacher Richtungsgeber dienen kann. Würde auch in 3D funktionieren...which is nice...
             tempShellRigBody.AddForce(angleGiver.transform.up * shellSpeed);
 
+
+			//numberofshots erhöhen, damit man nicht beliebig viel schiessen kann, das muss dan vom cycler auf 0 gesetzt werden, wenn ein spieler neu dran ist.
+			currentNumberOfShots++;
+
             //Codeartefakt zur Zerstörung der Bullet, was diese im Moment selbst regelt.
             //Destroy(Temporary_Bullet_Handler, 10.0f);
         }
     }
+
+	public void resetCurrentNumberOfShots(){
+		currentNumberOfShots = 0;
+	}
 }
