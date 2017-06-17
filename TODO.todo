@@ -53,7 +53,7 @@ Philipp:
     ✔ Verhindern Error durch NullRef fehlendes Objekt @done(2017-06-13 23:05) @project(Philipp)
     ✔ Control Cycle Skript !!! @done(2017-06-10 12:30) @project(Philipp)
     ✔ Control Cyle mit Flos Arbeit kombinieren und testen!! @done(2017-06-13 23:03) @project(Philipp)
-    ☐ Unwraps für UVMaps erstellen
+    ✔ Unwraps für UVMaps erstellen @done(2017-06-17 18:46) @project(Philipp)
     ☐ Texturen erstellen
     ✔ Camera Movement verbessern @done(2017-06-11 10:07) @project(Philipp)
     ✔ Life/Fuel-Bars @done(2017-06-14 20:32) @project(Philipp)
@@ -63,6 +63,10 @@ Philipp:
     ✔ ActivePointer  @done(2017-06-15 18:05) @project(Philipp)
     ✔ Todo-Auswertungs-Programm auf Hauptrechner laden @done(2017-06-15 22:22) @project(Philipp)
     ✔ Käthe als Collaborator für das Projekt eintragen @done(2017-06-15 22:47) @project(Philipp)
+    ✔ Steuerungszentralisierung für Elemente ausserhalb InputManager zur Vermeidung von Kontextwechseln @done(2017-06-17 18:35) @project(Philipp)
+        ☐ mit Flo wegen Anpassung seiner Skripts auf verbessertes Konzept sprechen
+    ✔ ungewollte vorzeitige Explosion der Shells fixen @done(2017-06-17 18:45) @project(Philipp)
+    ✔ ein Schuss pro Runde implementieren @done(2017-06-17 18:46) @project(Philipp)
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)

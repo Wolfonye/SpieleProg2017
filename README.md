@@ -1,6 +1,38 @@
 SpieleProgrammierungSoSe2017
 --------------------------------------------------------------------------------
 
+UPDATE 17.06.2017 (Philipp)
+--------------------------------------------------------------------------------
+Ich habe einige Dinge überarbeitet/implementiert:
+* Input, der NICHT als Achse funktionieren soll, sprich alles, was nicht die
+  Links/Rechtsbewegung der Vehicles ist, wird jetzt über ein zentrales
+  InputSkript festgelegt, welches die Werte als static strings verwaltet und
+  entsprechende Getter-Methoden besitzt; Hintergrund ist bessere Maintainability
+  Noch anzupassen wäre demnach das Skript, das den Lane-Wechsel steuert
+* Auf Grund der aktuellen Prioritäten habe ich noch nicht den Sprit-Modus
+  implementiert
+* neu implementiert: ein Schuss pro Runde (das Skript wurde von mir so angelegt,
+  dass es möglcihst einfach sein soll später auf mehr Schüsse pro Runde zu
+  verallgemeinern)
+* das Abfeuern des Schusses leitet eine kleine taktische Rückzugphase von 3
+  Sekunden ein, bevor die Runde endet; das bedeutet implizit, dass ich auch
+  den Zusammenhang zwischen abgefeuertem Schuss und dem Ende der Runde des
+  jeweiligen Spielers implementiert habe.
+* die Käthe hat jetzt nen eigenen TODO-Bereich :D
+* als ich bissl Zeit hatte und mal was Anderes machen wollte, habe ich ein
+  kleines Kommandozeilentool geschrieben, was eine rudimentäre statistische
+  Auswertung eines Todo-files nach unserem Standard erstellt und für jede
+  Subcategory die noch nicht erledigten Todos auflisten kann :)
+  (ich sollte dabei vielleicht anmerken: es ist wunderbar)
+
+BTW: wems noch nicht aufgefallen sein sollte; dieses markdown-file folgt auch
+gewissen Formatierungsstandards.
+Ein Eintrag besteht aus einer Kopfzeile mit Art des Eintrags, Datum und Namen
+des Erstellers in Klammern, darunter eine Zeile mit 80 Bindestrichen. Direkt im
+Anschluss folgt die Nachricht, an deren Ende eine Leerzeile einzufügen ist.
+Der oberste Eintrag ist immer der jüngste. Hintergrund: Überblick und die
+Tatsache, dass das z.B. von GitHub hübsch interpretiert wird.
+
 UPDATE 14.06.2017 (Philipp)
 --------------------------------------------------------------------------------
 Kurzes Tutorial wie ein Level gestaltet werden muss um nach aktuellem Stand
