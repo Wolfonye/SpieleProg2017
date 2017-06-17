@@ -20,6 +20,9 @@ public class TempRoundTimer : MonoBehaviour
 	private int actualTime;
 	private ControlCycler controlCycler;
 
+	//wird aus InputConfiguration beim Start einmal vorgeladen um unnötige Kontextwechsel zur Laufzeit zur vermeiden
+	private string fire;
+
 	public void setControlSwitcher(ControlCycler controller)
 	{
 		this.controlCycler = controller;
@@ -48,8 +51,15 @@ public class TempRoundTimer : MonoBehaviour
 		}
 	}
 
+	void Update(){
+		if(Input.GetKeyDown(fire)){
+			actualTime = 3;
+		}
+	}
+
 	void Start()
 	{
+		fire = InputConfiguration.getFireKey();
 		actualTime = timePerRound;
 		counterCoRoutine = countDownRound();
 		StartCoroutine(counterCoRoutine);

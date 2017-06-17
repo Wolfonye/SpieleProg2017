@@ -123,7 +123,7 @@ public class ControlCycler : MonoBehaviour
 		carMovement.FullBrake ();
 		vehicle.GetComponentInChildren<HoldLineScript> ().enabled = false;
 	}
-
+		
 	/*Auslagerung der Tankaktivierung
 	 * CHECK
 	 */
@@ -134,6 +134,9 @@ public class ControlCycler : MonoBehaviour
 		tempActivePointer.transform.parent = vehicle.transform;
 		vehicle.GetComponentInChildren<CarMovement> ().enabled = true;
 		vehicle.GetComponentInChildren<HoldLineScript> ().enabled = true;
+
+		//Anzahl gemachter Schüsse zu Beginn eines Zuges für ein Vehicle wieder auf 0 setzen
+		vehicle.GetComponentInChildren<ShellSpawn>().resetCurrentNumberOfShots ();
 	}
 }
 	
