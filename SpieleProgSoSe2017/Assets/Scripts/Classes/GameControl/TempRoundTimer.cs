@@ -17,6 +17,7 @@ public class TempRoundTimer : MonoBehaviour
      */
 	public int timePerRound = 60;
 	public Text timer;
+	public int maxTimeAfterShot;
 	private int actualTime;
 	private ControlCycler controlCycler;
 
@@ -52,8 +53,8 @@ public class TempRoundTimer : MonoBehaviour
 	}
 
 	void Update(){
-		if(Input.GetKeyDown(fire) && actualTime > 3){
-			actualTime = 3;
+		if(Input.GetKeyDown(fire) && actualTime > maxTimeAfterShot){
+			actualTime = maxTimeAfterShot;
 		}
 	}
 

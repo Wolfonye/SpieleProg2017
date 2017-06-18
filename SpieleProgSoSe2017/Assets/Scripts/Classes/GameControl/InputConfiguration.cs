@@ -11,6 +11,7 @@ public static class InputConfiguration : object {
 	private static string laneLeftKey = "q";
 	private static string laneRightKey = "e";
 	private static string overviewKey = "tab";
+	private static string pauseMenuKey = "escape";
 
 	//das sollte später mit der Maus passieren!!!
 	private static string barrelUpKey = "w";
@@ -38,5 +39,9 @@ public static class InputConfiguration : object {
 
 	public static string getOverviewKey(){
 		return overviewKey;
+	}
+
+	public static string getPauseMenuKey(){
+		return pauseMenuKey;
 	}
 }
