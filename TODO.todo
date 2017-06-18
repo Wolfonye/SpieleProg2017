@@ -39,7 +39,7 @@ Philipp:
     ☐ Shell-Trail
     ✔ Randomisierung des Entstehungsortes der Comic-Booms @done(2017-05-15 21:54) @project(Philipp)
     ✔ Comic-Booms ins Hauptprojekt importieren und auf Shells anpassen @done(2017-05-15 21:53) @project(Philipp)
-    ☐ Booms skalieren?
+    ✔ Booms skalieren? @done(2017-06-18 17:11) @project(Philipp)
     ☐ Mündungsfeuer/wolke
     ✔ Normierung der Lane-Breite @done(2017-05-26 08:35) @project(Philipp)
     ✔ Kontrollübergabe zwischen Spielern @done(2017-05-21 10:28) @project(Philipp)
@@ -52,7 +52,7 @@ Philipp:
     ✔ Control Cycle Skript !!! @done(2017-06-10 12:30) @project(Philipp)
     ✔ Control Cyle mit Flos Arbeit kombinieren und testen!! @done(2017-06-13 23:03) @project(Philipp)
     ✔ Unwraps für UVMaps erstellen @done(2017-06-17 18:46) @project(Philipp)
-    ☐ Texturen erstellen
+    ✔ Texturen erstellen @done(2017-06-18 17:11) @project(Philipp)
     ✔ Camera Movement verbessern @done(2017-06-11 10:07) @project(Philipp)
     ✔ Life/Fuel-Bars @done(2017-06-14 20:32) @project(Philipp)
     ✔ Seitencollider für Rampe hinzufügen, damit Tank nicht abstürzt @done(2017-06-17 22:59) @project(Philipp)
@@ -67,7 +67,8 @@ Philipp:
     ✔ ein Schuss pro Runde implementieren @done(2017-06-17 18:46) @project(Philipp)
     ☐ Camerawinkel soll abhängig von Zoom-Level sein
     ✔ camera zentriert auf aktiv werdendes vehikel @done(2017-06-17 22:59) @project(Philipp)
-    ☐ SmoothCameraScroll für Centering beim Aktivieren eines vehicles
+    ✔ SmoothCameraScroll für Centering beim Aktivieren eines vehicles @done(2017-06-18 17:11) @project(Philipp)
+    ✔ OverviewModus für Camera  @done(2017-06-18 17:11) @project(Philipp)
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
