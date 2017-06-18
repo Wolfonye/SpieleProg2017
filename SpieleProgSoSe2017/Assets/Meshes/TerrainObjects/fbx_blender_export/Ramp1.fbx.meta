@@ -8,15 +8,25 @@ ModelImporter:
     100000: Ramp
     100002: //RootNode
     100004: Stomps
+    100006: Rail1
+    100008: Rail2
     400000: Ramp
     400002: //RootNode
     400004: Stomps
+    400006: Rail1
+    400008: Rail2
     2300000: Ramp
     2300002: Stomps
+    2300004: Rail1
+    2300006: Rail2
     3300000: Ramp
     3300002: Stomps
+    3300004: Rail1
+    3300006: Rail2
     4300000: Ramp
     4300002: Stomps
+    4300004: Rail2
+    4300006: Rail1
   materials:
     importMaterials: 1
     materialName: 0
