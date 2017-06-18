@@ -26,6 +26,7 @@ public class CameraMovement : MonoBehaviour {
 	//dort befinden wir uns aktuell (wird für den Anfang auf 0 gesetzt) das heißt die Startkamerapos sollte in der Mitte der Range liegen
 	private float currentZoom;
 
+
 	//soweit darf die Cam nach links oder rechts fahren
 	//die sind in Abhaengigkeit des Levels festzulegen, daher public
 	public int leftBoundary;
@@ -38,12 +39,14 @@ public class CameraMovement : MonoBehaviour {
 	//Ist zu überlegen, ob man auch in der Höhe steuern lässt
 	//private int screenHeight;
 
+	//kleiner helfer, damit weniger oft initialisiert werden muss
 	private Vector3 tempPosition;
 
 	// Use this for initialization
 	void Start () {
 		currentZoom = 0;
 		Cursor.visible = true;
+		isInOverviewMode = false;
 		screenWidth = Screen.width;
 		//screenHeight = Screen.height;
 	}
@@ -88,36 +91,41 @@ public class CameraMovement : MonoBehaviour {
 			currentZoom = currentZoom + zoomSpeed;
 		}
 
+		//hier passiert das wechseln in die vogelperspektive
+		if (Input.GetKeyDown (InputConfiguration.getOverviewKey())) {
+			toggleOverviewPerspective ();
+		}
+
 	}
 
+	//camera soll auf das mitgegebene vehicle zentriert werden
 	public void centerOnVehicle(GameObject vehicle){
 		//Zielposition soll die x koordinate des vehicles haben, aber y und z der camera beibehalten
 		Vector3 targetPosition = vehicle.transform.position;
 		targetPosition.y = transform.position.y;
 		targetPosition.z = transform.position.z;
 
-		//wir koennen hier nicht in update aufrufen, also machen wir ne coroutine auf
+		//wir koennen hier nicht in update aufrufen, also machen wir ne coroutine auf, die dann die stetige veränderung macht
 		StartCoroutine (moveToPosition (transform, targetPosition, cameraCenteringTime));
 
 	}
 
-	public IEnumerator moveToPosition(Transform transform, Vector3 targetPosition, float timeToMove)
+	private IEnumerator moveToPosition(Transform objectToMove, Vector3 targetPosition, float timeToMove)
 	{
-		Vector3 currentPosition = transform.position;
+		Vector3 currentPosition = objectToMove.position;
 		float normedElapsedTime = 0f;
 		while(normedElapsedTime < 1)
 		{
-			//wir schauen, wie viel zeit vergangen ist, allerdings normiert
+			//wir schauen, wie viel zeit vergangen ist, allerdings normiert.
 			//die Teilung der verstrichenen Zeit durch timeToMove bewirkt eine Normierung
-			//joa...warum normierung...wegen der Funktionsweise von Lerp. Das ist ne lineare
+			//joa...warum machen wir dat?->wegen der Funktionsweise von Lerp. Das ist ne lineare
 			//Interpolation, die den wert im dritten argument nach [0,1]clampt und anhand dessen
 			//berechnet, welchen wert zwischen A und B es ausgibt. wenn wirs nicht sleber normieren könnte es blödsinn machen.
 			//damit ich mir später noch denken kann, dass das mathestudium zu irgendwas nutze war
 			//sage ich mir selbst hier, dass ich davon ausgehe, dass das was im stil der beschreibung
-			//der konvexen hülle zweier punkte ist, also sowas: a*r + b*(1-r) mit 0<r<1
+			//der konvexen hülle zweier punkte ist, also sowas im stil: a*r + b*(1-r) mit 0<r<1
 			normedElapsedTime = normedElapsedTime + Time.deltaTime / timeToMove;
-			transform.position = Vector3.Lerp(currentPosition, targetPosition, normedElapsedTime);
-
+			objectToMove.position = Vector3.Lerp(currentPosition, targetPosition, normedElapsedTime);
 
 			//insgesamt ein nettes Beispiel, wie man couroutienne einsetzen kann, wir steigen hier am ende der schleife nochmal
 			//ein beim folgenden frame, sodass wir die solange durchlaufen, bis wir unsere normierte elapsed time "voll" haben..
@@ -125,5 +133,62 @@ public class CameraMovement : MonoBehaviour {
 			yield return null;
 		}
 	}
+
+
+	//sind wir gerade in vogelperspektive oder nicht
+	private bool isInOverviewMode;
+	//speichert auf welcher position/rotation wir vorm toggeln in vogelperspektive waren
+	private Quaternion previousRotation;
+	private Vector3 previousPosition;
+
+	//gibt an, wo für das jeweilge Level die Mitte der Lanes ist bezogen auf die z achse
+	//damit wir die kamera dorthin schieben koennen.
+	public float lanesMidPoint;
+
+	//zeit, die das wechseln in overviewmodus brauchen soll
+	public float overviewToggleTime;
+
+	//hoehe der camera im overviewmodus (soolte man auch aufs level anpassen koennen daher public)
+	public float overviewHeight;
+
+	//schaltet in die vogelperspektive
+	private void toggleOverviewPerspective(){
+		Vector3 targetPosition;
+
+		//wenn wir nicht im overviewmodus sind, wollen wir reinwechseln;
+		//dazu sind paar sachen notwendig, damit wir auch wieder hübsch zurück kommen wir müssen uns die info merken
+		//auf welcher position und rotation wir vorher waren, unsere neue rotation soll lediglich um die x achse verändern
+		//vieles vom rest wird durch dei erläuterung zu den variablen klar, was aber noch gesagt sein sollte ist,
+		//dass beim zurückwechseln in normale perspektive ein evtl veränderter neuer xwert beibehalten werden soll...wir haben ja evtl zur
+		//site gescrollt udn das wollen wir nicht kaputt machen
+		if (!isInOverviewMode) {
+			previousPosition = transform.position;
+			previousRotation = transform.rotation;
+			targetPosition = new Vector3 (transform.position.x, overviewHeight, lanesMidPoint);
+			Quaternion targetRotation = new Quaternion();
+			targetRotation = Quaternion.Euler(90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+			StartCoroutine (moveToPositionWithRot (transform, targetPosition, targetRotation, overviewToggleTime));
+			isInOverviewMode = true;
+		}else {
+			targetPosition = new Vector3 (transform.position.x, previousPosition.y, previousPosition.z);
+			StartCoroutine(moveToPositionWithRot (transform, targetPosition, previousRotation, overviewToggleTime));
+			isInOverviewMode = false;
+		}
+	}
+
+	//siehe oben nur noch mit Rotation zusätzlich
+	private IEnumerator moveToPositionWithRot(Transform objectToMove, Vector3 targetPosition, Quaternion targetRotation, float timeToMove){
+		Vector3 currentPosition = objectToMove.position;
+		Quaternion currentRotation = objectToMove.rotation;
+		float normedElapsedTime = 0f;
+		while (normedElapsedTime < 1) {
+			normedElapsedTime = normedElapsedTime + Time.deltaTime / timeToMove;
+			objectToMove.position = Vector3.Lerp(currentPosition, targetPosition, normedElapsedTime);
+			objectToMove.rotation = Quaternion.Lerp (currentRotation, targetRotation, normedElapsedTime);
+
+			yield return null;
+		}
+	}
+
 
 }

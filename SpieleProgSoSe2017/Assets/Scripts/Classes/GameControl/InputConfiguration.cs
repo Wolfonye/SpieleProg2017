@@ -10,6 +10,7 @@ public static class InputConfiguration : object {
 	private static string fireKey = "space";
 	private static string laneLeftKey = "q";
 	private static string laneRightKey = "e";
+	private static string overviewKey = "tab";
 
 	//das sollte später mit der Maus passieren!!!
 	private static string barrelUpKey = "w";
@@ -33,5 +34,9 @@ public static class InputConfiguration : object {
 
 	public static string getBarrelDownKey(){
 		return barrelDownKey;
+	}
+
+	public static string getOverviewKey(){
+		return overviewKey;
 	}
 }
