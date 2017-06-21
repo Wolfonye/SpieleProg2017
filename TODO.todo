@@ -71,6 +71,8 @@ Philipp:
     ✔ OverviewModus für Camera  @done(2017-06-18 17:11) @project(Philipp)
     ✔ Spiel soll pausierbar sein @done(2017-06-18 23:10) @project(Philipp)
     ☐ Grid für OverviewModus
+    ☐ Wolke damit flo am wind spielen kann
+    ☐ flos geupdatete skripte einpflegen und pushen!!!!
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
@@ -80,11 +82,14 @@ Katya:
     ✔ Erste Einarbeitung in Unity @done(2017-06-15 22:26) @project(Katya)
     ☐ MainMenu
         ☐ laden von Szenen (Levels)
-        ☐ Optionen
+        ☐ (Optionen, zurückgestellt)
+        ☐ Manual
         ☐ Beenden
     ☐ Levelauswahlmenu
         ☐ Modusauswahl
     ☐ Match finished Screen
+    ☐ Pausescreen
+    ☐ Pause und Matchfinished mit Philipp synchronisieren (jaaaa...synchronisieren ist ein merhdeutiger begriffblabla)
 
 WayPoints:
     ☐ konspiratives Grillen
