@@ -11,11 +11,11 @@ Florian:
     ☐ lane-Wechsel nicht instant sondern fließend
     ✔ fix der Rotationsprobleme bei turn auf Rampe @done(2017-05-26 12:39) @project(Florian)
     ✔ Abfrage auf Seitenbewegung @done(2017-05-26 12:41) @project(Florian)
-    ☐ Trennung HoldLine und Lane-Wechsel (Wichtig)
+    ✔ Trennung HoldLine und Lane-Wechsel (Wichtig) @done(2017-06-23 11:01) @project(Florian)
     ☐ Wind recherchieren
     ☐ Sphere Explosion !!!
-    ☐ HoldLine fixen für Panzer die auf Lane  1 und 3 nebeneinander stehen und auf 2 wollen !!!
-    ☐ HoldLine und damit zusammenhängendes mit Philipps Cycle Arbeit kombinieren und testen!!
+    ✔ HoldLine fixen für Panzer die auf Lane  1 und 3 nebeneinander stehen und auf 2 wollen !!! @done(2017-06-23 11:01) @project(Florian)
+    ✔ HoldLine und damit zusammenhängendes mit Philipps Cycle Arbeit kombinieren und testen!! @done(2017-06-23 11:01) @project(Florian)
 
 Philipp:
     ✔ GitHub Account anlegen @done(2017-04-24 20:14) @project(Philipp)
@@ -72,7 +72,7 @@ Philipp:
     ✔ Spiel soll pausierbar sein @done(2017-06-18 23:10) @project(Philipp)
     ☐ Grid für OverviewModus
     ☐ Wolke damit flo am wind spielen kann
-    ☐ flos geupdatete skripte einpflegen und pushen!!!!
+    ✔ flos geupdatete skripte einpflegen und pushen!!!! @done(2017-06-23 11:01) @project(Philipp)
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
