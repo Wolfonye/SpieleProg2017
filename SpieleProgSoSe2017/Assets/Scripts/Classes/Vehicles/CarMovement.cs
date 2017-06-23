@@ -22,17 +22,32 @@ public class CarMovement : MonoBehaviour
 	private bool isGrounded;
 	private WheelHit hit;
 
-	/*
-	GetAxisRaw liefert nur Werte -1,0,1
-	wenn dieser Wert 0 ist, sprich nciht aktiv gas gegeben wird, soll die Bremse reinhauen
-	*/
+
     public void FixedUpdate()
     {
+		//----Übertrag von Flo für HoldLine-Verbesserung mit Anpassung auf neues Inputmanagement----------------------------
+		if (Input.GetKeyDown("q"))
+		{
+			this.transform.parent.GetComponent<HoldLineScript> ().LeftJump ();
+		}
+
+		if (Input.GetKeyDown("e"))
+		{
+			this.transform.parent.GetComponent<HoldLineScript> ().RightJump ();
+		}
+
+		if (Input.GetKeyDown("r"))
+		{
+			this.transform.parent.GetComponent<HoldLineScript> ().Spin ();
+		}
+		//-----------------------------------------------------------------------------------------------------------------
+
+
 		speed = vehicleRigBody.velocity.magnitude * 3.6f;
 		//Debug.Log ("speed in km/h:" + speed);
 
 		isGrounded = false;
-		//Hier stelle ich fest, ob mein Vehicle in irgendeiner Form Bodenkontakt hat
+		//Hier stelle ich fest, ob mein Vehicle in irgendeiner Form Bodenkontakt hat (ich möchte nicht, dass das Teil in der Luft gebremst wird :D SIehe unten
 		foreach (Axle axle in axleInfos) {
 			if(axle.leftWheel.GetGroundHit(out hit) == true || axle.rightWheel.GetGroundHit(out hit) == true){
 				isGrounded = true;
@@ -44,6 +59,10 @@ public class CarMovement : MonoBehaviour
 		if (vehicleRigBody.transform.forward.x > 0) {
 			motor = -motor;
 		}
+		/*
+		GetAxisRaw liefert nur Werte -1,0,1
+		wenn dieser Wert 0 ist, sprich nciht aktiv gas gegeben wird, soll die Bremse reinhauen
+		*/
         //steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 		leftRightInputInfo = Input.GetAxisRaw("Horizontal");
 		if (leftRightInputInfo == 0) {

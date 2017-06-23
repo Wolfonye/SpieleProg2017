@@ -13,7 +13,7 @@ public class ControlSwitcher : MonoBehaviour
     public GameObject player2;
 
 	private GameObject tempGameObject;
-	private Rigidbody tempRigBody;
+	//private Rigidbody tempRigBody;
 	private CarMovement carMovement;
 	private HoldLineScript holdLine;
 
@@ -38,7 +38,7 @@ public class ControlSwitcher : MonoBehaviour
 		if (player1 != null && player2 != null) {
 			//print("Deine Zeit ist abgelaufen");
 			tempGameObject = player1.transform.GetChild(0).gameObject;
-			tempRigBody = player1.GetComponent<Rigidbody> ();
+			//tempRigBody = player1.GetComponent<Rigidbody> ();
 			tempGameObject.SetActive(!tempGameObject.activeSelf);
 			//seltsam, dass ich carmovement nicht kriege wenn das script im ersten kind sitzt...extrem seltsam da gibts nen nullpointer
 			//würde mich mal interessieren, warum das so ist,insbesondere, da das level in der heirarchie das gleiche war...
@@ -53,7 +53,7 @@ public class ControlSwitcher : MonoBehaviour
 			//tempRigBody.velocity = new Vector3(0,0,0);
 
 			tempGameObject = player2.transform.GetChild(0).gameObject;
-			tempRigBody = player2.GetComponent<Rigidbody> ();
+			//tempRigBody = player2.GetComponent<Rigidbody> ();
 			tempGameObject.SetActive(!tempGameObject.activeSelf);
 			carMovement = player2.GetComponentInChildren<CarMovement>();
 			holdLine = player2.GetComponent<HoldLineScript> ();
