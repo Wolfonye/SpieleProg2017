@@ -30,7 +30,6 @@ Philipp:
     ✔ Git Setup für Version 0.0 um Prototyp zu ermöglichen einschließlich Dok-Branch @done(2017-05-10 22:49) @project(Philipp)
     ✔ Erweiterung Ordnerstruktur für verbessertes Meshhandling @done(2017-05-10 22:47) @project(Philipp)
     ✔ Base-scripts für Tank_Basic @done(2017-05-10 22:49) @project(Philipp)
-    ☐ Scripts objektspezifisch benennen, falls sie nur einem bestimmten Objekttyp dienen sollen
     ✔ Basic-Terrain-Objekte-Models @done(2017-06-17 21:16) @project(Philipp)
     ✔ Shell-Rotation und Collider @done(2017-05-12 20:06) @project(Philipp)
     ✔ Shell-Explosion (Partikel oder Comicboom) @done(2017-05-15 09:55) @project(Philipp)
@@ -58,11 +57,12 @@ Philipp:
     ✔ Seitencollider für Rampe hinzufügen, damit Tank nicht abstürzt @done(2017-06-17 22:59) @project(Philipp)
     ✔ Siegbedingungen!!! @done(2017-06-17 21:14) @project(Philipp)
     ☐ Levels entwerfen und mit Basics ausstatten, siehe dazu Readme vom 14.6. (Tutorial)
+        ☐ Editing der Heightmaps mit externem Editor recherchieren
+        ☐
     ✔ ActivePointer  @done(2017-06-15 18:05) @project(Philipp)
     ✔ Todo-Auswertungs-Programm auf Hauptrechner laden @done(2017-06-15 22:22) @project(Philipp)
     ✔ Käthe als Collaborator für das Projekt eintragen @done(2017-06-15 22:47) @project(Philipp)
     ✔ Steuerungszentralisierung für Elemente ausserhalb InputManager zur Vermeidung von Kontextwechseln @done(2017-06-17 18:35) @project(Philipp)
-        ☐ mit Flo wegen Anpassung seiner Skripts auf verbessertes Konzept sprechen
     ✔ ungewollte vorzeitige Explosion der Shells fixen @done(2017-06-17 18:45) @project(Philipp)
     ✔ ein Schuss pro Runde implementieren @done(2017-06-17 18:46) @project(Philipp)
     ☐ Camerawinkel soll abhängig von Zoom-Level sein
@@ -71,8 +71,10 @@ Philipp:
     ✔ OverviewModus für Camera  @done(2017-06-18 17:11) @project(Philipp)
     ✔ Spiel soll pausierbar sein @done(2017-06-18 23:10) @project(Philipp)
     ☐ Grid für OverviewModus
-    ☐ Wolke damit flo am wind spielen kann
+    ✔ Wolke-Prefab damit flo am wind spielen kann @done(2017-06-23 11:30) @project(Philipp)
     ✔ flos geupdatete skripte einpflegen und pushen!!!! @done(2017-06-23 11:01) @project(Philipp)
+    ☐ Flos updates auf neues Steuerungsverwaltungskonzept anpassen
+    ☐ Ganz am Ende und zwischendrin Kommentare und Namings überprüfen 
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)

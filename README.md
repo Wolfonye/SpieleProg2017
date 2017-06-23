@@ -1,6 +1,15 @@
 SpieleProgrammierungSoSe2017
 --------------------------------------------------------------------------------
 
+UPDATE 23.06.2017 (Philipp)
+--------------------------------------------------------------------------------
+Ich habe heute gelernt: nicht jeder Shader kann per se mit Transparenz umgehen.
+Toon-Lit zum Beispiel nicht. Zumindest nicht gut. Man kann immer mal testen
+MipMaps auszuschalten und vor allen Dingen auch Alpha is Transparency
+aktivieren. Mit dem richtigen Shader haut das dann auch hin mit der Transparenz.
+Es gibt sogar nen Standardshader, der dafür da ist.
+
+
 UPDATE 17.06.2017 (Philipp)
 --------------------------------------------------------------------------------
 Ich habe einige Dinge überarbeitet/implementiert:
