@@ -57,8 +57,8 @@ Philipp:
     ✔ Seitencollider für Rampe hinzufügen, damit Tank nicht abstürzt @done(2017-06-17 22:59) @project(Philipp)
     ✔ Siegbedingungen!!! @done(2017-06-17 21:14) @project(Philipp)
     ☐ Levels entwerfen und mit Basics ausstatten, siehe dazu Readme vom 14.6. (Tutorial)
-        ☐ Editing der Heightmaps mit externem Editor recherchieren
-        ☐
+        ✔ Editing der Heightmaps mit externem Editor recherchieren @done(2017-06-23 16:53) @project(Philipp)
+        ☐ Verschiedene Stile ausarbeiten
     ✔ ActivePointer  @done(2017-06-15 18:05) @project(Philipp)
     ✔ Todo-Auswertungs-Programm auf Hauptrechner laden @done(2017-06-15 22:22) @project(Philipp)
     ✔ Käthe als Collaborator für das Projekt eintragen @done(2017-06-15 22:47) @project(Philipp)
@@ -73,8 +73,10 @@ Philipp:
     ☐ Grid für OverviewModus
     ✔ Wolke-Prefab damit flo am wind spielen kann @done(2017-06-23 11:30) @project(Philipp)
     ✔ flos geupdatete skripte einpflegen und pushen!!!! @done(2017-06-23 11:01) @project(Philipp)
-    ☐ Flos updates auf neues Steuerungsverwaltungskonzept anpassen
-    ☐ Ganz am Ende und zwischendrin Kommentare und Namings überprüfen 
+    ☐ Flos updates auf neues Steuerungsverwaltungskonzept anpassen!!
+    ☐ Player-Switch soll auf Einschlag warten
+        ☐ Cam Auf Einschlag
+    ☐ Ganz am Ende und zwischendrin Kommentare und Namings überprüfen
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
