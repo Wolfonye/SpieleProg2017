@@ -73,7 +73,8 @@ Philipp:
     ☐ Grid für OverviewModus
     ✔ Wolke-Prefab damit flo am wind spielen kann @done(2017-06-23 11:30) @project(Philipp)
     ✔ flos geupdatete skripte einpflegen und pushen!!!! @done(2017-06-23 11:01) @project(Philipp)
-    ☐ Flos updates auf neues Steuerungsverwaltungskonzept anpassen!!
+    ✔ Flos updates auf neues Steuerungsverwaltungskonzept anpassen!! @done(2017-06-24 02:52) @project(Philipp)
+    ✔ Bug in Lane-Wechsel-Eingabe fixen!!!!!! @done(2017-06-24 02:53) @project(Philipp)
     ☐ Player-Switch soll auf Einschlag warten
         ☐ Cam Auf Einschlag
     ☐ Camera Bug beheben Abhängigkeit Zoom und Normal/Overview
