@@ -8,10 +8,11 @@ using UnityEngine;
 //das heißt insbesondere, dass dort wo achsen nützlich sind, wie in der vehicle-bewegung die sachen im input manager bleiben!!!
 public static class InputConfiguration : object {
 	private static string fireKey = "space";
-	private static string laneLeftKey = "q";
-	private static string laneRightKey = "e";
+	private static string leftJumpKey = "q";
+	private static string rightJumpKey = "e";
 	private static string overviewKey = "tab";
 	private static string pauseMenuKey = "escape";
+	public static string spinKey = "r";
 
 	//das sollte später mit der Maus passieren!!!
 	private static string barrelUpKey = "w";
@@ -21,12 +22,12 @@ public static class InputConfiguration : object {
 		return fireKey;
 	}
 
-	public static string getLaneLeftKey(){
-		return laneLeftKey;
+	public static string getLeftJumpKey(){
+		return leftJumpKey;
 	}
 
-	public static string getLaneRightKey(){
-		return laneRightKey;
+	public static string getRightJumpKey(){
+		return rightJumpKey;
 	}
 		
 	public static string getBarrelUpKey(){
@@ -44,4 +45,9 @@ public static class InputConfiguration : object {
 	public static string getPauseMenuKey(){
 		return pauseMenuKey;
 	}
+
+	public static string getSpinKey(){
+		return spinKey;
+	}
+
 }
