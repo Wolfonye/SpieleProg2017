@@ -23,20 +23,20 @@ public class CarMovement : MonoBehaviour
 	private WheelHit hit;
 
 
-    public void FixedUpdate()
+    public void Update()
     {
 		//----Übertrag von Flo für HoldLine-Verbesserung mit Anpassung auf neues Inputmanagement----------------------------
-		if (Input.GetKeyDown("q"))
+		if (Input.GetKeyDown (InputConfiguration.getLeftJumpKey()))
 		{
 			this.transform.parent.GetComponent<HoldLineScript> ().LeftJump ();
 		}
 
-		if (Input.GetKeyDown("e"))
+		if (Input.GetKeyDown (InputConfiguration.getRightJumpKey()))
 		{
 			this.transform.parent.GetComponent<HoldLineScript> ().RightJump ();
 		}
 
-		if (Input.GetKeyDown("r"))
+		if (Input.GetKeyDown (InputConfiguration.getSpinKey()))
 		{
 			this.transform.parent.GetComponent<HoldLineScript> ().Spin ();
 		}
