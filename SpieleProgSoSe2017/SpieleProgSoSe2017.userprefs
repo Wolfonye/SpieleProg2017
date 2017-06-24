@@ -1,13 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Classes\GameControl\ControlCycler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Classes\Vehicles\CarMovement.cs">
     <Files>
       <File FileName="Assets\Scripts\Classes\GameControl\InputConfiguration.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Classes\Vehicles\CarMovement.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Classes\Vehicles\LeftCollTest.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Classes\Vehicles\HoldLineScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Classes\Vehicles\RightCollTest.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Classes\GameControl\ControlCycler.cs" Line="120" Column="1" />
+      <File FileName="Assets\Scripts\Classes\GameControl\ControlCycler.cs" Line="136" Column="5" />
+      <File FileName="Assets\Scripts\Classes\Vehicles\TakeDamage.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

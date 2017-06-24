@@ -121,7 +121,7 @@ public class ControlCycler : MonoBehaviour
 		carMovement = vehicle.GetComponentInChildren<CarMovement> ();
 		carMovement.enabled = false;
 		carMovement.FullBrake ();
-		vehicle.GetComponentInChildren<HoldLineScript> ().enabled = false;
+		//vehicle.GetComponentInChildren<HoldLineScript> ().enabled = false;
 	}
 		
 	/*Auslagerung der Tankaktivierung
@@ -133,7 +133,7 @@ public class ControlCycler : MonoBehaviour
 		tempActivePointer = Instantiate (activePointer, vehicle.transform.position + activePointerOffset, vehicle.transform.rotation * Quaternion.Euler (0, 90, 0)) as GameObject;
 		tempActivePointer.transform.parent = vehicle.transform;
 		vehicle.GetComponentInChildren<CarMovement> ().enabled = true;
-		vehicle.GetComponentInChildren<HoldLineScript> ().enabled = true;
+		//vehicle.GetComponentInChildren<HoldLineScript> ().enabled = true;
 
 		//Camera auf gerade aktiviertem Vehicle zentrieren; praktisch: wir können so die rictige maincamera abgreifen, da wir nur eine haben. das spart unnötige variablen
 		Camera.main.GetComponent<CameraMovement>().centerOnVehicle(vehicle);
