@@ -136,7 +136,7 @@ public class ControlCycler : MonoBehaviour
 		//vehicle.GetComponentInChildren<HoldLineScript> ().enabled = true;
 
 		//Camera auf gerade aktiviertem Vehicle zentrieren; praktisch: wir können so die rictige maincamera abgreifen, da wir nur eine haben. das spart unnötige variablen
-		Camera.main.GetComponent<CameraMovement>().centerOnVehicle(vehicle);
+		Camera.main.GetComponent<CameraMovement>().centerOnGameObject(vehicle);
 
 		//Anzahl gemachter Schüsse zu Begi	nn eines Zuges für ein Vehicle wieder auf 0 setzen
 		vehicle.GetComponentInChildren<ShellSpawn>().resetCurrentNumberOfShots ();
