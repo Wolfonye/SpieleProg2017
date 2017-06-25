@@ -56,6 +56,9 @@
      <Compile Include="Assets\Scripts\Classes\GameControl\RoundTimer.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\TempRoundTimer.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\VictoryDefeatEvaluator.cs" />
+     <Compile Include="Assets\Scripts\Classes\Menus\ExitOnClick.cs" />
+     <Compile Include="Assets\Scripts\Classes\Menus\LoadControlScene.cs" />
+     <Compile Include="Assets\Scripts\Classes\Menus\SelectOnInput.cs" />
      <Compile Include="Assets\Scripts\Classes\Shells\ShellDamage.cs" />
      <Compile Include="Assets\Scripts\Classes\Shells\ShellDestruction.cs" />
      <Compile Include="Assets\Scripts\Classes\Shells\ShellRotation.cs" />
@@ -70,10 +73,24 @@
      <Compile Include="Assets\Scripts\Classes\Vehicles\TakeDamage.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDestructible.cs" />
+     <Compile Include="Assets\UnityEssentials\UISamples\Scripts\ActiveStateToggler.cs" />
+     <Compile Include="Assets\UnityEssentials\UISamples\Scripts\ApplicationManager.cs" />
+     <Compile Include="Assets\UnityEssentials\UISamples\Scripts\ChangeColor.cs" />
+     <Compile Include="Assets\UnityEssentials\UISamples\Scripts\DragMe.cs" />
+     <Compile Include="Assets\UnityEssentials\UISamples\Scripts\DragPanel.cs" />
+     <Compile Include="Assets\UnityEssentials\UISamples\Scripts\DropMe.cs" />
+     <Compile Include="Assets\UnityEssentials\UISamples\Scripts\PanelManager.cs" />
+     <Compile Include="Assets\UnityEssentials\UISamples\Scripts\ResizePanel.cs" />
+     <Compile Include="Assets\UnityEssentials\UISamples\Scripts\ScrollDetailTexture.cs" />
+     <Compile Include="Assets\UnityEssentials\UISamples\Scripts\ShowSliderValue.cs" />
+     <Compile Include="Assets\UnityEssentials\UISamples\Scripts\TiltWindow.cs" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
+     <None Include="Assets\UnityEssentials\UISamples\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
+     <None Include="Assets\UnityEssentials\UISamples\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+     <None Include="Assets\UnityEssentials\UISamples\Materials\UI-Default-No-Alpha.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Programmierung/Unity3D/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
