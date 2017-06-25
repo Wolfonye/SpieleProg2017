@@ -1,15 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Classes\Vehicles\CarMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Classes\GameControl\TempRoundTimer.cs">
     <Files>
-      <File FileName="Assets\Scripts\Classes\GameControl\InputConfiguration.cs" Line="50" Column="14" />
-      <File FileName="Assets\Scripts\Classes\Vehicles\CarMovement.cs" Line="39" Column="51" />
-      <File FileName="Assets\Scripts\Classes\Vehicles\LeftCollTest.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Classes\Vehicles\HoldLineScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Classes\Vehicles\RightCollTest.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Classes\GameControl\ControlCycler.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Classes\Vehicles\TakeDamage.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Classes\GameControl\CameraMovement.cs" Line="95" Column="61" />
+      <File FileName="Assets\Scripts\Classes\GameControl\TempRoundTimer.cs" Line="28" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -12,6 +12,7 @@ public static class InputConfiguration : object {
 	private static string rightJumpKey = "e";
 	private static string overviewKey = "tab";
 	private static string pauseMenuKey = "escape";
+	//DebugOption
 	public static string spinKey = "r";
 
 	//das sollte später mit der Maus passieren!!!
