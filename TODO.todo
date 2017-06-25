@@ -86,15 +86,15 @@ Philipp:
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
     ✔ Atom auf Lappi laden @done(2017-06-15 22:26) @project(Katya)
-    ☐ Tasks-Plugin für Atom ziehen
+    ✔ Tasks-Plugin für Atom ziehen @done(2017-06-25 20:53) @project(Katya)
     ✔ GitKraken auf Lappi laden @done(2017-06-15 22:26) @project(Katya)
     ✔ Erste Einarbeitung in Unity @done(2017-06-15 22:26) @project(Katya)
     ☐ MainMenu
-        ☐ laden von Szenen (Levels)
+        ✔ laden von Szenen (Levels) @done(2017-06-25 20:53) @project(Katya)
         ☐ (Optionen, zurückgestellt)
         ☐ Manual
-        ☐ Beenden
-    ☐ Levelauswahlmenu
+        ✔ Beenden @done(2017-06-25 20:53) @project(Katya)
+    ✔ Levelauswahlmenu @done(2017-06-25 20:53) @project(Katya)
         ☐ Modusauswahl
     ☐ Match finished Screen
     ☐ Pausescreen
