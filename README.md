@@ -1,6 +1,27 @@
 SpieleProgrammierungSoSe2017
 --------------------------------------------------------------------------------
 
+UPDATE 25.06.2017 (Philipp) CycleSystem + Observer fuer ShellDestruction
+--------------------------------------------------------------------------------
+Habe grosse updates am CycleSystem vorgenommen, wozu auch Aenderungen an anderer
+Stelle noetig waren.
+Hauptsaechlich geaendert: TempRoundTimer, ControlCycler
+
+Dazu kommen kleinere Aenderungen an ShellDestruction, die ihr aber zur Kenntnis
+nehmen solltet.
+Da ich registrieren musste, wann es zu einem Einschlag kommt, gibt es jetzt die
+Moeglichkeit sich bei der ShellDestruction als Observer zu registrieren.
+
+Der Observer muss das Interface IDestructionObserver implementieren.
+Die Benachrichtigung findet auf CollisionEnter statt.
+
+Neue Features im CycleSystem:
+* Timer stoppt nach abgegebenem Schuss bis zum Zeitpunkt des Einschlags
+* während die Shell fliegt darf sich der entsprechende Tank noch bewegen
+* trifft die Shell auf, zentriert die Cam auf den Einschlagsort
+* nach dem Einschlag gibt es 2 Sekunden Verzögerung bis der naechste Spieler
+  an der Reihe ist
+
 UPDATE 23.06.2017 (Philipp)
 --------------------------------------------------------------------------------
 Ich habe heute gelernt: nicht jeder Shader kann per se mit Transparenz umgehen.
@@ -8,7 +29,6 @@ Toon-Lit zum Beispiel nicht. Zumindest nicht gut. Man kann immer mal testen
 MipMaps auszuschalten und vor allen Dingen auch Alpha is Transparency
 aktivieren. Mit dem richtigen Shader haut das dann auch hin mit der Transparenz.
 Es gibt sogar nen Standardshader, der dafür da ist.
-
 
 UPDATE 17.06.2017 (Philipp)
 --------------------------------------------------------------------------------
