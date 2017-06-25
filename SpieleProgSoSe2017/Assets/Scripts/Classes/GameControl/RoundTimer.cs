@@ -20,6 +20,15 @@ public class RoundTimer : MonoBehaviour
     private int actualTime;
     private ControlSwitcher controlSwitcher;
 
+
+	void Start()
+	{
+		actualTime = timePerRound;
+		counterCoRoutine = countDownRound();
+		StartCoroutine(counterCoRoutine);
+	}
+
+
     public void setControlSwitcher(ControlSwitcher controller)
     {
         this.controlSwitcher = controller;
@@ -48,11 +57,6 @@ public class RoundTimer : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        actualTime = timePerRound;
-        counterCoRoutine = countDownRound();
-        StartCoroutine(counterCoRoutine);
-    }
+    
 
 }

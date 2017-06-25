@@ -99,9 +99,9 @@ public class CameraMovement : MonoBehaviour {
 	}
 
 	//camera soll auf das mitgegebene vehicle zentriert werden
-	public void centerOnVehicle(GameObject vehicle){
+	public void centerOnGameObject(GameObject objectInCenter){
 		//Zielposition soll die x koordinate des vehicles haben, aber y und z der camera beibehalten
-		Vector3 targetPosition = vehicle.transform.position;
+		Vector3 targetPosition = objectInCenter.transform.position;
 		targetPosition.y = transform.position.y;
 		targetPosition.z = transform.position.z;
 
