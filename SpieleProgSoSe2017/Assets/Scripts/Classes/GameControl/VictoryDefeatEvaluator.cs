@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VictoryDefeatEvaluator : MonoBehaviour {
 
@@ -10,6 +11,8 @@ public class VictoryDefeatEvaluator : MonoBehaviour {
 
 	private bool player0HasActiveVehicles;
 	private bool player1HasActiveVehicles;
+
+	public Canvas endOfRoundScreen;
 
 	//die Refs besorgen wir uns aaaaaus...dem zuständigen ControlCycler für das heweilge Level, 
 	//da der ja verwaltet, wer gerade aktiv ist und daher die Listen mit den Tank-Refs besitzt
@@ -53,23 +56,26 @@ public class VictoryDefeatEvaluator : MonoBehaviour {
 
 
 		//jetzt müssen wir die verschiedenen Kombinationen bewerten
-		if (player0HasActiveVehicles && player1HasActiveVehicles) {
-			Debug.Log ("alles noch offen");
-			return;
-		}
+		//if (player0HasActiveVehicles && player1HasActiveVehicles) {
+			//Debug.Log ("alles noch offen");
+			//return;
+		//}
 
 		if (!player0HasActiveVehicles && !player1HasActiveVehicles) {
-			Debug.Log ("unentschieden");
+			Instantiate (endOfRoundScreen, Vector3.zero, Quaternion.identity).GetComponentInChildren<Text>().text = "Draw!";
+			//Debug.Log ("unentschieden");
 			return;
 		}
 
 		if (!player0HasActiveVehicles) {
-			Debug.Log ("Spieler 2 gewinnt");
+			Instantiate (endOfRoundScreen, Vector3.zero, Quaternion.identity).GetComponentInChildren<Text>().text = "Player 2 wins!";
+			//Debug.Log ("Spieler 2 gewinnt");
 			return;
 		}
 
 		if (!player1HasActiveVehicles) {
-			Debug.Log ("Spieler 1 gewinnt");
+			Instantiate (endOfRoundScreen, Vector3.zero, Quaternion.identity).GetComponentInChildren<Text>().text = "Player 1 wins!";
+			//Debug.Log ("Spieler 1 gewinnt");
 			return;
 		}
 	}
