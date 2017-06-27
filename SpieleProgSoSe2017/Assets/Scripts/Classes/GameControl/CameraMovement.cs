@@ -95,7 +95,6 @@ public class CameraMovement : MonoBehaviour {
 		if (Input.GetKeyDown (InputConfiguration.getOverviewKey())) {
 			toggleOverviewPerspective ();
 		}
-
 	}
 
 	//camera soll auf das mitgegebene vehicle zentriert werden
@@ -137,9 +136,10 @@ public class CameraMovement : MonoBehaviour {
 
 	//sind wir gerade in vogelperspektive oder nicht
 	private bool isInOverviewMode;
-	//speichert auf welcher position/rotation wir vorm toggeln in vogelperspektive waren
+	//speichert auf welcher position/rotation wir vorm toggeln in vogelperspektive waren und wie der ZoomStand war
 	private Quaternion previousRotation;
 	private Vector3 previousPosition;
+	private float previousZoom;
 
 	//gibt an, wo für das jeweilge Level die Mitte der Lanes ist bezogen auf die z achse
 	//damit wir die kamera dorthin schieben koennen.
@@ -164,12 +164,14 @@ public class CameraMovement : MonoBehaviour {
 		if (!isInOverviewMode) {
 			previousPosition = transform.position;
 			previousRotation = transform.rotation;
+			previousZoom = currentZoom;
 			targetPosition = new Vector3 (transform.position.x, overviewHeight, lanesMidPoint);
 			Quaternion targetRotation = new Quaternion();
 			targetRotation = Quaternion.Euler(90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
 			StartCoroutine (moveToPositionWithRot (transform, targetPosition, targetRotation, overviewToggleTime));
 			isInOverviewMode = true;
 		}else {
+			currentZoom = previousZoom;
 			targetPosition = new Vector3 (transform.position.x, previousPosition.y, previousPosition.z);
 			StartCoroutine(moveToPositionWithRot (transform, targetPosition, previousRotation, overviewToggleTime));
 			isInOverviewMode = false;
