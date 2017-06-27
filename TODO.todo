@@ -77,7 +77,8 @@ Philipp:
     ✔ Bug in Lane-Wechsel-Eingabe fixen!!!!!! @done(2017-06-24 02:53) @project(Philipp)
     ✔ Player-Switch soll auf Einschlag warten !!! @done(2017-06-25 15:11) @project(Philipp)
         ✔ Cam Auf Einschlag @done(2017-06-25 15:11) @project(Philipp)
-    ☐ Camera Bug beheben Abhängigkeit Zoom und Normal/Overview !!!
+    ✔ Camera Bug beheben Abhängigkeit Zoom und Normal/Overview !!! @done(2017-06-27 19:39) @project(Philipp)
+    ☐ Camera testen auf Verhalten switch in OverviewModus bei Spielerwechsel
     ☐ Spin aus Hold-Line rausziehen
     ☐ Animation für Lane-Wechsel !
     ✔ Pause und Matchfinished mit Käthe synchronisieren @done(2017-06-27 19:08) @project(Philipp)
