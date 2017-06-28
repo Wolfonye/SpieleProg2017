@@ -1,0 +1,141 @@
+fileFormatVersion: 2
+guid: d645f46a63693e9408b8e35e842d8a2c
+timeCreated: 1498681215
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Base
+    100004: Bone
+    100006: Cube
+    100008: Cube_001
+    100010: Cube_002
+    100012: Cube_003
+    100014: Cube_004
+    100016: Cube_005
+    100018: Cube_006
+    100020: Level1PresentationSmall
+    100022: //RootNode
+    100024: Muzzle
+    100026: TurretBase
+    100028: Wheels
+    400000: Armature
+    400002: Base
+    400004: Bone
+    400006: Cube
+    400008: Cube_001
+    400010: Cube_002
+    400012: Cube_003
+    400014: Cube_004
+    400016: Cube_005
+    400018: Cube_006
+    400020: Level1PresentationSmall
+    400022: //RootNode
+    400024: Muzzle
+    400026: TurretBase
+    400028: Wheels
+    2300000: Base
+    2300002: Cube
+    2300004: Cube_001
+    2300006: Cube_002
+    2300008: Cube_003
+    2300010: Cube_004
+    2300012: Cube_005
+    2300014: Cube_006
+    2300016: TurretBase
+    2300018: Wheels
+    3300000: Base
+    3300002: Cube
+    3300004: Cube_001
+    3300006: Cube_002
+    3300008: Cube_003
+    3300010: Cube_004
+    3300012: Cube_005
+    3300014: Cube_006
+    3300016: TurretBase
+    3300018: Wheels
+    4300000: Muzzle
+    4300002: Cube_006
+    4300004: Cube_005
+    4300006: Cube_004
+    4300008: Cube_003
+    4300010: Cube_002
+    4300012: Cube_001
+    4300014: Cube
+    4300016: Base
+    4300018: TurretBase
+    4300020: Wheels
+    7400000: Default Take
+    9500000: //RootNode
+    13700000: Muzzle
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
