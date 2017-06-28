@@ -12,10 +12,14 @@ Florian:
     ✔ fix der Rotationsprobleme bei turn auf Rampe @done(2017-05-26 12:39) @project(Florian)
     ✔ Abfrage auf Seitenbewegung @done(2017-05-26 12:41) @project(Florian)
     ✔ Trennung HoldLine und Lane-Wechsel (Wichtig) @done(2017-06-23 11:01) @project(Florian)
-    ☐ Wind recherchieren
-    ☐ Sphere Explosion !!!
+    ✔ Wind recherchieren @done(2017-06-28 21:27) @project(Florian)
+    ✔ Sphere Explosion !!! @done(2017-06-28 21:27) @project(Florian)
     ✔ HoldLine fixen für Panzer die auf Lane  1 und 3 nebeneinander stehen und auf 2 wollen !!! @done(2017-06-23 11:01) @project(Florian)
     ✔ HoldLine und damit zusammenhängendes mit Philipps Cycle Arbeit kombinieren und testen!! @done(2017-06-23 11:01) @project(Florian)
+    ☐ Buildmoeglichkeiten eroertern und testen
+    ☐ Wind mit Phil auf Cycler abstimmen
+    ☐ Tests und Skalierung von Explosionswerten
+    ☐ Tests und Skalierung von Windwerten
 
 Philipp:
     ✔ GitHub Account anlegen @done(2017-04-24 20:14) @project(Philipp)
@@ -84,6 +88,7 @@ Philipp:
     ✔ Pause und Matchfinished mit Käthe synchronisieren @done(2017-06-27 19:08) @project(Philipp)
     ☐ Ganz am Ende und zwischendrin Kommentare und Namings überprüfen
     ✔ Camera Bug 2 fixen @done(2017-06-28 21:23) @project(Philipp)
+    ☐ Cycler mit Flo auf sein Windskript abstimmen
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
