@@ -32,4 +32,9 @@ public class PauseGame : MonoBehaviour {
 			thisPauseScreen.gameObject.SetActive (false);
 		} 
 	}
+		
+	public void togglePause(){
+		pause = !pause;
+		Time.timeScale = 1;
+	}
 }
