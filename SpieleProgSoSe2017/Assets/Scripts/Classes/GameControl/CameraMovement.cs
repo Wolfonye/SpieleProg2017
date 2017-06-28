@@ -165,6 +165,7 @@ public class CameraMovement : MonoBehaviour {
 			previousPosition = transform.position;
 			previousRotation = transform.rotation;
 			previousZoom = currentZoom;
+			currentZoom = 0;
 			targetPosition = new Vector3 (transform.position.x, overviewHeight, lanesMidPoint);
 			Quaternion targetRotation = new Quaternion();
 			targetRotation = Quaternion.Euler(90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
