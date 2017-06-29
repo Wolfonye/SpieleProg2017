@@ -17,7 +17,7 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
      */
 	public int timePerRound = 60;
 	public Text timer;
-	public int maxTimeAfterShot;
+	//public int maxTimeAfterShot;
 	private int actualTime;
 	private ControlCycler controlCycler;
 	private CameraMovement cameraMovement;
@@ -82,8 +82,8 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 	void Update(){
 		if(Input.GetKeyDown(fire) && !allShotsFiredForThisRound){
 			allShotsFiredForThisRound = true;
-			actualTime = maxTimeAfterShot;
-			timer.text = "paused";
+			//actualTime = maxTimeAfterShot;
+			timer.text = "shell fired, timer paused";
 		}
 
 		//Zeit abgelaufen: sofortiger switch
