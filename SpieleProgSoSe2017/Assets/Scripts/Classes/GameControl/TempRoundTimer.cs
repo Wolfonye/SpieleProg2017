@@ -83,7 +83,7 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 		if(Input.GetKeyDown(fire) && !allShotsFiredForThisRound){
 			allShotsFiredForThisRound = true;
 			actualTime = maxTimeAfterShot;
-			timer.text = "shell flying";
+			timer.text = "paused";
 		}
 
 		//Zeit abgelaufen: sofortiger switch
