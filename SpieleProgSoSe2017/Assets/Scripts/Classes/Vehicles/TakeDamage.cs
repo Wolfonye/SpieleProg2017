@@ -43,4 +43,15 @@ public class TakeDamage : MonoBehaviour {
 			//Debug.Log("Destroy");
 		}
 	}
+
+
+	//Flos Ergaenzung fuer die ExplosionDamages
+	public void TakeExplosion(int dmg){
+		life = life - dmg;
+		healthBar.value = life;
+		if(life <= 0){
+			gameObject.SetActive(false);
+			victoryDefeatEvaluator.evaluateVictoryDefeat ();
+		}
+	}
 }

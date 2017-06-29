@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\Classes\Menus\SelectOnInputAdvanced.cs" />
      <Compile Include="Assets\Scripts\Classes\Shells\ShellDamage.cs" />
      <Compile Include="Assets\Scripts\Classes\Shells\ShellDestruction.cs" />
+     <Compile Include="Assets\Scripts\Classes\Shells\ShellExplosion.cs" />
      <Compile Include="Assets\Scripts\Classes\Shells\ShellRotation.cs" />
      <Compile Include="Assets\Scripts\Classes\Shells\ShellSpawn.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\BarrelAngle.cs" />
