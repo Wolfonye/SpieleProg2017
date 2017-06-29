@@ -7,6 +7,10 @@ using UnityEngine;
 //pluginnen oder wasweißich. soll ja editierbar sein angeblich...
 public class ControlCycler : MonoBehaviour
 {
+	//debugfunction
+	public void echo(){
+		Debug.Log ("ControlCycler is online");
+	}
 
 	public Camera mainCam;
 
@@ -19,6 +23,8 @@ public class ControlCycler : MonoBehaviour
 	private int numberOfPlayers = 2;
 	public int numberOfVehiclesPerPlayer;
 
+	//Liste der Observer, die ueber das Cycling informiert werden wollen
+	private List<ICycleListener> cycleListeners;
 
 
 	//ich will jeweils auhc anzeigen, was das aktive Vehicle ist; dazu rbauche ich ne Ref auf den ActivePointer um den zu instanzieren
@@ -39,6 +45,12 @@ public class ControlCycler : MonoBehaviour
 		private CarMovement carMovement;
 		private HoldLineScript holdLine;
 
+
+	//wird noch vor start aufgerufen, ich initialisiere da die Liste um ner Nullpointerexception zu entgehen
+	void Awake(){
+		cycleListeners = new List<ICycleListener>();
+	}
+
 	void Start()
 	{
 		currentVehicleIndexOfPlayer = new int[numberOfPlayers];
@@ -55,13 +67,24 @@ public class ControlCycler : MonoBehaviour
 		Debug.Log ("current player is 0");
 	}
 
+	/*
+	 * Jeder der ueber das Cycling informiert werden will, soll sich hier registrieren
+	 */
+	public void registerCycleListener(ICycleListener cycleListener){
+		cycleListeners.Add (cycleListener);
+	}
 
 	/* Hier soll einfach durch die Spieler gecyclet werden
 	 * das koennen irgendwann durchaus mehr als 2 sein wuerde ich mal sagen
 	 */
 	public void cycle(){
 		currentPlayer = (currentPlayer + 1) % numberOfPlayers;
-		Debug.Log ("current player:" + currentPlayer);
+		//Debug.Log ("current player:" + currentPlayer);
+
+		foreach( ICycleListener listener in cycleListeners){
+			listener.playerWasCycled (currentPlayer);
+		}
+
 		if (currentPlayer == 0) {
 			deactivateAllVehicles (player1Vehicles);
 			activateNextVehicleOfPlayer (0, player0Vehicles);

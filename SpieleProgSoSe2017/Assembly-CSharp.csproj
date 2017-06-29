@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\Classes\GameControl\InputConfiguration.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\PauseGame.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\RoundTimer.cs" />
+     <Compile Include="Assets\Scripts\Classes\GameControl\ShowPlayerInHUD.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\TempRoundTimer.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\VictoryDefeatEvaluator.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\ExitOnClick.cs" />
@@ -74,6 +75,7 @@
      <Compile Include="Assets\Scripts\Classes\Vehicles\LeftCollTest.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\RightCollTest.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\TakeDamage.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\ICycleListener.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDestructible.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDestructionObserver.cs" />
