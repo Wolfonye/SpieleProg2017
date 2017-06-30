@@ -2,7 +2,7 @@ Florian:
     ✔ GitHub Account anlegen @done(2017-04-26 18:22) @project(Florian)
     ✔ README.me um Ideen erweitern @done(2017-05-01 08:38) @project(Florian)
     ✔ erste Einarbeitung in Unity @done(2017-05-12 14:48) @project(Florian)
-    ☐ fixen der Rotation
+    ✔ fixen der Rotation @done(2017-06-30 14:11) @project(Florian)
     ✔ Halten auf einer Geraden @done(2017-05-26 08:36) @project(Florian)
     ✔ Tasks-Plugin Atom @done(2017-05-27 09:22) @project(Florian)
     ✔ Atom auf Lappi ziehen @done(2017-05-27 09:22) @project(Florian)
@@ -20,6 +20,7 @@ Florian:
     ☐ Wind mit Phil auf Cycler abstimmen
     ✔ Tests und Skalierung von Explosionswerten @done(2017-06-30 02:08) @project(Florian)
     ☐ Tests und Skalierung von Windwerten
+    ☐ Lane-Wechsel Midair fixen
 
 Philipp:
     ✔ GitHub Account anlegen @done(2017-04-24 20:14) @project(Philipp)
@@ -95,7 +96,7 @@ Philipp:
         ☐ Levels fertigmachen
         ✔ Manual überarbeiten @done(2017-06-30 10:39) @project(Philipp)
         ☐ Installer an Beta-Tester verteilen
-    ☐ Bug bei unentschieden fixen
+    ☐ Bug bei unentschieden fixen !!!
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
