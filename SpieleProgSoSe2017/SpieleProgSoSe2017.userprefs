@@ -1,6 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Classes\Menus\ExitOnClick.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Classes\Vehicles\CarMovement.cs">
     <Files>
       <File FileName="Assets\Scripts\Classes\Vehicles\TakeDamage.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Classes\Shells\ShellExplosion.cs" Line="1" Column="1" />
@@ -8,7 +8,8 @@
       <File FileName="Assets\Scripts\Classes\GameControl\VictoryDefeatEvaluator.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Classes\Shells\ShellDamage.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Classes\GameControl\InputConfiguration.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Classes\Menus\ExitOnClick.cs" Line="11" Column="1" />
+      <File FileName="Assets\Scripts\Classes\Menus\ExitOnClick.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Classes\Vehicles\CarMovement.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
