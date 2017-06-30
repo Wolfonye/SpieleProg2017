@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VictoryDefeatEvaluator : MonoBehaviour {
+public class VictoryDefeatEvaluator : MonoBehaviour, ICycleListener {
 
 	//Refs auf die Listen der Spieler, damit ein check-up durchgeführt werden kann
 	private List<GameObject> player0Vehicles;
@@ -30,6 +30,13 @@ public class VictoryDefeatEvaluator : MonoBehaviour {
 
 		player0HasActiveVehicles = true;
 		player1HasActiveVehicles = true;
+
+		//Registrierung bei ControlCycler um nach jeder Runde zu testen, ob jemand gewonnen hat
+		GameObject.FindGameObjectWithTag("Gamemaster2000").GetComponent<ControlCycler>().registerCycleListener(this);
+	}
+
+	public void playerWasCycled (int currentPlayer){
+		evaluateVictoryDefeat ();
 	}
 
 	public void evaluateVictoryDefeat(){
@@ -63,18 +70,21 @@ public class VictoryDefeatEvaluator : MonoBehaviour {
 
 		if (!player0HasActiveVehicles && !player1HasActiveVehicles) {
 			Instantiate (endOfRoundScreen, Vector3.zero, Quaternion.identity).GetComponentInChildren<Text>().text = "Draw!";
+			GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponent<PauseGame> ().togglePause ();
 			//Debug.Log ("unentschieden");
 			return;
 		}
 
 		if (!player0HasActiveVehicles) {
 			Instantiate (endOfRoundScreen, Vector3.zero, Quaternion.identity).GetComponentInChildren<Text>().text = "Player 2 wins!";
+			GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponent<PauseGame> ().togglePause ();
 			//Debug.Log ("Spieler 2 gewinnt");
 			return;
 		}
 
 		if (!player1HasActiveVehicles) {
 			Instantiate (endOfRoundScreen, Vector3.zero, Quaternion.identity).GetComponentInChildren<Text>().text = "Player 1 wins!";
+			GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponent<PauseGame> ().togglePause ();
 			//Debug.Log ("Spieler 1 gewinnt");
 			return;
 		}
