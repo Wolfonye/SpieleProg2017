@@ -61,9 +61,9 @@ Philipp:
     ✔ Life/Fuel-Bars @done(2017-06-14 20:32) @project(Philipp)
     ✔ Seitencollider für Rampe hinzufügen, damit Tank nicht abstürzt @done(2017-06-17 22:59) @project(Philipp)
     ✔ Siegbedingungen!!! @done(2017-06-17 21:14) @project(Philipp)
-    ☐ Levels entwerfen und mit Basics ausstatten, siehe dazu Readme vom 14.6. (Tutorial)
+    ✔ Levels entwerfen und mit Basics ausstatten, siehe dazu Readme vom 14.6. (Tutorial) @done(2017-06-30 15:54) @project(Philipp)
         ✔ Editing der Heightmaps mit externem Editor recherchieren @done(2017-06-23 16:53) @project(Philipp)
-        ☐ Verschiedene Stile ausarbeiten
+        ✔ Verschiedene Stile ausarbeiten @done(2017-06-30 15:54) @project(Philipp)
     ✔ ActivePointer  @done(2017-06-15 18:05) @project(Philipp)
     ✔ Todo-Auswertungs-Programm auf Hauptrechner laden @done(2017-06-15 22:22) @project(Philipp)
     ✔ Käthe als Collaborator für das Projekt eintragen @done(2017-06-15 22:47) @project(Philipp)
@@ -91,12 +91,12 @@ Philipp:
     ✔ Camera Bug 2 fixen @done(2017-06-28 21:23) @project(Philipp)
     ☐ Cycler mit Flo auf sein Windskript abstimmen
     ✔ Flos Area of Effect Skripts einpflegen @done(2017-06-30 02:08) @project(Philipp)
-    ☐ TimeStop bei Match-Ende einfügen !!!
+    ✔ TimeStop bei Match-Ende einfügen !!! @done(2017-06-30 15:51) @project(Philipp)
     ☐ Präsi vorbereiten
-        ☐ Levels fertigmachen
+        ✔ Levels fertigmachen @done(2017-06-30 15:51) @project(Philipp)
         ✔ Manual überarbeiten @done(2017-06-30 10:39) @project(Philipp)
         ☐ Installer an Beta-Tester verteilen
-    ☐ Bug bei unentschieden fixen !!!
+    ✔ Bug bei unentschieden fixen !!! @done(2017-06-30 15:51) @project(Philipp)
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
