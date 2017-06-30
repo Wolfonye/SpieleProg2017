@@ -23,11 +23,6 @@ public class TakeDamage : MonoBehaviour {
 		healthBar.maxValue = life;
 		healthBar.value = life;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	void OnCollisionEnter (Collision col){
 		if(col.gameObject.tag == "Shell"){
@@ -38,8 +33,8 @@ public class TakeDamage : MonoBehaviour {
 		}
 		if(life <= 0){
 			gameObject.SetActive(false);
-			//wenn ein Tank zerstört wurde, so machen wir einen Check, ob einer der Spieler gewonnen hat
-			victoryDefeatEvaluator.evaluateVictoryDefeat ();
+			//wenn ein Tank zerstört wurde, so machen wir einen Check, ob einer der Spieler gewonnen hat (Legacy: wird jetzt immer am Rundenede gecheckt um keine inkonsistenten Zustaende zu generieren)
+			//victoryDefeatEvaluator.evaluateVictoryDefeat ();
 			//Debug.Log("Destroy");
 		}
 	}
@@ -51,7 +46,7 @@ public class TakeDamage : MonoBehaviour {
 		healthBar.value = life;
 		if(life <= 0){
 			gameObject.SetActive(false);
-			victoryDefeatEvaluator.evaluateVictoryDefeat ();
+			//victoryDefeatEvaluator.evaluateVictoryDefeat ();
 		}
 	}
 }
