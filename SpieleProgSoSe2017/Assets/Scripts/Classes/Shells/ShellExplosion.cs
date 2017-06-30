@@ -17,16 +17,18 @@ public class ShellExplosion : MonoBehaviour {
 		int i = 0;
 		int dmg = 20;
 		for(int j = 0; j < 5; j++){
+			Debug.Log (j);
 			radius = radius + start;	
 			hitColliders = Physics.OverlapSphere(center, radius);
 			while (i < hitColliders.Length)
 			{
-				Debug.Log (hitColliders [i].gameObject.transform.root.tag);
-				if (hitColliders[i].gameObject.transform.root.tag == "Tank"){
-					hitColliders [i].gameObject.transform.root.GetComponent<TakeDamage> ().TakeExplosion (dmg);
+				//Debug.Log (hitColliders [i].tag);
+				if (hitColliders[i].tag == "Base"){
+					hitColliders [i].GetComponent<TakeExplosion> ().TakeExplDmg (dmg);
 				}
 				i++;
 			}
+			i = 0;
 		}
 	}
 }
