@@ -25,22 +25,7 @@ public class CarMovement : MonoBehaviour
 
     public void Update()
     {
-		//----Übertrag von Flo für HoldLine-Verbesserung mit Anpassung auf neues Inputmanagement----------------------------
-		if (Input.GetKeyDown (InputConfiguration.getLeftJumpKey()))
-		{
-			this.transform.parent.GetComponent<HoldLineScript> ().LeftJump ();
-		}
-
-		if (Input.GetKeyDown (InputConfiguration.getRightJumpKey()))
-		{
-			this.transform.parent.GetComponent<HoldLineScript> ().RightJump ();
-		}
-
-		if (Input.GetKeyDown (InputConfiguration.getSpinKey()))
-		{
-			this.transform.parent.GetComponent<HoldLineScript> ().Spin ();
-		}
-		//-----------------------------------------------------------------------------------------------------------------
+		
 
 
 		speed = vehicleRigBody.velocity.magnitude * 3.6f;
@@ -76,6 +61,23 @@ public class CarMovement : MonoBehaviour
 				holdLine.Spin();
 			}
 		}
+
+		//----Übertrag von Flo für HoldLine-Verbesserung mit Anpassung auf neues Inputmanagement----------------------------
+		if (Input.GetKeyDown (InputConfiguration.getLeftJumpKey()) && isGrounded)
+		{
+			this.transform.parent.GetComponent<HoldLineScript> ().LeftJump ();
+		}
+
+		if (Input.GetKeyDown (InputConfiguration.getRightJumpKey()) && isGrounded)
+		{
+			this.transform.parent.GetComponent<HoldLineScript> ().RightJump ();
+		}
+
+		if (Input.GetKeyDown (InputConfiguration.getSpinKey()) && isGrounded)
+		{
+			this.transform.parent.GetComponent<HoldLineScript> ().Spin ();
+		}
+		//-----------------------------------------------------------------------------------------------------------------
 
 		if (isGrounded && brakeOn)
 		{
