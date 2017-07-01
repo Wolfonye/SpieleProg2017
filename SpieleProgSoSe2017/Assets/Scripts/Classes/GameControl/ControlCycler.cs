@@ -26,6 +26,9 @@ public class ControlCycler : MonoBehaviour
 	//Liste der Observer, die ueber das Cycling informiert werden wollen
 	private List<ICycleListener> cycleListeners;
 
+	//das zur Zeit aktive Fahrzeug
+	private GameObject activeVehicle;
+
 
 	//ich will jeweils auhc anzeigen, was das aktive Vehicle ist; dazu rbauche ich ne Ref auf den ActivePointer um den zu instanzieren
 	public GameObject activePointer;
@@ -49,6 +52,7 @@ public class ControlCycler : MonoBehaviour
 	//wird noch vor start aufgerufen, ich initialisiere da die Liste um ner Nullpointerexception zu entgehen
 	void Awake(){
 		cycleListeners = new List<ICycleListener>();
+		activeVehicle = player0Vehicles [0];
 	}
 
 	void Start()
@@ -67,6 +71,11 @@ public class ControlCycler : MonoBehaviour
 		Debug.Log ("current player is 0");
 	}
 
+
+	//selbsterklärend
+	public GameObject getActiveVehicle(){
+		return activeVehicle;
+	}
 	/*
 	 * Jeder der ueber das Cycling informiert werden will, soll sich hier registrieren
 	 */
@@ -80,10 +89,8 @@ public class ControlCycler : MonoBehaviour
 	public void cycle(){
 		currentPlayer = (currentPlayer + 1) % numberOfPlayers;
 		//Debug.Log ("current player:" + currentPlayer);
+		//Debug.Log("listener count: " + cycleListeners.Count);
 
-		foreach( ICycleListener listener in cycleListeners){
-			listener.playerWasCycled (currentPlayer);
-		}
 
 		if (currentPlayer == 0) {
 			deactivateAllVehiclesInList (player1Vehicles);
@@ -94,6 +101,10 @@ public class ControlCycler : MonoBehaviour
 			deactivateAllVehiclesInList (player0Vehicles);
 			//Debug.Log ("vehicles deactivated");
 			activateNextVehicleOfPlayer (1, player1Vehicles);
+		}
+
+		foreach( ICycleListener listener in cycleListeners){
+			listener.playerWasCycled (currentPlayer);
 		}
 	}
 
@@ -162,6 +173,8 @@ public class ControlCycler : MonoBehaviour
 	 * CHECK
 	 */
 	private void activateVehicle(GameObject vehicle){
+		activeVehicle = vehicle;
+		Debug.Log("active Vehicle: " + activeVehicle);
 		vehicle.transform.GetChild (0).gameObject.SetActive (true);
 		//Multiplikation mit Quaternion um 90 Grad draufzuaddieren, damit die Ausrichtung stimmt bzgl unserer Ebenenkonvention
 		tempActivePointer = Instantiate (activePointer, vehicle.transform.position + activePointerOffset, vehicle.transform.rotation * Quaternion.Euler (0, 90, 0)) as GameObject;

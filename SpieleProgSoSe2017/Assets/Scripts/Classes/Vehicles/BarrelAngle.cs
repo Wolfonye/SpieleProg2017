@@ -19,8 +19,10 @@ public class BarrelAngle : MonoBehaviour
     public GameObject origin;
 
 	//wird aus InputConfiguration beim Start einmal vorgeladen um unnötige Kontextwechsel zur Laufzeit zur vermeiden
-	string barrelUp;
-	string barrelDown;
+	private string barrelUp;
+	private string barrelDown;
+
+	private float barrelAngle;
 
     //Basis-Rotation für die Rotationsberechnung des bones in jedem Frame; außerhalb deklariert um unnötige Objekterzeugung zu vermeiden
     //die wird zunächst in jedem update mit dem aktuellen Rotations-Stand des bones "gefüttert"
@@ -34,7 +36,8 @@ public class BarrelAngle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+		barrelAngle = Vector3.Angle (barrel.transform.up, origin.transform.forward);
+		 
         //das hier ist jetzt die verbesserte Variante, bei der das relative Koordinatensystem des bones genauso bleibt wies soll und zwei achsen jeweils gelocked sind
         //die Erweiterung um origin hat gut funktioniert
         //netterweise ist der * Operator in Unity für Quaternionen so überladen, dass wir das linke Argument um das rechte rotieren 
@@ -42,7 +45,7 @@ public class BarrelAngle : MonoBehaviour
         originalRot = barrel.transform.rotation;
 		if (Input.GetKey(barrelDown))
         {
-			if (Vector3.Angle(barrel.transform.up, origin.transform.forward) > minAnglePositive)
+			if (barrelAngle > minAnglePositive)
             {
                 barrel.transform.rotation = originalRot * Quaternion.AngleAxis(barrelLiftSpeed * Time.deltaTime, Vector3.left);
             }
@@ -50,11 +53,15 @@ public class BarrelAngle : MonoBehaviour
 
 		if (Input.GetKey(barrelUp))
         {
-			if (Vector3.Angle(barrel.transform.up, origin.transform.forward) < maxAnglePosositive)
+			if (barrelAngle < maxAnglePosositive)
             {
                 barrel.transform.rotation = originalRot * Quaternion.AngleAxis(-barrelLiftSpeed * Time.deltaTime, Vector3.left);
             }
         }
 
     }
+
+	public float getBarrelAngle(){
+		return barrelAngle;
+	}
 }
