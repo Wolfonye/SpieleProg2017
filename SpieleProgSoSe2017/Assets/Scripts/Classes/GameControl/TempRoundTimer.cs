@@ -88,12 +88,10 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 			timer.text = "shell fired, timer paused";
 		}
 
-		//Zeit abgelaufen: sofortiger switch
+		//Zeit abgelaufen: switch nach rundencooldown
 		if (actualTime == -1)
 		{
-			actualTime = timePerRound;
-			controlCycler.cycle();
-			allShotsFiredForThisRound = false;
+			StartCoroutine(endRoundAfterSeconds (switchTime));
 		}
 
 		//zeit noch nicht abgelaufen, aber shell geschossen
@@ -128,6 +126,13 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 		paused = false;
 	}
 
+	// ich benutze die endRoundAfterImpact... obwohl kein impact da war, aber darauf laesst sich einfach aufbauen
+	private IEnumerator endRoundAfterSeconds(int seconds){
+		actualTime = timePerRound;
+		allShotsFiredForThisRound = true;
+		paused = true;
+		yield return endRoundAfterImpactAndSeconds (seconds);
+	}
 	public void destructionObserved(GameObject destructedObject){
 		destructedLast = true;
 		cameraMovement.centerOnGameObject (destructedObject);
