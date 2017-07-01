@@ -10,6 +10,8 @@ public static class InputConfiguration : object {
 	private static string fireKey = "space";
 	private static string leftJumpKey = "q";
 	private static string rightJumpKey = "e";
+	private static string leftJumpKeyAlt = "left";
+	private static string rightJumpKeyAlt = "right";
 	private static string overviewKey = "tab";
 	private static string pauseMenuKey = "escape";
 	//DebugOption
@@ -29,6 +31,14 @@ public static class InputConfiguration : object {
 
 	public static string getRightJumpKey(){
 		return rightJumpKey;
+	}
+
+	public static string getLeftJumpKeyAlt(){
+		return leftJumpKeyAlt;
+	}
+
+	public static string getRightJumpKeyAlt(){
+		return rightJumpKeyAlt;
 	}
 		
 	public static string getBarrelUpKey(){

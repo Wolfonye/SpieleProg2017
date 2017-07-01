@@ -7,9 +7,9 @@
       <File FileName="Assets\Scripts\Classes\GameControl\TempRoundTimer.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Classes\GameControl\VictoryDefeatEvaluator.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Classes\Shells\ShellDamage.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Classes\GameControl\InputConfiguration.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Classes\GameControl\InputConfiguration.cs" Line="41" Column="25" />
       <File FileName="Assets\Scripts\Classes\Menus\ExitOnClick.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Classes\Vehicles\CarMovement.cs" Line="76" Column="71" />
+      <File FileName="Assets\Scripts\Classes\Vehicles\CarMovement.cs" Line="71" Column="122" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

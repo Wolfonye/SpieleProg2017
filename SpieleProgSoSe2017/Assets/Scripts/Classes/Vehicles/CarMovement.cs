@@ -63,12 +63,12 @@ public class CarMovement : MonoBehaviour
 		}
 
 		//----Übertrag von Flo für HoldLine-Verbesserung mit Anpassung auf neues Inputmanagement----------------------------
-		if (Input.GetKeyDown (InputConfiguration.getLeftJumpKey()) && isGrounded)
+		if ((Input.GetKeyDown (InputConfiguration.getLeftJumpKey())||Input.GetKeyDown (InputConfiguration.getLeftJumpKeyAlt())) && isGrounded)
 		{
 			this.transform.parent.GetComponent<HoldLineScript> ().LeftJump ();
 		}
 
-		if (Input.GetKeyDown (InputConfiguration.getRightJumpKey()) && isGrounded)
+		if ((Input.GetKeyDown (InputConfiguration.getRightJumpKey()) || Input.GetKeyDown (InputConfiguration.getRightJumpKeyAlt())) && isGrounded)
 		{
 			this.transform.parent.GetComponent<HoldLineScript> ().RightJump ();
 		}
