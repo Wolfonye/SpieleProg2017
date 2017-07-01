@@ -42,8 +42,12 @@ public class CameraMovement : MonoBehaviour {
 	//kleiner helfer, damit weniger oft initialisiert werden muss
 	private Vector3 tempPosition;
 
+	//wird die Kamera uf den Tank zentriet oder nicht?
+	bool centeringModeOn;
+
 	// Use this for initialization
 	void Start () {
+		centeringModeOn = false;
 		currentZoom = 0;
 		Cursor.visible = true;
 		isInOverviewMode = false;
@@ -57,21 +61,20 @@ public class CameraMovement : MonoBehaviour {
 		//Bissl lästig: in C# darf ich nicht bei nem transform einfach einen einzigen wert wie zb transform.position.x direkt ändern,
 		//daher kommt dieses erstmal etwas seltsam anmutende Skript hier
 		//tempPosition wird oben deklariert, damit ich nicht dauernd neue Objekte erzuegen muss
-		//was hier noch fehlt ist die Beschränkung nach links und rechts irgendwann
-		//falls alle level gleich groß sind ist es easy, da dann lediglich eine beschränkung in x Richtung abgefragt werden muss
-		//für den dynamischen Fall müssten wir uns noch was überlegen
 		tempPosition = transform.position;
-		//nach rechts fahren
-		if ((Input.mousePosition.x > screenWidth - activateScrollOffset) && (tempPosition.x > rightBoundary)) {
-			tempPosition.x = tempPosition.x - scrollSpeed * Time.deltaTime;
-			transform.position = tempPosition;
-		}
+		if (!centeringModeOn) {
+			//nach rechts fahren
+			if ((Input.mousePosition.x > screenWidth - activateScrollOffset) && (tempPosition.x > rightBoundary)) {
+				tempPosition.x = tempPosition.x - scrollSpeed * Time.deltaTime;
+				transform.position = tempPosition;
+			}
 
-		//nach links fahren
-		if ((Input.mousePosition.x < activateScrollOffset) && (tempPosition.x < leftBoundary)) {
-			tempPosition.x = tempPosition.x + scrollSpeed * Time.deltaTime;
-			transform.position = tempPosition;
-			//Debug.Log ("amRand");
+			//nach links fahren
+			if ((Input.mousePosition.x < activateScrollOffset) && (tempPosition.x < leftBoundary)) {
+				tempPosition.x = tempPosition.x + scrollSpeed * Time.deltaTime;
+				transform.position = tempPosition;
+				//Debug.Log ("amRand");
+			}
 		}
 
 		//suuuuuuu, zoomen sollte man ja auch können; das versuche ich im Folgenden
@@ -92,9 +95,22 @@ public class CameraMovement : MonoBehaviour {
 		}
 
 		//hier passiert das wechseln in die vogelperspektive
-		if (Input.GetKeyDown (InputConfiguration.getOverviewKey())) {
+		if (Input.GetKeyDown (InputConfiguration.getOverviewKey()) && !centeringModeOn) {
 			toggleOverviewPerspective ();
 		}
+
+		//wechsel zum CVentermode
+		if (Input.GetKeyDown (InputConfiguration.getCenteringModeKey())){
+			toggleCenteringMode();
+		}
+	}
+
+	public bool isInCenteringMode(){
+		return centeringModeOn;
+	}
+
+	private void toggleCenteringMode(){
+		centeringModeOn = !centeringModeOn;
 	}
 
 	//camera soll auf das mitgegebene vehicle zentriert werden
@@ -109,26 +125,33 @@ public class CameraMovement : MonoBehaviour {
 
 	}
 
+	bool automatedMovementRunning;
+
 	private IEnumerator moveToPosition(Transform objectToMove, Vector3 targetPosition, float timeToMove)
 	{
 		Vector3 currentPosition = objectToMove.position;
 		float normedElapsedTime = 0f;
-		while(normedElapsedTime < 1)
-		{
-			//wir schauen, wie viel zeit vergangen ist, allerdings normiert.
-			//die Teilung der verstrichenen Zeit durch timeToMove bewirkt eine Normierung
-			//joa...warum machen wir dat?->wegen der Funktionsweise von Lerp. Das ist ne lineare
-			//Interpolation, die den wert im dritten argument nach [0,1]clampt und anhand dessen
-			//berechnet, welchen wert zwischen A und B es ausgibt. wenn wirs nicht sleber normieren könnte es blödsinn machen.
-			//damit ich mir später noch denken kann, dass das mathestudium zu irgendwas nutze war
-			//sage ich mir selbst hier, dass ich davon ausgehe, dass das was im stil der beschreibung
-			//der konvexen hülle zweier punkte ist, also sowas im stil: a*r + b*(1-r) mit 0<r<1
-			normedElapsedTime = normedElapsedTime + Time.deltaTime / timeToMove;
-			objectToMove.position = Vector3.Lerp(currentPosition, targetPosition, normedElapsedTime);
+		if (!automatedMovementRunning) {
+			automatedMovementRunning = true;
+			while (normedElapsedTime < 1) {
+				//wir schauen, wie viel zeit vergangen ist, allerdings normiert.
+				//die Teilung der verstrichenen Zeit durch timeToMove bewirkt eine Normierung
+				//joa...warum machen wir dat?->wegen der Funktionsweise von Lerp. Das ist ne lineare
+				//Interpolation, die den wert im dritten argument nach [0,1]clampt und anhand dessen
+				//berechnet, welchen wert zwischen A und B es ausgibt. wenn wirs nicht sleber normieren könnte es blödsinn machen.
+				//damit ich mir später noch denken kann, dass das mathestudium zu irgendwas nutze war
+				//sage ich mir selbst hier, dass ich davon ausgehe, dass das was im stil der beschreibung
+				//der konvexen hülle zweier punkte ist, also sowas im stil: a*r + b*(1-r) mit 0<r<1
+				normedElapsedTime = normedElapsedTime + Time.deltaTime / timeToMove;
+				objectToMove.position = Vector3.Lerp (currentPosition, targetPosition, normedElapsedTime);
 
-			//insgesamt ein nettes Beispiel, wie man couroutienne einsetzen kann, wir steigen hier am ende der schleife nochmal
-			//ein beim folgenden frame, sodass wir die solange durchlaufen, bis wir unsere normierte elapsed time "voll" haben..
-			//nette dinger die coroutinen..
+				//insgesamt ein nettes Beispiel, wie man couroutienne einsetzen kann, wir steigen hier am ende der schleife nochmal
+				//ein beim folgenden frame, sodass wir die solange durchlaufen, bis wir unsere normierte elapsed time "voll" haben..
+				//nette dinger die coroutinen..
+				yield return null;
+			}
+			automatedMovementRunning = false;
+		} else {
 			yield return null;
 		}
 	}
@@ -184,13 +207,21 @@ public class CameraMovement : MonoBehaviour {
 		Vector3 currentPosition = objectToMove.position;
 		Quaternion currentRotation = objectToMove.rotation;
 		float normedElapsedTime = 0f;
-		while (normedElapsedTime < 1) {
-			normedElapsedTime = normedElapsedTime + Time.deltaTime / timeToMove;
-			objectToMove.position = Vector3.Lerp(currentPosition, targetPosition, normedElapsedTime);
-			objectToMove.rotation = Quaternion.Lerp (currentRotation, targetRotation, normedElapsedTime);
 
+		if (!automatedMovementRunning) {
+			automatedMovementRunning = true;
+			while (normedElapsedTime < 1) {
+				normedElapsedTime = normedElapsedTime + Time.deltaTime / timeToMove;
+				objectToMove.position = Vector3.Lerp(currentPosition, targetPosition, normedElapsedTime);
+				objectToMove.rotation = Quaternion.Lerp (currentRotation, targetRotation, normedElapsedTime);
+
+				yield return null;
+			}
+			automatedMovementRunning = false;
+		} else {
 			yield return null;
 		}
+
 	}
 
 
