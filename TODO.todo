@@ -70,7 +70,7 @@ Philipp:
     ✔ Steuerungszentralisierung für Elemente ausserhalb InputManager zur Vermeidung von Kontextwechseln @done(2017-06-17 18:35) @project(Philipp)
     ✔ ungewollte vorzeitige Explosion der Shells fixen @done(2017-06-17 18:45) @project(Philipp)
     ✔ ein Schuss pro Runde implementieren @done(2017-06-17 18:46) @project(Philipp)
-    ☐ Camerawinkel soll abhängig von Zoom-Level sein
+    ☐ Camerawinkel soll abhängig von Zoom-Level sein (zurückgestellt)
     ✔ camera zentriert auf aktiv werdendes vehikel @done(2017-06-17 22:59) @project(Philipp)
     ✔ SmoothCameraScroll für Centering beim Aktivieren eines vehicles @done(2017-06-18 17:11) @project(Philipp)
     ✔ OverviewModus für Camera  @done(2017-06-18 17:11) @project(Philipp)
@@ -95,10 +95,13 @@ Philipp:
     ☐ Präsi vorbereiten
         ✔ Levels fertigmachen @done(2017-06-30 15:51) @project(Philipp)
         ✔ Manual überarbeiten @done(2017-06-30 10:39) @project(Philipp)
-        ☐ Installer an Beta-Tester verteilen
+        ✔ Installer an Beta-Tester verteilen @done(2017-07-01 15:11) @project(Philipp)
     ✔ Bug bei unentschieden fixen !!! @done(2017-06-30 15:51) @project(Philipp)
-    ☐ cam soll auf tank zentriert werden können und folgen können
+    ✔ cam soll auf tank zentriert werden können und folgen können @done(2017-07-01 15:08) @project(Philipp)
     ☐ cooldown zwischen runden, weil sonst zu hektisch
+    ☐ es ist noch unschoen, dass man nicht den overviewmodus wechseln kann, wenn man im centering mode ist-> fixen
+    ☐ trennung von centering mode für einzelne spieler????
+    ☐ es ist unschön, dass ein spieler das switchen der cam auf den anderen verhindern kann, wenn er kurz vorher overview toggelt-> fixen
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
