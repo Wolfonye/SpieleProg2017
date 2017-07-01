@@ -106,7 +106,7 @@ Philipp:
     ✔ topple detect @done(2017-07-01 19:05) @project(Philipp)
     ☐ auslagern von "next player in: " auf eigenes canvas, da man das auch in anderen modi brauchen wird (wo das topple detect auch ist)
     ☐ Button für vorzeitiges Rundenende einbauen
-    ☐ Winkelanzeige einbauen
+    ✔ Winkelanzeige einbauen @done(2017-07-01 21:18) @project(Philipp)
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
