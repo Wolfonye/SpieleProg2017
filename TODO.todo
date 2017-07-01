@@ -101,9 +101,12 @@ Philipp:
     ✔ cooldown zwischen runden, weil sonst zu hektisch @done(2017-07-01 16:51) @project(Philipp)
     ☐ es ist noch unschoen, dass man nicht den overviewmodus wechseln kann, wenn man im centering mode ist-> fixen
     ☐ trennung von centering mode für einzelne spieler????
+    ☐ cam auf bullet???
     ☐ es ist unschön, dass ein spieler das switchen der cam auf den anderen verhindern kann, wenn er kurz vorher overview toggelt-> fixen
-    ☐ topple detect
+    ✔ topple detect @done(2017-07-01 19:05) @project(Philipp)
     ☐ auslagern von "next player in: " auf eigenes canvas, da man das auch in anderen modi brauchen wird (wo das topple detect auch ist)
+    ☐ Button für vorzeitiges Rundenende einbauen
+    ☐ Winkelanzeige einbauen
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
