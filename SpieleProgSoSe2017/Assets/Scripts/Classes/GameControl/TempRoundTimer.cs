@@ -118,7 +118,7 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 		allShotsFiredForThisRound = false;
 		controlCycler.deactivateAllVehicles ();
 		while (elapsedTime < seconds) {
-			switchTimer.text = "Next Player in: " + (seconds - elapsedTime);
+			switchTimer.text = "Round Cooldown: " + (seconds - elapsedTime);
 			elapsedTime++;
 			Debug.Log ("sekunde vorbei");
 			yield return new WaitForSeconds (1);
