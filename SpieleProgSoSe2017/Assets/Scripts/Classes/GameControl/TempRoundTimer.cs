@@ -17,6 +17,8 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
      */
 	public int timePerRound = 60;
 	public Text timer;
+	public Text switchTimer;
+	public int switchTime = 5;
 	//public int maxTimeAfterShot;
 	private int actualTime;
 	private ControlCycler controlCycler;
@@ -101,7 +103,7 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 
 		//shell ist eingeschlagen
 		if (destructedLast) {
-			StartCoroutine(endRoundAfterImpactAndSeconds (2));
+			StartCoroutine(endRoundAfterImpactAndSeconds (switchTime));
 		}
 	}
 
@@ -110,10 +112,18 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 
 	//soll nachdem der Impakt da war seconds warten und dann den cycle einleiten
 	private IEnumerator endRoundAfterImpactAndSeconds(int seconds){
+		int elapsedTime = 0;
 		actualTime = timePerRound;
 		destructedLast = false;
 		allShotsFiredForThisRound = false;
-		yield return new WaitForSeconds (seconds);
+		controlCycler.deactivateAllVehicles ();
+		while (elapsedTime < seconds) {
+			switchTimer.text = "Next Player in: " + (seconds - elapsedTime);
+			elapsedTime++;
+			Debug.Log ("sekunde vorbei");
+			yield return new WaitForSeconds (1);
+		}
+		switchTimer.text = "";
 		controlCycler.cycle ();
 		paused = false;
 	}

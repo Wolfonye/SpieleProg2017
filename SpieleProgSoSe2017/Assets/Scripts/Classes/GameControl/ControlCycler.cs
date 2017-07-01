@@ -61,8 +61,8 @@ public class ControlCycler : MonoBehaviour
 
 		currentPlayer = 0;
 		roundTimer.setControlSwitcher(this);
-		deactivateAllVehicles (player0Vehicles);
-		deactivateAllVehicles (player1Vehicles);
+		deactivateAllVehiclesInList (player0Vehicles);
+		deactivateAllVehiclesInList (player1Vehicles);
 		activateNextVehicleOfPlayer (0, player0Vehicles);
 		Debug.Log ("current player is 0");
 	}
@@ -86,12 +86,12 @@ public class ControlCycler : MonoBehaviour
 		}
 
 		if (currentPlayer == 0) {
-			deactivateAllVehicles (player1Vehicles);
+			deactivateAllVehiclesInList (player1Vehicles);
 			activateNextVehicleOfPlayer (0, player0Vehicles);
 		} else {
 
 			//Debug.Log ("current player = 1 is true");
-			deactivateAllVehicles (player0Vehicles);
+			deactivateAllVehiclesInList (player0Vehicles);
 			//Debug.Log ("vehicles deactivated");
 			activateNextVehicleOfPlayer (1, player1Vehicles);
 		}
@@ -129,9 +129,20 @@ public class ControlCycler : MonoBehaviour
 	/* Auslagerung der Playerdeaktivierung
 	 * CHECK
 	 */
-	private void deactivateAllVehicles(List<GameObject> vehicles){
+	private void deactivateAllVehiclesInList(List<GameObject> vehicles){
 		for (int i = 0; i < vehicles.Count; i++) {
 			deactivateVehicle (vehicles [i]);
+		}
+		Destroy(tempActivePointer);
+	}
+
+	//also wiiirklich alle :D
+	public void deactivateAllVehicles(){
+		for (int i = 0; i < player0Vehicles.Count; i++) {
+			deactivateVehicle (player0Vehicles [i]);
+		}
+		for (int i = 0; i < player1Vehicles.Count; i++) {
+			deactivateVehicle (player1Vehicles [i]);
 		}
 		Destroy(tempActivePointer);
 	}
