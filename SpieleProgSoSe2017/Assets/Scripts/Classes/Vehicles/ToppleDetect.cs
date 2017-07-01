@@ -13,15 +13,17 @@ public class ToppleDetect : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Vector3.Dot (transform.up, Vector3.down) > 0) {
-			StartCoroutine (showToppleMessage);
+		if (Vector3.Dot (transform.up, Vector3.down) > 0 && gameObject.activeSelf == true) {
+			StartCoroutine (showToppleMessage());
 		}
 	}
 
 	private IEnumerator showToppleMessage(){
-		gameObject.SetActive (false);
-		toppleText.text = "That's not the way to treat an expansive Tank! I'm taking it away from you!";
-		yield return WaitForSeconds (3);
-		toppleText.text = "";
+		
+		toppleText.text = "That's not the way to treat an expensive Tank! I'm taking it away from you!";
+		yield return new WaitForSeconds (3);
+		gameObject.SetActive (false); //steht jetzt hier hinter der message, da das wohl die coroutine stoppt das object zud eactivaten...warum auch immer...klingt nach ner unsinnigen desginentshcedung
+		toppleText.text = " ";
+		Debug.Log ("Im here");
 	}
 }
