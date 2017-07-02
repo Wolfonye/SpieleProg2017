@@ -84,7 +84,6 @@ Philipp:
         ✔ Cam Auf Einschlag @done(2017-06-25 15:11) @project(Philipp)
     ✔ Camera Bug beheben Abhängigkeit Zoom und Normal/Overview !!! @done(2017-06-27 19:39) @project(Philipp)
     ✔ Camera testen auf Verhalten switch in OverviewModus bei Spielerwechsel @done(2017-06-28 21:23) @project(Philipp)
-    ☐ Spin aus Hold-Line rausziehen
     ☐ Animation für Lane-Wechsel (zurueckgestellt)
     ✔ Pause und Matchfinished mit Käthe synchronisieren @done(2017-06-27 19:08) @project(Philipp)
     ☐ Ganz am Ende und zwischendrin Kommentare und Namings überprüfen
@@ -101,12 +100,12 @@ Philipp:
     ✔ cooldown zwischen runden, weil sonst zu hektisch @done(2017-07-01 16:51) @project(Philipp)
     ☐ es ist noch unschoen, dass man nicht den overviewmodus wechseln kann, wenn man im centering mode ist-> fixen
     ☐ trennung von centering mode für einzelne spieler????
-    ☐ cam auf bullet???
-    ☐ es ist unschön, dass ein spieler das switchen der cam auf den anderen verhindern kann, wenn er kurz vorher overview toggelt-> fixen
+    ☐ es ist unschön, dass ein spieler das switchen der cam auf den anderen verhindern kann, wenn er kurz vorher overview toggelt-> fixen (zurückstellt)
     ✔ topple detect @done(2017-07-01 19:05) @project(Philipp)
-    ☐ auslagern von "next player in: " auf eigenes canvas, da man das auch in anderen modi brauchen wird (wo das topple detect auch ist)
-    ☐ Button für vorzeitiges Rundenende einbauen
+    ☐ auslagern von "next player in: " auf eigenes canvas, da man das auch in anderen modi brauchen wird (wo das topple detect auch ist) (zurückgestellt)
+    ☐ Button für vorzeitiges Rundenende einbauen !
     ✔ Winkelanzeige einbauen @done(2017-07-01 21:18) @project(Philipp)
+    ☐ 3 Tasten für Cam-Modi: frei, fix on tank, fix on tank then shell !!!
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
@@ -129,6 +128,7 @@ Katya:
     ✔ Pausescreen @done(2017-06-26 22:34) @project(Katya)
     ✔ Pause und Matchfinished mit Philipp synchronisieren (jaaaa...synchronisieren ist ein merhdeutiger begriffblabla) @done(2017-06-27 22:02) @project(Katya)
     ☐ Menu-Panelhintergründe Alphas usw. anpassen
+    ☐ Control-Setup
 
 WayPoints:
     ☐ konspiratives Grillen
