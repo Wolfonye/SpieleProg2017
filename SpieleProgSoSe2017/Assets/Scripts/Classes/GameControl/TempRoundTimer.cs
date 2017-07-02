@@ -27,12 +27,16 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 	//wird aus InputConfiguration beim Start einmal vorgeladen um unnötige Kontextwechsel zur Laufzeit zur vermeiden
 	private string fire;
 
+	//um festzustellen, ob gerade das Rundenende cooldownt, damit nicht das feuern entgegengenommen wird und der timer-text shell flying wird, obwohl gar nciht geschossen wurde
+	private bool inCooldownPhase;
+
 	private IEnumerator counterCoRoutine;
 
 	private bool allShotsFiredForThisRound;
 
 	void Start()
 	{
+		inCooldownPhase = false;
 		GameObject mainCam = GameObject.FindWithTag ("MainCamera");
 		cameraMovement = mainCam.GetComponent<CameraMovement> ();
 		paused = false;
@@ -80,9 +84,11 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 		}
 	}
 
+
+
 	//hier drin müssen verschiedene Situationen berücksichtigt werden: zeit abgelaufen, zeit noch nicht abgelaufen aber shell schon abgeschossen usw....
 	void Update(){
-		if(Input.GetKeyDown(fire) && !allShotsFiredForThisRound){
+		if(Input.GetKeyDown(fire) && !allShotsFiredForThisRound && !inCooldownPhase){
 			allShotsFiredForThisRound = true;
 			//actualTime = maxTimeAfterShot;
 			timer.text = "shell fired, timer paused";
@@ -110,6 +116,7 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 
 	//soll nachdem der Impakt da war seconds warten und dann den cycle einleiten
 	private IEnumerator endRoundAfterImpactAndSeconds(int seconds){
+		inCooldownPhase = true;
 		int elapsedTime = 0;
 		actualTime = timePerRound;
 		destructedLast = false;
@@ -123,6 +130,7 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 		}
 		switchTimer.text = "";
 		controlCycler.cycle ();
+		inCooldownPhase = false;
 		paused = false;
 	}
 
