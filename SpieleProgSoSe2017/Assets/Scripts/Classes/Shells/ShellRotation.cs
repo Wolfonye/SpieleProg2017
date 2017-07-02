@@ -21,7 +21,8 @@ public class ShellRotation : MonoBehaviour
 
     private void Start()
     {
-        boomOffset = new Vector3(Random.Range(-3f, 3f), 2.5f + Random.Range(0f, 3f), 0);
+        //boomOffset = new Vector3(Random.Range(-3f, 3f), 2.5f + Random.Range(0f, 3f), 0);
+		boomOffset = new Vector3(0, 2.5f, 0);
         newRot = new Vector3(0, 0, 0);
     }
     
