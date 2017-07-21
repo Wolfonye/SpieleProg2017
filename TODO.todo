@@ -17,10 +17,14 @@ Florian:
     ✔ HoldLine fixen für Panzer die auf Lane  1 und 3 nebeneinander stehen und auf 2 wollen !!! @done(2017-06-23 11:01) @project(Florian)
     ✔ HoldLine und damit zusammenhängendes mit Philipps Cycle Arbeit kombinieren und testen!! @done(2017-06-23 11:01) @project(Florian)
     ✔ Buildmoeglichkeiten eroertern und testen @done(2017-06-30 02:08) @project(Florian)
-    ☐ Wind mit Phil auf Cycler abstimmen
+    ☐ Wind mit Phil auf Cycler abstimmen (should have)
     ✔ Tests und Skalierung von Explosionswerten @done(2017-06-30 02:08) @project(Florian)
-    ☐ Tests und Skalierung von Windwerten
+    ☐ Tests und Skalierung von Windwerten (should have)
     ✔ Lane-Wechsel Midair fixen @done(2017-07-01 00:08) @project(Florian)
+    ☐ Munitionsarten (must have)
+    ☐ evtl. zerstörbare Objekte (Logik) (should have)
+    ☐ Nahkampf; Kollision (should have)
+    ☐ Flugzeug-Feature (could have)
 
 Philipp:
     ✔ GitHub Account anlegen @done(2017-04-24 20:14) @project(Philipp)
@@ -91,7 +95,7 @@ Philipp:
     ☐ Cycler mit Flo auf sein Windskript abstimmen
     ✔ Flos Area of Effect Skripts einpflegen @done(2017-06-30 02:08) @project(Philipp)
     ✔ TimeStop bei Match-Ende einfügen !!! @done(2017-06-30 15:51) @project(Philipp)
-    ☐ Präsi vorbereiten
+    ✔ Präsi vorbereiten @done(2017-07-21 18:45) @project(Philipp)
         ✔ Levels fertigmachen @done(2017-06-30 15:51) @project(Philipp)
         ✔ Manual überarbeiten @done(2017-06-30 10:39) @project(Philipp)
         ✔ Installer an Beta-Tester verteilen @done(2017-07-01 15:11) @project(Philipp)
@@ -103,11 +107,17 @@ Philipp:
     ☐ es ist unschön, dass ein spieler das switchen der cam auf den anderen verhindern kann, wenn er kurz vorher overview toggelt-> fixen (zurückstellt)
     ✔ topple detect @done(2017-07-01 19:05) @project(Philipp)
     ☐ auslagern von "next player in: " auf eigenes canvas, da man das auch in anderen modi brauchen wird (wo das topple detect auch ist) (zurückgestellt)
-    ☐ Button für vorzeitiges Rundenende einbauen !
+    ☐ Button für vorzeitiges Rundenende einbauen ! (should have)
     ✔ Winkelanzeige einbauen @done(2017-07-01 21:18) @project(Philipp)
-    ☐ 3 Tasten für Cam-Modi: frei, fix on tank, fix on tank then shell !!!
+    ☐ Cam-Modi: frei, fix on tank, fix on tank then shell !!! (must have)
     ☐ Taste für langsmaeres BarrelMovement
     ✔ Bugfix: während des Cooldowns löst Schießen eine ungewollte Anzeigeänderung aus, die zu spät aktualisiert wird @done(2017-07-02 14:50) @project(Philipp)
+    ☐ Shader impro (could have)
+    ☐ Umgebung fancyfizieren (could have)
+    ☐ semantischer Zoom (could have)
+    ☐ smoothing der cam-bewegung (could have)
+    ☐ Gedanken zu visuellem Feedback und Verbesserungen (should have)
+    ☐ Auswahl Tankanzahl zs mit Käthe (must have)
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
@@ -130,7 +140,9 @@ Katya:
     ✔ Pausescreen @done(2017-06-26 22:34) @project(Katya)
     ✔ Pause und Matchfinished mit Philipp synchronisieren (jaaaa...synchronisieren ist ein merhdeutiger begriffblabla) @done(2017-06-27 22:02) @project(Katya)
     ☐ Menu-Panelhintergründe Alphas usw. anpassen
-    ☐ Control-Setup
+    ☐ Control-Setup (must have)
+    ☐ Grafic sugar in menus (should have)
+    ☐ Auswahl Tankanzahl zs mit Phil (must have)
 
 WayPoints:
     ☐ konspiratives Grillen
