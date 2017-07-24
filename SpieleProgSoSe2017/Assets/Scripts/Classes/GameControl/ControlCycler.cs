@@ -167,6 +167,7 @@ public class ControlCycler : MonoBehaviour
 		carMovement.enabled = false;
 		carMovement.FullBrake ();
 		//vehicle.GetComponentInChildren<HoldLineScript> ().enabled = false;
+		vehicle.GetComponentInChildren<VehicleEnabled>().enabled = false;
 	}
 		
 	/*Auslagerung der Tankaktivierung
@@ -180,6 +181,7 @@ public class ControlCycler : MonoBehaviour
 		tempActivePointer = Instantiate (activePointer, vehicle.transform.position + activePointerOffset, vehicle.transform.rotation * Quaternion.Euler (0, 90, 0)) as GameObject;
 		tempActivePointer.transform.parent = vehicle.transform;
 		vehicle.GetComponentInChildren<CarMovement> ().enabled = true;
+		vehicle.GetComponentInChildren<VehicleEnabled>().enabled = true;
 
 		//vehicle.GetComponentInChildren<HoldLineScript> ().enabled = true;
 

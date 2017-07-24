@@ -1,6 +1,13 @@
-﻿using System.Collections;
+﻿/*
+ * Author: Philipp Bous
+ */
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 /*
  * Grundidee des Skripts fürs Scrollen: stelle die aktuelle Position des Mauszeigers fest.
  * Wenn dieser sich innerhalb eines bestimmten Offsets zum Bildschirmrand befindet,
@@ -11,7 +18,10 @@ using UnityEngine;
  * Grundidee des Skripts fürs Zoomen: bei MouseWheeldrehung fahre Camera in gewissen Boundaries an
  * der eigenen Vorwärts-Achse entlang nach vorne oder hinten.
  */
-public class CameraMovement : MonoBehaviour {
+public class CameraMovement : MonoBehaviour, ICycleListener{
+	//Anzeigetext für den CamModus
+	public Text camModeText;
+
 	//wie viel distanz zum rand reicht um den seitlichen scroll auszuläsen
 	public int activateScrollOffset;
 	//wei schnell wir scrollen
@@ -43,16 +53,29 @@ public class CameraMovement : MonoBehaviour {
 	private Vector3 tempPosition;
 
 	//wird die Kamera uf den Tank zentriet oder nicht?
-	bool centeringModeOn;
+	bool centerOnVehicleModeOn;
+
+	//Kamera folgt dem Tank und der Bullet
+	bool bulletFollowModeOn;
+
+	//Variable um das Objekt zu referenzieren, dem gefolgt werden soll (wenn einem Objekt gefolgt werden soll)
+	GameObject followedObject;
+
+
+	//wir wollen wissen, ob diese Runde schon ne Bullet abgeschossen wurde
+	bool bulletWasFiredThisRound;
+
 
 	// Use this for initialization
 	void Start () {
-		centeringModeOn = false;
+		GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponentInChildren<ControlCycler> ().registerCycleListener (this);
+		centerOnVehicleModeOn = false;
 		currentZoom = 0;
 		Cursor.visible = true;
 		isInOverviewMode = false;
 		screenWidth = Screen.width;
 		//screenHeight = Screen.height;
+		camModeNumber = 0;
 	}
 	
 	// Update is called once per frame
@@ -62,7 +85,7 @@ public class CameraMovement : MonoBehaviour {
 		//daher kommt dieses erstmal etwas seltsam anmutende Skript hier
 		//tempPosition wird oben deklariert, damit ich nicht dauernd neue Objekte erzuegen muss
 		tempPosition = transform.position;
-		if (!centeringModeOn) {
+		if (!centerOnVehicleModeOn && !bulletFollowModeOn) {
 			//nach rechts fahren
 			if ((Input.mousePosition.x > screenWidth - activateScrollOffset) && (tempPosition.x > rightBoundary)) {
 				tempPosition.x = tempPosition.x - scrollSpeed * Time.deltaTime;
@@ -76,6 +99,22 @@ public class CameraMovement : MonoBehaviour {
 				//Debug.Log ("amRand");
 			}
 		}
+
+
+		//jede abgefeuerte Shell setzt sich selbst als active Bullet; das hei die letzte abgefeuerte Shell ist das;
+		//wenn also eine Bullet gefired wurde und wir im BulletFollowMode sind, soll die das followedObject werden
+		if (bulletFollowModeOn && bulletWasFiredThisRound) {
+			followedObject = ActiveObjects.getActiveBullet ();
+		}
+
+		//wenn wir in einem der Modi sind, wo ein Object verfolgt wird, wollen wir jedes Frame die Position updaten
+		//die null-Abfrage ist insbesondere für Zeiten relevant, wo der bullet gefolgt wird, da die ja irgendwann zerstört wird
+		if (centerOnVehicleModeOn || bulletFollowModeOn) {
+			if (followedObject != null) {
+				setPositionToObject (followedObject);
+			}
+		}
+
 
 		//suuuuuuu, zoomen sollte man ja auch können; das versuche ich im Folgenden
 		mouseWheelInput = Input.GetAxis("Mouse ScrollWheel");
@@ -95,25 +134,72 @@ public class CameraMovement : MonoBehaviour {
 		}
 
 		//hier passiert das wechseln in die vogelperspektive
-		if (Input.GetKeyDown (InputConfiguration.getOverviewKey()) && !centeringModeOn) {
+		if (Input.GetKeyDown (InputConfiguration.getOverviewKey()) && !centerOnVehicleModeOn && !bulletFollowModeOn) {
 			toggleOverviewPerspective ();
 		}
 
-		//wechsel zum CVentermode
+		//cycling des Cam-Modus detected
 		if (Input.GetKeyDown (InputConfiguration.getCenteringModeKey())){
-			toggleCenteringMode();
+			cycleCamModus ();
 		}
 	}
 
 	public bool isInCenteringMode(){
-		return centeringModeOn;
+		return centerOnVehicleModeOn;
 	}
 
+	//!!!!!!!  legacy : kommt irgendwann raus   !!!!!!!
 	private void toggleCenteringMode(){
-		centeringModeOn = !centeringModeOn;
+		centerOnVehicleModeOn = !centerOnVehicleModeOn;
 	}
 
-	//camera soll auf das mitgegebene vehicle zentriert werden
+	//Zahl die den Cammodus repräsentiert, siehe toggleCamModus
+	int camModeNumber;
+
+	//so kann die Aussenwelt mitteilen, dass ne Bullet fliegt
+	public void bulletWasFired(){
+		bulletWasFiredThisRound = true;
+	}
+
+
+	//Implementierung für das ICycleListener-Interface; wir stellen fest, dass in der kommenden Runde noch keine Bullet abgefeuert wurde
+	public void playerWasCycled(int currentPlayer){
+		bulletWasFiredThisRound = false;
+		followedObject = ActiveObjects.getActiveTank ();
+	}
+
+	//durchschalten zwischen Cam-Modi: 0 ist frei, 1 ist Tank-Follow, 2 ist Bullet und Tank follow
+	private void cycleCamModus(){
+		camModeNumber = (camModeNumber + 1) % 3;
+		if (camModeNumber == 0) {
+			bulletFollowModeOn = false;
+			centerOnVehicleModeOn = false;
+			camModeText.text = "Cam-Mode: free";
+		}
+
+		if (camModeNumber == 1) {
+			centerOnVehicleModeOn = true;
+			bulletFollowModeOn = false;
+			followedObject = ActiveObjects.getActiveTank ();
+			camModeText.text = "Cam-Mode: follow vehicle";
+		}
+
+		if (camModeNumber == 2) {
+			centerOnVehicleModeOn = false;
+			bulletFollowModeOn = true;
+			followedObject = ActiveObjects.getActiveTank ();
+			camModeText.text = "Cam-Mode: follow vehicle then bullet";
+		}
+	}
+
+
+	//kann von aussen von einem Objekt aufgerufen werden, wenn es wünscht, dass die Cam es verfolgt
+	public void followMe(GameObject objectToFollow){
+		followedObject = objectToFollow;
+	}
+
+
+	//camera soll auf das mitgegebene vehicle zentriert werden und zwar smooth
 	public void centerOnGameObject(GameObject objectInCenter){
 		//Zielposition soll die x koordinate des vehicles haben, aber y und z der camera beibehalten
 		Vector3 targetPosition = objectInCenter.transform.position;
@@ -125,6 +211,15 @@ public class CameraMovement : MonoBehaviour {
 
 	}
 
+	//camera soll auf das mitgegebene vehicle zentriert werden; aber instant
+	public void setPositionToObject(GameObject objectInCenter){
+		Vector3 targetPosition = objectInCenter.transform.position;
+		targetPosition.y = transform.position.y;
+		targetPosition.z = transform.position.z;
+		transform.position = targetPosition;
+	}
+
+	//zeigt an, ob gerade eine automatisierte Movementbewegung stattfindet um Inkonsistenzen auf Grund von Konkurrenz zu vermeiden
 	bool automatedMovementRunning;
 
 	private IEnumerator moveToPosition(Transform objectToMove, Vector3 targetPosition, float timeToMove)

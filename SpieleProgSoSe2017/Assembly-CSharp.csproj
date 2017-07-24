@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CarMoveTest.cs" />
-     <Compile Include="Assets\Scripts\Classes\GameControl\CamFollowObject.cs" />
+     <Compile Include="Assets\Scripts\Classes\GameControl\ActiveObjects.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\ControlCycler.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\ControlSwitcher.cs" />
@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\Classes\Shells\ShellDestruction.cs" />
      <Compile Include="Assets\Scripts\Classes\Shells\ShellExplosion.cs" />
      <Compile Include="Assets\Scripts\Classes\Shells\ShellRotation.cs" />
+     <Compile Include="Assets\Scripts\Classes\Shells\ShellSetup.cs" />
      <Compile Include="Assets\Scripts\Classes\Shells\ShellSpawn.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\BarrelAngle.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\CarCenterOfMass.cs" />
@@ -80,6 +81,7 @@
      <Compile Include="Assets\Scripts\Classes\Vehicles\TakeDamage.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\TakeExplosion.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\ToppleDetect.cs" />
+     <Compile Include="Assets\Scripts\Classes\Vehicles\VehicleEnabled.cs" />
      <Compile Include="Assets\Scripts\Interfaces\ICycleListener.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDestructible.cs" />
