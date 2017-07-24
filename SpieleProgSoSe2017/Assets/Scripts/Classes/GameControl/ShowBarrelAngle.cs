@@ -24,7 +24,7 @@ public class ShowBarrelAngle : MonoBehaviour, ICycleListener {
 	void Update () {
 		Debug.Log ("active Tank: " + activeTank);
 		if (activeTank != null && activeTank.GetComponentInChildren<BarrelAngle> () != null) {
-			Debug.Log (activeTank.GetComponentInChildren<BarrelAngle> ());
+			//Debug.Log (activeTank.GetComponentInChildren<BarrelAngle> ());
 			//Debug.Log ("active Tank: " + activeTank);
 			angle = activeTank.GetComponentInChildren<BarrelAngle> ().getBarrelAngle ();
 		}
