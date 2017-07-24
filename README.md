@@ -1,6 +1,31 @@
 SpieleProgrammierungSoSe2017
 --------------------------------------------------------------------------------
 
+
+UPDATE 24.07.2017 (Philipp) Cam-Movement und Active Objects Verwaltung
+--------------------------------------------------------------------------------
+Moien allerseits;
+
+habe das Cam-Movement geupdatet und es beherrscht jetzt drei Modi:
+
+* frei
+* Cam folgt Tank
+* Cam folgt Tank und dann der Shell.
+
+Weiterhin war es mir möglich die Cam-Bewegung ruckelfreier zu gestalten. Bleibt
+das auf schwächeren Maschinen zu testen.
+
+Was evtl. für euch von größerem Interesse ist:
+
+Ich habe ein Objekt angelegt "ActiveObjects", welches statisch ist und dazu
+gedacht ist Referenzen auf gerade in der jeweiligen Runde aktive Objekte zu
+verwalten; das sind im Moment nur der aktive Tank und die aktive Shell, sollte
+denn eine existieren (da muss man vorsichtig sein bei den Shells mit Null-Refs).
+Dafür existieren Setter, aber auch insbesondere Getter. Falls jemand die braucht
+, kann er sich die daraus ziehen. Die werden in jedem Level vorhanden sein, weil
+das dazugehörige Script vom Gamemaster2000 gehalten wird.
+Bei Fragen wenden sie sich vertrauensvoll an Philipp Bous
+
 UPDATE 25.06.2017 (Philipp) CycleSystem + Observer fuer ShellDestruction
 --------------------------------------------------------------------------------
 Habe grosse updates am CycleSystem vorgenommen, wozu auch Aenderungen an anderer

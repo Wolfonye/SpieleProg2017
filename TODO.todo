@@ -109,7 +109,7 @@ Philipp:
     ☐ auslagern von "next player in: " auf eigenes canvas, da man das auch in anderen modi brauchen wird (wo das topple detect auch ist) (zurückgestellt)
     ☐ Button für vorzeitiges Rundenende einbauen ! (should have)
     ✔ Winkelanzeige einbauen @done(2017-07-01 21:18) @project(Philipp)
-    ☐ Cam-Modi: frei, fix on tank, fix on tank then shell !!! (must have)
+    ✔ Cam-Modi: frei, fix on tank, fix on tank then shell !!! (must have) @done(2017-07-24 17:37) @project(Philipp)
     ☐ Taste für langsmaeres BarrelMovement
     ✔ Bugfix: während des Cooldowns löst Schießen eine ungewollte Anzeigeänderung aus, die zu spät aktualisiert wird @done(2017-07-02 14:50) @project(Philipp)
     ☐ Shader impro (could have)
