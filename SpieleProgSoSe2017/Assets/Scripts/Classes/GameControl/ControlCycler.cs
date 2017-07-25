@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿/*
+ * Author: Philipp Bous
+ */
+
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -12,6 +16,11 @@ public class ControlCycler : MonoBehaviour
 		Debug.Log ("ControlCycler is online");
 	}
 
+
+	//muss in jedem Level manuell gesetzt werden, da der Controlcycler in Abhängigkeit des Levels gewisse Dinge anders machen muss
+	//Für mehr Info siehe CurrentLevelSetup.cs
+	public string LEVEL_ID; 
+
 	public Camera mainCam;
 
 	//Liste der Spieler, wobei ein Spieler einfach eine Liste aus Tanks ist (nämlich die Tanks, die
@@ -21,7 +30,10 @@ public class ControlCycler : MonoBehaviour
 	public List<GameObject> player1Vehicles;
 	private int currentPlayer;
 	private int numberOfPlayers = 2;
-	public int numberOfVehiclesPerPlayer;
+
+	//die Info zieht sich der Cycler im Awake mittels der LevelID aus dem MaxTanksPerLevel.cs
+	//Ganz hübsche Neuerung um Datendopplung zu reduzieren.
+	private int maxNumberOfVehiclesPerPlayer;
 
 	//Liste der Observer, die ueber das Cycling informiert werden wollen
 	private List<ICycleListener> cycleListeners;
@@ -44,13 +56,25 @@ public class ControlCycler : MonoBehaviour
 	//ist aber erstmal zweitrangig angesichts der Zeit; irgendwann haett ich das gerne
 	public TempRoundTimer roundTimer;
 				
-		private GameObject tempGameObject;
-		private CarMovement carMovement;
-		private HoldLineScript holdLine;
+	private GameObject tempGameObject;
+	private CarMovement carMovement;
+	private HoldLineScript holdLine;
 
 
 	//wird noch vor start aufgerufen, ich initialisiere da die Liste um ner Nullpointerexception zu entgehen
 	void Awake(){
+		maxNumberOfVehiclesPerPlayer = MaxTanksPerLevel.getMaxTanksByLevelID (LEVEL_ID);
+		//ich trenne das hier bewusst, falls wir später bock haben player individuell zu handicappen; dann müssen wir nciht mehr so viel ändern ;)
+		int numberOfTanksToDeactivatePlayer0 = maxNumberOfVehiclesPerPlayer - CurrentLevelSetup.getNumberOfTanksForLevelByID(LEVEL_ID);
+		int numberOfTanksToDeactivatePlayer1 = maxNumberOfVehiclesPerPlayer - CurrentLevelSetup.getNumberOfTanksForLevelByID (LEVEL_ID);
+		while (numberOfTanksToDeactivatePlayer0 > 0) {
+			player0Vehicles [maxNumberOfVehiclesPerPlayer - numberOfTanksToDeactivatePlayer0].SetActive(false);
+			numberOfTanksToDeactivatePlayer0--;
+		}
+		while (numberOfTanksToDeactivatePlayer1 > 0) {
+			player1Vehicles [maxNumberOfVehiclesPerPlayer - numberOfTanksToDeactivatePlayer1].SetActive(false);
+			numberOfTanksToDeactivatePlayer1--;
+		}
 		cycleListeners = new List<ICycleListener>();
 		activeVehicle = player0Vehicles [0];
 	}
@@ -58,7 +82,6 @@ public class ControlCycler : MonoBehaviour
 	void Start()
 	{
 		currentVehicleIndexOfPlayer = new int[numberOfPlayers];
-
 		//spaeter evtl adaptiver
 		currentVehicleIndexOfPlayer[0] = 0;
 		currentVehicleIndexOfPlayer[1] = 0;
@@ -72,7 +95,7 @@ public class ControlCycler : MonoBehaviour
 	}
 
 
-	//selbsterklärend
+	//selbsterklärend: der gerade aktive Tank kann von aussen ausgelesen werden
 	public GameObject getActiveVehicle(){
 		return activeVehicle;
 	}
@@ -118,9 +141,9 @@ public class ControlCycler : MonoBehaviour
 		} else {
 			//whileIterations soll helfen ne Endlosschleife abzufangen, falls bei Zerstörung aller Tanks eines Teams keine Siegbedingung getriggert wird
 			//so haben wir dann keinen stress, auch, wenn noch kein win screen implementiert ist. natürlich sollte da real betrachtet das spiel beendet werden
-			int whileIterations = numberOfVehiclesPerPlayer;
+			int whileIterations = maxNumberOfVehiclesPerPlayer;
 			while (vehicles [currentVehicleIndexOfPlayer [playerNumber]].activeSelf == false && (whileIterations > 0)) {
-				currentVehicleIndexOfPlayer [playerNumber] = (currentVehicleIndexOfPlayer [playerNumber] + 1) % numberOfVehiclesPerPlayer;
+				currentVehicleIndexOfPlayer [playerNumber] = (currentVehicleIndexOfPlayer [playerNumber] + 1) % maxNumberOfVehiclesPerPlayer;
 				whileIterations--;
 				//Debug.Log ("currentvehidleindex of player " + playerNumber + "is " + currentVehicleIndexOfPlayer [playerNumber]);
 			}
@@ -131,7 +154,7 @@ public class ControlCycler : MonoBehaviour
 				activateVehicle (player1Vehicles [currentVehicleIndexOfPlayer [1]]);
 				//Debug.Log ("Vehicle activated");
 			}
-			currentVehicleIndexOfPlayer [playerNumber] = (currentVehicleIndexOfPlayer [playerNumber] + 1) % numberOfVehiclesPerPlayer;
+			currentVehicleIndexOfPlayer [playerNumber] = (currentVehicleIndexOfPlayer [playerNumber] + 1) % maxNumberOfVehiclesPerPlayer;
 		}
 	}
 

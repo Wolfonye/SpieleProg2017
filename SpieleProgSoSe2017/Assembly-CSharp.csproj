@@ -51,10 +51,12 @@
      <Compile Include="Assets\Scripts\Classes\GameControl\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\ControlCycler.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\ControlSwitcher.cs" />
+     <Compile Include="Assets\Scripts\Classes\GameControl\CurrentLevelSetup.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\EndRoundManually.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\ExitUnpausing.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\HUDLookToCamera.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\InputConfiguration.cs" />
+     <Compile Include="Assets\Scripts\Classes\GameControl\MaxTanksPerLevel.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\PauseGame.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\RoundTimer.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\ShowBarrelAngle.cs" />

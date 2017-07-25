@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/*
+ * Author: Philipp Bous, Florian Kruschewski
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

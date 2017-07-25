@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/*
+ * Author: Philipp Bous
+ */
+
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 

@@ -153,7 +153,7 @@ public class CameraMovement : MonoBehaviour, ICycleListener{
 		centerOnVehicleModeOn = !centerOnVehicleModeOn;
 	}
 
-	//Zahl die den Cammodus repräsentiert, siehe toggleCamModus
+	//Zahl die den Cammodus repräsentiert, siehe cycleCamModus
 	int camModeNumber;
 
 	//so kann die Aussenwelt mitteilen, dass ne Bullet fliegt
