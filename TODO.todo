@@ -108,7 +108,7 @@ Philipp:
     ☐ es ist unschön, dass ein spieler das switchen der cam auf den anderen verhindern kann, wenn er kurz vorher overview toggelt-> fixen (zurückstellt)
     ✔ topple detect @done(2017-07-01 19:05) @project(Philipp)
     ☐ auslagern von "next player in: " auf eigenes canvas, da man das auch in anderen modi brauchen wird (wo das topple detect auch ist) (zurückgestellt)
-    ☐ Button für vorzeitiges Rundenende einbauen ! (should have)
+    ✔ Button für vorzeitiges Rundenende einbauen ! (should have) @done(2017-07-25 10:55) @project(Philipp)
     ✔ Winkelanzeige einbauen @done(2017-07-01 21:18) @project(Philipp)
     ✔ Cam-Modi: frei, fix on tank, fix on tank then shell !!! (must have) @done(2017-07-24 17:37) @project(Philipp)
     ☐ Taste für langsmaeres BarrelMovement
@@ -119,7 +119,7 @@ Philipp:
     ✔ smoothing der cam-bewegung (could have) @done(2017-07-25 09:40) @project(Philipp)
     ☐ Gedanken zu visuellem Feedback und Verbesserungen (should have)
     ☐ Auswahl Tankanzahl zs mit Käthe (must have)
-    ☐ ausgiebige Tests der Cam-Mopi
+    ☐ ausgiebige Tests der Cam-Modi
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
