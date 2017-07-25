@@ -118,8 +118,9 @@ Philipp:
     ☐ semantischer Zoom (could have)
     ✔ smoothing der cam-bewegung (could have) @done(2017-07-25 09:40) @project(Philipp)
     ☐ Gedanken zu visuellem Feedback und Verbesserungen (should have)
-    ☐ Auswahl Tankanzahl zs mit Käthe (must have)
+    ✔ Auswahl Tankanzahl zs mit Käthe (must have) @done(2017-07-25 16:02) @project(Philipp)
     ☐ ausgiebige Tests der Cam-Modi
+    ☐ Bugfix: EndRoundButton soll nicht nach abgefeuertem Schuss klickbar sein, das waere ein Doppelrundencheat
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
