@@ -7,6 +7,7 @@ public class ShellDestruction : MonoBehaviour {
 	private List<IDestructionObserver> destructionObservers;
 
 	//Ich muss mir irgendwie am Anfang die Spielelemente ziehen, die gerne notified würden, wenn die Shell explodiert wird
+	//bissl unschön noch...
 	void Start(){
 		destructionObservers = new List<IDestructionObserver>();
 		GameObject gameMaster2000 = GameObject.FindWithTag ("Gamemaster2000");

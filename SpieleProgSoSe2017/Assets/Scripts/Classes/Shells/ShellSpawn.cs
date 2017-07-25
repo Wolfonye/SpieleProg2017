@@ -21,7 +21,12 @@ public class ShellSpawn : MonoBehaviour {
 	private int currentNumberOfShots;
 	private int maxNumberOfShots;
 
+	//Ref auf den TempRoundTimer, damit wir ihm sagen koennen, dass die letzte Kugel abgefeuert wurde
+	//sofern wir im Zeitmodus sind heißt das
+	TempRoundTimer tempRoundTimer;
+
 	void Start(){
+		tempRoundTimer = GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponent<TempRoundTimer> () as TempRoundTimer;
 		fireKey = InputConfiguration.getFireKey ();
 		currentNumberOfShots = 0;
 		maxNumberOfShots = 1;
@@ -46,13 +51,16 @@ public class ShellSpawn : MonoBehaviour {
 
 			//numberofshots erhöhen, damit man nicht beliebig viel schiessen kann, das muss dan vom cycler auf 0 gesetzt werden, wenn ein spieler neu dran ist.
 			currentNumberOfShots++;
-
-            //Codeartefakt zur Zerstörung der Bullet, was diese im Moment selbst regelt.
-            //Destroy(Temporary_Bullet_Handler, 10.0f);
         }
+
+		if (currentNumberOfShots == maxNumberOfShots) {
+			tempRoundTimer.setLastShotInTheAir(true);
+		}
     }
 
+	//dadurch kann der Cycler die aktuelle Shot-Zahl wieder nullen, wenn die Runde wechselt
 	public void resetCurrentNumberOfShots(){
 		currentNumberOfShots = 0;
 	}
+
 }

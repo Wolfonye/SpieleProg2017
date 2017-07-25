@@ -211,7 +211,7 @@ public class ControlCycler : MonoBehaviour
 		//Camera auf gerade aktiviertem Vehicle zentrieren; praktisch: wir können so die rictige maincamera abgreifen, da wir nur eine haben. das spart unnötige variablen
 		Camera.main.GetComponent<CameraMovement>().centerOnGameObject(vehicle);
 
-		//Anzahl gemachter Schüsse zu Begi	nn eines Zuges für ein Vehicle wieder auf 0 setzen
+		//Anzahl gemachter Schüsse zu Beginn eines Zuges für ein Vehicle wieder auf 0 setzen
 		vehicle.GetComponentInChildren<ShellSpawn>().resetCurrentNumberOfShots ();
 	}
 
@@ -219,7 +219,7 @@ public class ControlCycler : MonoBehaviour
 	public List<GameObject> getPlayer0Vehicles(){
 		return player0Vehicles;
 	}
-
+		
 	public List<GameObject> getPlayer1Vehicles(){
 		return player1Vehicles;
 	}

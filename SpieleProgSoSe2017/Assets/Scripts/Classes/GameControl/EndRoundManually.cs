@@ -17,6 +17,8 @@ public class EndRoundManually : MonoBehaviour {
 	}
 
 	public void endRoundNow(){
-		StartCoroutine (tempRoundTimer.endRoundAfterSeconds (tempRoundTimer.getSwitchTime()));
+		if (!tempRoundTimer.isLastShotInTheAir () && !tempRoundTimer.isInCoolDownPhase()) {
+			StartCoroutine (tempRoundTimer.endRoundAfterSeconds (tempRoundTimer.getSwitchTime()));
+		}
 	}
 }

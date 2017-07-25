@@ -47,6 +47,7 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 		allShotsFiredForThisRound = false;
 		fire = InputConfiguration.getFireKey();
 		actualTime = timePerRound;
+		int i = 0;
 		counterCoRoutine = countDownRound();
 		StartCoroutine(counterCoRoutine);
 	}
@@ -125,6 +126,7 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 		actualTime = timePerRound;
 		destructedLast = false;
 		allShotsFiredForThisRound = false;
+		lastShotInTheAir = false;
 		controlCycler.deactivateAllVehicles ();
 		while (elapsedTime < seconds) {
 			switchTimer.text = "Round Cooldown: " + (seconds - elapsedTime);
@@ -132,6 +134,9 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 			//Debug.Log ("sekunde vorbei");
 			yield return new WaitForSeconds (1);
 		}
+		destructedLast = false;
+		allShotsFiredForThisRound = false;
+		lastShotInTheAir = false;
 		switchTimer.text = "";
 		controlCycler.cycle ();
 		inCooldownPhase = false;
@@ -146,10 +151,33 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 		yield return endRoundAfterImpactAndSeconds (seconds);
 	}
 
-	//Implementierung des entsprechenden Interfaces, um auf Destruction einer Shell zu reagieren (Observer-Pattern)
+	//Implementierung des entsprechenden Interfaces, um auf Destruction einer Shell zu reagieren (Observer-Pattern);
+	//WICHTIG das heißt hier destructedLast, ist es aber noch nciht; das will cih irgendwann aufrüsten
 	public void destructionObserved(GameObject destructedObject){
 		destructedLast = true;
 		cameraMovement.centerOnGameObject (destructedObject);
+	}
+
+	public bool lastShellDestructedThisRound(){
+		return destructedLast;
+	}
+
+	// soll true sein sobald die letzte Shell zumindest mal unterwegs ist
+	private bool lastShotInTheAir;
+
+	//Implementierung des entsprechenden Interfaces
+	public void setLastShotInTheAir(bool inTheAir){
+		lastShotInTheAir = inTheAir;
+	}
+
+	//gibt true zurueck, wenn die letzte Shell deiser Runde entweder fliegt oder eingeschlagen ist.
+	public bool isLastShotInTheAir(){
+		return lastShotInTheAir;
+	}
+
+	//gibt true zurueck, wenn wir in der cooldown-phase sind
+	public bool isInCoolDownPhase(){
+		return inCooldownPhase;
 	}
 
 	public int getSwitchTime(){
