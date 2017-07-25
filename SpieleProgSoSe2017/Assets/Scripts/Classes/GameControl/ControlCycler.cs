@@ -68,7 +68,7 @@ public class ControlCycler : MonoBehaviour
 		deactivateAllVehiclesInList (player0Vehicles);
 		deactivateAllVehiclesInList (player1Vehicles);
 		activateNextVehicleOfPlayer (0, player0Vehicles);
-		Debug.Log ("current player is 0");
+		//Debug.Log ("current player is 0");
 	}
 
 
@@ -175,7 +175,7 @@ public class ControlCycler : MonoBehaviour
 	 */
 	private void activateVehicle(GameObject vehicle){
 		activeVehicle = vehicle;
-		Debug.Log("active Vehicle: " + activeVehicle);
+		//Debug.Log("active Vehicle: " + activeVehicle);
 		vehicle.transform.GetChild (0).gameObject.SetActive (true);
 		//Multiplikation mit Quaternion um 90 Grad draufzuaddieren, damit die Ausrichtung stimmt bzgl unserer Ebenenkonvention
 		tempActivePointer = Instantiate (activePointer, vehicle.transform.position + activePointerOffset, vehicle.transform.rotation * Quaternion.Euler (0, 90, 0)) as GameObject;

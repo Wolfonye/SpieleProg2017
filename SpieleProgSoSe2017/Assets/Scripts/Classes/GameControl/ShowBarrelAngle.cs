@@ -22,7 +22,7 @@ public class ShowBarrelAngle : MonoBehaviour, ICycleListener {
 
 	// Update is called once per frame
 	void Update () {
-		Debug.Log ("active Tank: " + activeTank);
+		//Debug.Log ("active Tank: " + activeTank);
 		if (activeTank != null && activeTank.GetComponentInChildren<BarrelAngle> () != null) {
 			//Debug.Log (activeTank.GetComponentInChildren<BarrelAngle> ());
 			//Debug.Log ("active Tank: " + activeTank);

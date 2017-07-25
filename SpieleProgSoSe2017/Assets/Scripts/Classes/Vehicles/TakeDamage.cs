@@ -3,23 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//beinhaltet Information über die Lebensenergie eines Vehicles sowie den nötigen Trigger um SiegNiderlage festzustellen
+//beinhaltet Information über die Lebensenergie eines Vehicles
 
 public class TakeDamage : MonoBehaviour {
 	public int life = 1000;
 
-	//wir wollen ja rausfinden, ob die Zerstörung eines Vehicles einen Spieler zum Sieger gemacht hat
-	//also brauchen wir ne ref auf unseren VictoryDefeatEvaluator
-	private VictoryDefeatEvaluator victoryDefeatEvaluator;
-
 	public Slider healthBar;
 	// Use this for initialization
 	void Start () {
-		//wir ziehen uns den victorydefeatEvaluator automatisiert am anfang, sonst wäre das ne ziemlcih ätzende arbeit
-		//das für jedes level per hand zu machen
-		GameObject gameMaster2000 = GameObject.FindWithTag ("Gamemaster2000");
-		victoryDefeatEvaluator = gameMaster2000.GetComponent<VictoryDefeatEvaluator> ();
-
 		healthBar.maxValue = life;
 		healthBar.value = life;
 	}

@@ -1,8 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Classes\GameControl\CameraMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Classes\Vehicles\TakeDamage.cs">
     <Files>
-      <File FileName="Assets\Scripts\Classes\GameControl\CameraMovement.cs" Line="56" Column="28" />
+      <File FileName="Assets\Scripts\Classes\GameControl\CameraMovement.cs" Line="99" Column="12" />
+      <File FileName="Assets\Scripts\Classes\GameControl\EndRoundManually.cs" Line="16" Column="86" />
+      <File FileName="Assets\Scripts\Classes\GameControl\TempRoundTimer.cs" Line="152" Column="21" />
+      <File FileName="Assets\Scripts\Classes\Vehicles\TakeDamage.cs" Line="42" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

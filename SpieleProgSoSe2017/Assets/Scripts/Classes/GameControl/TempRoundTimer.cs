@@ -111,7 +111,7 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 		}
 	}
 
-	//wir wollen wissen ob diese Runde schon eine (irgendwann dei letzte) Shell zerstört wurde
+	//wir wollen wissen ob diese Runde schon eine (irgendwann dei letzte; Zukunftsmusik für nach der Vorlesung) Shell zerstört wurde
 	private bool destructedLast;
 
 	//soll nachdem der Impakt da war seconds warten und dann den cycle einleiten
@@ -125,7 +125,7 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 		while (elapsedTime < seconds) {
 			switchTimer.text = "Round Cooldown: " + (seconds - elapsedTime);
 			elapsedTime++;
-			Debug.Log ("sekunde vorbei");
+			//Debug.Log ("sekunde vorbei");
 			yield return new WaitForSeconds (1);
 		}
 		switchTimer.text = "";
@@ -135,15 +135,21 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 	}
 
 	// ich benutze die endRoundAfterImpact... obwohl kein impact da war, aber darauf laesst sich einfach aufbauen
-	private IEnumerator endRoundAfterSeconds(int seconds){
+	public IEnumerator endRoundAfterSeconds(int seconds){
 		actualTime = timePerRound;
 		allShotsFiredForThisRound = true;
 		paused = true;
 		yield return endRoundAfterImpactAndSeconds (seconds);
 	}
+
+	//Implementierung des entsprechenden Interfaces, um auf Destruction einer Shell zu reagieren (Observer-Pattern)
 	public void destructionObserved(GameObject destructedObject){
 		destructedLast = true;
 		cameraMovement.centerOnGameObject (destructedObject);
+	}
+
+	public int getSwitchTime(){
+		return switchTime;
 	}
 
 }
