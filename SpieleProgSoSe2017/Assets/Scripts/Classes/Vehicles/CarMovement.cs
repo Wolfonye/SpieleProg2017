@@ -25,9 +25,6 @@ public class CarMovement : MonoBehaviour
 
     public void Update()
     {
-		
-
-
 		speed = vehicleRigBody.velocity.magnitude * 3.6f;
 		//Debug.Log ("speed in km/h:" + speed);
 
