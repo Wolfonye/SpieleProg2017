@@ -56,7 +56,7 @@ Philipp:
     ✔ Interface-Konzeption für Schadensmodell @done(2017-05-21 10:28) @project(Philipp)
     ✔ Radphysik in den Griff bekommen @done(2017-05-26 08:35) @project(Philipp)
     ✔ Bzgl. seltsamer Skalierungsunterschiede investigativ tätig werden!!! @done(2017-06-10 16:40) @project(Philipp)
-    ☐ Sprit-Modus
+    ☐ Sprit-Modus (could have)
     ✔ Verhindern Error durch NullRef fehlendes Objekt @done(2017-06-13 23:05) @project(Philipp)
     ✔ Control Cycle Skript !!! @done(2017-06-10 12:30) @project(Philipp)
     ✔ Control Cyle mit Flos Arbeit kombinieren und testen!! @done(2017-06-13 23:03) @project(Philipp)
@@ -103,7 +103,6 @@ Philipp:
     ✔ Bug bei unentschieden fixen !!! @done(2017-06-30 15:51) @project(Philipp)
     ✔ cam soll auf tank zentriert werden können und folgen können @done(2017-07-01 15:08) @project(Philipp)
     ✔ cooldown zwischen runden, weil sonst zu hektisch @done(2017-07-01 16:51) @project(Philipp)
-    ☐ es ist noch unschoen, dass man nicht den overviewmodus wechseln kann, wenn man nicht im freien Modus ist: fixen
     ☐ trennung von centering mode für einzelne spieler????
     ☐ es ist unschön, dass ein spieler das switchen der cam auf den anderen verhindern kann, wenn er kurz vorher overview toggelt-> fixen (zurückstellt)
     ✔ topple detect @done(2017-07-01 19:05) @project(Philipp)
@@ -121,6 +120,7 @@ Philipp:
     ✔ Auswahl Tankanzahl zs mit Käthe (must have) @done(2017-07-25 16:02) @project(Philipp)
     ☐ ausgiebige Tests der Cam-Modi
     ✔ Bugfix: EndRoundButton soll nicht nach abgefeuertem Schuss klickbar sein, das waere ein Doppelrundencheat @done(2017-07-25 17:35) @project(Philipp)
+    ✔ Overview nur im freien Modus, sollte man den freien Modus verlassen so wird Overview beendet @done(2017-07-28 12:09) @project(Philipp)
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
