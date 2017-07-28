@@ -8,6 +8,11 @@ using System.Collections.Generic;
 
 public class CarMovement : MonoBehaviour
 {
+	//Ref auf den ActionPointController dieses Fahrzeugs; habe erst überlegt dei Action Points hier drin zu halten aus Performancegründen.
+	//Ich vermute allerdings, dass es wenig bis nichts spürbares an Unterschied geben wird, wenn ich das auslagere und damit die ganze Sache ein bisschen
+	//übersichtlicher und hoffentlich erweiterbarer halte.
+	public ActionPointController actionPointController;
+
 	//Für jede Achse gibt es nen Listeneintrag
     public List<Axle> axleInfos; 
 
@@ -18,6 +23,7 @@ public class CarMovement : MonoBehaviour
     //public float maxSteeringAngle; 
 	public float brakePower;
 	public float brakeFactor = 0.8f;
+	//um zu steuern ab wann die Beschleunigung von künstlich gedämpft werden soll, funzt sehr gut :D
 	public float speedDampingThreshold;
 
 	public HoldLineScript holdLine;
@@ -45,8 +51,8 @@ public class CarMovement : MonoBehaviour
 				break;
 			}
 		}
-	
         motor = maxMotorTorque * Input.GetAxis("Horizontal");
+		//Fahrtrichtung soll immer relativ zum Betrachter sein
 		if (vehicleRigBody.transform.forward.x > 0) {
 			motor = -motor;
 		}

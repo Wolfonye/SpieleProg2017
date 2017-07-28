@@ -14,6 +14,9 @@ using UnityEngine.UI;
 
 public class TempRoundTimer : MonoBehaviour, IDestructionObserver, IGameMode
 {
+	readonly string  MODE_ID = "timer";
+	//zeigt ob Modus aktiv ist
+	private bool isEnabled;
 	/* timePerRound ist selbsterklärend, genauso wie actualTime
      * timer ist der Timer-Text auf dem Canvas, der als UI-Anzeige dient
      * controlSwitcher ist eine Referenz auf ebenjenen, damit wir dessen timerZero-methode aufrufen können, die 
@@ -42,6 +45,7 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver, IGameMode
 
 	void Start()
 	{
+		isEnabled = true;
 		inCooldownPhase = false;
 		GameObject mainCam = GameObject.FindWithTag ("MainCamera");
 		cameraMovement = mainCam.GetComponent<CameraMovement> ();
@@ -80,6 +84,20 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver, IGameMode
 		}
 	}
 
+
+	public string getModeID(){
+		return MODE_ID;
+	}
+
+	public bool isModeEnabled ()
+	{
+		return isEnabled;
+	}
+
+	public void toggleEnabled ()
+	{
+		isEnabled = !isEnabled;
+	}
 
 	public void setControlSwitcher(ControlCycler controller)
 	{

@@ -14,5 +14,12 @@ using UnityEngine;
  * da an ein paar anderen Stellen noch weiter abstrahieren.
  */
 public interface IGameMode {
+	//gibt true zurueck, wenn der angewählte Gamemode sich gerade im Rundencooldown befindet
 	bool isInCoolDown ();
+	//gibt die MODE_ID des jeweiligen Gamemode zurück
+	string getModeID ();
+	//gibt true zurueck, wenn der angesprochene Modus aktiv ist
+	bool isModeEnabled();
+	//tauscht zwischen enabled und nicht enabled eines Modes
+	void toggleEnabled();
 }
