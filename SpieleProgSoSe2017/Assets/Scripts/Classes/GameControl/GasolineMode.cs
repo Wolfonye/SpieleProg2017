@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GasolineMode : MonoBehaviour, IGameMode {
+public class GasolineMode : MonoBehaviour,IDestructionObserver, IGameMode {
 	readonly string MODE_ID = "GAS_MODE";
 	private bool isEnabled;
 	// Use this for initialization
 	void Awake () {
-		isEnabled = true;
+		if (ActiveObjects.getActiveGameModeID () == MODE_ID) {
+			isEnabled = true;
+		} else {
+			isEnabled = false;
+		}
 	}
 	
 	// Update is called once per frame
@@ -33,5 +37,10 @@ public class GasolineMode : MonoBehaviour, IGameMode {
 	public void toggleEnabled ()
 	{
 		isEnabled = !isEnabled;
+	}
+
+	public void destructionObserved (GameObject destructedObject)
+	{
+		throw new System.NotImplementedException ();
 	}
 }

@@ -15,7 +15,14 @@ public class ShellDestruction : MonoBehaviour {
 	void Start(){
 		destructionObservers = new List<IDestructionObserver>();
 		GameObject gameMaster2000 = GameObject.FindWithTag ("Gamemaster2000");
-		destructionObservers.Add((TempRoundTimer)gameMaster2000.GetComponent<TempRoundTimer>());
+		if (GameObject.FindWithTag ("Gamemaster2000").GetComponent<TempRoundTimer> ().isModeEnabled ()) {
+			destructionObservers.Add ((TempRoundTimer)gameMaster2000.GetComponent<TempRoundTimer> ());
+		}
+
+		if (GameObject.FindWithTag ("Gamemaster2000").GetComponent<GasolineMode> ().isModeEnabled ()) {
+			destructionObservers.Add ((GasolineMode)gameMaster2000.GetComponent<GasolineMode> ());
+		}
+
 	}
 
     //Joa...die Shell muss weg...
