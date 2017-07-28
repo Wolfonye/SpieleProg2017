@@ -1,10 +1,16 @@
-﻿using System.Collections;
+﻿/*
+ * Author: Philipp Bous
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ShellRotation : MonoBehaviour
 {
+	//Zwischenspeicher für Velocity-Vektor der Shell
     Vector3 vel;
+	//Zwischenspeicher für jeweils neu berechnete Rotation
     Vector3 newRot;
 
     //bissl randomisierter Offset um einen größeren Coolnesswert zu generieren; ich generiere mir den direkt in Start
@@ -13,6 +19,8 @@ public class ShellRotation : MonoBehaviour
     bool exploded = false;
     //explosion : das boom-prefab mit der entsprechenden Animation; die Namensgebung sollte ich wohl noch ändern...bissl unhübsch
     public GameObject explosion;
+
+	//!!! TODO: die Instanziierung des Booms hat hier nichts mehr zu suchen !!! Das sollte aus OO-Gründen raus; kann aber theoretisch bis nach der Abgabe warten, da keine funktionale Effektveränderung; andere Sachen sind wichtiger
     //Referenz auf das neu aus explosion erzeugte Boom-Objekt; hauptsächlich um es zerstören zu können. Evtl. sollte das Zerstören über
     //ein Interface verallgemeinert werden
     GameObject boom;

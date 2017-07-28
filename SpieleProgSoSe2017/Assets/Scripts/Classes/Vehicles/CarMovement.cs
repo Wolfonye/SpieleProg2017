@@ -1,12 +1,21 @@
-﻿using UnityEngine;
+﻿/*
+ * Author: Philipp Bous + Florian Kruschewski(siehe Markierung)
+ */
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 public class CarMovement : MonoBehaviour
 {
-    public List<Axle> axleInfos; // the information about each individual axle
-    public float maxMotorTorque; // maximum torque the motor can apply to wheel
-    public float maxSteeringAngle; // maximum steer angle the wheel can have
+	//Für jede Achse gibt es nen Listeneintrag
+    public List<Axle> axleInfos; 
+
+	//maximales Drehmoment pro Achse
+    public float maxMotorTorque; 
+
+	//Wie weit kann ich das Lenkrad einschlagen, legacy; erstmal nciht wichtig; mal schauen, wie sich das Konzept im nächsten Jahr entwickelt. Vielleicht schreib ich alles nochmal in Richtung stufenlos um...
+    //public float maxSteeringAngle; 
 	public float brakePower;
 	public float brakeFactor = 0.8f;
 	public float speedDampingThreshold;
@@ -116,6 +125,8 @@ public class CarMovement : MonoBehaviour
         }
     }
 
+	//Funktion, die es mir ermöglicht auch von außen noch das Fahrzeug abzubremsen, wenn es selbst bereits über keine aktive Steuerung mehr verfügt
+	//das ist wichtig, da ich die Skripte immer wieder ein und ausschalte um gewissen Tanks die Kontrolle zu entziehen. Methoden aufrufen auf deaktivierten Scripts darf man nämlich noch.
 	public void FullBrake(){
 		vehicleRigBody.AddForce(-vehicleRigBody.velocity * vehicleRigBody.mass * brakeFactor);
 		foreach (Axle axle in axleInfos) {

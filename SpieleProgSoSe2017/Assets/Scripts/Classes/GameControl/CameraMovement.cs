@@ -61,14 +61,20 @@ public class CameraMovement : MonoBehaviour, ICycleListener{
 	//Variable um das Objekt zu referenzieren, dem gefolgt werden soll (wenn einem Objekt gefolgt werden soll)
 	GameObject followedObject;
 
-
 	//wir wollen wissen, ob diese Runde schon ne Bullet abgeschossen wurde
 	bool bulletWasFiredThisRound;
 
+	//Ref auf den GameMode, um zB entscheiden zu können ob dieser gerade im CoolDown ist
+	public IGameMode gameMode;
 
 	// Use this for initialization
 	void Start () {
 		GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponentInChildren<ControlCycler> ().registerCycleListener (this);
+		//die nächste Zeile ist nur eine temporäre Lösung; wenn es mal weitere Modi geben sollte muss das hier adaptiv werden; die Vorbereitung sind bereits mittels Interface getroffen
+		//Ich hatte überlegt das kompositorisch in ein kapselndes Objekt auszulagern mit den Gamemodi, aber so finde ich es etwas schöner, da etwas modularer zu bearbeiten;
+		//man muss dann nicht jedesmal wieder an der gleichen Sache rumfuhrwerken, sondern kann einen neuen Gamemodus als eigenständiges Modul schreiben.
+		gameMode = GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponentInChildren<TempRoundTimer> ();
+	
 		centerOnVehicleModeOn = false;
 		currentZoom = 0;
 		Cursor.visible = true;
@@ -77,15 +83,20 @@ public class CameraMovement : MonoBehaviour, ICycleListener{
 		//screenHeight = Screen.height;
 		camModeNumber = 0;
 	}
-	
+		
 	// Update is called once per frame
 	void Update () {
 
-		//Bissl lästig: in C# darf ich nicht bei nem transform einfach einen einzigen wert wie zb transform.position.x direkt ändern,
+		//cycling des Cam-Modus detected
+		if (Input.GetKeyDown (InputConfiguration.getCamModeKey())){
+			cycleCamModus ();
+		}
+
+		//Bissl lästig: ich darf nicht bei ner transform bei gewissen Teilen einfach einen einzigen wert wie zb transform.position.x direkt ändern,
 		//daher kommt dieses erstmal etwas seltsam anmutende Skript hier
 		//tempPosition wird oben deklariert, damit ich nicht dauernd neue Objekte erzuegen muss
 		tempPosition = transform.position;
-		if (!centerOnVehicleModeOn && !bulletFollowModeOn) {
+		if (!centerOnVehicleModeOn && !bulletFollowModeOn && !automatedMovementRunning) {
 			//nach rechts fahren
 			if ((Input.mousePosition.x > screenWidth - activateScrollOffset) && (tempPosition.x > rightBoundary)) {
 				tempPosition.x = tempPosition.x - scrollSpeed * Time.deltaTime;
@@ -101,7 +112,7 @@ public class CameraMovement : MonoBehaviour, ICycleListener{
 		}
 
 
-		//jede abgefeuerte Shell setzt sich selbst als active Bullet; das hei die letzte abgefeuerte Shell ist das;
+		//jede abgefeuerte Shell setzt sich selbst als active Bullet; das heisst die letzte abgefeuerte Shell ist das active Bullet;
 		//wenn also eine Bullet gefired wurde und wir im BulletFollowMode sind, soll die das followedObject werden
 		if (bulletFollowModeOn && bulletWasFiredThisRound) {
 			followedObject = ActiveObjects.getActiveBullet ();
@@ -109,8 +120,12 @@ public class CameraMovement : MonoBehaviour, ICycleListener{
 
 		//wenn wir in einem der Modi sind, wo ein Object verfolgt wird, wollen wir jedes Frame die Position updaten
 		//die null-Abfrage ist insbesondere für Zeiten relevant, wo der bullet gefolgt wird, da die ja irgendwann zerstört wird
-		if (centerOnVehicleModeOn || bulletFollowModeOn) {
-			if (followedObject != null) {
+		if ((centerOnVehicleModeOn || bulletFollowModeOn) && !gameMode.isInCoolDown() && !automatedMovementRunning) {
+			if (isInOverviewMode){
+				toggleOverviewPerspective();
+			}
+			//das !isInOverviewMode ist wichtig, für den Fall, dass ich im Overview bin, weil ich sonst zu früh ein Frame aus dem Endzustand bekomme, da ja das togglen der Overview asynchrone Teile enthält
+			if (followedObject != null && !isInOverviewMode) {
 				setPositionToObject (followedObject);
 			}
 		}
@@ -132,29 +147,25 @@ public class CameraMovement : MonoBehaviour, ICycleListener{
 			transform.Translate (0, 0, mouseWheelInput * zoomSpeed);
 			currentZoom = currentZoom + zoomSpeed;
 		}
+			
+
 
 		//hier passiert das wechseln in die vogelperspektive
 		if (Input.GetKeyDown (InputConfiguration.getOverviewKey()) && !centerOnVehicleModeOn && !bulletFollowModeOn) {
 			toggleOverviewPerspective ();
 		}
-
-		//cycling des Cam-Modus detected
-		if (Input.GetKeyDown (InputConfiguration.getCenteringModeKey())){
-			cycleCamModus ();
-		}
 	}
 
+
+
+	//Ich kann von aussen abfragen, ob wir im centeringMode sind
 	public bool isInCenteringMode(){
 		return centerOnVehicleModeOn;
 	}
 
-	//!!!!!!!  legacy : kommt irgendwann raus   !!!!!!!
-	private void toggleCenteringMode(){
-		centerOnVehicleModeOn = !centerOnVehicleModeOn;
-	}
 
 	//Zahl die den Cammodus repräsentiert, siehe cycleCamModus
-	int camModeNumber;
+	private int camModeNumber;
 
 	//so kann die Aussenwelt mitteilen, dass ne Bullet fliegt
 	public void bulletWasFired(){

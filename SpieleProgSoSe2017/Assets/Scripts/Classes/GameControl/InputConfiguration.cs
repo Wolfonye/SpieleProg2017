@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/*
+ * Author: Philipp Bous
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +17,7 @@ public static class InputConfiguration : object {
 	private static string leftJumpKeyAlt = "left";
 	private static string rightJumpKeyAlt = "right";
 	private static string overviewKey = "tab";
-	private static string centeringModeKey = "g";
+	private static string camModeKey = "g";
 	private static string pauseMenuKey = "escape";
 	//DebugOption
 	public static string spinKey = "r";
@@ -54,8 +58,8 @@ public static class InputConfiguration : object {
 		return overviewKey;
 	}
 
-	public static string getCenteringModeKey(){
-		return centeringModeKey;
+	public static string getCamModeKey(){
+		return camModeKey;
 	}
 
 	public static string getPauseMenuKey(){

@@ -12,7 +12,7 @@ using UnityEngine.UI;
  * Von hier aus wird im Moment auch die Kontrollübergabe gesteuert, weil diese direkt mit der Zeit in Verbindung steht
  */
 
-public class TempRoundTimer : MonoBehaviour, IDestructionObserver
+public class TempRoundTimer : MonoBehaviour, IDestructionObserver, IGameMode
 {
 	/* timePerRound ist selbsterklärend, genauso wie actualTime
      * timer ist der Timer-Text auf dem Canvas, der als UI-Anzeige dient
@@ -38,6 +38,8 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 
 	private bool allShotsFiredForThisRound;
 
+
+
 	void Start()
 	{
 		inCooldownPhase = false;
@@ -47,17 +49,44 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 		allShotsFiredForThisRound = false;
 		fire = InputConfiguration.getFireKey();
 		actualTime = timePerRound;
-		int i = 0;
 		counterCoRoutine = countDownRound();
 		StartCoroutine(counterCoRoutine);
 	}
+		
+
+
+	//hier drin müssen verschiedene Situationen berücksichtigt werden: zeit abgelaufen, zeit noch nicht abgelaufen aber shell schon abgeschossen usw....
+	void Update(){
+		if(Input.GetKeyDown(fire) && !allShotsFiredForThisRound && !inCooldownPhase){
+			allShotsFiredForThisRound = true;
+			//actualTime = maxTimeAfterShot;
+			timer.text = "shell fired, timer paused";
+		}
+
+		//Zeit abgelaufen: switch nach rundencooldown
+		if (actualTime == -1)
+		{
+			StartCoroutine(endRoundAfterSeconds (switchTime));
+		}
+
+		//zeit noch nicht abgelaufen, aber shell geschossen
+		if (allShotsFiredForThisRound && !paused) {
+			paused = true;
+		}
+
+		//shell ist eingeschlagen
+		if (destructedLast) {
+			StartCoroutine(endRoundAfterImpactAndSeconds (switchTime));
+		}
+	}
+
 
 	public void setControlSwitcher(ControlCycler controller)
 	{
 		this.controlCycler = controller;
 	}
 
-
+	//ist gerade pausiert ja oder nein
 	private bool paused;
 
 	/* IEnumerator um coroutine definieren zu können; yield als schlüsselwort für couroutinen; die können an diesem punkt wo sie 
@@ -89,32 +118,6 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 		}
 	}
 
-
-
-	//hier drin müssen verschiedene Situationen berücksichtigt werden: zeit abgelaufen, zeit noch nicht abgelaufen aber shell schon abgeschossen usw....
-	void Update(){
-		if(Input.GetKeyDown(fire) && !allShotsFiredForThisRound && !inCooldownPhase){
-			allShotsFiredForThisRound = true;
-			//actualTime = maxTimeAfterShot;
-			timer.text = "shell fired, timer paused";
-		}
-
-		//Zeit abgelaufen: switch nach rundencooldown
-		if (actualTime == -1)
-		{
-			StartCoroutine(endRoundAfterSeconds (switchTime));
-		}
-
-		//zeit noch nicht abgelaufen, aber shell geschossen
-		if (allShotsFiredForThisRound && !paused) {
-			paused = true;
-		}
-
-		//shell ist eingeschlagen
-		if (destructedLast) {
-			StartCoroutine(endRoundAfterImpactAndSeconds (switchTime));
-		}
-	}
 
 	//wir wollen wissen ob diese Runde schon eine (irgendwann dei letzte; Zukunftsmusik für nach der Vorlesung) Shell zerstört wurde
 	private bool destructedLast;
@@ -151,8 +154,13 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver
 		yield return endRoundAfterImpactAndSeconds (seconds);
 	}
 
+	//Implementierung des GameMode-Interfaces
+	public bool isInCoolDown(){
+		return inCooldownPhase;
+	}
+
 	//Implementierung des entsprechenden Interfaces, um auf Destruction einer Shell zu reagieren (Observer-Pattern);
-	//WICHTIG das heißt hier destructedLast, ist es aber noch nciht; das will cih irgendwann aufrüsten
+	//WICHTIG das heißt hier destructedLast, ist es aber noch nciht; das will cih irgendwann aufrüsten; das ist lediglich so, weil ich mir in Zukunft Arbeit sparen wollte
 	public void destructionObserved(GameObject destructedObject){
 		destructedLast = true;
 		cameraMovement.centerOnGameObject (destructedObject);
