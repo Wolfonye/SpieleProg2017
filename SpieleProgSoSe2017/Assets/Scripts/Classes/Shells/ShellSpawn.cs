@@ -25,12 +25,11 @@ public class ShellSpawn : MonoBehaviour {
 	private int currentNumberOfShots;
 	private int maxNumberOfShots;
 
-	//Ref auf den TempRoundTimer, damit wir ihm sagen koennen, dass die letzte Kugel abgefeuert wurde
-	//sofern wir im Zeitmodus sind heißt das
-	TempRoundTimer tempRoundTimer;
+	//Ref auf den GameMode
+	IGameMode gameMode;
 
 	void Start(){
-		tempRoundTimer = GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponent<TempRoundTimer> () as TempRoundTimer;
+		gameMode = ActiveObjects.getActiveGameMode();
 		fireKey = InputConfiguration.getFireKey ();
 		currentNumberOfShots = 0;
 		maxNumberOfShots = 1;
@@ -58,7 +57,7 @@ public class ShellSpawn : MonoBehaviour {
         }
 
 		if (currentNumberOfShots == maxNumberOfShots) {
-			tempRoundTimer.setLastShotInTheAir(true);
+			gameMode.setLastShotInTheAir(true);
 		}
     }
 

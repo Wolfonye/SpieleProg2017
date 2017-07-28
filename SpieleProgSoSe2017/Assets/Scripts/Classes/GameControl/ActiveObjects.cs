@@ -16,6 +16,7 @@ public static class ActiveObjects : object {
 	private static GameObject activeTank;
 	private static GameObject activeBullet;
 
+	private static IGameMode activeGameMode;
 	private static string activeGameModeID = "GAS_MODE"; //i know...streng genommen kein Objekt, sondern nur die ID des Objektes, um das es geht; verklagt mich; ich habe gerade nicht die Zeit den Klassennamen zu refactorn, das ist mit Monodevelop ein Kreuz
 
 	public static void setActiveTank(GameObject tank){
@@ -30,6 +31,10 @@ public static class ActiveObjects : object {
 		activeGameModeID = gameModeID;
 	}
 
+	public static void setActiveGameMode(IGameMode gameMode){
+		activeGameMode = gameMode;
+	}
+
 	public static GameObject getActiveTank(){
 		return activeTank;
 	}
@@ -40,5 +45,9 @@ public static class ActiveObjects : object {
 
 	public static string getActiveGameModeID(){
 		return activeGameModeID;
+	}
+
+	public static IGameMode getActiveGameMode(){
+		return activeGameMode;
 	}
 }

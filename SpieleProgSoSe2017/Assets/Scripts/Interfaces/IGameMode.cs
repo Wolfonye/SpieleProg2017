@@ -22,4 +22,6 @@ public interface IGameMode {
 	bool isModeEnabled();
 	//tauscht zwischen enabled und nicht enabled eines Modes
 	void toggleEnabled();
+	//man soll dem Mode mitteilen können, wann der letzte Schuss gerade fliegt
+	void setLastShotInTheAir(bool isActive);
 }

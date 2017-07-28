@@ -9,8 +9,11 @@ public class GasolineMode : MonoBehaviour,IDestructionObserver, IGameMode {
 	void Awake () {
 		if (ActiveObjects.getActiveGameModeID () == MODE_ID) {
 			isEnabled = true;
+			this.enabled = true;
+			ActiveObjects.setActiveGameMode (this);
 		} else {
 			isEnabled = false;
+			this.enabled = false;
 		}
 	}
 	
@@ -41,5 +44,10 @@ public class GasolineMode : MonoBehaviour,IDestructionObserver, IGameMode {
 
 	public void destructionObserved (GameObject destructedObject)
 	{
+	}
+
+	public void setLastShotInTheAir (bool isActive)
+	{
+		
 	}
 }
