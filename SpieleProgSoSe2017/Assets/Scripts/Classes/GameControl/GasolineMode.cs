@@ -41,6 +41,5 @@ public class GasolineMode : MonoBehaviour,IDestructionObserver, IGameMode {
 
 	public void destructionObserved (GameObject destructedObject)
 	{
-		throw new System.NotImplementedException ();
 	}
 }

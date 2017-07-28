@@ -207,7 +207,6 @@ public class ControlCycler : MonoBehaviour
 		vehicle.GetComponentInChildren<CarMovement> ().enabled = true;
 		vehicle.GetComponentInChildren<VehicleEnabled>().enabled = true;
 		vehicle.GetComponentInChildren<ActionPointController>().enabled = true;
-
 		//vehicle.GetComponentInChildren<HoldLineScript> ().enabled = true;
 
 		//Camera auf gerade aktiviertem Vehicle zentrieren; praktisch: wir können so die rictige maincamera abgreifen, da wir nur eine haben. das spart unnötige variablen

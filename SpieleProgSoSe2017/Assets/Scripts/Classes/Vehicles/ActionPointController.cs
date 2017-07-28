@@ -42,6 +42,7 @@ public class ActionPointController : MonoBehaviour, ICycleListener {
 	public void playerWasCycled (int currentPlayer)
 	{
 		increaseAPBy (actionGainPerRound);
+		actionPointBar.value = actionPoints;
 	}
 
 	//liefert true zurueck, wenn actionPoints noch echt größer null ist, sonst false
