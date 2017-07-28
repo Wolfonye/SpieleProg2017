@@ -191,6 +191,7 @@ public class ControlCycler : MonoBehaviour
 		carMovement.FullBrake ();
 		//vehicle.GetComponentInChildren<HoldLineScript> ().enabled = false;
 		vehicle.GetComponentInChildren<VehicleEnabled>().enabled = false;
+		vehicle.GetComponentInChildren<ActionPointController>().enabled = false;
 	}
 		
 	/*Auslagerung der Tankaktivierung
@@ -205,6 +206,7 @@ public class ControlCycler : MonoBehaviour
 		tempActivePointer.transform.parent = vehicle.transform;
 		vehicle.GetComponentInChildren<CarMovement> ().enabled = true;
 		vehicle.GetComponentInChildren<VehicleEnabled>().enabled = true;
+		vehicle.GetComponentInChildren<ActionPointController>().enabled = true;
 
 		//vehicle.GetComponentInChildren<HoldLineScript> ().enabled = true;
 

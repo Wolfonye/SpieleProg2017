@@ -6,8 +6,8 @@ public class GasolineMode : MonoBehaviour, IGameMode {
 	readonly string MODE_ID = "GAS_MODE";
 	private bool isEnabled;
 	// Use this for initialization
-	void Start () {
-		isEnabled = false;
+	void Awake () {
+		isEnabled = true;
 	}
 	
 	// Update is called once per frame

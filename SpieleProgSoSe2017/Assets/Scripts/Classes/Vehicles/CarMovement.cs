@@ -37,6 +37,12 @@ public class CarMovement : MonoBehaviour
 	private bool isGrounded;
 	private WheelHit hit;
 
+	//soll true sein, wenn das Fahrzeug Benzin/AP verbraucht
+	private bool consumesGasoline;
+
+	public void Start(){
+		consumesGasoline = GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponent<GasolineMode> ().isModeEnabled (); 
+	}
 
     public void Update()
     {
@@ -104,6 +110,11 @@ public class CarMovement : MonoBehaviour
 			 * Wenn wir das Spiel irgendwann mal erweitern wollen um verrückte Modi wie "Glatteis", dann setzen wir einfach den Faktor sehr niedrig oder sogar negativ und dann wirds verrückt :D
 			 */
 			vehicleRigBody.AddForce(-vehicleRigBody.velocity * vehicleRigBody.mass * brakeFactor);
+		}
+
+		if (!actionPointController.hasPointsLeft () && consumesGasoline) {
+			motor = 0;
+			FullBrake ();
 		}
 
 		foreach (Axle axle in axleInfos)

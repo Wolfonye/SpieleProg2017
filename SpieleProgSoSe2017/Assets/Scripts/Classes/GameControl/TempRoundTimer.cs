@@ -14,7 +14,7 @@ using UnityEngine.UI;
 
 public class TempRoundTimer : MonoBehaviour, IDestructionObserver, IGameMode
 {
-	readonly string  MODE_ID = "timer";
+	readonly string  MODE_ID = "TIMER";
 	//zeigt ob Modus aktiv ist
 	private bool isEnabled;
 	/* timePerRound ist selbsterklärend, genauso wie actualTime
@@ -41,11 +41,14 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver, IGameMode
 
 	private bool allShotsFiredForThisRound;
 
-
+	void Awake(){
+		if (ActiveObjects.getActiveGameModeID () == MODE_ID) {
+			isEnabled = true;
+		}
+	}
 
 	void Start()
 	{
-		isEnabled = true;
 		inCooldownPhase = false;
 		GameObject mainCam = GameObject.FindWithTag ("MainCamera");
 		cameraMovement = mainCam.GetComponent<CameraMovement> ();
