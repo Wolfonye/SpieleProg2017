@@ -2,6 +2,39 @@ SpieleProgrammierungSoSe2017
 --------------------------------------------------------------------------------
 
 
+UPDATE 24.07.2017 (Philipp) Active-Objects, Cam
+--------------------------------------------------------------------------------
+Es gibt wieder was :D :
+
+ActiveObjects funktioniert jetzt losgelöst vom Gamemaster2000.
+Wenn ihr an der Kern-Logik rumschrauben wollt, sagt mir bitte vorher Bescheid,
+weil ich da einige Änderungen eingeführt habe.
+
+Ich habe einige Code-Cleanings und Kommentare ergänzt und mich einige Zeit
+mit Bugs bezüglich der Cam rumgeschlagen und konnte da auch weiterkommen;
+ein paar Sachen sind anch wie vor nicht optimal. Was mich am meisten stört ist
+der abrupte Wechsel der Position anchdem man von free cam in folgende cam
+wechselt. Immerhin scheint das Verhalten aber jetzt konsistent zu sein.
+Habe ewig gebraucht um eine Sache zu beheben, die am Ende nur wenige Zeichen
+benötigt hat -.- .
+
+Ich habe ein Interface für den GameMode hinzugefügt, bis jetzt macht davon meiner
+ich nur der Cycler Gebrauch.
+Wenn ihr auf Dinge stoßt, die jeder Modus können sollte, dann sagt mir Bescheid
+und ich erweitere das Interface entsprechend bzw. sagt mir Bescheid, wenn ihr
+das ändert.
+
+In dem Zuge wäre es demnächst Zeit mal den TempRoundTimer umzubennen und die
+dadurch notwendig werdenden Refactorings durchzuführen.
+
+Ich hab das Gefühl noch viel mehr gemacht zu haben, aber mein Schädel kriegts
+gerade nciht mehr zusammen; schaut einfach in die Kommentare der Klassen, die
+euch unbekannt vorkommen, da sollte ich einiges erläutert haben.
+
+Für euch gibt es da auch glaube ich keine wichtigen How-Tos, die ich hätte
+schreiben müssen.
+
+
 UPDATE 24.07.2017 (Philipp) Cam-Movement und Active Objects Verwaltung
 --------------------------------------------------------------------------------
 Moien allerseits;
