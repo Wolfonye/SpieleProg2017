@@ -56,9 +56,9 @@ Philipp:
     ✔ Interface-Konzeption für Schadensmodell @done(2017-05-21 10:28) @project(Philipp)
     ✔ Radphysik in den Griff bekommen @done(2017-05-26 08:35) @project(Philipp)
     ✔ Bzgl. seltsamer Skalierungsunterschiede investigativ tätig werden!!! @done(2017-06-10 16:40) @project(Philipp)
-    ☐ Sprit-Modus (could have)
+    ✔ Sprit-Modus (could have) @done(2017-08-02 16:18) @project(Philipp)
         ✔ ActionPointBars und Bearbeitungslogik @done(2017-07-28 18:29) @project(Philipp)
-        ☐ Modus per se (Logik für Rundenwechsel usw.)
+        ✔ Modus per se (Logik für Rundenwechsel usw.) @done(2017-08-02 16:18) @project(Philipp)
     ✔ Verhindern Error durch NullRef fehlendes Objekt @done(2017-06-13 23:05) @project(Philipp)
     ✔ Control Cycle Skript !!! @done(2017-06-10 12:30) @project(Philipp)
     ✔ Control Cyle mit Flos Arbeit kombinieren und testen!! @done(2017-06-13 23:03) @project(Philipp)
@@ -106,9 +106,9 @@ Philipp:
     ✔ cam soll auf tank zentriert werden können und folgen können @done(2017-07-01 15:08) @project(Philipp)
     ✔ cooldown zwischen runden, weil sonst zu hektisch @done(2017-07-01 16:51) @project(Philipp)
     ☐ trennung von centering mode für einzelne spieler????
-    ☐ es ist unschön, dass ein spieler das switchen der cam auf den anderen verhindern kann, wenn er kurz vorher overview toggelt-> fixen (zurückstellt)
+    ✔ es ist unschön, dass ein spieler das switchen der cam auf den anderen verhindern kann, wenn er kurz vorher overview toggelt-> fixen (zurückstellt) @done(2017-08-02 16:18) @project(Philipp)
     ✔ topple detect @done(2017-07-01 19:05) @project(Philipp)
-    ☐ auslagern von "next player in: " auf eigenes canvas, da man das auch in anderen modi brauchen wird (wo das topple detect auch ist) (zurückgestellt)
+    ✔ auslagern von "next player in: " auf eigenes canvas, da man das auch in anderen modi brauchen wird (wo das topple detect auch ist) (zurückgestellt) @done(2017-08-02 16:19) @project(Philipp)
     ✔ Button für vorzeitiges Rundenende einbauen ! (should have) @done(2017-07-25 10:55) @project(Philipp)
     ✔ Winkelanzeige einbauen @done(2017-07-01 21:18) @project(Philipp)
     ✔ Cam-Modi: frei, fix on tank, fix on tank then shell !!! (must have) @done(2017-07-24 17:37) @project(Philipp)
@@ -123,6 +123,7 @@ Philipp:
     ☐ ausgiebige Tests der Cam-Modi
     ✔ Bugfix: EndRoundButton soll nicht nach abgefeuertem Schuss klickbar sein, das waere ein Doppelrundencheat @done(2017-07-25 17:35) @project(Philipp)
     ✔ Overview nur im freien Modus, sollte man den freien Modus verlassen so wird Overview beendet @done(2017-07-28 12:09) @project(Philipp)
+    ☐ Konzeption abstrakter Oberklasse für Gamemodi, daraus resultierend evtl. Refactoring IGameMode sinnig
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)

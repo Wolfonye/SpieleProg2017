@@ -2,6 +2,35 @@ SpieleProgrammierungSoSe2017
 --------------------------------------------------------------------------------
 
 
+UPDATE 24.07.2017 (Philipp) Sprit/ActionPoint-Modus-Basis ist fertig
+--------------------------------------------------------------------------------
+Habe jetzt den ActionPointModus implementiert und er scheint gut zu
+funktionieren. Mir bekannte Bugs sind behoben. Um das alles zu ermöglichen
+und erweiterbar zu halten, habe ich eine recht große Menge an Code-Refactorings
+durchgeführt. Der Code ist jetzt vielerorts kürzer, lesbarer und variabler und
+insbesondere weniger stark in sihc gekoppelt. Ich konnte bei den meisten Teilen
+realisieren, dass sie ihre nötigen Informationen dynamisch erhalten können.
+
+Vorher war es zum Beispiel so, dass eine Shell erst feststellte, welcher
+GameMode gerade aktiv war und diesen dann seiner eigenen Observerliste
+hinzugefügt hat, was enorm unschön war. Jetzt gibt es ein GameMode-Interface,
+welches vom entsprechenden Observerinterface erbt und der Mode wird vom Shell-
+Spawner bei der Shell registriert. Das bedeutet die ShellDestruction macht jetzt
+nur noch das, was sie wirklich soll, nämlich die Shell zerstören und das melden.
+Weiterhin fallen durch diesen Ansatz diverse Fallunterscheidungen weg.
+
+Um einen Überblick zu bekommen siehe die beiden Gamemodes sowie ShellDestruction
+, den vom neuen Konzept profitierenden EndRoundButton (bzw. das zuständige
+Script, welches erheblich einfach geworden ist) und das ShellSpawn-Script.
+
+TODO
+Eine Sache, die in Zukunft noch zu machen wäre, ist es eine abstrakte
+Basisklasse für die Gamemodes zur Verfügung zu stellen um einige Code-Dopplungen
+zu eliminieren.
+Dann lässt sich überlegen, ob man das GameMode-Interface nicht sogar wieder
+etwas zusammenstauchen kann.
+
+
 UPDATE 24.07.2017 (Philipp) Active-Objects, Cam
 --------------------------------------------------------------------------------
 Es gibt wieder was :D :
