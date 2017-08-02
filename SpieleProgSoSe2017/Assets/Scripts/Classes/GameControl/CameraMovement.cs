@@ -151,7 +151,7 @@ public class CameraMovement : MonoBehaviour, ICycleListener{
 
 
 		//hier passiert das wechseln in die vogelperspektive
-		if (Input.GetKeyDown (InputConfiguration.getOverviewKey()) && !centerOnVehicleModeOn && !bulletFollowModeOn) {
+		if (Input.GetKeyDown (InputConfiguration.getOverviewKey()) && !centerOnVehicleModeOn && !bulletFollowModeOn && !gameMode.isInCoolDown()) {
 			toggleOverviewPerspective ();
 		}
 	}

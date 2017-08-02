@@ -92,7 +92,6 @@
      <Compile Include="Assets\Scripts\Interfaces\IDestructible.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDestructionObserver.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IGameMode.cs" />
-     <Compile Include="Assets\Scripts\Interfaces\ILastShotInTheAirObserver.cs" />
      <Compile Include="Assets\UnityEssentials\UISamples\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\UnityEssentials\UISamples\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\UnityEssentials\UISamples\Scripts\ChangeColor.cs" />
