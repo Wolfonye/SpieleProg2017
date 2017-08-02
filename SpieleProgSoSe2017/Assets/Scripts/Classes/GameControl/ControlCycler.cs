@@ -50,11 +50,6 @@ public class ControlCycler : MonoBehaviour
 
 	//welches Fahrzeug ist gerade das aktive
 	private int[] currentVehicleIndexOfPlayer;
-
-	//TODO: revisen, ob man das wirklcih so machen sollte mit der Referenz; evtl gehts auch ohne, dann
-	//waere das softwaretechnisch huebscher weil die Objekte dann weniger stark miteinander verwoben waeren;
-	//ist aber erstmal zweitrangig angesichts der Zeit; irgendwann haett ich das gerne
-	public TempRoundTimer roundTimer;
 				
 	private GameObject tempGameObject;
 	private CarMovement carMovement;
@@ -87,7 +82,6 @@ public class ControlCycler : MonoBehaviour
 		currentVehicleIndexOfPlayer[1] = 0;
 
 		currentPlayer = 0;
-		roundTimer.setControlSwitcher(this);
 		deactivateAllVehiclesInList (player0Vehicles);
 		deactivateAllVehiclesInList (player1Vehicles);
 		activateNextVehicleOfPlayer (0, player0Vehicles);

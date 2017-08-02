@@ -6,23 +6,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Eine Shell oder irgendeine andere Art von "Schuss" soll mit mitteilen können, wenn er zerstört wurde, wobei
+ * man hier vielleicht allgemiener hätte sagen können, wenn "die Phase des Absetzens" abgeschlossen ist.
+ * Eine Mine hat ja nciht wirklich eine Flugzeit, ein Schuss schon, eine Mine könnte das also direkt mitteilen
+ * eine Shell sollte das wirklich erst, nachdem sie explodiert ist.
+ * Aber das war am Anfang noch nicht so geplant, daher die etwas enge Namensgebung.
+ * Ich muss mal schauen, obs Tools gibt, die das schnell refactorn können. Visual Studio köntne es vermutlich
+ * aaaber meine Version ist abgelaufen und ich gurke mit Monodevelop rum -.-
+ * */
 public class ShellDestruction : MonoBehaviour {
 
 	private List<IDestructionObserver> destructionObservers;
 
-	//Ich muss mir irgendwie am Anfang die Spielelemente ziehen, die gerne notified würden, wenn die Shell explodiert wird
-	//bissl unschön noch...nicht sehr klassische observed -.-
-	void Start(){
+	// wichtig, dass das im Awake steht, sonst hagelts NullPointerExceptions :D
+	void Awake(){
 		destructionObservers = new List<IDestructionObserver>();
-		GameObject gameMaster2000 = GameObject.FindWithTag ("Gamemaster2000");
-		if (GameObject.FindWithTag ("Gamemaster2000").GetComponent<TempRoundTimer> ().isModeEnabled ()) {
-			destructionObservers.Add ((TempRoundTimer)gameMaster2000.GetComponent<TempRoundTimer> ());
-		}
-
-		if (GameObject.FindWithTag ("Gamemaster2000").GetComponent<GasolineMode> ().isModeEnabled ()) {
-			destructionObservers.Add ((GasolineMode)gameMaster2000.GetComponent<GasolineMode> ());
-		}
-
 	}
 
     //Joa...die Shell muss weg...
