@@ -69,7 +69,10 @@ public class GasolineMode : MonoBehaviour, IGameMode {
 
 	// Update is called once per frame
 	void Update () {
-		
+		if (lastShellDestroyed) {
+			StartCoroutine (endRoundAfterSeconds (switchTime));
+			lastShellDestroyed = false;
+		}
 	}
 
 	public bool isInCoolDown ()
@@ -93,9 +96,27 @@ public class GasolineMode : MonoBehaviour, IGameMode {
 		isEnabled = !isEnabled;
 	}
 
+	//soll seconds lange warten und dann die Runde beenden und cyclen; während des wartens(cooldown) sind bereits alle vehicle deaktiviert
+	private IEnumerator endRoundAfterSeconds(int seconds){
+		inCoolDownPhase = true;
+		int elapsedTime = 0;
+		lastShotIsInTheAir = false;
+		cycler.deactivateAllVehicles ();
+		while (elapsedTime < seconds) {
+			switchTimer.text = "Round Cooldown: " + (seconds - elapsedTime);
+			elapsedTime++;
+			//Debug.Log ("sekunde vorbei");
+			yield return new WaitForSeconds (1);
+		}
+		switchTimer.text = "";
+		cycler.cycle ();
+		inCoolDownPhase = false;
+	}
+
 	//Es folgen Interfaceimplementierungen----------------------
 	public void destructionObserved (GameObject destructedObject)
 	{
+		cameraMovement.centerOnGameObject (destructedObject);
 	}
 		
 	public void setLastShotInTheAir (bool isInTheAir)
@@ -105,5 +126,9 @@ public class GasolineMode : MonoBehaviour, IGameMode {
 
 	public void lastShotExploded(){
 		lastShellDestroyed = true;
+	}
+
+	public void initiateRoundEnd(){
+		StartCoroutine(endRoundAfterSeconds(switchTime));
 	}
 }

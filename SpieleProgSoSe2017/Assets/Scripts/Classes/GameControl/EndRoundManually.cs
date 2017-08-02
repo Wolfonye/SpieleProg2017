@@ -6,19 +6,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+ * stellt Funktion zur Verfügung für den Button, mit dem man vorzeitig ein Rundenende einleiten kann
+ * wurde stark refactored neben einigen anderen Dingen, nachdem das IGameMode Interface und
+ * ActiveObjects entstanden ist.
+ * Dadurch hat sich der Code wesentlich vereinfacht. Funktioniert wirklcih erstuanlich gut inzwischen...geil.
+ */
 public class EndRoundManually : MonoBehaviour {
-	private GameObject gamemaster2000;
-	private TempRoundTimer tempRoundTimer;
+	private IGameMode gameMode;
 
 	// Use this for initialization
 	void Start () {
-		gamemaster2000 = GameObject.FindGameObjectWithTag ("Gamemaster2000");
-		tempRoundTimer = gamemaster2000.GetComponent<TempRoundTimer> () as TempRoundTimer;
+		gameMode = ActiveObjects.getActiveGameMode ();
 	}
 
 	public void endRoundNow(){
-		if (!tempRoundTimer.isLastShotInTheAir () && !tempRoundTimer.isInCoolDownPhase()) {
-			StartCoroutine (tempRoundTimer.endRoundAfterSeconds (tempRoundTimer.getSwitchTime()));
+		if (!gameMode.isInCoolDown ()) {	
+			gameMode.initiateRoundEnd ();
 		}
 	}
 }

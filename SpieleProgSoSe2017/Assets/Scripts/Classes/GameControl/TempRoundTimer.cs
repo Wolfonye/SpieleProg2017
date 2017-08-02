@@ -96,6 +96,7 @@ public class TempRoundTimer : MonoBehaviour, IGameMode
 		//shell ist eingeschlagen
 		if (destructedLast) {
 			StartCoroutine(endRoundAfterImpactAndSeconds (switchTime));
+			destructedLast = false;
 		}
 	}
 
@@ -160,7 +161,6 @@ public class TempRoundTimer : MonoBehaviour, IGameMode
 		inCooldownPhase = true;
 		int elapsedTime = 0;
 		actualTime = timePerRound;
-		destructedLast = false;
 		allShotsFiredForThisRound = false;
 		lastShotInTheAir = false;
 		controlCycler.deactivateAllVehicles ();
@@ -170,9 +170,6 @@ public class TempRoundTimer : MonoBehaviour, IGameMode
 			//Debug.Log ("sekunde vorbei");
 			yield return new WaitForSeconds (1);
 		}
-		destructedLast = false;
-		allShotsFiredForThisRound = false;
-		lastShotInTheAir = false;
 		switchTimer.text = "";
 		controlCycler.cycle ();
 		inCooldownPhase = false;
@@ -211,6 +208,11 @@ public class TempRoundTimer : MonoBehaviour, IGameMode
 		lastShotInTheAir = inTheAir;
 	}
 	public void lastShotExploded(){
+	}
+	public void initiateRoundEnd(){
+		if (!isLastShotInTheAir () && !isInCoolDownPhase()) {
+			StartCoroutine (endRoundAfterSeconds (switchTime));
+		}
 	}
 
 	//gibt true zurueck, wenn die letzte Shell deiser Runde entweder fliegt oder eingeschlagen ist.

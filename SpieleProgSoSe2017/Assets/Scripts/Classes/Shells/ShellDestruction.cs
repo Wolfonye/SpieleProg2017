@@ -14,7 +14,7 @@ using UnityEngine;
  * Aber das war am Anfang noch nicht so geplant, daher die etwas enge Namensgebung.
  * Ich muss mal schauen, obs Tools gibt, die das schnell refactorn können. Visual Studio köntne es vermutlich
  * aaaber meine Version ist abgelaufen und ich gurke mit Monodevelop rum -.-
- * */
+ */
 public class ShellDestruction : MonoBehaviour {
 
 	private List<IDestructionObserver> destructionObservers;

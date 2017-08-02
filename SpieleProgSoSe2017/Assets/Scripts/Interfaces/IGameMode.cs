@@ -28,4 +28,6 @@ public interface IGameMode:IDestructionObserver {
 	void setLastShotInTheAir(bool isActive);
 	//der Mode soll reagieren, wenn der letzte Schuss zerstört wurde
 	void lastShotExploded();
+	//um von aussen ein Rundenende herbeizuführen unabhängig vom spezieleln Modus
+	void initiateRoundEnd();
 }
