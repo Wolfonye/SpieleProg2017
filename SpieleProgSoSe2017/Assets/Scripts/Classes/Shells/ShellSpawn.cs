@@ -47,13 +47,14 @@ public class ShellSpawn : MonoBehaviour, IDestructionObserver {
     // Update is called once per frame
     void Update()
     {
-		if (Input.GetKeyDown(fireKey) && currentNumberOfShotsFired < maxNumberOfShots)
-        {
-            tempShell = Instantiate(shell, shellEmitter.transform.position + emitterOffset, shellEmitter.transform.rotation) as GameObject;
+		if (Input.GetKeyDown (fireKey) && currentNumberOfShotsFired < maxNumberOfShots) {
+			tempShell = Instantiate (shell, shellEmitter.transform.position + emitterOffset, shellEmitter.transform.rotation) as GameObject;
+			//wenn ne shell abgefuert wurde wollen verchiedene parteien von ihrere zerstörung wissen; zum einen der shallspawner, zum anderen der gamemode
+			//hier ist zu bemerken, dass das nur funktioneirt, weil das Gamemode-Interface das DesctructionObserverInterface erweitert
 			tempShell.GetComponent<ShellDestruction> ().registerDestructionObserver (this);
 			tempShell.GetComponent<ShellDestruction> ().registerDestructionObserver (gameMode);
 
-            //addForce funktioniert nicht auf dem GameObject per se, sondern auf dem Rigidbody, den wir uns hier beschaffen
+            //		addForce funktioniert nicht auf dem GameObject per se, sondern auf dem Rigidbody, den wir uns hier beschaffen
             Rigidbody tempShellRigBody;
             tempShellRigBody = tempShell.GetComponent<Rigidbody>();
 

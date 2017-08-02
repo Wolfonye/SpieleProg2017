@@ -15,7 +15,7 @@ using UnityEngine.UI;
  * dass ein Rundenende nicht durch zeitliche Vorgänge getriggert wird. 
  * Die Fälle, die eine Runde beenden sind:
  * - User betätigt end round button
- * - User gibt letzten Schuss der Runde ab
+ * - Letzter Schuss der Runde ist explodiert
  * Die Verwaltung der Action-Points wird von den Objekten slebst verwaltet, die über solche verfügen.
  * Das soll bessere Entkopplung ermöglichen und sicherstellen, dass SPielelemente, die von aussen Einfluss auf
  * die Action Points nehmen werden keine zusätzlichen unnötigen Kontextwechsel verursachen.
@@ -50,18 +50,21 @@ public class GasolineMode : MonoBehaviour, IGameMode {
 	public Text switchTimer;
 	public int switchTime;
 
+	//der Mode soll schauen, ob er der aktuell gewünschte ist, welches über die in ActiveObjects gesetzte ID passiert
+	//und ActiveObjects eine ref auf sich selbst geben.
 	void Awake () {
 		if (ActiveObjects.getActiveGameModeID () == MODE_ID) {
 			isEnabled = true;
 			this.enabled = true;
 			ActiveObjects.setActiveGameMode (this);
+			GameObject.FindWithTag ("TimeModeHUD").SetActive(false);
 		} else {
 			isEnabled = false;
 			this.enabled = false;
 		}
 	}
 
-	//Initialisierung
+	//setzen der Refs für cam-Bewegung und cycler
 	void Start(){
 		cycler = GameObject.FindWithTag ("Gamemaster2000").GetComponent<ControlCycler> () as ControlCycler;
 		cameraMovement = GameObject.FindWithTag ("MainCamera").GetComponent<CameraMovement> () as CameraMovement;
@@ -69,7 +72,7 @@ public class GasolineMode : MonoBehaviour, IGameMode {
 
 	// Update is called once per frame
 	void Update () {
-		if (lastShellDestroyed) {
+		if (lastShellDestroyed && !inCoolDownPhase) {
 			StartCoroutine (endRoundAfterSeconds (switchTime));
 			lastShellDestroyed = false;
 		}
@@ -91,6 +94,7 @@ public class GasolineMode : MonoBehaviour, IGameMode {
 		return isEnabled;
 	}
 
+	//toggelt die isEnabled-Variable
 	public void toggleEnabled ()
 	{
 		isEnabled = !isEnabled;

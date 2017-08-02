@@ -24,7 +24,7 @@ public class ShellDestruction : MonoBehaviour {
 		destructionObservers = new List<IDestructionObserver>();
 	}
 
-    //Joa...die Shell muss weg...
+    //Joa...die Shell muss weg...und logischerweise die observer benachrichtigt werden
     private void OnCollisionEnter(Collision collision)
     {
 		foreach (IDestructionObserver destructionObserver in destructionObservers) {

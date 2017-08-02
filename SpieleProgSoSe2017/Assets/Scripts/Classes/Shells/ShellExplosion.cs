@@ -17,7 +17,7 @@ public class ShellExplosion : MonoBehaviour {
 		int i = 0;
 		int dmg = 20;
 		for(int j = 0; j < 5; j++){
-			Debug.Log (j);
+			//Debug.Log (j);
 			radius = radius + start;	
 			hitColliders = Physics.OverlapSphere(center, radius);
 			while (i < hitColliders.Length)

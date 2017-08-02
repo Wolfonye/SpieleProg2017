@@ -17,6 +17,10 @@ public static class ActiveObjects : object {
 	private static GameObject activeBullet;
 
 	private static IGameMode activeGameMode;
+	//die ID kann von aussen gesetzt werden, um mitzuteilen welcher mode gewünscht ist
+	//die modes erkennen dann beim start, ob sie gewünscht sind und setzen den activeGameMode dementsprechend
+	//auf sich selbst, wenn ja und deaktivieren sich slebst, wenn nein.
+	//dazu wird die readonly-ID des gamemode mit der hier gesetzten abgeglichen.
 	private static string activeGameModeID = "GAS_MODE"; //i know...streng genommen kein Objekt, sondern nur die ID des Objektes, um das es geht; verklagt mich; ich habe gerade nicht die Zeit den Klassennamen zu refactorn, das ist mit Monodevelop ein Kreuz
 
 	public static void setActiveTank(GameObject tank){

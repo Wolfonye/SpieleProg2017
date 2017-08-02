@@ -18,6 +18,7 @@ public class EndRoundManually : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//wir ziehen uns den aktiven Modus; die wissen dann selber, was getan werden muss, um ne Runde zu beenden (initiateROundEnd)
 		gameMode = ActiveObjects.getActiveGameMode ();
 	}
 
