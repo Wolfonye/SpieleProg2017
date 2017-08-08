@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Classes\GameControl\CurrentLevelSetup.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\EndRoundManually.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\ExitUnpausing.cs" />
+     <Compile Include="Assets\Scripts\Classes\GameControl\GasolineMode.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\HUDLookToCamera.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\InputConfiguration.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\MaxTanksPerLevel.cs" />
@@ -74,6 +75,7 @@
      <Compile Include="Assets\Scripts\Classes\Shells\ShellRotation.cs" />
      <Compile Include="Assets\Scripts\Classes\Shells\ShellSetup.cs" />
      <Compile Include="Assets\Scripts\Classes\Shells\ShellSpawn.cs" />
+     <Compile Include="Assets\Scripts\Classes\Vehicles\ActionPointController.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\BarrelAngle.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\CarCenterOfMass.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\CarMovement.cs" />
@@ -90,7 +92,6 @@
      <Compile Include="Assets\Scripts\Interfaces\IDestructible.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDestructionObserver.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IGameMode.cs" />
-     <Compile Include="Assets\Scripts\Interfaces\ILastShotInTheAirObserver.cs" />
      <Compile Include="Assets\UnityEssentials\UISamples\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\UnityEssentials\UISamples\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\UnityEssentials\UISamples\Scripts\ChangeColor.cs" />

@@ -5,15 +5,25 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+//TODO: nach Abgabe, wenn wieder mehr Zeit ist abstrakte Oberklasse für Modi schreiben; existiert noch nicht,
+//weil ANfangs nicht klar war, dass mehrere Modi betrieben werden würden und es dementsprechend wenig Abstraktiosngedanken gab
 
 
 /*
- * Skript für den Rundencounter; über die public int timePerRound kann man von außen die Rundenzeit variieren; 
- * Von hier aus wird im Moment auch die Kontrollübergabe gesteuert, weil diese direkt mit der Zeit in Verbindung steht
+ * Skript für den Time-Game-Mode; über die public int timePerRound kann man von außen die Rundenzeit variieren; 
+ * Der Modus entscheidet, wann gecyclet wird; die dazu nötigen Funktionen und die entsprechende Logik sind in ControlCycler.cs implementiert
  */
 
-public class TempRoundTimer : MonoBehaviour, IDestructionObserver, IGameMode
+public class TempRoundTimer : MonoBehaviour, IGameMode
 {
+	//Die ID wird genutzt um die Modi zu unterscheiden, es geschieht beim Awake ein checkup mit
+	// der ID, die aktuell im ActiveObjects gesetzt ist und somit repräsentiert, welchen Modus
+	// der User gerade wünscht. Fällt der checkup positiv aus wird der modus aktiviert. Dieses Verfahren
+	// ist auf jeden Modus übertragbar. Aus Evolutionstechnischen Gründen gibt es da noch keine gemeinsame
+	//abstrakte Oberklasse, das wäre noch zu erledigen; dann wäre das ein bisschen aufgeräumter
+	readonly string  MODE_ID = "TIMER";
+	//zeigt ob Modus aktiv ist
+	private bool isEnabled;
 	/* timePerRound ist selbsterklärend, genauso wie actualTime
      * timer ist der Timer-Text auf dem Canvas, der als UI-Anzeige dient
      * controlSwitcher ist eine Referenz auf ebenjenen, damit wir dessen timerZero-methode aufrufen können, die 
@@ -38,13 +48,22 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver, IGameMode
 
 	private bool allShotsFiredForThisRound;
 
-
+	void Awake(){
+		if (ActiveObjects.getActiveGameModeID () == MODE_ID) {
+			isEnabled = true;
+			this.enabled = true;
+			ActiveObjects.setActiveGameMode (this);
+		} else {
+			isEnabled = false;
+			this.enabled = false;
+		}
+	}
 
 	void Start()
 	{
+		controlCycler = GameObject.FindWithTag ("Gamemaster2000").GetComponent<ControlCycler> () as ControlCycler;
 		inCooldownPhase = false;
-		GameObject mainCam = GameObject.FindWithTag ("MainCamera");
-		cameraMovement = mainCam.GetComponent<CameraMovement> ();
+		cameraMovement = GameObject.FindWithTag ("MainCamera").GetComponent<CameraMovement> ();
 		paused = false;
 		allShotsFiredForThisRound = false;
 		fire = InputConfiguration.getFireKey();
@@ -77,9 +96,24 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver, IGameMode
 		//shell ist eingeschlagen
 		if (destructedLast) {
 			StartCoroutine(endRoundAfterImpactAndSeconds (switchTime));
+			destructedLast = false;
 		}
 	}
 
+
+	public string getModeID(){
+		return MODE_ID;
+	}
+
+	public bool isModeEnabled ()
+	{
+		return isEnabled;
+	}
+
+	public void toggleEnabled ()
+	{
+		isEnabled = !isEnabled;
+	}
 
 	public void setControlSwitcher(ControlCycler controller)
 	{
@@ -127,7 +161,6 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver, IGameMode
 		inCooldownPhase = true;
 		int elapsedTime = 0;
 		actualTime = timePerRound;
-		destructedLast = false;
 		allShotsFiredForThisRound = false;
 		lastShotInTheAir = false;
 		controlCycler.deactivateAllVehicles ();
@@ -137,9 +170,6 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver, IGameMode
 			//Debug.Log ("sekunde vorbei");
 			yield return new WaitForSeconds (1);
 		}
-		destructedLast = false;
-		allShotsFiredForThisRound = false;
-		lastShotInTheAir = false;
 		switchTimer.text = "";
 		controlCycler.cycle ();
 		inCooldownPhase = false;
@@ -173,9 +203,16 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver, IGameMode
 	// soll true sein sobald die letzte Shell zumindest mal unterwegs ist
 	private bool lastShotInTheAir;
 
-	//Implementierung des entsprechenden Interfaces
+	//Implementierungen des entsprechenden Interfaces
 	public void setLastShotInTheAir(bool inTheAir){
 		lastShotInTheAir = inTheAir;
+	}
+	public void lastShotExploded(){
+	}
+	public void initiateRoundEnd(){
+		if (!isLastShotInTheAir () && !isInCoolDownPhase()) {
+			StartCoroutine (endRoundAfterSeconds (switchTime));
+		}
 	}
 
 	//gibt true zurueck, wenn die letzte Shell deiser Runde entweder fliegt oder eingeschlagen ist.
@@ -191,5 +228,5 @@ public class TempRoundTimer : MonoBehaviour, IDestructionObserver, IGameMode
 	public int getSwitchTime(){
 		return switchTime;
 	}
-
+		
 }

@@ -50,11 +50,6 @@ public class ControlCycler : MonoBehaviour
 
 	//welches Fahrzeug ist gerade das aktive
 	private int[] currentVehicleIndexOfPlayer;
-
-	//TODO: revisen, ob man das wirklcih so machen sollte mit der Referenz; evtl gehts auch ohne, dann
-	//waere das softwaretechnisch huebscher weil die Objekte dann weniger stark miteinander verwoben waeren;
-	//ist aber erstmal zweitrangig angesichts der Zeit; irgendwann haett ich das gerne
-	public TempRoundTimer roundTimer;
 				
 	private GameObject tempGameObject;
 	private CarMovement carMovement;
@@ -87,7 +82,6 @@ public class ControlCycler : MonoBehaviour
 		currentVehicleIndexOfPlayer[1] = 0;
 
 		currentPlayer = 0;
-		roundTimer.setControlSwitcher(this);
 		deactivateAllVehiclesInList (player0Vehicles);
 		deactivateAllVehiclesInList (player1Vehicles);
 		activateNextVehicleOfPlayer (0, player0Vehicles);
@@ -191,6 +185,7 @@ public class ControlCycler : MonoBehaviour
 		carMovement.FullBrake ();
 		//vehicle.GetComponentInChildren<HoldLineScript> ().enabled = false;
 		vehicle.GetComponentInChildren<VehicleEnabled>().enabled = false;
+		vehicle.GetComponentInChildren<ActionPointController>().enabled = false;
 	}
 		
 	/*Auslagerung der Tankaktivierung
@@ -205,7 +200,7 @@ public class ControlCycler : MonoBehaviour
 		tempActivePointer.transform.parent = vehicle.transform;
 		vehicle.GetComponentInChildren<CarMovement> ().enabled = true;
 		vehicle.GetComponentInChildren<VehicleEnabled>().enabled = true;
-
+		vehicle.GetComponentInChildren<ActionPointController>().enabled = true;
 		//vehicle.GetComponentInChildren<HoldLineScript> ().enabled = true;
 
 		//Camera auf gerade aktiviertem Vehicle zentrieren; praktisch: wir können so die rictige maincamera abgreifen, da wir nur eine haben. das spart unnötige variablen

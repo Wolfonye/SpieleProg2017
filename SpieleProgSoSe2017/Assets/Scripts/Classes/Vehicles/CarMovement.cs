@@ -8,6 +8,11 @@ using System.Collections.Generic;
 
 public class CarMovement : MonoBehaviour
 {
+	//Ref auf den ActionPointController dieses Fahrzeugs; habe erst überlegt dei Action Points hier drin zu halten aus Performancegründen.
+	//Ich vermute allerdings, dass es wenig bis nichts spürbares an Unterschied geben wird, wenn ich das auslagere und damit die ganze Sache ein bisschen
+	//übersichtlicher und hoffentlich erweiterbarer halte.
+	public ActionPointController actionPointController;
+
 	//Für jede Achse gibt es nen Listeneintrag
     public List<Axle> axleInfos; 
 
@@ -18,6 +23,7 @@ public class CarMovement : MonoBehaviour
     //public float maxSteeringAngle; 
 	public float brakePower;
 	public float brakeFactor = 0.8f;
+	//um zu steuern ab wann die Beschleunigung von künstlich gedämpft werden soll, funzt sehr gut :D
 	public float speedDampingThreshold;
 
 	public HoldLineScript holdLine;
@@ -31,6 +37,12 @@ public class CarMovement : MonoBehaviour
 	private bool isGrounded;
 	private WheelHit hit;
 
+	//soll true sein, wenn das Fahrzeug Benzin/AP verbraucht
+	private bool consumesGasoline;
+
+	public void Start(){
+		consumesGasoline = GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponent<GasolineMode> ().isModeEnabled (); 
+	}
 
     public void Update()
     {
@@ -45,8 +57,8 @@ public class CarMovement : MonoBehaviour
 				break;
 			}
 		}
-	
         motor = maxMotorTorque * Input.GetAxis("Horizontal");
+		//Fahrtrichtung soll immer relativ zum Betrachter sein
 		if (vehicleRigBody.transform.forward.x > 0) {
 			motor = -motor;
 		}
@@ -98,6 +110,11 @@ public class CarMovement : MonoBehaviour
 			 * Wenn wir das Spiel irgendwann mal erweitern wollen um verrückte Modi wie "Glatteis", dann setzen wir einfach den Faktor sehr niedrig oder sogar negativ und dann wirds verrückt :D
 			 */
 			vehicleRigBody.AddForce(-vehicleRigBody.velocity * vehicleRigBody.mass * brakeFactor);
+		}
+
+		if (!actionPointController.hasPointsLeft () && consumesGasoline) {
+			motor = 0;
+			FullBrake ();
 		}
 
 		foreach (Axle axle in axleInfos)
