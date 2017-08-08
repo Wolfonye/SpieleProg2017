@@ -19,6 +19,7 @@ public static class InputConfiguration : object {
 	private static string overviewKey = "tab";
 	private static string camModeKey = "g";
 	private static string pauseMenuKey = "escape";
+
 	//DebugOption
 	public static string spinKey = "r";
 
@@ -68,6 +69,46 @@ public static class InputConfiguration : object {
 
 	public static string getSpinKey(){
 		return spinKey;
+	}
+
+	public static void setFireKey(string newFireKey){
+		fireKey = newFireKey;
+	}
+
+	public static void setLeftJumpKey(string newLeftJumpKey){
+		leftJumpKey = newLeftJumpKey;
+	}
+
+	public static void setRightJumpKey(string newRightJumpKey){
+		rightJumpKey = newRightJumpKey;
+	}
+
+	public static void setRightJumpKeyAlt(string newRightJumpKey){
+		rightJumpKeyAlt = newRightJumpKey;
+	}
+
+	public static void setLeftJumpKeyAlt(string newLeftJumpKey){
+		leftJumpKeyAlt = newLeftJumpKey;
+	}
+
+	public static void setOverviewKey(string newOverviewKey){
+		overviewKey = newOverviewKey;
+	}
+
+	public static void setCamModeKey(string newCamModeKey){
+		camModeKey = newCamModeKey;
+	}
+
+	public static void setPauseMenuKey(string newPauseMenuKey){
+		pauseMenuKey = newPauseMenuKey;
+	}
+
+	public static void setBarrelUpKey(string newBarrelUpKey){
+		barrelUpKey = newBarrelUpKey;
+	}
+
+	public static void setBarrelDownKey(string newBarrelDownKey){
+		barrelDownKey = newBarrelDownKey;
 	}
 
 }
