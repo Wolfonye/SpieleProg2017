@@ -141,15 +141,22 @@ Katya:
         ✔ Beenden @done(2017-06-25 20:53) @project(Katya)
     ✔ Levelauswahlmenu @done(2017-06-25 20:53) @project(Katya)
         ☐ Modusauswahl
+            ✔ graphisch  @done(2017-08-09 10:26) @project(Katya)
+            ☐ Skript
     ☐ Match finished Screen
         ☐ WinnerScreen Hintergrund Animationen
     ✔ Pausescreen @done(2017-06-26 22:34) @project(Katya)
     ✔ Pause und Matchfinished mit Philipp synchronisieren (jaaaa...synchronisieren ist ein merhdeutiger begriffblabla) @done(2017-06-27 22:02) @project(Katya)
     ☐ Menu-Panelhintergründe Alphas usw. anpassen
     ☐ Control-Setup (must have)
+        ✔ gaphisch   @done(2017-08-09 10:26) @project(Katya)
+        ☐ Skript
     ☐ Grafic sugar in menus (should have)
     ☐ Auswahl Tankanzahl zs mit Phil (must have)
-
+        ✔ graphisch   @done(2017-08-09 10:27) @project(Katya)
+        ☐ Skript
+    ☐ Start Game Button Skript
+    ☐ Level Button Skript
 WayPoints:
     ☐ konspiratives Grillen
     ✔ MinimalPrototyp zur Physik @done(2017-05-12 14:52) @project(WayPoints)
