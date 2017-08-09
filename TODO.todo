@@ -152,11 +152,11 @@ Katya:
         ✔ gaphisch   @done(2017-08-09 10:26) @project(Katya)
         ☐ Skript
     ☐ Grafic sugar in menus (should have)
-    ☐ Auswahl Tankanzahl zs mit Phil (must have)
+    ✔ Auswahl Tankanzahl zs mit Phil (must have) @done(2017-08-09 15:58) @project(Katya)
         ✔ graphisch   @done(2017-08-09 10:27) @project(Katya)
-        ☐ Skript
-    ☐ Start Game Button Skript
-    ☐ Level Button Skript
+        ✔ Skript @done(2017-08-09 15:58) @project(Katya)
+    ✔ Start Game Button Skript @done(2017-08-09 15:57) @project(Katya)
+    ✔ Level Button Skript @done(2017-08-09 15:57) @project(Katya)
 WayPoints:
     ☐ konspiratives Grillen
     ✔ MinimalPrototyp zur Physik @done(2017-05-12 14:52) @project(WayPoints)
