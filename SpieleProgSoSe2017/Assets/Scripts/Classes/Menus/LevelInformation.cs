@@ -16,22 +16,31 @@ public class LevelInformation : MonoBehaviour {
 		startGame.setCurrentLvlID (LEVEL_ID);
 	}
 
+	// holt sich die maximale Tankanzahl für das jeweilige Level
 	public int getMaxNumberOfTanks (string LEVEL_ID) {
 		maxNumberOfTanks = MaxTanksPerLevel.getMaxTanksByLevelID (LEVEL_ID);
 		return maxNumberOfTanks;
 	}
 
-	public void setMaxNumberOfTanks (int maxNumberOfTanks) {
+	// übermittelt dem Hochzählbutton, welche die obere Grenze ist, also die maximale Tankanzahl
+	public void setMaxNumberOfTanks () {
 		countingUp.setMaxNumberOfTanks (maxNumberOfTanks);
 	}
 
-	public void setMaxTanksText (int maxNumberOfTanks) {
+	// Text, der anzeigt, wieviele Tanks in dem Level jeweils gespielt werden dürfen
+	public void setMaxTanksText () {
 		maxTanks = GetComponent<Text> ();
 		maxTanks.text = maxNumberOfTanks.ToString ();
 	}
 
-	public void setCurrentNumberOfTanks (int maxNumberOfTanks) {
+	// Text, der anzeigt, wieviele Tanks ausgewählt werden bei default, nämlich maximale Anzahl
+	public void setCurrentNumberOfTanks () {
 		currentNumberOfTanks = GetComponent<Text> ();
 		currentNumberOfTanks.text = maxNumberOfTanks.ToString ();
+	}
+
+	// Übergabe der aktuellen Anzahl der Tanks an das StartGame-Skript
+	public void tellCurrentNumberOfTanks () {
+		startGame.setCurrentNumberOfTanks (maxNumberOfTanks);
 	}
 }
