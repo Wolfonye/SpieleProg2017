@@ -49,7 +49,7 @@ Philipp:
     ✔ Randomisierung des Entstehungsortes der Comic-Booms @done(2017-05-15 21:54) @project(Philipp)
     ✔ Comic-Booms ins Hauptprojekt importieren und auf Shells anpassen @done(2017-05-15 21:53) @project(Philipp)
     ✔ Booms skalieren? @done(2017-06-18 17:11) @project(Philipp)
-    ☐ Mündungsfeuer/wolke
+    ☐ Mündungsfeuer/wolke(zurueckgestellt)
     ✔ Normierung der Lane-Breite @done(2017-05-26 08:35) @project(Philipp)
     ✔ Kontrollübergabe zwischen Spielern @done(2017-05-21 10:28) @project(Philipp)
     ✔ Timer-Skript Rohfassung @done(2017-05-19 18:36) @project(Philipp)
@@ -105,14 +105,14 @@ Philipp:
     ✔ Bug bei unentschieden fixen !!! @done(2017-06-30 15:51) @project(Philipp)
     ✔ cam soll auf tank zentriert werden können und folgen können @done(2017-07-01 15:08) @project(Philipp)
     ✔ cooldown zwischen runden, weil sonst zu hektisch @done(2017-07-01 16:51) @project(Philipp)
-    ☐ trennung von centering mode für einzelne spieler????
+    ☐ trennung von centering mode für einzelne spieler(zurueckgestellt)
     ✔ es ist unschön, dass ein spieler das switchen der cam auf den anderen verhindern kann, wenn er kurz vorher overview toggelt-> fixen (zurückstellt) @done(2017-08-02 16:18) @project(Philipp)
     ✔ topple detect @done(2017-07-01 19:05) @project(Philipp)
     ✔ auslagern von "next player in: " auf eigenes canvas, da man das auch in anderen modi brauchen wird (wo das topple detect auch ist) (zurückgestellt) @done(2017-08-02 16:19) @project(Philipp)
     ✔ Button für vorzeitiges Rundenende einbauen ! (should have) @done(2017-07-25 10:55) @project(Philipp)
     ✔ Winkelanzeige einbauen @done(2017-07-01 21:18) @project(Philipp)
     ✔ Cam-Modi: frei, fix on tank, fix on tank then shell !!! (must have) @done(2017-07-24 17:37) @project(Philipp)
-    ☐ Taste für langsmaeres BarrelMovement
+    ☐ Taste für langsmaeres BarrelMovement(should have)
     ✔ Bugfix: während des Cooldowns löst Schießen eine ungewollte Anzeigeänderung aus, die zu spät aktualisiert wird @done(2017-07-02 14:50) @project(Philipp)
     ☐ Shader impro (could have)
     ☐ Umgebung fancyfizieren (could have)
@@ -141,22 +141,15 @@ Katya:
         ✔ Beenden @done(2017-06-25 20:53) @project(Katya)
     ✔ Levelauswahlmenu @done(2017-06-25 20:53) @project(Katya)
         ☐ Modusauswahl
-            ✔ graphisch  @done(2017-08-09 10:26) @project(Katya)
-            ☐ Skript
     ☐ Match finished Screen
         ☐ WinnerScreen Hintergrund Animationen
     ✔ Pausescreen @done(2017-06-26 22:34) @project(Katya)
     ✔ Pause und Matchfinished mit Philipp synchronisieren (jaaaa...synchronisieren ist ein merhdeutiger begriffblabla) @done(2017-06-27 22:02) @project(Katya)
     ☐ Menu-Panelhintergründe Alphas usw. anpassen
     ☐ Control-Setup (must have)
-        ✔ gaphisch   @done(2017-08-09 10:26) @project(Katya)
-        ☐ Skript
     ☐ Grafic sugar in menus (should have)
     ☐ Auswahl Tankanzahl zs mit Phil (must have)
-        ✔ graphisch   @done(2017-08-09 10:27) @project(Katya)
-        ☐ Skript
-    ☐ Start Game Button Skript
-    ☐ Level Button Skript
+
 WayPoints:
     ☐ konspiratives Grillen
     ✔ MinimalPrototyp zur Physik @done(2017-05-12 14:52) @project(WayPoints)
