@@ -125,9 +125,9 @@ Philipp:
     ✔ Overview nur im freien Modus, sollte man den freien Modus verlassen so wird Overview beendet @done(2017-07-28 12:09) @project(Philipp)
     ☐ Konzeption abstrakter Oberklasse für Gamemodi, daraus resultierend evtl. Refactoring IGameMode sinnig
     ☐ Key-Binding-Persistency-Schnittstelle (must have)
-        ☐ load profile from file
-        ☐ save profile from file
-        ☐ set keybingin 
+        ✔ load profile from file @done(2017-08-11 15:29) @project(Philipp)
+        ✔ save profile from file @done(2017-08-11 15:29) @project(Philipp)
+        ☐ Tests der Schnittstelle
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
