@@ -12,6 +12,8 @@ using UnityEngine;
 //drei Modi war das alte Design nicht gut und ich lagere das jetzt aus, da diese Information ja evtl noch woanders wichtig sein könnte
 //(hätte ja auch alles im Cam-Script bleiben können)
 
+//TODO: das hätte ich gerne irgendwann nicht mehr static sondern instanziiert auf einer pro-level-Basis
+
 public static class ActiveObjects : object {
 	private static GameObject activeTank;
 	private static GameObject activeBullet;

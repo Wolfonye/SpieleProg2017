@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Classes\GameControl\GasolineMode.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\HUDLookToCamera.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\InputConfiguration.cs" />
+     <Compile Include="Assets\Scripts\Classes\GameControl\InputConfigurationData.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\MaxTanksPerLevel.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\PauseGame.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\RoundTimer.cs" />

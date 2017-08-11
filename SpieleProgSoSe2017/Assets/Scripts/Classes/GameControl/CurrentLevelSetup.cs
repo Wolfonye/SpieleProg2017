@@ -32,6 +32,9 @@ using UnityEngine;
  * Klasse viele Informationen verwaltet und das auch muss und ich verhindern möchte, dass sie Funktionen
  * übernehmen muss, für die sie nicht gedacht ist und zur Gottklasse mutiert.
  */
+
+//TODO: Ummodeln auf nicht static; steht nicht zur debatte, bevor die neuen Menüansätze von Käthe nciht eingearbeitet sind (Stand 11.9.2017);
+//      hat durchaus Potential erst nach Abgabe zu geschehen, wie die meisten anderen static-Konvertierungen auch.
 public static class CurrentLevelSetup : object {
 	private static int numberOfTanksL1 = 1;
 	private static int numberOfTanksL2 = 3;
