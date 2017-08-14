@@ -2,6 +2,23 @@ SpieleProgrammierungSoSe2017
 --------------------------------------------------------------------------------
 
 
+
+UPDATE 24.07.2017 (Philipp) SLowBarrelMovement + semantic Zoom + Performance
+--------------------------------------------------------------------------------
+Habe ne Tate eingefügt, die bewirkt, dass ein Barrel sich langsamer bewegt, wenn
+man sie gedrückt hält beim up oder down.
+
+Weiterhin habe ich eine erste semantic zoom-Variante implementiert, die eher als
+proof of concept zu sehen ist, aber letztlich nciht so bleiben soll.
+Im Moment ploppen Infos noch einfach so auf, ich schätze ich werde da irgendwas
+mit einfadenden Alphawerten machen. Evtl änder ich auch nochmal die
+Scriptstruktur diesbezüglich.
+
+Weiter werde ich versuchen rauszufinden, warum es manchmal so ruckelt bei
+Cam-Bewegungen seitlicher Natur. Sprich Performanceverbesserungen. Mal schauen
+ob ich da was finden kann.
+
+
 UPDATE 24.07.2017 (Philipp) Sprit/ActionPoint-Modus-Basis ist fertig
 --------------------------------------------------------------------------------
 Habe jetzt den ActionPointModus implementiert und er scheint gut zu

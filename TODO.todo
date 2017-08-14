@@ -116,7 +116,7 @@ Philipp:
     ✔ Bugfix: während des Cooldowns löst Schießen eine ungewollte Anzeigeänderung aus, die zu spät aktualisiert wird @done(2017-07-02 14:50) @project(Philipp)
     ☐ Shader impro (could have)
     ☐ Umgebung fancyfizieren (could have)
-    ☐ semantischer Zoom (could have)
+    ✔ semantischer Zoom (could have) @done(2017-08-14 19:06) @project(Philipp)
     ✔ smoothing der cam-bewegung (could have) @done(2017-07-25 09:40) @project(Philipp)
     ☐ Gedanken zu visuellem Feedback und Verbesserungen (should have)
     ✔ Auswahl Tankanzahl zs mit Käthe (must have) @done(2017-07-25 16:02) @project(Philipp)
@@ -131,6 +131,8 @@ Philipp:
     ☐ How-Tos für Levelerstellung updaten
     ☐ How-Tos für Keybinding-Schnittstelle
     ☐ How-Tos für Spielemodus-Schnittstelle
+    ☐ semantischen Zoom von ploppen auf Alphachannelveränderung umskripten
+    ☐ Performanceverbesserungen (should have)
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
