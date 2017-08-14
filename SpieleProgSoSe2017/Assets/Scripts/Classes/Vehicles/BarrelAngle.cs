@@ -12,15 +12,19 @@ public class BarrelAngle : MonoBehaviour
     //barrel : joa...der entsprecehnde bone halt...
     //origin : WICHTIG origin determiniert welches Koordinatensystem als Referenz für die Winkelberechnung dient; das heißt es ist sinnig
     //hier das lokale Koordinatensystem des Chassy's zu wählen
-    public int barrelLiftSpeed;
+    public float barrelLiftSpeed;
     public int minAnglePositive;
     public int maxAnglePosositive;
     public GameObject barrel;
     public GameObject origin;
+	private readonly float barrelSpeedReductionFactor = 0.07f; //wird eingerechnet, wenn Taste für langsameres Barrellmovement gedrückt wurde. Das ist absichtlich gehardcoded.
+
+	private float rotateDegrees; //helper für wiederholte Neuberechnung des Angles
 
 	//wird aus InputConfiguration beim Start einmal vorgeladen um unnötige Kontextwechsel zur Laufzeit zur vermeiden
 	private string barrelUp;
 	private string barrelDown;
+	private string slowMovement;
 
 	private float barrelAngle;
 
@@ -31,6 +35,7 @@ public class BarrelAngle : MonoBehaviour
 	void Start(){
 		barrelDown = InputConfiguration.getBarrelDownKey ();
 		barrelUp = InputConfiguration.getBarrelUpKey ();
+		slowMovement = InputConfiguration.getSlowBarrelMovementKey ();
 	}
 
     // Update is called once per frame
@@ -38,16 +43,26 @@ public class BarrelAngle : MonoBehaviour
     {
 		barrelAngle = Vector3.Angle (barrel.transform.up, origin.transform.forward);
 		 
+		//Wir schauen, ob die Taste für langsameres BarrelMovement gedrueckt wurde; in Abhängigkeit der Antwort wird die Gradanzahl bestimmt, um die wir unter Umständen drehen wollen
+		//Ich habe hier überlegt, ob es nciht sinniger wäre diese Berechnung nur on demand zu machen, aber dann dachte ich, dass der Impact vermutlich nciht hoch sien würde und habe
+		//mich zu Gunsten höherer Codelesbarkeit entschieden (ich vermeide so eine Codedopplung und das auszulagern in eine eigene Funktion hätte ich als overkill empfunden und 
+		//hätte die Berechnung unnötig aus dem Kontext gerissen)
+		if(Input.GetKey(slowMovement)){
+			rotateDegrees = barrelLiftSpeed * barrelSpeedReductionFactor * Time.deltaTime;
+		}else{
+			rotateDegrees = barrelLiftSpeed * Time.deltaTime;
+		}
+
         //das hier ist jetzt die verbesserte Variante, bei der das relative Koordinatensystem des bones genauso bleibt wies soll und zwei achsen jeweils gelocked sind
         //die Erweiterung um origin hat gut funktioniert
         //netterweise ist der * Operator in Unity für Quaternionen so überladen, dass wir das linke Argument um das rechte rotieren 
         //können (um, nicht um Sinne von Drehachse, sondern Winkel)
         originalRot = barrel.transform.rotation;
 		if (Input.GetKey(barrelDown))
-        {
+        {				
 			if (barrelAngle > minAnglePositive)
             {
-                barrel.transform.rotation = originalRot * Quaternion.AngleAxis(barrelLiftSpeed * Time.deltaTime, Vector3.left);
+				barrel.transform.rotation = originalRot * Quaternion.AngleAxis(rotateDegrees, Vector3.left);
             }
         }
 
@@ -55,7 +70,7 @@ public class BarrelAngle : MonoBehaviour
         {
 			if (barrelAngle < maxAnglePosositive)
             {
-                barrel.transform.rotation = originalRot * Quaternion.AngleAxis(-barrelLiftSpeed * Time.deltaTime, Vector3.left);
+				barrel.transform.rotation = originalRot * Quaternion.AngleAxis(-rotateDegrees, Vector3.left);
             }
         }
 

@@ -1,5 +1,6 @@
 ﻿/*
- * Author: Philipp Bous, Florian Kruschewski
+ * Author: Philipp Bous
+ * Coauthor: Florian Kruschewski
  */
 
 using System.Collections;
@@ -8,37 +9,42 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //beinhaltet Information über die Lebensenergie eines Vehicles
+//Florian hat die TakeExplosion-Geschichte gemacht. Fragen diesbezüglich und wie das im Rest verbaut ist an ihn.
 
 public class TakeDamage : MonoBehaviour {
 	public int life = 1000;
+	public int maxLife = 1000;
 
+	//ref auf die Healthbar und den HealthText im VehicleInfoHUD
 	public Slider healthBar;
+	public Text healthText;
+
 	// Use this for initialization
 	void Start () {
-		healthBar.maxValue = life;
+		healthBar.maxValue = maxLife;
 		healthBar.value = life;
+		healthText.text = "HP: " + life + "/" + maxLife;
 	}
 
 	void OnCollisionEnter (Collision col){
 		if(col.gameObject.tag == "Shell"){
 			life = life - col.gameObject.GetComponent<ShellDamage>().Damage;
 			healthBar.value = life;
+			healthText.text = "HP: " + life + "/" + maxLife;
 			//Debug.Log("Treffer");
 			//Debug.Log(col.collider.name);
 		}
 		if(life <= 0){
 			gameObject.SetActive(false);
-			//wenn ein Tank zerstört wurde, so machen wir einen Check, ob einer der Spieler gewonnen hat (Legacy: wird jetzt immer am Rundenede gecheckt um keine inkonsistenten Zustaende zu generieren)
-			//victoryDefeatEvaluator.evaluateVictoryDefeat ();
-			//Debug.Log("Destroy");
 		}
 	}
 
 
-	//Flos Ergaenzung fuer die ExplosionDamages
+	//Florians Ergaenzung fuer die ExplosionDamages
 	public void TakeExplosion(int dmg){
 		life = life - dmg;
 		healthBar.value = life;
+		healthText.text = "HP: " + life + "/" + maxLife;
 		if(life <= 0){
 			gameObject.SetActive(false);
 			//victoryDefeatEvaluator.evaluateVictoryDefeat ();

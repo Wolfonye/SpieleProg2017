@@ -23,6 +23,7 @@ public static class InputConfiguration : object {
 	private static string overviewKey = "tab";
 	private static string camModeKey = "g";
 	private static string pauseMenuKey = "escape";
+	private static string slowBarrelMovementKey = "left shift";
 	//DebugOption
 	public static string spinKey = "r";
 
@@ -70,6 +71,10 @@ public static class InputConfiguration : object {
 		return pauseMenuKey;
 	}
 
+	public static string getSlowBarrelMovementKey(){
+		return slowBarrelMovementKey;
+	}
+
 	public static string getSpinKey(){
 		return spinKey;
 	}
@@ -94,6 +99,7 @@ public static class InputConfiguration : object {
 			pauseMenuKey = inputData.pauseMenuKey;
 			rightJumpKey = inputData.rightJumpKey;
 			rightJumpKeyAlt = inputData.rightJumpKeyAlt;
+			slowBarrelMovementKey = inputData.slowBarrelMovementKey;
 		} else {
 			Debug.Log ("Datei konnte nicht gefunden werden; hier muss was getan werden!");
 		}
@@ -116,6 +122,7 @@ public static class InputConfiguration : object {
 		inputData.pauseMenuKey = pauseMenuKey;
 		inputData.rightJumpKey = rightJumpKey;
 		inputData.rightJumpKeyAlt = rightJumpKeyAlt;
+		inputData.slowBarrelMovementKey = slowBarrelMovementKey;
 
 		binaryFormatter.Serialize(fileStream, inputData);
 

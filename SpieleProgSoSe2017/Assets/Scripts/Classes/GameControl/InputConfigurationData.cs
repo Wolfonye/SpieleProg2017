@@ -17,6 +17,7 @@ public class InputConfigurationData {
 	public string overviewKey;
 	public string camModeKey;
 	public string pauseMenuKey;
+	public string slowBarrelMovementKey;
 
 	//das sollte später mit der Maus passieren!!!
 	public string barrelUpKey;
