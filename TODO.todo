@@ -112,7 +112,7 @@ Philipp:
     ✔ Button für vorzeitiges Rundenende einbauen ! (should have) @done(2017-07-25 10:55) @project(Philipp)
     ✔ Winkelanzeige einbauen @done(2017-07-01 21:18) @project(Philipp)
     ✔ Cam-Modi: frei, fix on tank, fix on tank then shell !!! (must have) @done(2017-07-24 17:37) @project(Philipp)
-    ☐ Taste für langsmaeres BarrelMovement(should have)
+    ✔ Taste für langsmaeres BarrelMovement(should have) @done(2017-08-14 17:05) @project(Philipp)
     ✔ Bugfix: während des Cooldowns löst Schießen eine ungewollte Anzeigeänderung aus, die zu spät aktualisiert wird @done(2017-07-02 14:50) @project(Philipp)
     ☐ Shader impro (could have)
     ☐ Umgebung fancyfizieren (could have)
@@ -128,6 +128,9 @@ Philipp:
         ✔ load profile from file @done(2017-08-11 15:29) @project(Philipp)
         ✔ save profile from file @done(2017-08-11 15:29) @project(Philipp)
         ☐ Tests der Schnittstelle
+    ☐ How-Tos für Levelerstellung updaten
+    ☐ How-Tos für Keybinding-Schnittstelle
+    ☐ How-Tos für Spielemodus-Schnittstelle
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
