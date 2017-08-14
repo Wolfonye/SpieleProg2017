@@ -12,6 +12,8 @@ using UnityEngine;
 //Zwecke eigentlich unsinnig wäre
 
 //!!!WICHTIG!!! Wird hier ein Level hinzugefügt, so muss das auch in CurrentLevelSetup geschehen.
+
+//TODO: soll letztlihc nicht static sein; siehe Kommentar in CurrentLevelSetup (Zukunftsmusik)
 public static class MaxTanksPerLevel : object {
 	public static readonly int MAX_TANKS_LEVEL1 = 1;
 	public static readonly int MAX_TANKS_LEVEL2 = 3;
