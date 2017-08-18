@@ -131,8 +131,9 @@ Philipp:
     ☐ How-Tos für Levelerstellung updaten
     ☐ How-Tos für Keybinding-Schnittstelle
     ☐ How-Tos für Spielemodus-Schnittstelle
-    ☐ semantischen Zoom von ploppen auf Alphachannelveränderung umskripten
+    ✔ semantischen Zoom von ploppen auf Alphachannelveränderung umskripten @done(2017-08-18 11:07) @project(Philipp)
     ☐ Performanceverbesserungen (should have)
+    ☐ Test isometrische cam für Overview
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
