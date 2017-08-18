@@ -48,10 +48,10 @@ public class VHUDSemanticZoom : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		currentCamDistance = Vector3.Distance (mainCam.transform.position, gameObject.transform.position);
-		Debug.Log("currentcamdistance: " + currentCamDistance);
+		//Debug.Log("currentcamdistance: " + currentCamDistance);
 		if(currentCamDistance < drawDistanceForBarTexts && currentCamDistance > maxAlphaPoint){
 			helperColor.a = -currentCamDistance/(drawDistanceForBarTexts - maxAlphaPoint)+1; //Lineare Veränderung des ALphawertes
-			Debug.Log("helpercolor: " + helperColor);
+			//Debug.Log("helpercolor: " + helperColor);
 		}
 		if (currentCamDistance < maxAlphaPoint){
 			helperColor.a = 1;
