@@ -47,7 +47,6 @@ public class TakeDamage : MonoBehaviour {
 		healthText.text = "HP: " + life + "/" + maxLife;
 		if(life <= 0){
 			gameObject.SetActive(false);
-			//victoryDefeatEvaluator.evaluateVictoryDefeat ();
 		}
 	}
 }
