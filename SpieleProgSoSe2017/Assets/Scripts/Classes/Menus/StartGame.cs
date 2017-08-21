@@ -43,6 +43,16 @@ public class StartGame : MonoBehaviour {
 
 	// lädt das ausgewählte Level
 	public void loadLevel () {
-
+		switch (currentLvlID) {
+		case "LEVEL1":
+			Application.LoadLevel ("Level1PresentationSmall");
+			break;
+		case "LEVEL2":
+			Application.LoadLevel ("Level2PresentationMedium");
+			break;
+		case "LEVEL3":
+			Application.LoadLevel ("Level3PresentationLarge");
+			break;
+		}
 	}
 }
