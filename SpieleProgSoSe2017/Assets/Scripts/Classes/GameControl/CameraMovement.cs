@@ -21,7 +21,6 @@ using UnityEngine.UI;
 public class CameraMovement : MonoBehaviour, ICycleListener{
 	//Anzeigetext für den CamModus
 	public Text camModeText;
-
 	//wie viel distanz zum rand reicht um den seitlichen scroll auszuläsen
 	public int activateScrollOffset;
 	//wei schnell wir scrollen
@@ -30,43 +29,33 @@ public class CameraMovement : MonoBehaviour, ICycleListener{
 	public float zoomSpeed;
 	//Zeit, die centerOnVehicle benötigt
 	public float cameraCenteringTime;
-
 	//wie viel wir gemessen an der Startposition raus/reinzoomen duerfen
 	public float maxZoomOffset;
 	//dort befinden wir uns aktuell (wird für den Anfang auf 0 gesetzt) das heißt die Startkamerapos sollte in der Mitte der Range liegen
 	private float currentZoom;
-
-
+	//camModeKeyCode
+	private string camModeKey;
 	//soweit darf die Cam nach links oder rechts fahren
 	//die sind in Abhaengigkeit des Levels festzulegen, daher public
 	public int leftBoundary;
 	public int rightBoundary;
-
 	//wir wollen messen ob wir zoomen wollten
 	private float mouseWheelInput;
-
 	private int screenWidth;
 	//Ist zu überlegen, ob man auch in der Höhe steuern lässt
 	//private int screenHeight;
-
 	//kleiner helfer, damit weniger oft initialisiert werden muss
 	private Vector3 tempPosition;
-
 	//wird die Kamera uf den Tank zentriet oder nicht?
 	bool centerOnVehicleModeOn;
-
 	//Kamera folgt dem Tank und der Bullet
 	bool bulletFollowModeOn;
-
 	//Variable um das Objekt zu referenzieren, dem gefolgt werden soll (wenn einem Objekt gefolgt werden soll)
 	GameObject followedObject;
-
 	//wir wollen wissen, ob diese Runde schon ne Bullet abgeschossen wurde
 	bool bulletWasFiredThisRound;
-
 	//Ref auf den GameMode, um zB entscheiden zu können ob dieser gerade im CoolDown ist
 	public IGameMode gameMode;
-
 	// Use this for initialization
 	void Start () {
 		GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponentInChildren<ControlCycler> ().registerCycleListener (this);
@@ -74,7 +63,7 @@ public class CameraMovement : MonoBehaviour, ICycleListener{
 		//Ich hatte überlegt das kompositorisch in ein kapselndes Objekt auszulagern mit den Gamemodi, aber so finde ich es etwas schöner, da etwas modularer zu bearbeiten;
 		//man muss dann nicht jedesmal wieder an der gleichen Sache rumfuhrwerken, sondern kann einen neuen Gamemodus als eigenständiges Modul schreiben.
 		gameMode = GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponentInChildren<TempRoundTimer> ();
-	
+		camModeKey = InputConfiguration.getCamModeKey();
 		centerOnVehicleModeOn = false;
 		currentZoom = 0;
 		Cursor.visible = true;
@@ -86,12 +75,10 @@ public class CameraMovement : MonoBehaviour, ICycleListener{
 		
 	// Update is called once per frame
 	void Update () {
-
 		//cycling des Cam-Modus detected
-		if (Input.GetKeyDown (InputConfiguration.getCamModeKey())){
+		if (Input.GetKeyDown (camModeKey)){
 			cycleCamModus ();
 		}
-
 		//Bissl lästig: ich darf nicht bei ner transform bei gewissen Teilen einfach einen einzigen wert wie zb transform.position.x direkt ändern,
 		//daher kommt dieses erstmal etwas seltsam anmutende Skript hier
 		//tempPosition wird oben deklariert, damit ich nicht dauernd neue Objekte erzuegen muss
@@ -102,7 +89,6 @@ public class CameraMovement : MonoBehaviour, ICycleListener{
 				tempPosition.x = tempPosition.x - scrollSpeed * Time.deltaTime;
 				transform.position = tempPosition;
 			}
-
 			//nach links fahren
 			if ((Input.mousePosition.x < activateScrollOffset) && (tempPosition.x < leftBoundary)) {
 				tempPosition.x = tempPosition.x + scrollSpeed * Time.deltaTime;
@@ -129,8 +115,6 @@ public class CameraMovement : MonoBehaviour, ICycleListener{
 				setPositionToObject (followedObject);
 			}
 		}
-
-
 		//suuuuuuu, zoomen sollte man ja auch können; das versuche ich im Folgenden
 		mouseWheelInput = Input.GetAxis("Mouse ScrollWheel");
 		if (mouseWheelInput < 0) {
@@ -147,9 +131,6 @@ public class CameraMovement : MonoBehaviour, ICycleListener{
 			transform.Translate (0, 0, mouseWheelInput * zoomSpeed);
 			currentZoom = currentZoom + zoomSpeed;
 		}
-			
-
-
 		//hier passiert das wechseln in die vogelperspektive
 		if (Input.GetKeyDown (InputConfiguration.getOverviewKey()) && !centerOnVehicleModeOn && !bulletFollowModeOn && !gameMode.isInCoolDown()) {
 			toggleOverviewPerspective ();
