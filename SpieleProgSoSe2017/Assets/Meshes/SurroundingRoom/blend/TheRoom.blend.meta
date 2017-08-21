@@ -21,6 +21,44 @@ ModelImporter:
     100026: TablePlate_005
     100028: //RootNode
     100030: WallsAndFloor
+    100032: Appel
+    100034: ArmRest
+    100036: ArmRest_001
+    100038: BackConnectionThingy
+    100040: BackConnectionThingy_001
+    100042: BackStomps
+    100044: BackStomps_001
+    100046: Chair
+    100048: Chair_001
+    100050: Cupboard
+    100052: Cylinder
+    100054: CylinderBackLeft
+    100056: CylinderBackLeft_001
+    100058: CylinderBackMiddle
+    100060: CylinderBackMiddle_001
+    100062: CylinderBackRight
+    100064: CylinderBackRight_001
+    100066: CylinderFrontLeft
+    100068: CylinderFrontLeft_001
+    100070: CylinderFrontRight
+    100072: CylinderFrontRight_001
+    100074: DrawerChest
+    100076: FrontStomps
+    100078: FrontStomps_001
+    100080: HandleUpper
+    100082: HandleUpper_001
+    100084: HandleUpper_002
+    100086: LowerDrawer
+    100088: MainThingy
+    100090: MainThingy_001
+    100092: MiddleDrawer
+    100094: MidPiece1
+    100096: MidPiece2
+    100098: OuterSHape
+    100100: OuterThingy
+    100102: Pen
+    100104: Sphere
+    100106: UpperDrawer
     400000: BackWall
     400002: Floor
     400004: FrontWall
@@ -37,6 +75,44 @@ ModelImporter:
     400026: TablePlate_005
     400028: //RootNode
     400030: WallsAndFloor
+    400032: Appel
+    400034: ArmRest
+    400036: ArmRest_001
+    400038: BackConnectionThingy
+    400040: BackConnectionThingy_001
+    400042: BackStomps
+    400044: BackStomps_001
+    400046: Chair
+    400048: Chair_001
+    400050: Cupboard
+    400052: Cylinder
+    400054: CylinderBackLeft
+    400056: CylinderBackLeft_001
+    400058: CylinderBackMiddle
+    400060: CylinderBackMiddle_001
+    400062: CylinderBackRight
+    400064: CylinderBackRight_001
+    400066: CylinderFrontLeft
+    400068: CylinderFrontLeft_001
+    400070: CylinderFrontRight
+    400072: CylinderFrontRight_001
+    400074: DrawerChest
+    400076: FrontStomps
+    400078: FrontStomps_001
+    400080: HandleUpper
+    400082: HandleUpper_001
+    400084: HandleUpper_002
+    400086: LowerDrawer
+    400088: MainThingy
+    400090: MainThingy_001
+    400092: MiddleDrawer
+    400094: MidPiece1
+    400096: MidPiece2
+    400098: OuterSHape
+    400100: OuterThingy
+    400102: Pen
+    400104: Sphere
+    400106: UpperDrawer
     2300000: BackWall
     2300002: Floor
     2300004: FrontWall
@@ -48,6 +124,39 @@ ModelImporter:
     2300016: TablePlate_003
     2300018: TablePlate_004
     2300020: TablePlate_005
+    2300022: ArmRest
+    2300024: ArmRest_001
+    2300026: BackConnectionThingy
+    2300028: BackConnectionThingy_001
+    2300030: BackStomps
+    2300032: BackStomps_001
+    2300034: Cylinder
+    2300036: CylinderBackLeft
+    2300038: CylinderBackLeft_001
+    2300040: CylinderBackMiddle
+    2300042: CylinderBackMiddle_001
+    2300044: CylinderBackRight
+    2300046: CylinderBackRight_001
+    2300048: CylinderFrontLeft
+    2300050: CylinderFrontLeft_001
+    2300052: CylinderFrontRight
+    2300054: CylinderFrontRight_001
+    2300056: FrontStomps
+    2300058: FrontStomps_001
+    2300060: HandleUpper
+    2300062: HandleUpper_001
+    2300064: HandleUpper_002
+    2300066: LowerDrawer
+    2300068: MainThingy
+    2300070: MainThingy_001
+    2300072: MiddleDrawer
+    2300074: MidPiece1
+    2300076: MidPiece2
+    2300078: OuterSHape
+    2300080: OuterThingy
+    2300082: Pen
+    2300084: Sphere
+    2300086: UpperDrawer
     3300000: BackWall
     3300002: Floor
     3300004: FrontWall
@@ -59,6 +168,39 @@ ModelImporter:
     3300016: TablePlate_003
     3300018: TablePlate_004
     3300020: TablePlate_005
+    3300022: ArmRest
+    3300024: ArmRest_001
+    3300026: BackConnectionThingy
+    3300028: BackConnectionThingy_001
+    3300030: BackStomps
+    3300032: BackStomps_001
+    3300034: Cylinder
+    3300036: CylinderBackLeft
+    3300038: CylinderBackLeft_001
+    3300040: CylinderBackMiddle
+    3300042: CylinderBackMiddle_001
+    3300044: CylinderBackRight
+    3300046: CylinderBackRight_001
+    3300048: CylinderFrontLeft
+    3300050: CylinderFrontLeft_001
+    3300052: CylinderFrontRight
+    3300054: CylinderFrontRight_001
+    3300056: FrontStomps
+    3300058: FrontStomps_001
+    3300060: HandleUpper
+    3300062: HandleUpper_001
+    3300064: HandleUpper_002
+    3300066: LowerDrawer
+    3300068: MainThingy
+    3300070: MainThingy_001
+    3300072: MiddleDrawer
+    3300074: MidPiece1
+    3300076: MidPiece2
+    3300078: OuterSHape
+    3300080: OuterThingy
+    3300082: Pen
+    3300084: Sphere
+    3300086: UpperDrawer
     4300000: TablePlate
     4300002: TablePlate_005
     4300004: TablePlate_004
@@ -70,6 +212,39 @@ ModelImporter:
     4300016: FrontWall
     4300018: BackWall
     4300020: Floor
+    4300022: Cylinder
+    4300024: Pen
+    4300026: Sphere
+    4300028: MainThingy_001
+    4300030: CylinderBackRight_001
+    4300032: CylinderBackMiddle_001
+    4300034: CylinderBackLeft_001
+    4300036: CylinderFrontRight_001
+    4300038: CylinderFrontLeft_001
+    4300040: ArmRest_001
+    4300042: BackConnectionThingy_001
+    4300044: BackStomps_001
+    4300046: FrontStomps_001
+    4300048: MidPiece1
+    4300050: MidPiece2
+    4300052: OuterSHape
+    4300054: FrontStomps
+    4300056: BackStomps
+    4300058: BackConnectionThingy
+    4300060: ArmRest
+    4300062: CylinderFrontLeft
+    4300064: CylinderFrontRight
+    4300066: CylinderBackLeft
+    4300068: CylinderBackMiddle
+    4300070: CylinderBackRight
+    4300072: MainThingy
+    4300074: LowerDrawer
+    4300076: MiddleDrawer
+    4300078: UpperDrawer
+    4300080: HandleUpper_002
+    4300082: HandleUpper_001
+    4300084: HandleUpper
+    4300086: OuterThingy
     7400000: Default Take
     9500000: //RootNode
   materials:
