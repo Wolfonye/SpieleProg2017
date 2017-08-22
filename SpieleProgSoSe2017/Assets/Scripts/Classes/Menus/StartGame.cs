@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour {
 
@@ -22,7 +23,7 @@ public class StartGame : MonoBehaviour {
 	}
 
 	// findet heraus, welcher Modus gerade angewählt ist und setzt dementsprechend die ID
-	public void setCurrentActiveMode () {
+	private void setCurrentActiveMode () {
 		currentActiveMode = activeModeText.text;
 		if (currentActiveMode == "Gas Mode") {
 			this.activeGameModeID = "GAS_MODE";
@@ -32,26 +33,29 @@ public class StartGame : MonoBehaviour {
 	}
 
 	// übermittelt dem CurrentLevelSetup-Skript die ausgewählte Anzahl der Tanks
-	public void tellCurrentNumberOfTanks () {
+	private void tellCurrentNumberOfTanks () {
 			CurrentLevelSetup.setNumberOfTanksForLevelByID (currentNumberOfTanks, currentLvlID);
 	}
 
 	// übermittelt dem ActiveObjects-Skript welcher SpielModus aktiv ist
-	public void tellActiveMode () {
+	private void tellActiveMode () {
 		ActiveObjects.setActiveGameModeID (activeGameModeID);
 	}
 
 	// lädt das ausgewählte Level
 	public void loadLevel () {
+		setCurrentActiveMode();
+		tellCurrentNumberOfTanks();
+		tellActiveMode();
 		switch (currentLvlID) {
 		case "LEVEL1":
-			Application.LoadLevel ("Level1PresentationSmall");
+			SceneManager.LoadScene ("Level1PresentationSmall");
 			break;
 		case "LEVEL2":
-			Application.LoadLevel ("Level2PresentationMedium");
+			SceneManager.LoadScene ("Level2PresentationMedium");
 			break;
 		case "LEVEL3":
-			Application.LoadLevel ("Level3PresentationLarge");
+			SceneManager.LoadScene ("Level3PresentationLarge");
 			break;
 		}
 	}

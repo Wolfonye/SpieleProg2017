@@ -18,7 +18,7 @@ public class CountingUp : MonoBehaviour {
 
 	// wenn auf den Button geklickt wird, soll die Anzahl der Tanks hochgezählt werden,
 	// aber nur, wenn die maximale Anzahl der Tanks noch nicht erreicht ist 
-	public void onClick() {
+	public void countUp() {
 		currentNumberOfTanksInt = int.Parse (currentNumberOfTanks.text);
 		if (currentNumberOfTanksInt < maxNumberOfTanks) {
 			currentNumberOfTanksInt++;
@@ -26,7 +26,8 @@ public class CountingUp : MonoBehaviour {
 			currentNumberOfTanksInt = maxNumberOfTanks;	// eigtl nicht nötig, aber Safety first
 		}
 		// aktuelle, hochgezählte Anzahl wird in das Textfeld geschrieben
-		currentNumberOfTanks.text = currentNumberOfTanksInt.ToString (); 
+		currentNumberOfTanks.text = currentNumberOfTanksInt.ToString ();
+		setCurrentNumberOfTanks(); 
 	}
 
 	// Übergabe der aktuellen Anzahl der Tanks an das StartGame-Skript

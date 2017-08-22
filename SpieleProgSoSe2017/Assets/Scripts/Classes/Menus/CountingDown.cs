@@ -11,7 +11,7 @@ public class CountingDown : MonoBehaviour {
 
 	// wenn der Button geklickt wird, soll die aktuelle Anzahl der Tanks runtergezählt werden,
 	// außer wenn die Anzahl 1 ist, denn das ist der Minimalwert
-	public void onClick() {
+	public void countDown() {
 		currentNumberOfTanksInt = int.Parse (currentNumberOfTanks.text);
 		if (currentNumberOfTanksInt > 1) {
 			currentNumberOfTanksInt--;
@@ -20,6 +20,7 @@ public class CountingDown : MonoBehaviour {
 		}
 		// aktuelle, runtergezählte Anzahl wird in das Textfeld geschrieben
 		currentNumberOfTanks.text = currentNumberOfTanksInt.ToString (); 
+		setCurrentNumberOfTanks();
 	}
 
 	// Übergabe der aktuellen Anzahl der Tanks an das StartGame-Skript

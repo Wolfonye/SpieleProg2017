@@ -29,18 +29,25 @@ public class LevelInformation : MonoBehaviour {
 
 	// Text, der anzeigt, wieviele Tanks in dem Level jeweils gespielt werden dürfen
 	public void setMaxTanksText () {
-		maxTanks = GetComponent<Text> ();
 		maxTanks.text = maxNumberOfTanks.ToString ();
 	}
 
 	// Text, der anzeigt, wieviele Tanks ausgewählt werden bei default, nämlich maximale Anzahl
-	public void setCurrentNumberOfTanks () {
-		currentNumberOfTanks = GetComponent<Text> ();
+	public void setCurrentNumberOfTanksText () {
 		currentNumberOfTanks.text = maxNumberOfTanks.ToString ();
 	}
 
 	// Übergabe der aktuellen Anzahl der Tanks an das StartGame-Skript
 	public void tellCurrentNumberOfTanks () {
 		startGame.setCurrentNumberOfTanks (maxNumberOfTanks);
+	}
+
+	public void initLevel(){
+		setCurrentLvlID(LEVEL_ID);
+		getMaxNumberOfTanks(LEVEL_ID);
+		setMaxNumberOfTanks();
+		tellCurrentNumberOfTanks();
+		setCurrentNumberOfTanksText();
+		setMaxTanksText();
 	}
 }
