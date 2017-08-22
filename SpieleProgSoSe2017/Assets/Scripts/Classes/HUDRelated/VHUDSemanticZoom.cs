@@ -27,18 +27,18 @@ public class VHUDSemanticZoom : MonoBehaviour {
 	private float currentCamDistance;
 
 	//soll die ActionBar überhaupt gezeigt werden?
-	private bool drawActionbar;
+	//private bool drawActionbar;
 
 	private Color helperColor;
 	// Use this for initialization
 	void Start () {
 		mainCam = GameObject.FindWithTag ("MainCamera").GetComponent<Camera>();
 		if (ActiveObjects.getActiveGameModeID () == "GAS_MODE") {
-			drawActionbar = true;
+			//drawActionbar = true;
 			healthText.gameObject.SetActive(true);
 			actionPointText.gameObject.SetActive (true);
 		} else {
-			drawActionbar = false;
+			//drawActionbar = false;
 			healthText.gameObject.SetActive (false);
 			actionPointText.gameObject.SetActive (false);
 		}

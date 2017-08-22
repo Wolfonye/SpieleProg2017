@@ -23,7 +23,7 @@ public class ControlCycler : MonoBehaviour
 
 	public Camera mainCam;
 
-	//Liste der Spieler, wobei ein Spieler einfach eine Liste aus Tanks ist (nämlich die Tanks, die
+	//Die zwei Spieler, wobei ein Spieler einfach eine Liste aus Tanks ist (nämlich die Tanks, die
 	//diesem Spieler gehören; ich hoffe ich habe erweiterungstechnisch nichts uebershen fuer
 	//den Zeitpunkt, an dem wir evtl verschiedene Fahrzeuge einbauen wollen.
 	public List<GameObject> player0Vehicles;
@@ -32,7 +32,6 @@ public class ControlCycler : MonoBehaviour
 	private int numberOfPlayers = 2;
 
 	//die Info zieht sich der Cycler im Awake mittels der LevelID aus dem MaxTanksPerLevel.cs
-	//Ganz hübsche Neuerung um Datendopplung zu reduzieren.
 	private int maxNumberOfVehiclesPerPlayer;
 
 	//Liste der Observer, die ueber das Cycling informiert werden wollen
@@ -82,6 +81,11 @@ public class ControlCycler : MonoBehaviour
 		currentVehicleIndexOfPlayer[1] = 0;
 
 		currentPlayer = 0;
+		for(int i = 0; i < player0Vehicles.Count; i++){
+			player0Vehicles[i].GetComponent<ActionPointController>().initialize();
+			player1Vehicles[i].GetComponent<ActionPointController>().initialize();
+		}
+		
 		deactivateAllVehiclesInList (player0Vehicles);
 		deactivateAllVehiclesInList (player1Vehicles);
 		activateNextVehicleOfPlayer (0, player0Vehicles);

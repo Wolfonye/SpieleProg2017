@@ -23,7 +23,7 @@ public class ActionPointController : MonoBehaviour, ICycleListener {
 
 
 	// Use this for initialization
-	void Start () {
+	public void initialize () {
 		if (!GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponent<GasolineMode> ().isModeEnabled ()) {
 			actionPointBar.gameObject.SetActive (false);
 			actionPointText.gameObject.SetActive (false);
