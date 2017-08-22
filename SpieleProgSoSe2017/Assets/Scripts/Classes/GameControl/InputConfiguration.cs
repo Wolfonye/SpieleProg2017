@@ -15,22 +15,24 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 
 public static class InputConfiguration : object {
-	private static string fireKey = "space";
-	private static string leftJumpKey = "q";
-	private static string rightJumpKey = "e";
-	private static string leftJumpKeyAlt = "left";
-	private static string rightJumpKeyAlt = "right";
-	private static string overviewKey = "tab";
-	private static string camModeKey = "g";
-	private static string pauseMenuKey = "escape";
-	private static string slowBarrelMovementKey = "left shift";
+	public static string fireKey = "space";
+	public static string leftJumpKey = "q";
+	public static string rightJumpKey = "e";
+	public static string leftJumpKeyAlt = "left";
+	public static string rightJumpKeyAlt = "right";
+	public static string overviewKey = "tab";
+	public static string camModeKey = "g";
+	public static string pauseMenuKey = "escape";
+	public static string slowBarrelMovementKey = "left shift";
 	//DebugOption
 	public static string spinKey = "r";
 
 	//das sollte später mit der Maus passieren!!!
-	private static string barrelUpKey = "w";
-	private static string barrelDownKey ="s";
+	public static string barrelUpKey = "w";
+	public static string barrelDownKey ="s";
 
+
+	//TODO: die getter sollen alle raus und die variablen einfach public werden; in diesem fall auf getter und setter zu pochen ist eigentlich ziemlich schwachsinnig.
 	public static string getFireKey(){
 		return fireKey;
 	}
