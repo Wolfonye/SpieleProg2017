@@ -60,6 +60,15 @@ ModelImporter:
     100104: Sphere
     100106: UpperDrawer
     100108: Eraser
+    100110: Apple
+    100112: Base
+    100114: Bulb
+    100116: Estilus
+    100118: Hat
+    100120: Lamp
+    100122: Paper
+    100124: Toggler
+    100126: TogglerBase
     400000: BackWall
     400002: Floor
     400004: FrontWall
@@ -115,6 +124,15 @@ ModelImporter:
     400104: Sphere
     400106: UpperDrawer
     400108: Eraser
+    400110: Apple
+    400112: Base
+    400114: Bulb
+    400116: Estilus
+    400118: Hat
+    400120: Lamp
+    400122: Paper
+    400124: Toggler
+    400126: TogglerBase
     2300000: BackWall
     2300002: Floor
     2300004: FrontWall
@@ -160,6 +178,14 @@ ModelImporter:
     2300084: Sphere
     2300086: UpperDrawer
     2300088: Eraser
+    2300090: Apple
+    2300092: Base
+    2300094: Bulb
+    2300096: Estilus
+    2300098: Hat
+    2300100: Paper
+    2300102: Toggler
+    2300104: TogglerBase
     3300000: BackWall
     3300002: Floor
     3300004: FrontWall
@@ -205,6 +231,14 @@ ModelImporter:
     3300084: Sphere
     3300086: UpperDrawer
     3300088: Eraser
+    3300090: Apple
+    3300092: Base
+    3300094: Bulb
+    3300096: Estilus
+    3300098: Hat
+    3300100: Paper
+    3300102: Toggler
+    3300104: TogglerBase
     4300000: TablePlate
     4300002: TablePlate_005
     4300004: TablePlate_004
@@ -250,6 +284,14 @@ ModelImporter:
     4300084: HandleUpper
     4300086: OuterThingy
     4300088: Eraser
+    4300090: Paper
+    4300092: Apple
+    4300094: TogglerBase
+    4300096: Toggler
+    4300098: Bulb
+    4300100: Base
+    4300102: Estilus
+    4300104: Hat
     7400000: Default Take
     9500000: //RootNode
   materials:
