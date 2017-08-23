@@ -66,7 +66,7 @@ public class TempRoundTimer : MonoBehaviour, IGameMode
 		cameraMovement = GameObject.FindWithTag ("MainCamera").GetComponent<CameraMovement> ();
 		paused = false;
 		allShotsFiredForThisRound = false;
-		fire = InputConfiguration.getFireKey();
+		fire = InputConfiguration.fireKey;
 		actualTime = timePerRound;
 		counterCoRoutine = countDownRound();
 		StartCoroutine(counterCoRoutine);

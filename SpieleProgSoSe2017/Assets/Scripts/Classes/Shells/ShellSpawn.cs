@@ -37,7 +37,7 @@ public class ShellSpawn : MonoBehaviour, IDestructionObserver {
 	private bool lastExplodedReported;
 	void Start(){
 		gameMode = ActiveObjects.getActiveGameMode();
-		fireKey = InputConfiguration.getFireKey ();
+		fireKey = InputConfiguration.fireKey;
 		inTheAirReported = false;
 		lastExplodedReported = false;
 		currentNumberOfShotsFired = 0;

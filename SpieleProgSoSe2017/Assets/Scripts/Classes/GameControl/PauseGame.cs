@@ -10,18 +10,19 @@ public class PauseGame : MonoBehaviour {
 	private bool pause;
 
 	public Canvas pauseScreen;
-
+	private string pauseKey;
 	private Canvas thisPauseScreen;
 	// Use this for initialization
 	void Start () {
 		pause = false;
+		pauseKey = InputConfiguration.pauseMenuKey;
 		thisPauseScreen = Instantiate (pauseScreen, Vector3.zero, Quaternion.identity);
 		thisPauseScreen.gameObject.SetActive (false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(InputConfiguration.getPauseMenuKey())){ 
+		if (Input.GetKeyDown(pauseKey)){ 
 			togglePauseMenu ();
 		}  
 	}

@@ -71,7 +71,9 @@
      <Compile Include="Assets\Scripts\Classes\Menus\ExitOnClick.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\LevelInformation.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\LoadControlScene.cs" />
+     <Compile Include="Assets\Scripts\Classes\Menus\RecognizeKeyInput.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\ResumeButton.cs" />
+     <Compile Include="Assets\Scripts\Classes\Menus\SaveKeyOptions.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\SelectOnInput.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\SelectOnInputAdvanced.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\StartGame.cs" />

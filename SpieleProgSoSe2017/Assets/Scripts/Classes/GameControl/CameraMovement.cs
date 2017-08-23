@@ -52,6 +52,9 @@ public class CameraMovement : MonoBehaviour, ICycleListener{
 	//kleiner helfer, damit weniger oft initialisiert werden muss
 	private Vector3 tempPosition;
 
+	private string camModeKey;
+	private string overviewKey;
+
 	//wird die Kamera uf den Tank zentriet oder nicht?
 	bool centerOnVehicleModeOn;
 
@@ -69,6 +72,8 @@ public class CameraMovement : MonoBehaviour, ICycleListener{
 
 	// Use this for initialization
 	void Start () {
+		camModeKey = InputConfiguration.camModeKey;
+		overviewKey = InputConfiguration.overviewKey;
 		GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponentInChildren<ControlCycler> ().registerCycleListener (this);
 		//die nächste Zeile ist nur eine temporäre Lösung; wenn es mal weitere Modi geben sollte muss das hier adaptiv werden; die Vorbereitung sind bereits mittels Interface getroffen
 		//Ich hatte überlegt das kompositorisch in ein kapselndes Objekt auszulagern mit den Gamemodi, aber so finde ich es etwas schöner, da etwas modularer zu bearbeiten;
@@ -88,7 +93,7 @@ public class CameraMovement : MonoBehaviour, ICycleListener{
 	void Update () {
 
 		//cycling des Cam-Modus detected
-		if (Input.GetKeyDown (InputConfiguration.getCamModeKey())){
+		if (Input.GetKeyDown (camModeKey)){
 			cycleCamModus ();
 		}
 
@@ -151,7 +156,7 @@ public class CameraMovement : MonoBehaviour, ICycleListener{
 
 
 		//hier passiert das wechseln in die vogelperspektive
-		if (Input.GetKeyDown (InputConfiguration.getOverviewKey()) && !centerOnVehicleModeOn && !bulletFollowModeOn && !gameMode.isInCoolDown()) {
+		if (Input.GetKeyDown (overviewKey) && !centerOnVehicleModeOn && !bulletFollowModeOn && !gameMode.isInCoolDown()) {
 			toggleOverviewPerspective ();
 		}
 	}
