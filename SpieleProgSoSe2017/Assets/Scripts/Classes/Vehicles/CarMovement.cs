@@ -26,6 +26,8 @@ public class CarMovement : MonoBehaviour
 	//um zu steuern ab wann die Beschleunigung von künstlich gedämpft werden soll, funzt sehr gut :D
 	public float speedDampingThreshold;
 
+	public float maxSpeedFactor = 1;
+
 	public HoldLineScript holdLine;
 	public Rigidbody vehicleRigBody;
 	private float motor;
@@ -131,7 +133,7 @@ public class CarMovement : MonoBehaviour
                 axleInfo.leftWheel.steerAngle = steering;
                 axleInfo.rightWheel.steerAngle = steering;
             }*/
-			if (axle.motor && (speed < speedDampingThreshold)) {
+			if (axle.motor && (speed < speedDampingThreshold * maxSpeedFactor)) {
 				axle.leftWheel.motorTorque = motor;
 				axle.rightWheel.motorTorque = motor;
 			} else {
