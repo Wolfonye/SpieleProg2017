@@ -31,6 +31,10 @@ public class CarMovement : MonoBehaviour
 	private float motor;
 	//private float steering;
 
+	private string driveLeft;
+	private string driveRight;
+	private string jumpLeft;
+	private string jumpRight;
 	private float leftRightInputInfo;
 	private float speed;
 	private bool brakeOn;
@@ -41,11 +45,16 @@ public class CarMovement : MonoBehaviour
 	private bool consumesGasoline;
 
 	public void Start(){
-		consumesGasoline = GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponent<GasolineMode> ().isModeEnabled (); 
+		consumesGasoline = GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponent<GasolineMode> ().isModeEnabled ();
+		driveLeft = InputConfiguration.driveLeftKey;
+		driveRight = InputConfiguration.driveRightKey;
+		jumpLeft = InputConfiguration.leftJumpKey;
+		jumpRight = InputConfiguration.rightJumpKey;
 	}
 
     public void Update()
     {
+		brakeOn = true;
 		speed = vehicleRigBody.velocity.magnitude * 3.6f;
 		//Debug.Log ("speed in km/h:" + speed);
 
@@ -57,44 +66,41 @@ public class CarMovement : MonoBehaviour
 				break;
 			}
 		}
-        motor = maxMotorTorque * Input.GetAxis("Horizontal");
-		//Fahrtrichtung soll immer relativ zum Betrachter sein
-		if (vehicleRigBody.transform.forward.x > 0) {
-			motor = -motor;
-		}
-		/*
-		GetAxisRaw liefert nur Werte -1,0,1
-		wenn dieser Wert 0 ist, sprich nciht aktiv gas gegeben wird, soll die Bremse reinhauen
-		*/
-        //steering = maxSteeringAngle * Input.GetAxis("Horizontal");
-		leftRightInputInfo = Input.GetAxisRaw("Horizontal");
-		if (leftRightInputInfo == 0) {
-			brakeOn = true;
-		} else {
+		//Debug.Log("Transformrichtung x: " + vehicleRigBody.transform.forward.x);
+		if(Input.GetKey(driveRight)){
 			brakeOn = false;
-			if ((vehicleRigBody.transform.forward.x > 0) && (leftRightInputInfo == 1)) {
+			if(vehicleRigBody.transform.forward.x > 0){
 				holdLine.Spin();
 			}
-			if ((vehicleRigBody.transform.forward.x < 0) && (leftRightInputInfo == -1)) {
+			motor = maxMotorTorque;
+		}
+		if(Input.GetKey(driveLeft)){
+			brakeOn = false;
+			if(vehicleRigBody.transform.forward.x <= 0){
 				holdLine.Spin();
 			}
+			motor = maxMotorTorque;
+		}
+		//Debug.Log("Bremse: " + brakeOn);
+		if(brakeOn){
+			motor = 0;
 		}
 
 		//----Übertrag von Flo für HoldLine-Verbesserung mit Anpassung auf neues Inputmanagement----------------------------
-		if ((Input.GetKeyDown (InputConfiguration.getLeftJumpKey())||Input.GetKeyDown (InputConfiguration.getLeftJumpKeyAlt())) && isGrounded)
+		if (Input.GetKeyDown (jumpLeft) && isGrounded)
 		{
 			this.transform.parent.GetComponent<HoldLineScript> ().LeftJump ();
 		}
 
-		if ((Input.GetKeyDown (InputConfiguration.getRightJumpKey()) || Input.GetKeyDown (InputConfiguration.getRightJumpKeyAlt())) && isGrounded)
+		if (Input.GetKeyDown (jumpRight) && isGrounded)
 		{
 			this.transform.parent.GetComponent<HoldLineScript> ().RightJump ();
 		}
-
-		if (Input.GetKeyDown (InputConfiguration.getSpinKey()) && isGrounded)
-		{
-			this.transform.parent.GetComponent<HoldLineScript> ().Spin ();
-		}
+		//das ist nur DebugOption; soll irgendwann rausfliegen
+		//if (Input.GetKeyDown (InputConfiguration.spinKey) && isGrounded)
+		//{
+		//	this.transform.parent.GetComponent<HoldLineScript> ().Spin ();
+		//}
 		//-----------------------------------------------------------------------------------------------------------------
 
 		if (isGrounded && brakeOn)

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SaveKeyOptions : MonoBehaviour {
 
-	public InputConfiguration inputconf;
-
 	// Use this for initialization
 	void Start () {
 		

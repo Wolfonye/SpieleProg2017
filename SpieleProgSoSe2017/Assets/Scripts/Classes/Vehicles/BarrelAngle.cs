@@ -33,9 +33,9 @@ public class BarrelAngle : MonoBehaviour
     Quaternion originalRot;
 
 	void Start(){
-		barrelDown = InputConfiguration.getBarrelDownKey ();
-		barrelUp = InputConfiguration.getBarrelUpKey ();
-		slowMovement = InputConfiguration.getSlowBarrelMovementKey ();
+		barrelDown = InputConfiguration.barrelDownKey;
+		barrelUp = InputConfiguration.barrelUpKey;
+		slowMovement = InputConfiguration.slowBarrelMovementKey;
 	}
 
     // Update is called once per frame

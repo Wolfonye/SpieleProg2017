@@ -10,10 +10,10 @@ using UnityEngine;
 [System.Serializable]
 public class InputConfigurationData {
 	public string fireKey;
+	public string driveLeftKey;
+	public string driveRightKey;
 	public string leftJumpKey;
 	public string rightJumpKey;
-	public string leftJumpKeyAlt;
-	public string rightJumpKeyAlt;
 	public string overviewKey;
 	public string camModeKey;
 	public string pauseMenuKey;

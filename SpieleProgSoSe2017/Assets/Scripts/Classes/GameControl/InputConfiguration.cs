@@ -15,69 +15,21 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 
 public static class InputConfiguration : object {
-	private static string fireKey = "space";
-	private static string leftJumpKey = "q";
-	private static string rightJumpKey = "e";
-	private static string leftJumpKeyAlt = "left";
-	private static string rightJumpKeyAlt = "right";
-	private static string overviewKey = "tab";
-	private static string camModeKey = "g";
-	private static string pauseMenuKey = "escape";
-	private static string slowBarrelMovementKey = "left shift";
+	public static string fireKey = "space";
+	public static string driveLeftKey = "a";
+	public static string driveRightKey = "d";
+	public static string leftJumpKey = "q";
+	public static string rightJumpKey = "e";
+	public static string overviewKey = "tab";
+	public static string camModeKey = "g";
+	public static string pauseMenuKey = "escape";
+	public static string slowBarrelMovementKey = "left shift";
+	//das sollte später mit der Maus passieren!!!
+	public static string barrelUpKey = "w";
+	public static string barrelDownKey ="s";
 	//DebugOption
 	public static string spinKey = "r";
-
-	//das sollte später mit der Maus passieren!!!
-	private static string barrelUpKey = "w";
-	private static string barrelDownKey ="s";
-
-	public static string getFireKey(){
-		return fireKey;
-	}
-
-	public static string getLeftJumpKey(){
-		return leftJumpKey;
-	}
-
-	public static string getRightJumpKey(){
-		return rightJumpKey;
-	}
-
-	public static string getLeftJumpKeyAlt(){
-		return leftJumpKeyAlt;
-	}
-
-	public static string getRightJumpKeyAlt(){
-		return rightJumpKeyAlt;
-	}
-		
-	public static string getBarrelUpKey(){
-		return barrelUpKey;
-	}
-
-	public static string getBarrelDownKey(){
-		return barrelDownKey;
-	}
-
-	public static string getOverviewKey(){
-		return overviewKey;
-	}
-
-	public static string getCamModeKey(){
-		return camModeKey;
-	}
-
-	public static string getPauseMenuKey(){
-		return pauseMenuKey;
-	}
-
-	public static string getSlowBarrelMovementKey(){
-		return slowBarrelMovementKey;
-	}
-
-	public static string getSpinKey(){
-		return spinKey;
-	}
+	
 
 	//Soll eine Tastenbelegung aus einer Datei laden; es soll später die Möglichkeit geben Profile zu erstellen (je player zum Beispiel)
 	//, daher ist das hier nicht parameterlos; was hier noch fehlt sind die Dinge aus dem Inputmanager.
@@ -89,17 +41,17 @@ public static class InputConfiguration : object {
 			FileStream fileStream = File.Open(path, FileMode.Open);
 			InputConfigurationData inputData = (InputConfigurationData)binaryFormatter.Deserialize (fileStream);
 			fileStream.Close ();
-			barrelDownKey = inputData.barrelDownKey;
-			barrelUpKey = inputData.barrelUpKey;
-			camModeKey = inputData.camModeKey;
 			fireKey = inputData.fireKey;
+			driveLeftKey = inputData.driveLeftKey;
+			driveRightKey = inputData.driveRightKey;
 			leftJumpKey = inputData.leftJumpKey;
-			leftJumpKeyAlt = inputData.leftJumpKeyAlt;
-			overviewKey = inputData.overviewKey;
-			pauseMenuKey = inputData.pauseMenuKey;
 			rightJumpKey = inputData.rightJumpKey;
-			rightJumpKeyAlt = inputData.rightJumpKeyAlt;
+			overviewKey = inputData.overviewKey;
+			camModeKey = inputData.camModeKey;
+			pauseMenuKey = inputData.pauseMenuKey;
 			slowBarrelMovementKey = inputData.slowBarrelMovementKey;
+			barrelUpKey = inputData.barrelUpKey;
+			barrelDownKey = inputData.barrelDownKey;
 		} else {
 			Debug.Log ("Datei konnte nicht gefunden werden; hier muss was getan werden!");
 		}
@@ -112,17 +64,17 @@ public static class InputConfiguration : object {
 		FileStream fileStream = File.Open(Application.persistentDataPath + "/controlProfiles/" + filename, FileMode.Open);
 
 		InputConfigurationData inputData = new InputConfigurationData();
-		inputData.barrelDownKey = barrelDownKey;
-		inputData.barrelUpKey = barrelUpKey;
-		inputData.camModeKey = camModeKey;
 		inputData.fireKey = fireKey;
+		inputData.driveLeftKey = driveLeftKey;
+		inputData.driveRightKey = driveRightKey;
 		inputData.leftJumpKey = leftJumpKey;
-		inputData.leftJumpKeyAlt = leftJumpKeyAlt;
-		inputData.overviewKey = overviewKey;
-		inputData.pauseMenuKey = pauseMenuKey;
 		inputData.rightJumpKey = rightJumpKey;
-		inputData.rightJumpKeyAlt = rightJumpKeyAlt;
+		inputData.overviewKey = overviewKey;
+		inputData.camModeKey = camModeKey;
+		inputData.pauseMenuKey = pauseMenuKey;
 		inputData.slowBarrelMovementKey = slowBarrelMovementKey;
+		inputData.barrelUpKey = barrelUpKey;
+		inputData.barrelDownKey = barrelDownKey;
 
 		binaryFormatter.Serialize(fileStream, inputData);
 
