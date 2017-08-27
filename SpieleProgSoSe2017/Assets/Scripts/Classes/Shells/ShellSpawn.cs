@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShellSpawn : MonoBehaviour, IDestructionObserver {
     //shellEmitter ist der Ort ab dem die Shell startet. Zum Debugging und Testen existiert im Moment noch der emitterOffset;
@@ -16,7 +17,7 @@ public class ShellSpawn : MonoBehaviour, IDestructionObserver {
     //shellSpeed sollte selbsterklärend sein :D
     public GameObject shellEmitter;
     public GameObject angleGiver;
-    public GameObject shell;
+    public GameObject[] shells;
     public float shellSpeed;
     Vector3 emitterOffset = new Vector3(0, 0, 0);
 	//wird aus InputConfiguration beim Start einmal vorgeladen um unnötige Kontextwechsel zur Laufzeit zur vermeiden
@@ -31,7 +32,12 @@ public class ShellSpawn : MonoBehaviour, IDestructionObserver {
 
 	//Wir benötigen eine Referenz auf die neu erzeugte Shell um mit ihr arbeiten zu können (addForce und so...)
 	GameObject tempShell;
-
+	//Wir benötigen eine Referenz auf die Shells-Togglegroup um rausfinden zu können, welche Sorte Shell erzeugt werden soll
+	//Die Toggles sind noch enorm seltsam implementiert, daher der Umweg über IEnumerator und entsprechende Methoden wie unten zu sehen
+	//Das führt dazu, dass wir leider auch ne Referenz auf ein Toggle per se halten müssen. Sau nervig...Internet war nicht mega hilfreich in dieser Sache.
+	public ToggleGroup togglegroup;
+	private Toggle toggle;
+	private IEnumerator<Toggle> activeToggles;
 	//Helper um Kontextwechsel zu sparen
 	private bool inTheAirReported;
 	private bool lastExplodedReported;
@@ -48,7 +54,13 @@ public class ShellSpawn : MonoBehaviour, IDestructionObserver {
     void Update()
     {
 		if (Input.GetKeyDown (fireKey) && currentNumberOfShotsFired < maxNumberOfShots) {
-			tempShell = Instantiate (shell, shellEmitter.transform.position + emitterOffset, shellEmitter.transform.rotation) as GameObject;
+			activeToggles = togglegroup.ActiveToggles().GetEnumerator();
+			activeToggles.MoveNext();
+			toggle = activeToggles.Current;
+			//Hier wird entschieden welche Sorte Shell erzeugt wird, das definiert sich eindeutig über die ID des Toggles, das gerade aktiv ist.
+			//Natürlich nur solange die Reihenfolge der Prefabs, die in das Shells-Array gehören auch mit der der Toggles übereinstimmt :D
+			//anders gesagt: das prefab, dass zur toggleID 0 passt sollte auch als erstes im array liegen
+			tempShell = Instantiate (shells[toggle.GetComponent<ToggleID>().ID], shellEmitter.transform.position + emitterOffset, shellEmitter.transform.rotation) as GameObject;
 			//wenn ne shell abgefuert wurde wollen verchiedene parteien von ihrere zerstörung wissen; zum einen der shallspawner, zum anderen der gamemode
 			//hier ist zu bemerken, dass das nur funktioneirt, weil das Gamemode-Interface das DesctructionObserverInterface erweitert
 			tempShell.GetComponent<ShellDestruction> ().registerDestructionObserver (this);
