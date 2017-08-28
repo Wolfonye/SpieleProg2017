@@ -141,9 +141,14 @@ Philipp:
     ✔ eigenes ButtonDesign @done(2017-08-27 13:53) @project(Philipp)
     ✔ Vorbereitung des Wirings für die neuen Shells @done(2017-08-27 18:51) @project(Philipp)
     ☐ Shell-Animations
-        ☐ Acid (DOT)
+        ✔ Acid (DOT) @done(2017-08-28 21:58) @project(Philipp)
         ☐ HOT
-        ☐ Wall
+        ☐ Wall (zweitrangig)
+        ☐ Speed up
+        ☐ Speed down
+    ☐ Effekt-Indikatoren für Vehicle-Info-HUD
+        ☐ Acid
+        ☐ HOT
         ☐ Speed up
         ☐ Speed down
 
