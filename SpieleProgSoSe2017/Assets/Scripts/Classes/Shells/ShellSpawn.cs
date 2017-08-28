@@ -35,14 +35,19 @@ public class ShellSpawn : MonoBehaviour, IDestructionObserver {
 	//Wir benötigen eine Referenz auf die Shells-Togglegroup um rausfinden zu können, welche Sorte Shell erzeugt werden soll
 	//Die Toggles sind noch enorm seltsam implementiert, daher der Umweg über IEnumerator und entsprechende Methoden wie unten zu sehen
 	//Das führt dazu, dass wir leider auch ne Referenz auf ein Toggle per se halten müssen. Sau nervig...Internet war nicht mega hilfreich in dieser Sache.
-	public ToggleGroup togglegroup;
+	private ToggleGroup togglegroup;
 	private Toggle toggle;
 	private IEnumerator<Toggle> activeToggles;
 	//Helper um Kontextwechsel zu sparen
 	private bool inTheAirReported;
 	private bool lastExplodedReported;
+	void Awake(){
+		
+		togglegroup = GameObject.FindWithTag("ShellOptions").GetComponent<ToggleGroup>();
+	}
 	void Start(){
 		gameMode = ActiveObjects.getActiveGameMode();
+		togglegroup = GameObject.FindWithTag("ShellOptions").GetComponent<ToggleGroup>();
 		fireKey = InputConfiguration.fireKey;
 		inTheAirReported = false;
 		lastExplodedReported = false;

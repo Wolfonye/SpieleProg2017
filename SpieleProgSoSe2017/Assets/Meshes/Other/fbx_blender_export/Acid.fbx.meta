@@ -1,0 +1,197 @@
+fileFormatVersion: 2
+guid: eed99c2377f634445a0e20cbf487e0a8
+timeCreated: 1503945710
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Drop
+    100004: Inside
+    100006: Inside.001
+    100008: Inside.002
+    100010: Metal
+    100012: Outside
+    100014: Outside.001
+    100016: Outside.003
+    100018: Reagenz
+    400000: //RootNode
+    400002: Drop
+    400004: Inside
+    400006: Inside.001
+    400008: Inside.002
+    400010: Metal
+    400012: Outside
+    400014: Outside.001
+    400016: Outside.003
+    400018: Reagenz
+    2300000: Inside
+    2300002: Inside.001
+    2300004: Inside.002
+    2300006: Outside
+    2300008: Outside.001
+    2300010: Outside.003
+    3300000: Inside
+    3300002: Inside.001
+    3300004: Inside.002
+    3300006: Outside
+    3300008: Outside.001
+    3300010: Outside.003
+    4300000: Outside.003
+    4300002: Inside
+    4300004: Outside.001
+    4300006: Inside.002
+    4300008: Inside.001
+    4300010: Outside
+    7400000: Metal|DropAction
+    7400002: Metal|Inside.001Action
+    7400004: Metal|Inside.002Action
+    7400006: Metal|InsideAction
+    7400008: Metal|MetalAction
+    7400010: Metal|Outside.001Action
+    7400012: Metal|Outside.003Action
+    7400014: Metal|OutsideAction
+    7400016: Metal|ReagenzAction
+    7400018: Outside.003|DropAction
+    7400020: Outside.003|Inside.001Action
+    7400022: Outside.003|Inside.002Action
+    7400024: Outside.003|InsideAction
+    7400026: Outside.003|MetalAction
+    7400028: Outside.003|Outside.001Action
+    7400030: Outside.003|Outside.003Action
+    7400032: Outside.003|OutsideAction
+    7400034: Outside.003|ReagenzAction
+    7400036: Inside|DropAction
+    7400038: Inside|Inside.001Action
+    7400040: Inside|Inside.002Action
+    7400042: Inside|InsideAction
+    7400044: Inside|MetalAction
+    7400046: Inside|Outside.001Action
+    7400048: Inside|Outside.003Action
+    7400050: Inside|OutsideAction
+    7400052: Inside|ReagenzAction
+    7400054: Drop|DropAction
+    7400056: Drop|Inside.001Action
+    7400058: Drop|Inside.002Action
+    7400060: Drop|InsideAction
+    7400062: Drop|MetalAction
+    7400064: Drop|Outside.001Action
+    7400066: Drop|Outside.003Action
+    7400068: Drop|OutsideAction
+    7400070: Drop|ReagenzAction
+    7400072: Outside.001|DropAction
+    7400074: Outside.001|Inside.001Action
+    7400076: Outside.001|Inside.002Action
+    7400078: Outside.001|InsideAction
+    7400080: Outside.001|MetalAction
+    7400082: Outside.001|Outside.001Action
+    7400084: Outside.001|Outside.003Action
+    7400086: Outside.001|OutsideAction
+    7400088: Outside.001|ReagenzAction
+    7400090: Inside.002|DropAction
+    7400092: Inside.002|Inside.001Action
+    7400094: Inside.002|Inside.002Action
+    7400096: Inside.002|InsideAction
+    7400098: Inside.002|MetalAction
+    7400100: Inside.002|Outside.001Action
+    7400102: Inside.002|Outside.003Action
+    7400104: Inside.002|OutsideAction
+    7400106: Inside.002|ReagenzAction
+    7400108: Reagenz|DropAction
+    7400110: Reagenz|Inside.001Action
+    7400112: Reagenz|Inside.002Action
+    7400114: Reagenz|InsideAction
+    7400116: Reagenz|MetalAction
+    7400118: Reagenz|Outside.001Action
+    7400120: Reagenz|Outside.003Action
+    7400122: Reagenz|OutsideAction
+    7400124: Reagenz|ReagenzAction
+    7400126: Inside.001|DropAction
+    7400128: Inside.001|Inside.001Action
+    7400130: Inside.001|Inside.002Action
+    7400132: Inside.001|InsideAction
+    7400134: Inside.001|MetalAction
+    7400136: Inside.001|Outside.001Action
+    7400138: Inside.001|Outside.003Action
+    7400140: Inside.001|OutsideAction
+    7400142: Inside.001|ReagenzAction
+    7400144: Outside|DropAction
+    7400146: Outside|Inside.001Action
+    7400148: Outside|Inside.002Action
+    7400150: Outside|InsideAction
+    7400152: Outside|MetalAction
+    7400154: Outside|Outside.001Action
+    7400156: Outside|Outside.003Action
+    7400158: Outside|OutsideAction
+    7400160: Outside|ReagenzAction
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
