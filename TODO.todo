@@ -26,6 +26,7 @@ Florian:
     ☐ Nahkampf; Kollision (should have)
     ☐ Flugzeug-Feature (could have)
     ✔ Steuerung dahingehend umstellen, dass HoldLine nicht relativ zum Tank sondern absolut agiert (should have) @done(2017-08-31 13:38) @project(Florian)
+    ☐ Damage/Action-Overflow fix
 
 Philipp:
     ✔ GitHub Account anlegen @done(2017-04-24 20:14) @project(Philipp)
@@ -152,6 +153,7 @@ Philipp:
         ☐ Speed down
     ☐ Map mit separierten Seiten
     ☐ beende Runde, wenn aktiver Panzer zerstört wird
+    ☐ Cycler mit active skripts auf andere Shells anpassen (aktivieren nur, wenn tank aktiv ist)
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
