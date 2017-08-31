@@ -46,7 +46,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CarMoveTest.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\ActiveObjects.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\ControlCycler.cs" />
@@ -65,6 +64,7 @@
      <Compile Include="Assets\Scripts\Classes\GameControl\VictoryDefeatEvaluator.cs" />
      <Compile Include="Assets\Scripts\Classes\HUDRelated\HUDLookToCamera.cs" />
      <Compile Include="Assets\Scripts\Classes\HUDRelated\ShowPlayerInHUD.cs" />
+     <Compile Include="Assets\Scripts\Classes\HUDRelated\ToggleID.cs" />
      <Compile Include="Assets\Scripts\Classes\HUDRelated\VHUDSemanticZoom.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\CountingDown.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\CountingUp.cs" />
@@ -100,7 +100,6 @@
      <Compile Include="Assets\Scripts\Interfaces\IDestructible.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDestructionObserver.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IGameMode.cs" />
-     <Compile Include="Assets\ToggleID.cs" />
      <Compile Include="Assets\UnityEssentials\UISamples\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\UnityEssentials\UISamples\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\UnityEssentials\UISamples\Scripts\ChangeColor.cs" />
