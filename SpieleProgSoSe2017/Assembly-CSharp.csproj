@@ -102,6 +102,7 @@
      <Compile Include="Assets\Scripts\Classes\Vehicles\TakeExplosion.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\ToppleDetect.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\VehicleEnabled.cs" />
+     <Compile Include="Assets\Scripts\Classes\Vehicles\VehicleScriptController.cs" />
      <Compile Include="Assets\Scripts\Interfaces\ICycleListener.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IDestructible.cs" />
