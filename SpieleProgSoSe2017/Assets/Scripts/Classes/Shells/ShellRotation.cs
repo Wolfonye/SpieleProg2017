@@ -13,8 +13,9 @@ public class ShellRotation : MonoBehaviour
 	//Zwischenspeicher für jeweils neu berechnete Rotation
     Vector3 newRot;
 
-    //bissl randomisierter Offset um einen größeren Coolnesswert zu generieren; ich generiere mir den direkt in Start
-    Vector3 boomOffset;
+    //Offset für die einzelnen verschiedenenn Animationen, da die ja nicht alle gleiche Dimensionen haben; weiterhin deren Dauer
+    public Vector3 boomOffset;
+    public float animationDuration;
     //ein Flag um nicht lauter booms auszulösen durch mehrfache Collision (durch die Zerstörung der Shell dürfte das zum Artefakt werden)
     bool exploded = false;
     //explosion : das boom-prefab mit der entsprechenden Animation; die Namensgebung sollte ich wohl noch ändern...bissl unhübsch
@@ -30,7 +31,6 @@ public class ShellRotation : MonoBehaviour
     private void Start()
     {
         //boomOffset = new Vector3(Random.Range(-3f, 3f), 2.5f + Random.Range(0f, 3f), 0);
-		boomOffset = new Vector3(0, 2.5f, 0);
         newRot = new Vector3(0, 0, 0);
     }
     
@@ -61,7 +61,7 @@ public class ShellRotation : MonoBehaviour
              */
             boom = Instantiate(explosion, transform.position + boomOffset, Quaternion.Euler(0, 0, 0));
             //für das destroy wäre es schöner das animationsende irgendwie abgreifen zu können
-            Destroy(boom, 1.3f);
+            Destroy(boom, animationDuration);
             exploded = true;
         }
     }
