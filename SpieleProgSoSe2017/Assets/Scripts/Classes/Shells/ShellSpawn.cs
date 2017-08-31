@@ -41,10 +41,6 @@ public class ShellSpawn : MonoBehaviour, IDestructionObserver {
 	//Helper um Kontextwechsel zu sparen
 	private bool inTheAirReported;
 	private bool lastExplodedReported;
-	void Awake(){
-		
-		togglegroup = GameObject.FindWithTag("ShellOptions").GetComponent<ToggleGroup>();
-	}
 	void Start(){
 		gameMode = ActiveObjects.getActiveGameMode();
 		togglegroup = GameObject.FindWithTag("ShellOptions").GetComponent<ToggleGroup>();

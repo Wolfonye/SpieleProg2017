@@ -38,7 +38,7 @@ public class CarMovement : MonoBehaviour
 	private string jumpLeft;
 	private string jumpRight;
 	private float leftRightInputInfo;
-	private float speed;
+	public float speed;
 	private bool brakeOn;
 	private bool isGrounded;
 	private WheelHit hit;

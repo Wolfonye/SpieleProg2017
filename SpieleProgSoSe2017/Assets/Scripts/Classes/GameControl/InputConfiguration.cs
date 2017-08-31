@@ -18,15 +18,15 @@ public static class InputConfiguration : object {
 	public static string fireKey = "space";
 	public static string driveLeftKey = "a";
 	public static string driveRightKey = "d";
-	public static string leftJumpKey = "q";
-	public static string rightJumpKey = "e";
+	public static string leftJumpKey = "w";
+	public static string rightJumpKey = "s";
 	public static string overviewKey = "tab";
 	public static string camModeKey = "g";
 	public static string pauseMenuKey = "escape";
 	public static string slowBarrelMovementKey = "left shift";
 	//das sollte später mit der Maus passieren!!!
-	public static string barrelUpKey = "w";
-	public static string barrelDownKey ="s";
+	public static string barrelUpKey = "q";
+	public static string barrelDownKey ="e";
 	//DebugOption
 	public static string spinKey = "r";
 	
