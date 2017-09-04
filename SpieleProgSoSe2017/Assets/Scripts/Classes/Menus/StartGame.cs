@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/*
+ *Author: Katya Engelmann
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -44,6 +47,7 @@ public class StartGame : MonoBehaviour {
 
 	// lädt das ausgewählte Level
 	public void loadLevel () {
+		ActiveObjects.gameOver = false; //Philipp
 		setCurrentActiveMode();
 		tellCurrentNumberOfTanks();
 		tellActiveMode();

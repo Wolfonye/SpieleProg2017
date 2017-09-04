@@ -12,8 +12,12 @@ using UnityEngine;
 //auf end Round klicken muss; das wäre...nicht spassig.
 public class PassiveDestructionHandler : MonoBehaviour {
 	void OnDisable(){
-		if(ActiveObjects.getActiveTank() == gameObject && !ActiveObjects.gameOver){
-			ActiveObjects.getActiveGameMode().initiateRoundEnd();
+		if(ActiveObjects.getActiveGameMode() != null){
+			if(ActiveObjects.getActiveTank() == gameObject && !ActiveObjects.gameOver){
+				ActiveObjects.getActiveGameMode().initiateRoundEnd();
+			}
+		}else{
+			Debug.Log("GameMode: null"); //Das ganze else ist nur ne Debug-Option
 		}
 	}
 }

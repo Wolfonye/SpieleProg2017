@@ -44,7 +44,7 @@ public class ControlCycler : MonoBehaviour
 	//ich will jeweils auhc anzeigen, was das aktive Vehicle ist; dazu rbauche ich ne Ref auf den ActivePointer um den zu instanzieren
 	public GameObject activePointer;
 	private GameObject tempActivePointer; //das gerade instanzierte ActivePointerObjekt
-	private Vector3 activePointerOffset = new Vector3 (0, 5, 0);
+	private Vector3 activePointerOffset = new Vector3 (0, 10, 0);
 
 
 	//welches Fahrzeug ist gerade das aktive

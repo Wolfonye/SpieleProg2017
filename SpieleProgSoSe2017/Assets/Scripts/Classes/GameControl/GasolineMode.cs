@@ -133,6 +133,13 @@ public class GasolineMode : MonoBehaviour, IGameMode {
 	}
 
 	public void initiateRoundEnd(){
-		StartCoroutine(endRoundAfterSeconds(switchTime));
+		//Debug-if
+		if(ActiveObjects.getActiveGameMode() == null){
+			Debug.Log("gameMode: null");
+		}
+		
+		if(ActiveObjects.getActiveGameMode() != null){
+			StartCoroutine(endRoundAfterSeconds(switchTime));
+		}
 	}
 }
