@@ -97,6 +97,7 @@
      <Compile Include="Assets\Scripts\Classes\Vehicles\HoldLineScript.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\HoldLineVersion2.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\LeftCollTest.cs" />
+     <Compile Include="Assets\Scripts\Classes\Vehicles\PassiveDestructionHandler.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\RightCollTest.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\TakeDamage.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\TakeExplosion.cs" />

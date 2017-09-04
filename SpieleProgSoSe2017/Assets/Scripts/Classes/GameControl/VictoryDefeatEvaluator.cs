@@ -75,6 +75,7 @@ public class VictoryDefeatEvaluator : MonoBehaviour, ICycleListener {
 		if (!player0HasActiveVehicles && !player1HasActiveVehicles) {
 			Instantiate (endOfRoundScreen, Vector3.zero, Quaternion.identity).GetComponentInChildren<Text>().text = "Draw!";
 			GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponent<PauseGame> ().togglePause ();
+			ActiveObjects.gameOver = true;
 			//Debug.Log ("unentschieden");
 			return;
 		}
@@ -82,6 +83,7 @@ public class VictoryDefeatEvaluator : MonoBehaviour, ICycleListener {
 		if (!player0HasActiveVehicles) {
 			Instantiate (endOfRoundScreen, Vector3.zero, Quaternion.identity).GetComponentInChildren<Text>().text = "Player 2 wins!";
 			GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponent<PauseGame> ().togglePause ();
+			ActiveObjects.gameOver = true;
 			//Debug.Log ("Spieler 2 gewinnt");
 			return;
 		}
@@ -89,6 +91,7 @@ public class VictoryDefeatEvaluator : MonoBehaviour, ICycleListener {
 		if (!player1HasActiveVehicles) {
 			Instantiate (endOfRoundScreen, Vector3.zero, Quaternion.identity).GetComponentInChildren<Text>().text = "Player 1 wins!";
 			GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponent<PauseGame> ().togglePause ();
+			ActiveObjects.gameOver = true;
 			//Debug.Log ("Spieler 1 gewinnt");
 			return;
 		}

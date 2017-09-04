@@ -15,6 +15,7 @@ using UnityEngine;
 //TODO: das hätte ich gerne irgendwann nicht mehr static sondern instanziiert auf einer pro-level-Basis
 
 public static class ActiveObjects : object {
+	public static bool gameOver = false;
 	private static GameObject activeTank;
 	private static GameObject activeBullet;
 
