@@ -146,14 +146,16 @@ Philipp:
         ✔ HOT @done(2017-08-31 13:46) @project(Philipp)
         ✔ Speed up @done(2017-08-31 13:46) @project(Philipp)
         ✔ Speed down @done(2017-08-31 13:46) @project(Philipp)
-    ☐ Effekt-Indikatoren für Vehicle-Info-HUD
-        ☐ Acid
-        ☐ HOT
-        ☐ Speed up
-        ☐ Speed down
+    ✔ Effekt-Indikatoren für Vehicle-Info-HUD @done(2017-09-04 18:44) @project(Philipp)
+        ✔ Acid @done(2017-09-04 18:44) @project(Philipp)
+        ✔ HOT @done(2017-09-04 18:44) @project(Philipp)
+        ✔ Speed up @done(2017-09-04 18:44) @project(Philipp)
+        ✔ Speed down @done(2017-09-04 18:44) @project(Philipp)
     ☐ Map mit separierten Seiten
-    ☐ beende Runde, wenn aktiver Panzer zerstört wird
-    ☐ Cycler mit active skripts auf andere Shells anpassen (aktivieren nur, wenn tank aktiv ist)
+    ✔ beende Runde, wenn aktiver Panzer zerstört wird @done(2017-09-04 17:16) @project(Philipp)
+    ✔ Cycler mit active skripts auf andere Shells anpassen (aktivieren nur, wenn tank aktiv ist) @done(2017-09-04 16:27) @project(Philipp)
+    ☐ EffektIndikatoren an Rest anbinden
+    ☐ Semantischer Zoom für EffektIndikatoren
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
