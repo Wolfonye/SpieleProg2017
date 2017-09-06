@@ -21,7 +21,7 @@ Florian:
     ✔ Tests und Skalierung von Explosionswerten @done(2017-06-30 02:08) @project(Florian)
     ☐ Tests und Skalierung von Windwerten (should have)
     ✔ Lane-Wechsel Midair fixen @done(2017-07-01 00:08) @project(Florian)
-    ☐ Munitionsarten (must have)
+    ✔ Munitionsarten (must have) @done(2017-09-06 17:50) @project(Florian)
     ☐ evtl. zerstörbare Objekte (Logik) (should have)
     ☐ Nahkampf; Kollision (should have)
     ☐ Flugzeug-Feature (could have)
@@ -119,13 +119,13 @@ Philipp:
     ✔ Umgebung fancyfizieren (could have) @done(2017-08-31 13:40) @project(Philipp)
     ✔ semantischer Zoom (could have) @done(2017-08-14 19:06) @project(Philipp)
     ✔ smoothing der cam-bewegung (could have) @done(2017-07-25 09:40) @project(Philipp)
-    ☐ Gedanken zu visuellem Feedback und Verbesserungen (should have)
+    ✔ Gedanken zu visuellem Feedback und Verbesserungen (should have) @done(2017-09-06 17:49) @project(Philipp)
     ✔ Auswahl Tankanzahl zs mit Käthe (must have) @done(2017-07-25 16:02) @project(Philipp)
     ☐ ausgiebige Tests der Cam-Modi
     ✔ Bugfix: EndRoundButton soll nicht nach abgefeuertem Schuss klickbar sein, das waere ein Doppelrundencheat @done(2017-07-25 17:35) @project(Philipp)
     ✔ Overview nur im freien Modus, sollte man den freien Modus verlassen so wird Overview beendet @done(2017-07-28 12:09) @project(Philipp)
     ☐ Konzeption abstrakter Oberklasse für Gamemodi, daraus resultierend evtl. Refactoring IGameMode sinnig
-    ☐ Key-Binding-Persistency-Schnittstelle (must have)
+    ☐ Key-Binding-Persistency-Schnittstelle + Tests(must have)
         ✔ load profile from file @done(2017-08-11 15:29) @project(Philipp)
         ✔ save profile from file @done(2017-08-11 15:29) @project(Philipp)
         ☐ Tests der Schnittstelle
@@ -154,8 +154,7 @@ Philipp:
     ☐ Map mit separierten Seiten
     ✔ beende Runde, wenn aktiver Panzer zerstört wird @done(2017-09-04 17:16) @project(Philipp)
     ✔ Cycler mit active skripts auf andere Shells anpassen (aktivieren nur, wenn tank aktiv ist) @done(2017-09-04 16:27) @project(Philipp)
-    ☐ EffektIndikatoren an Rest anbinden
-    ☐ Semantischer Zoom für EffektIndikatoren
+    ✔ EffektIndikatoren an Rest anbinden @done(2017-09-06 17:49) @project(Philipp)
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
