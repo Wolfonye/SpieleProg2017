@@ -17,13 +17,13 @@ Florian:
     ✔ HoldLine fixen für Panzer die auf Lane  1 und 3 nebeneinander stehen und auf 2 wollen !!! @done(2017-06-23 11:01) @project(Florian)
     ✔ HoldLine und damit zusammenhängendes mit Philipps Cycle Arbeit kombinieren und testen!! @done(2017-06-23 11:01) @project(Florian)
     ✔ Buildmoeglichkeiten eroertern und testen @done(2017-06-30 02:08) @project(Florian)
-    ☐ Wind mit Phil auf Cycler abstimmen (should have)
+    ✔ Wind mit Phil auf Cycler abstimmen (should have) @done(2017-09-06 20:04) @project(Florian)
     ✔ Tests und Skalierung von Explosionswerten @done(2017-06-30 02:08) @project(Florian)
     ☐ Tests und Skalierung von Windwerten (should have)
     ✔ Lane-Wechsel Midair fixen @done(2017-07-01 00:08) @project(Florian)
     ✔ Munitionsarten (must have) @done(2017-09-06 17:50) @project(Florian)
     ☐ evtl. zerstörbare Objekte (Logik) (should have)
-    ☐ Nahkampf; Kollision (should have)
+    ✔ Nahkampf; Kollision (should have) @done(2017-09-06 20:04) @project(Florian)
     ☐ Flugzeug-Feature (could have)
     ✔ Steuerung dahingehend umstellen, dass HoldLine nicht relativ zum Tank sondern absolut agiert (should have) @done(2017-08-31 13:38) @project(Florian)
     ☐ Damage/Action-Overflow fix
@@ -155,6 +155,8 @@ Philipp:
     ✔ beende Runde, wenn aktiver Panzer zerstört wird @done(2017-09-04 17:16) @project(Philipp)
     ✔ Cycler mit active skripts auf andere Shells anpassen (aktivieren nur, wenn tank aktiv ist) @done(2017-09-04 16:27) @project(Philipp)
     ✔ EffektIndikatoren an Rest anbinden @done(2017-09-06 17:49) @project(Philipp)
+    ☐ Wolken in alle Level einbauen
+    ☐ nicht vergessen, dass der Gamemaster2000 jetzt mehr braucht, als im Prefab drin ist!
 
 Katya:
     ✔ GitHub Account anlegen @done(2017-06-15 22:26) @project(Katya)
