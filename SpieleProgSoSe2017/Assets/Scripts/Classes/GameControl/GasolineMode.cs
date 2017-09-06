@@ -102,6 +102,9 @@ public class GasolineMode : MonoBehaviour, IGameMode {
 
 	//soll seconds lange warten und dann die Runde beenden und cyclen; während des wartens(cooldown) sind bereits alle vehicle deaktiviert
 	private IEnumerator endRoundAfterSeconds(int seconds){
+		if(switchTimer == null){
+			yield break;
+		}
 		inCoolDownPhase = true;
 		int elapsedTime = 0;
 		lastShotIsInTheAir = false;
@@ -133,13 +136,6 @@ public class GasolineMode : MonoBehaviour, IGameMode {
 	}
 
 	public void initiateRoundEnd(){
-		//Debug-if
-		if(ActiveObjects.getActiveGameMode() == null){
-			Debug.Log("gameMode: null");
-		}
-		
-		if(ActiveObjects.getActiveGameMode() != null){
-			StartCoroutine(endRoundAfterSeconds(switchTime));
-		}
+		StartCoroutine(endRoundAfterSeconds(switchTime));
 	}
 }

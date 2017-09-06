@@ -158,6 +158,9 @@ public class TempRoundTimer : MonoBehaviour, IGameMode
 
 	//soll nachdem der Impakt da war seconds warten und dann den cycle einleiten
 	private IEnumerator endRoundAfterImpactAndSeconds(int seconds){
+		if(switchTimer == null){
+			yield break;
+		}
 		inCooldownPhase = true;
 		int elapsedTime = 0;
 		actualTime = timePerRound;

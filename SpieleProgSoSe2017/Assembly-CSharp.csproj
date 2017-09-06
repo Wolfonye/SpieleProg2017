@@ -63,6 +63,8 @@
      <Compile Include="Assets\Scripts\Classes\GameControl\TempRoundTimer.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\VictoryDefeatEvaluator.cs" />
      <Compile Include="Assets\Scripts\Classes\GameControl\WindForce.cs" />
+     <Compile Include="Assets\Scripts\Classes\HUDRelated\EffectCounterControl.cs" />
+     <Compile Include="Assets\Scripts\Classes\HUDRelated\EffectHUDControl.cs" />
      <Compile Include="Assets\Scripts\Classes\HUDRelated\HUDLookToCamera.cs" />
      <Compile Include="Assets\Scripts\Classes\HUDRelated\ShowPlayerInHUD.cs" />
      <Compile Include="Assets\Scripts\Classes\HUDRelated\ToggleID.cs" />
