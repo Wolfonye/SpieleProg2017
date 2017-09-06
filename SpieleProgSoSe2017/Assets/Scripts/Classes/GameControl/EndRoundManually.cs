@@ -23,8 +23,10 @@ public class EndRoundManually : MonoBehaviour {
 	}
 
 	public void endRoundNow(){
-		if (!gameMode.isInCoolDown ()) {	
-			gameMode.initiateRoundEnd ();
+		if(gameMode != null){
+			if (!gameMode.isInCoolDown ()) {	
+				gameMode.initiateRoundEnd ();
+			}
 		}
 	}
 }
