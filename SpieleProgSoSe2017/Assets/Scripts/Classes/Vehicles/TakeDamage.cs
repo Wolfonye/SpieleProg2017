@@ -28,7 +28,12 @@ public class TakeDamage : MonoBehaviour {
 
 	void OnCollisionEnter (Collision col){
 		if(col.gameObject.tag == "Shell"){
+			if((life - col.gameObject.GetComponent<ShellDamage>().Damage) > maxLife){
+				life = maxLife;
+			}
+			else {						
 			life = life - col.gameObject.GetComponent<ShellDamage>().Damage;
+			}
 			healthBar.value = life;
 			healthText.text = "HP: " + life + "/" + maxLife;
 			//Debug.Log("Treffer");
@@ -42,7 +47,12 @@ public class TakeDamage : MonoBehaviour {
 
 	//Florians Ergaenzung fuer die ExplosionDamages
 	public void TakeExplosion(int dmg){
-		life = life - dmg;
+		if((life - dmg) > maxLife){
+			life = maxLife;
+		}
+		else {						
+			life = life - dmg;
+		}
 		healthBar.value = life;
 		healthText.text = "HP: " + life + "/" + maxLife;
 		if(life <= 0){

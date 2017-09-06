@@ -6,7 +6,7 @@ public class ShellWind : MonoBehaviour {
 	public GameObject GameMaster;
 	// Use this for initialization
 	void Start () {
-		GameMaster = GameObject.Find ("GameMaster2000");
+		GameMaster = GameObject.FindWithTag ("Gamemaster2000");
 	}
 	
 	// Update is called once per frame
