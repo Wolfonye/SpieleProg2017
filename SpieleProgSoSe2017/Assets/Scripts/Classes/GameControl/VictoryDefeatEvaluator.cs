@@ -43,13 +43,15 @@ public class VictoryDefeatEvaluator : MonoBehaviour, ICycleListener {
 		evaluateVictoryDefeat ();
 	}
 
-	public void evaluateVictoryDefeat(){
-		//wollen feststellen, ob bei player0 noch wenigstens ein Vehicle nicht zerstört wurde
-		//remember zerstören heißt bei uns gameobject deaktivieren
-		//das dürfte nicht viel overhead erzeugen, da es nur sehr wenige objekte sind und diese
-		//höchstens einmal deaktiviert werden; die vereinfachung an code an anderer stelle sollte
-		//das also mehr als aufwiegen; wir nehmen also mal an es gibt keine aktiven mehr, setzen
-		//auf false und schauen dann nach, obs nicht doch ein aktives gibt
+	
+	//wollen feststellen, ob bei einem SPieler bereits alle vehicle zerstört wurden
+	//remember zerstören heißt bei uns gameobject deaktivieren
+	//das dürfte nicht viel overhead erzeugen, da es nur sehr wenige objekte sind und diese
+	//höchstens einmal deaktiviert werden; die vereinfachung an code an anderer stelle sollte
+	//das also mehr als aufwiegen; wir nehmen also mal an es gibt keine aktiven mehr, setzen
+	//auf false und schauen dann nach, obs nicht doch ein aktives gibt
+	//aus conveniencegründen gibt die funktion true zurück, falls einer der Spieler KEINE aktiven Fahrzeuge mehr hat!
+	public bool isGameOver(){
 		player0HasActiveVehicles = false;
 		foreach (GameObject vehicle in player0Vehicles) {
 			if (vehicle.activeSelf) {
@@ -57,7 +59,6 @@ public class VictoryDefeatEvaluator : MonoBehaviour, ICycleListener {
 			}
 		}
 
-		//siehe oben
 		player1HasActiveVehicles = false;
 		foreach (GameObject vehicle in player1Vehicles) {
 			if (vehicle.activeSelf) {
@@ -65,7 +66,15 @@ public class VictoryDefeatEvaluator : MonoBehaviour, ICycleListener {
 			}
 		}
 
+		if(!player0HasActiveVehicles || !player1HasActiveVehicles){
+			return true;
+		}else{
+			return false;
+		}
 
+	}
+	public void evaluateVictoryDefeat(){
+		isGameOver();
 		//jetzt müssen wir die verschiedenen Kombinationen bewerten
 		//if (player0HasActiveVehicles && player1HasActiveVehicles) {
 			//Debug.Log ("alles noch offen");
