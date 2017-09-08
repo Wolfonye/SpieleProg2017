@@ -16,7 +16,6 @@ public class ShellDOT : MonoBehaviour {
 		Vector3 center = transform.position;
 		float radius = 0f;
 		int i = 0;
-		int dmg = 20;
 		for(int j = 0; j < 1; j++){
 			//Debug.Log (j);
 			radius = radius + start;	

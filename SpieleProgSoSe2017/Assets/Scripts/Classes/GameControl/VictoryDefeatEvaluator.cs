@@ -54,15 +54,19 @@ public class VictoryDefeatEvaluator : MonoBehaviour, ICycleListener {
 	public bool isGameOver(){
 		player0HasActiveVehicles = false;
 		foreach (GameObject vehicle in player0Vehicles) {
-			if (vehicle.activeSelf) {
-				player0HasActiveVehicles = true;
+			if(vehicle != null){  
+				if (vehicle.activeSelf) {
+					player0HasActiveVehicles = true;
+				}
 			}
 		}
 
 		player1HasActiveVehicles = false;
 		foreach (GameObject vehicle in player1Vehicles) {
-			if (vehicle.activeSelf) {
-				player1HasActiveVehicles = true;
+			if(vehicle != null){
+				if (vehicle.activeSelf) {
+					player1HasActiveVehicles = true;
+				}
 			}
 		}
 

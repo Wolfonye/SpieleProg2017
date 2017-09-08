@@ -14,7 +14,9 @@ public class VDEvaluatorHelper : MonoBehaviour {
 	}
 	void OnDisable(){
 		if(evaluator.isGameOver()){
-			gameMode.initiateRoundEnd();
+			if(ActiveObjects.getActiveGameMode() != null){
+				gameMode.initiateRoundEnd();
+			}
 		}
 	}
 }
