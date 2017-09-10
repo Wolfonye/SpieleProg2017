@@ -39,7 +39,7 @@ public class VHUDSemanticZoom : MonoBehaviour {
 			actionPointText.gameObject.SetActive (true);
 		} else {
 			//drawActionbar = false;
-			healthText.gameObject.SetActive (false);
+			healthText.gameObject.SetActive (true);
 			actionPointText.gameObject.SetActive (false);
 		}
 		helperColor = healthText.color;
