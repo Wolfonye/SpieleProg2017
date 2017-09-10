@@ -121,7 +121,7 @@ Philipp:
     ✔ smoothing der cam-bewegung (could have) @done(2017-07-25 09:40) @project(Philipp)
     ✔ Gedanken zu visuellem Feedback und Verbesserungen (should have) @done(2017-09-06 17:49) @project(Philipp)
     ✔ Auswahl Tankanzahl zs mit Käthe (must have) @done(2017-07-25 16:02) @project(Philipp)
-    ☐ ausgiebige Tests der Cam-Modi
+    ✔ ausgiebige Tests der Cam-Modi @done(2017-09-10 21:36) @project(Philipp)
     ✔ Bugfix: EndRoundButton soll nicht nach abgefeuertem Schuss klickbar sein, das waere ein Doppelrundencheat @done(2017-07-25 17:35) @project(Philipp)
     ✔ Overview nur im freien Modus, sollte man den freien Modus verlassen so wird Overview beendet @done(2017-07-28 12:09) @project(Philipp)
     ☐ Konzeption abstrakter Oberklasse für Gamemodi, daraus resultierend evtl. Refactoring IGameMode sinnig
