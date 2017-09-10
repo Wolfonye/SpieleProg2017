@@ -45,7 +45,7 @@ public class TakeDamage : MonoBehaviour {
 	}
 
 
-	//Florians Ergaenzung fuer die ExplosionDamages
+	//Florians Ergaenzung fuer die ExplosionDamages (Ist basis diverser Shelleffekte geworden)
 	public void TakeExplosion(int dmg){
 		if((life - dmg) > maxLife){
 			life = maxLife;

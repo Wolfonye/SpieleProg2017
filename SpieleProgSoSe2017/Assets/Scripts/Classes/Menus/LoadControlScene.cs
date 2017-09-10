@@ -1,6 +1,7 @@
 ﻿/*
- *Author: Katya Engelmann
+ * Author: Katya Engelmann
  */
+ 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,9 @@ public class LoadControlScene : MonoBehaviour {
 		 * so ziemlich die einzige Stelle, wo ich sicherstellen kann, dass die Coroutine bzgl Gamemode ordentlich
 		 * "gecancelt" werden; scheint jedenfalls zu funktionieren. Editor spinnt jetzt nciht mehr rum.
 		 * So richtig logisch ist das alles nicht. Mag aber damit zusammenhängen, dass im Editor einige Sachen
-		 * nebenher passieren, die beim "reinen" Spiel nicht stattfinden
+		 * nebenher passieren, die beim "reinen" Spiel nicht stattfinden.
+		 * Es ist weiterhin SEHR wichtig, dass das vor LoadScene stattfindet, weil das einige OnDisables aufruft.
+		 * Das testen auf null beim GameMode erlaubt mir NullPointerExceptions vorzubeugen. Sauberes ObjectCleanup vor Szenenwechsel ist wichtig :D
 		 */
 		if(sceneIndex == 0){
 			ActiveObjects.setActiveGameMode(null);

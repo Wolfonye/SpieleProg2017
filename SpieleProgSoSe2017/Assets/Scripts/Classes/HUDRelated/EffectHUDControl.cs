@@ -1,9 +1,15 @@
-﻿using System.Collections;
+﻿/*
+ * Author: Philipp Bous
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Sorgt dafür, dass die entsprechenden Symbole, die aktive Effekte anzeigen ein oder ausgeblendet werden.
 public class EffectHUDControl : MonoBehaviour {
+	//Wir benötigen eine Ref auf das EffectScript des entsprechenden Vehicles und Refs auf die Symbole innerhalb des dazugehörigen VehicleInfoHUD
 	public EffectScript effectScript;
 	public GameObject dotEffect;
 	public GameObject hotEffect;

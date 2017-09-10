@@ -1,8 +1,13 @@
-﻿using System.Collections;
+﻿/*
+ * Author: Philipp Bous
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Sorgt dafür, dass im AdditionalInfoHUD der aktive Spieler angezeigt wird
 public class ShowPlayerInHUD : MonoBehaviour, ICycleListener {
 	Text currentPlayerText;
 

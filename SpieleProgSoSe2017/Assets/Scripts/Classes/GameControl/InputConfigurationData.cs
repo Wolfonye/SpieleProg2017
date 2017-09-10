@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/*
+ * Author: Philipp Bous
+ */
+ 
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //Serialisierbares Datenobjekt zur Persistierung von Controls; komplementiert InputConfiguration

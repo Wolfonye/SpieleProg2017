@@ -1,7 +1,13 @@
-﻿using System.Collections;
+﻿/*
+ *Author: Philipp Bous
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//!!!LEGACY wird jetzt durch ControlCycler ersetzt!!!
 public class ControlSwitcher : MonoBehaviour
 {
 

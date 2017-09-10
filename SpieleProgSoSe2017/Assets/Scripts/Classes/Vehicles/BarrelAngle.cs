@@ -1,7 +1,12 @@
-﻿using System.Collections;
+﻿/*
+ * Author: Philipp Bous
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Steuert die Bewegung des Kanonenrohrs bei Tanks
 public class BarrelAngle : MonoBehaviour
 {
     //barrelLiftSpeed : selbsterklärend

@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/*
+ * Author: Katya Engelmann, Philipp Bous
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -11,15 +15,6 @@ public class RecognizeKeyInput : MonoBehaviour {
 		for(int i = 0; i < values.Length; i++){
 			keyCodes[i] = (KeyCode)values[i];
 		}
-	}
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 
 	public void keyWait(){

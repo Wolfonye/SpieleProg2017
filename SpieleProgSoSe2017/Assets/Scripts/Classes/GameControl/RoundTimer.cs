@@ -1,7 +1,12 @@
-﻿using UnityEngine;
+﻿/*
+ * Author: Philipp Bous
+ */
+
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
+//!!!LEGACY wird jetzt durch TempRoundTimer ersetzt!!!
 
 /*
  * Skript für den Rundencounter; über die public int timePerRound kann man von außen die Rundenzeit variieren; 

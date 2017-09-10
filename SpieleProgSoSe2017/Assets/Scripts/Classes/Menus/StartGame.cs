@@ -1,6 +1,7 @@
 ﻿/*
- *Author: Katya Engelmann
+ * Author: Katya Engelmann
  */
+ 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

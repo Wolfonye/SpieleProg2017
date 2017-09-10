@@ -17,6 +17,10 @@ using UnityEngine.UI;
  * 
  * Grundidee des Skripts fürs Zoomen: bei MouseWheeldrehung fahre Camera in gewissen Boundaries an
  * der eigenen Vorwärts-Achse entlang nach vorne oder hinten.
+ * 
+ * Weiterhin findet sihc heir die Logik für die einzelnen Cam-Modi; wäre zu überlegen nach Abgabe für jeden Modus ein eigenes SKript zu schreiben, damit
+ * wir hier weniger viel Stoff drin haben. Aaaaber wo soll man die Zeit hernehmen...irgendwann sollte ich auch mal für die ganzen Prüfungen lernen, die
+ * ich wegen SpiPro geschoben habe.
  */
 public class CameraMovement : MonoBehaviour, ICycleListener{
 	//Anzeigetext für den CamModus

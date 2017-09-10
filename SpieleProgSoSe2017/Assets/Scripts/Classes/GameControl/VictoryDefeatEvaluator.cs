@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Soll dazu dienen festzustellen ob ein Spieler gewonnen hat
 public class VictoryDefeatEvaluator : MonoBehaviour, ICycleListener {
 
 	//Refs auf die Listen der Spieler, damit ein check-up durchgeführt werden kann

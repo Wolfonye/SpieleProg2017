@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Regelt die Unterbrechung des Spiels mit stoppen der laufenden Zeit und Aktivierung des entsprechenden Screens
 public class PauseGame : MonoBehaviour {
 	private bool pause;
 

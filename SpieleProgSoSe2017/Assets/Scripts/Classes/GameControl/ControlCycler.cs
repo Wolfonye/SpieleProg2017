@@ -9,6 +9,9 @@ using UnityEngine;
 //memo: unity schafft noch keine listen in listen im inspector; extrem aergerlich, sonst haette ich das hier
 //mit geringem mehraufwand adaptiver gestalten koennen; ich sollte irgendwann mal den editor dahingehend umschreiben
 //pluginnen oder wasweißich. soll ja editierbar sein angeblich...
+
+//Also, dieses Skript regelt die Vergabe von Kontrolle an einzelne Tanks und verwaltet dementsprechend die Listen der Fahrzeuge
+//Das heißt hier steckt insbesondere die Logik drin, die dafür sorgt, dass beim cyclen kein Mist passiert, wenn einzelne Tanks ausgeschaltet wurden.
 public class ControlCycler : MonoBehaviour
 {
 	//debugfunction

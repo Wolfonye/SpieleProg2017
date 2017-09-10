@@ -24,7 +24,7 @@ public class ToppleDetect : MonoBehaviour {
 		}
 	}
 
-	//wenn ich einen Topple entdekct habe, belibt das nciht ungeahndet; Tank wegnehmen und verbalen Zeigefinger erheben
+	//wenn ich einen Topple entdekct habe, bleibt das nicht ungeahndet; Tank wegnehmen und verbalen Zeigefinger erheben
 	private IEnumerator showToppleMessage(){
 		
 		toppleText.text = "That's not the way to treat an expensive Tank! I'm taking it away from you!";

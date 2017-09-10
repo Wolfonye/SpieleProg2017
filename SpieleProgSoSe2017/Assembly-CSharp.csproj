@@ -105,6 +105,7 @@
      <Compile Include="Assets\Scripts\Classes\Vehicles\RightCollTest.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\TakeDamage.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\TakeExplosion.cs" />
+     <Compile Include="Assets\Scripts\Classes\Vehicles\TankDestructionBoom.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\ToppleDetect.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\VDEvaluatorHelper.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\VehicleEnabled.cs" />

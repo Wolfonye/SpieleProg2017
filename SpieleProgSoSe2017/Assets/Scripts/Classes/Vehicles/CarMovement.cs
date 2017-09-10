@@ -6,6 +6,8 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+//Regelt die normale Bewegung nach links und rechts mittels Wheelcollidern, desweiteren werden von hier auch Flos Skripte für
+//das Springen zwischen den Lanes angesprochen.
 public class CarMovement : MonoBehaviour
 {
 	//Ref auf den ActionPointController dieses Fahrzeugs; habe erst überlegt dei Action Points hier drin zu halten aus Performancegründen.
