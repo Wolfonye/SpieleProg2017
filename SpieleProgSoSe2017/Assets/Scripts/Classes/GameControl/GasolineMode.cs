@@ -52,22 +52,19 @@ public class GasolineMode : MonoBehaviour, IGameMode {
 
 	//der Mode soll schauen, ob er der aktuell gewünschte ist, welches über die in ActiveObjects gesetzte ID passiert
 	//und ActiveObjects eine ref auf sich selbst geben.
+	//setzen der Refs für cam-Bewegung und cycler
 	void Awake () {
 		if (ActiveObjects.getActiveGameModeID () == MODE_ID) {
 			isEnabled = true;
 			this.enabled = true;
 			ActiveObjects.setActiveGameMode (this);
 			GameObject.FindWithTag ("TimeModeHUD").SetActive(false);
+			cycler = GameObject.FindWithTag ("Gamemaster2000").GetComponent<ControlCycler> () as ControlCycler;
+			cameraMovement = GameObject.FindWithTag ("MainCamera").GetComponent<CameraMovement> () as CameraMovement;
 		} else {
 			isEnabled = false;
 			this.enabled = false;
-		}
-	}
-
-	//setzen der Refs für cam-Bewegung und cycler
-	void Start(){
-		cycler = GameObject.FindWithTag ("Gamemaster2000").GetComponent<ControlCycler> () as ControlCycler;
-		cameraMovement = GameObject.FindWithTag ("MainCamera").GetComponent<CameraMovement> () as CameraMovement;
+		}	
 	}
 
 	// Update is called once per frame

@@ -30,7 +30,7 @@ public class RecognizeKeyInput : MonoBehaviour {
 		while(!inputReceived){
 			for(int i = 0; i < values.Length; i++) {
 				if(Input.GetKey(keyCodes[i])){
-					Debug.Log("Gedrueckte Taste: " + keyCodes[i].ToString());
+					//Debug.Log("Gedrueckte Taste: " + keyCodes[i].ToString());
 					inputReceived = true;
 					buttonText.text = KeyCodeConverter.keyCodeStringToKeyString(keyCodes[i].ToString());
 				}

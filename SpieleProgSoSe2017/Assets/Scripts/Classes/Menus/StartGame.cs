@@ -8,6 +8,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/*Idee: wenn das Spiel gestartet wird nach dem alles ausgewählt wurde, 
+* können alle wichtigen Infos zum Starten des Levels gesammelt und auf dem aktuellesten Stand weitergegeben werden
+* -> sobald etwas geändert wird, wird es direkt hier zur "Sammelstelle" weitergeleitet
+*/
 public class StartGame : MonoBehaviour {
 
 	public string currentLvlID;
@@ -18,10 +22,12 @@ public class StartGame : MonoBehaviour {
 
 
 
+	// bekommt die aktuelle Level ID rein, demit wir später wissen, welche Szene wir überhaupt laden müssen 
 	public void setCurrentLvlID(string LEVEL_ID){
 		this.currentLvlID = LEVEL_ID;
 	}
 
+	// bekommt die aktuelle Anzahl der tanks, damit wir die später weitergeben können
 	public void setCurrentNumberOfTanks(int number){
 		this.currentNumberOfTanks = number;
 	}
@@ -46,7 +52,7 @@ public class StartGame : MonoBehaviour {
 		ActiveObjects.setActiveGameModeID (activeGameModeID);
 	}
 
-	// lädt das ausgewählte Level
+	// lädt das ausgewählte Level und gibt die wichtigen Infos dafür mit (welcher Modus, wie viele Tanks)
 	public void loadLevel () {
 		ActiveObjects.gameOver = false; //Philipp
 		setCurrentActiveMode();
@@ -61,6 +67,9 @@ public class StartGame : MonoBehaviour {
 			break;
 		case "LEVEL3":
 			SceneManager.LoadScene ("Level3PresentationLarge");
+			break;
+		case "LEVEL4":												
+			SceneManager.LoadScene ("Level4PresentationMedium");
 			break;
 		}
 	}

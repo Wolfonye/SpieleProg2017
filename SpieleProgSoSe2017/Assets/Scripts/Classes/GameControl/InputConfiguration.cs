@@ -64,7 +64,6 @@ public static class InputConfiguration : object {
 	public static void saveControlConfigToFile(string filename){
 		BinaryFormatter binaryFormatter = new BinaryFormatter ();
 		string path = Application.persistentDataPath + Path.DirectorySeparatorChar + filename;
-		
 		FileStream fileStream = File.Open(path, FileMode.Open);
 
 		InputConfigurationData inputData = new InputConfigurationData();
@@ -83,6 +82,6 @@ public static class InputConfiguration : object {
 		binaryFormatter.Serialize(fileStream, inputData);
 
 		fileStream.Close();
-
+		Debug.Log("file written");
 	}
 }
