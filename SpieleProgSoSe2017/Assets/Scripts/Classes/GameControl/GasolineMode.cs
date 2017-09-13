@@ -118,9 +118,12 @@ public class GasolineMode : MonoBehaviour, IGameMode {
 	}
 
 	//Es folgen Interfaceimplementierungen----------------------
+	//initiate ROund end muss irgendwann hier raus und auf mehrere shells pro runde angepasst werden; die vorbereitungen dafür habe ich bereits gemacht
+	//machen wir nach abgabe; hier stellenw ir einfach sicher, dass der einschlag das rundenende auslöst
 	public void destructionObserved (GameObject destructedObject)
 	{
 		cameraMovement.centerOnGameObject (destructedObject);
+		initiateRoundEnd();
 	}
 		
 	public void setLastShotInTheAir (bool isInTheAir)
