@@ -127,10 +127,10 @@ Philipp:
     ✔ Bugfix: EndRoundButton soll nicht nach abgefeuertem Schuss klickbar sein, das waere ein Doppelrundencheat @done(2017-07-25 17:35) @project(Philipp)
     ✔ Overview nur im freien Modus, sollte man den freien Modus verlassen so wird Overview beendet @done(2017-07-28 12:09) @project(Philipp)
     ☐ Konzeption abstrakter Oberklasse für Gamemodi, daraus resultierend evtl. Refactoring IGameMode sinnig
-    ☐ Key-Binding-Persistency-Schnittstelle + Tests(must have)
+    ✔ Key-Binding-Persistency-Schnittstelle + Tests(must have) @done(2017-09-13 14:57) @project(Philipp)
         ✔ load profile from file @done(2017-08-11 15:29) @project(Philipp)
         ✔ save profile from file @done(2017-08-11 15:29) @project(Philipp)
-        ☐ Tests der Schnittstelle
+        ✔ Tests der Schnittstelle @done(2017-09-13 14:57) @project(Philipp)
     ☐ How-Tos für Levelerstellung updaten
     ☐ How-Tos für Keybinding-Schnittstelle
     ☐ How-Tos für Spielemodus-Schnittstelle
@@ -184,15 +184,15 @@ Katya:
         ☐ WinnerScreen Hintergrund Animationen
     ✔ Pausescreen @done(2017-06-26 22:34) @project(Katya)
     ✔ Pause und Matchfinished mit Philipp synchronisieren (jaaaa...synchronisieren ist ein merhdeutiger begriffblabla) @done(2017-06-27 22:02) @project(Katya)
-    ☐ Menu-Panelhintergründe Alphas usw. anpassen
-    ☐ Control-Setup (must have)
-    ☐ Grafic sugar in menus (should have)
+    ✔ Menu-Panelhintergründe Alphas usw. anpassen @done(2017-09-13 14:57) @project(Katya)
+    ✔ Control-Setup (must have) @done(2017-09-13 23:05) @project(Katya)
+    ✔ Grafic sugar in menus (should have) @done(2017-09-13 10:04) @project(Katya)
     ✔ Auswahl Tankanzahl zs mit Phil (must have) @done(2017-08-09 15:58) @project(Katya)
         ✔ graphisch   @done(2017-08-09 10:27) @project(Katya)
         ✔ Skript @done(2017-08-09 15:58) @project(Katya)
     ✔ Start Game Button Skript @done(2017-09-13 09:29) @project(Katya)
     ✔ Level Button Skript @done(2017-08-09 15:57) @project(Katya)
-    ☐ Level4 Button
+    ✔ Level4 Button @done(2017-09-13 23:05) @project(Katya)
 
 WayPoints:
     ☐ konspiratives Grillen
