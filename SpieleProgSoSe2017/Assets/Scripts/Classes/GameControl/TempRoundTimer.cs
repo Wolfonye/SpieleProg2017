@@ -53,12 +53,12 @@ public class TempRoundTimer : MonoBehaviour, IGameMode
 			isEnabled = true;
 			this.enabled = true;
 			ActiveObjects.setActiveGameMode (this);
+			controlCycler = GameObject.FindWithTag ("Gamemaster2000").GetComponent<ControlCycler> () as ControlCycler;
+			cameraMovement = GameObject.FindWithTag ("MainCamera").GetComponent<CameraMovement> ();
 		} else {
 			isEnabled = false;
 			this.enabled = false;
 		}
-		controlCycler = GameObject.FindWithTag ("Gamemaster2000").GetComponent<ControlCycler> () as ControlCycler;
-		cameraMovement = GameObject.FindWithTag ("MainCamera").GetComponent<CameraMovement> ();
 	}
 
 	void Start()

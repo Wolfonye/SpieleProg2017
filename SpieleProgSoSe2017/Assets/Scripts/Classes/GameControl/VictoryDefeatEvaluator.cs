@@ -73,11 +73,14 @@ public class VictoryDefeatEvaluator : MonoBehaviour, ICycleListener {
 			}
 
 			if(!player0HasActiveVehicles || !player1HasActiveVehicles){
+				ActiveObjects.gameOver = true;
 				return true;
 			}else{
+				ActiveObjects.gameOver = false;
 				return false;
 			}
 		}else{
+			ActiveObjects.gameOver = false;
 			return false;
 		}
 	}

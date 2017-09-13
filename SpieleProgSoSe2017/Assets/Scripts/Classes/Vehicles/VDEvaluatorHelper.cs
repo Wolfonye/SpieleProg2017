@@ -13,12 +13,15 @@ public class VDEvaluatorHelper : MonoBehaviour {
 	public IGameMode gameMode;
 	public VictoryDefeatEvaluator evaluator;
 
+	private ControlCycler cycler;
+
 	void Start(){
 		gameMode = ActiveObjects.getActiveGameMode();
 	}
 	void OnDisable(){
 		if(evaluator.isGameOver()){
 			if(ActiveObjects.getActiveGameMode() != null){
+				Debug.Log("disable initiated round end");
 				gameMode.initiateRoundEnd();
 			}
 		}

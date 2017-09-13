@@ -88,7 +88,11 @@ public class ControlCycler : MonoBehaviour
 		currentPlayer = 0;
 		for(int i = 0; i < player0Vehicles.Count; i++){
 			player0Vehicles[i].GetComponent<ActionPointController>().initialize();
+			player0Vehicles[i].GetComponent<PassiveDestructionHandler>().enabled = true;
+			player0Vehicles[i].GetComponent<VDEvaluatorHelper>().enabled = true;
 			player1Vehicles[i].GetComponent<ActionPointController>().initialize();
+			player1Vehicles[i].GetComponent<PassiveDestructionHandler>().enabled = true;
+			player1Vehicles[i].GetComponent<VDEvaluatorHelper>().enabled = true;
 		}
 		
 		deactivateAllVehiclesInList (player0Vehicles);

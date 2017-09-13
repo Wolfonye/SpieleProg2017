@@ -11,10 +11,12 @@ using UnityEngine;
 //Wenn also der Tank passiv zerstäört wird, der gerade aktiv ist, sollte die Runde beendet werden ohne, dass der Spieler
 //auf end Round klicken muss; das wäre...nicht spassig.
 public class PassiveDestructionHandler : MonoBehaviour {
+	private ControlCycler cycler;
 	void OnDisable(){
 		if(ActiveObjects.getActiveGameMode() != null){
 			if(ActiveObjects.getActiveTank() == gameObject && !ActiveObjects.gameOver){
 				ActiveObjects.getActiveGameMode().initiateRoundEnd();
+				Debug.Log("passive destruction initiated round end");
 			}
 		}else{
 			Debug.Log("GameMode: null"); //Das ganze else ist nur ne Debug-Option

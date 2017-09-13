@@ -24,7 +24,8 @@ public class EndRoundManually : MonoBehaviour {
 
 	public void endRoundNow(){
 		if(gameMode != null){
-			if (!gameMode.isInCoolDown ()) {	
+			if (!gameMode.isInCoolDown ()) {
+				Debug.Log("manually initiated round end");	
 				gameMode.initiateRoundEnd ();
 			}
 		}
