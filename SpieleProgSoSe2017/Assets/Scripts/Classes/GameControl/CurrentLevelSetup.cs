@@ -43,6 +43,7 @@ public static class CurrentLevelSetup : object {
 	private static int numberOfTanksL1 = 1;
 	private static int numberOfTanksL2 = 3;
 	private static int numberOfTanksL3 = 5;
+	private static int numberOfTanksL4 = 5;	//Katya
 
 
 	//Setzt die gerade gewuenschte Anzahl von Tanks in einem durch den LevelID-String identifizierten Level auf den gewünschten Wert
@@ -59,6 +60,9 @@ public static class CurrentLevelSetup : object {
 		case "LEVEL3":
 			numberOfTanksL3 = numberOfTanks;
 			break;
+			case "LEVEL4":						//Katya
+			numberOfTanksL4 = numberOfTanks;
+			break;
 		}
 	}
 
@@ -70,6 +74,8 @@ public static class CurrentLevelSetup : object {
 				return numberOfTanksL2;
 			case "LEVEL3":
 				return numberOfTanksL3;
+			case "LEVEL4":						//Katya
+				return numberOfTanksL4;
 		}
 		return 1;
 	}

@@ -50,6 +50,7 @@ public class CarMovement : MonoBehaviour
 
 	public void Start(){
 		consumesGasoline = GameObject.FindGameObjectWithTag ("Gamemaster2000").GetComponent<GasolineMode> ().isModeEnabled ();
+		//KeyCode driveLeft = (KeyCode) System.Enum.Parse(typeof(KeyCode), InputConfiguration.driveLeftKey) ;
 		driveLeft = InputConfiguration.driveLeftKey;
 		driveRight = InputConfiguration.driveRightKey;
 		jumpLeft = InputConfiguration.leftJumpKey;

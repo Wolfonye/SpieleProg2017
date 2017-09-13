@@ -14,6 +14,7 @@ using UnityEngine;
 //Das heißt hier steckt insbesondere die Logik drin, die dafür sorgt, dass beim cyclen kein Mist passiert, wenn einzelne Tanks ausgeschaltet wurden.
 public class ControlCycler : MonoBehaviour
 {
+	public bool isOnline;
 	//debugfunction
 	public void echo(){
 		Debug.Log ("ControlCycler is online");
@@ -60,6 +61,7 @@ public class ControlCycler : MonoBehaviour
 
 	//wird noch vor start aufgerufen, ich initialisiere da die Liste um ner Nullpointerexception zu entgehen
 	void Awake(){
+		isOnline = false;
 		maxNumberOfVehiclesPerPlayer = MaxTanksPerLevel.getMaxTanksByLevelID (LEVEL_ID);
 		//ich trenne das hier bewusst, falls wir später bock haben player individuell zu handicappen; dann müssen wir nciht mehr so viel ändern ;)
 		int numberOfTanksToDeactivatePlayer0 = maxNumberOfVehiclesPerPlayer - CurrentLevelSetup.getNumberOfTanksForLevelByID(LEVEL_ID);
@@ -92,6 +94,8 @@ public class ControlCycler : MonoBehaviour
 		deactivateAllVehiclesInList (player0Vehicles);
 		deactivateAllVehiclesInList (player1Vehicles);
 		activateNextVehicleOfPlayer (0, player0Vehicles);
+		isOnline = true;
+		echo();
 		//Debug.Log ("current player is 0");
 	}
 

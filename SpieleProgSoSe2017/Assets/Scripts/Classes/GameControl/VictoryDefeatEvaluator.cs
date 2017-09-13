@@ -53,30 +53,33 @@ public class VictoryDefeatEvaluator : MonoBehaviour, ICycleListener {
 	//auf false und schauen dann nach, obs nicht doch ein aktives gibt
 	//aus conveniencegründen gibt die funktion true zurück, falls einer der Spieler KEINE aktiven Fahrzeuge mehr hat!
 	public bool isGameOver(){
-		player0HasActiveVehicles = false;
-		foreach (GameObject vehicle in player0Vehicles) {
-			if(vehicle != null){  
-				if (vehicle.activeSelf) {
-					player0HasActiveVehicles = true;
+		if(controlCycler.isOnline){			
+			player0HasActiveVehicles = false;
+			foreach (GameObject vehicle in player0Vehicles) {
+				if(vehicle != null){  
+					if (vehicle.activeSelf) {
+						player0HasActiveVehicles = true;
+					}
 				}
 			}
-		}
 
-		player1HasActiveVehicles = false;
-		foreach (GameObject vehicle in player1Vehicles) {
-			if(vehicle != null){
-				if (vehicle.activeSelf) {
-					player1HasActiveVehicles = true;
+			player1HasActiveVehicles = false;
+			foreach (GameObject vehicle in player1Vehicles) {
+				if(vehicle != null){
+					if (vehicle.activeSelf) {
+						player1HasActiveVehicles = true;
+					}
 				}
 			}
-		}
 
-		if(!player0HasActiveVehicles || !player1HasActiveVehicles){
-			return true;
+			if(!player0HasActiveVehicles || !player1HasActiveVehicles){
+				return true;
+			}else{
+				return false;
+			}
 		}else{
 			return false;
 		}
-
 	}
 	public void evaluateVictoryDefeat(){
 		isGameOver();

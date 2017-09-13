@@ -18,6 +18,7 @@ public static class MaxTanksPerLevel : object {
 	public static readonly int MAX_TANKS_LEVEL1 = 1;
 	public static readonly int MAX_TANKS_LEVEL2 = 3;
 	public static readonly int MAX_TANKS_LEVEL3 = 5;
+	public static readonly int MAX_TANKS_LEVEL4 = 5;	// Katya
 
 	public static int getMaxTanksByLevelID(string LEVEL_ID){
 		switch(LEVEL_ID){
@@ -27,6 +28,8 @@ public static class MaxTanksPerLevel : object {
 			return MAX_TANKS_LEVEL2;
 		case "LEVEL3":
 			return MAX_TANKS_LEVEL3;
+		case "LEVEL4":						// Katya
+			return MAX_TANKS_LEVEL4;
 		}
 		return 1;
 	}

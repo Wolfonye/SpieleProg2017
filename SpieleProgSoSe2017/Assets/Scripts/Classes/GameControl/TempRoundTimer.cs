@@ -57,13 +57,13 @@ public class TempRoundTimer : MonoBehaviour, IGameMode
 			isEnabled = false;
 			this.enabled = false;
 		}
+		controlCycler = GameObject.FindWithTag ("Gamemaster2000").GetComponent<ControlCycler> () as ControlCycler;
+		cameraMovement = GameObject.FindWithTag ("MainCamera").GetComponent<CameraMovement> ();
 	}
 
 	void Start()
 	{
-		controlCycler = GameObject.FindWithTag ("Gamemaster2000").GetComponent<ControlCycler> () as ControlCycler;
 		inCooldownPhase = false;
-		cameraMovement = GameObject.FindWithTag ("MainCamera").GetComponent<CameraMovement> ();
 		paused = false;
 		allShotsFiredForThisRound = false;
 		fire = InputConfiguration.fireKey;

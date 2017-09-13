@@ -70,16 +70,18 @@
      <Compile Include="Assets\Scripts\Classes\HUDRelated\ShowPlayerInHUD.cs" />
      <Compile Include="Assets\Scripts\Classes\HUDRelated\ToggleID.cs" />
      <Compile Include="Assets\Scripts\Classes\HUDRelated\VHUDSemanticZoom.cs" />
+     <Compile Include="Assets\Scripts\Classes\Menus\ApplyKeyOptions.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\CountingDown.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\CountingUp.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\ExitOnClick.cs" />
+     <Compile Include="Assets\Scripts\Classes\Menus\InitialKeySetupLoad.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\LevelInformation.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\LoadControlScene.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\RecognizeKeyInput.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\ResumeButton.cs" />
-     <Compile Include="Assets\Scripts\Classes\Menus\SaveKeyOptions.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\SelectOnInput.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\SelectOnInputAdvanced.cs" />
+     <Compile Include="Assets\Scripts\Classes\Menus\SetKeyButtonTexts.cs" />
      <Compile Include="Assets\Scripts\Classes\Menus\StartGame.cs" />
      <Compile Include="Assets\Scripts\Classes\Shells\ShellDOT.cs" />
      <Compile Include="Assets\Scripts\Classes\Shells\ShellDamage.cs" />
@@ -92,6 +94,7 @@
      <Compile Include="Assets\Scripts\Classes\Shells\ShellSpeedDown.cs" />
      <Compile Include="Assets\Scripts\Classes\Shells\ShellSpeedUp.cs" />
      <Compile Include="Assets\Scripts\Classes\Shells\ShellWind.cs" />
+     <Compile Include="Assets\Scripts\Classes\Util\KeyCodeConverter.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\ActionPointController.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\BarrelAngle.cs" />
      <Compile Include="Assets\Scripts\Classes\Vehicles\CarCenterOfMass.cs" />
