@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//legacy: habe ich benutzt zum experimentieren
+//LEGACY: habe ich benutzt zum experimentieren
 public class CarCenterOfMass : MonoBehaviour {
 	public Vector3 com ;
 	public Rigidbody rb;
