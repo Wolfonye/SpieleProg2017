@@ -35,7 +35,7 @@ public class StartGame : MonoBehaviour {
 	// findet heraus, welcher Modus gerade angewählt ist und setzt dementsprechend die ID
 	private void setCurrentActiveMode () {
 		currentActiveMode = activeModeText.text;
-		if (currentActiveMode == "Gas Mode") {
+		if (currentActiveMode == "Action Point Mode") {
 			this.activeGameModeID = "GAS_MODE";
 		} else {
 			this.activeGameModeID = "TIMER";
