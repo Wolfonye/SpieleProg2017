@@ -135,8 +135,9 @@ public class GasolineMode : MonoBehaviour, IGameMode {
 		lastShellDestroyed = true;
 	}
 
+	private bool endingRound = false;
 	public void initiateRoundEnd(){
-		if(!lastShotIsInTheAir && !inCoolDownPhase){
+		if(!inCoolDownPhase){
 			StartCoroutine(endRoundAfterSeconds(switchTime));
 		}
 	}
