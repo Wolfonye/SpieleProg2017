@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class ShellExplosion : MonoBehaviour {
 	public float Radius = 2.4f;
+	bool block = false;
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		ExplosionDamage(Radius);
+		if(block == false){
+			block = true;
+			ExplosionDamage(Radius);
+		}
 	}
 
 	void ExplosionDamage(float start){

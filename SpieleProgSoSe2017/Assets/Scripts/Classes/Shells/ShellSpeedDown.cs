@@ -5,10 +5,14 @@ using UnityEngine;
 public class ShellSpeedDown : MonoBehaviour {
 	public float Radius = 12f;
 	public int effectDuration = 31;
+	bool block = false;
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		ExplosionDamage(Radius);
+		if(block == false){
+			block = true;
+			ExplosionDamage(Radius);
+		}
 	}
 
 	void ExplosionDamage(float start){

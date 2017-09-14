@@ -14,6 +14,7 @@ using UnityEngine.UI;
 public class TakeDamage : MonoBehaviour {
 	public int life = 1000;
 	public int maxLife = 1000;
+	float TimeEllapsed = 0;
 
 	//ref auf die Healthbar und den HealthText im VehicleInfoHUD
 	public Slider healthBar;
@@ -26,8 +27,13 @@ public class TakeDamage : MonoBehaviour {
 		healthText.text = "HP: " + life + "/" + maxLife;
 	}
 
+	void Update () {
+		TimeEllapsed += Time.deltaTime;
+	}
+
 	void OnCollisionEnter (Collision col){
-		if(col.gameObject.tag == "Shell"){
+		if(col.gameObject.tag == "Shell" && TimeEllapsed > 1){
+			TimeEllapsed = 0;
 			if((life - col.gameObject.GetComponent<ShellDamage>().Damage) > maxLife){
 				life = maxLife;
 			}

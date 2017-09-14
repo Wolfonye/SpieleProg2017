@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class RammenScript : MonoBehaviour {
 	CarMovement Wheels;
+	float TimeEllapsed = 0;
 	// Use this for initialization
 	void Start () {
 		Wheels = gameObject.GetComponentInChildren<CarMovement> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
 		
+	void Update () {
+		TimeEllapsed += Time.deltaTime;
 	}
+
 
 	private void OnCollisionEnter(Collision collision)
 	{
 		//Debug.Log ("test");
-		if (collision.gameObject.tag == "Tank"){
+		if (collision.gameObject.tag == "Tank" && TimeEllapsed > 1){
+			TimeEllapsed = 0;
 			//Debug.Log ("Gerammt");
 			int dmg = (int) Wheels.speed;
 			//Debug.Log (dmg);
