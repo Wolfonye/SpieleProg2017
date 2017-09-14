@@ -174,7 +174,7 @@ Katya:
         ✔ Hintergrund Animationen @done(2017-06-28 21:23) @project(Katya)
         ✔ laden von Szenen (Levels) @done(2017-06-25 20:53) @project(Katya)
         ☐ (Optionen, zurückgestellt)
-        ☐ Manual
+        ✔ Manual @done(2017-09-14 22:53) @project(Katya)
             ✔ Guide @done(2017-06-27 21:59) @project(Katya)
             ✔ KeyLayout hardcoded @done(2017-06-27 21:59) @project(Katya)
         ✔ Beenden @done(2017-06-25 20:53) @project(Katya)
