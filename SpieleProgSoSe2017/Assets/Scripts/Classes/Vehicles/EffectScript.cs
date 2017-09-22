@@ -21,13 +21,13 @@ public class EffectScript : MonoBehaviour {
 		if(DoTCounter > 0){
 			if(TimeEllapsed >= intervall){
 				DoTCounter--;
-				this.GetComponent<TakeDamage> ().TakeExplosion (20);
+				this.GetComponent<TakeDamage> ().TakeExplosion (5);
 			}
 		}
 		if(HoTCounter > 0){
 			if(TimeEllapsed >= intervall){
 				HoTCounter--;
-				this.GetComponent<TakeDamage> ().TakeExplosion (-20);
+				this.GetComponent<TakeDamage> ().TakeExplosion (-5);
 			}
 		}
 		if(SlowCounter > 0 && FastCounter > 0){
