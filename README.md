@@ -1,36 +1,28 @@
-SpieleProgrammierungSoSe2017
+# Spieleprogrammierung 2017
+---
+## Beteiligte
+* Katya Engelmann
+* Florian Kruschewski
+* Philipp Bous
 
-Schaut mal bitte, ob ihr das TODO.todo file, was ich erstellt habe irgendwie aufbekommt.
-Ich hab da ein sehr nices Plug-In für Atom, wo ich da überall schön Häkchen setzen kann,
-wenn ein todo erreicht ist, wobei auch automatisch die Zeit eingetragen wird usw.
-Wenn ihr das nicht könnt werd ich vielleicht versuchen das alleine bissl aktuell
-zu halten, aber ich fänds ganz nice, wenn wir son paar waypoints hätten, wo wir automatisch
-später dran sehen können, wie wir vorankommen und nachvollziehen können, welche
-Schritte wir eigentlich unternommen haben. Das sollte eine gute Unterstützung für unsere
-Dokumentation und einen etwaigen Vortrag darstellen.
+## Hinweise zu den aktuellen Versionen 1.0 und 1.0.1
 
-Ideen-Sammlung: (vielleicht fächern wirs nicht auf, sondern packen jeweils unseren Namen einfach hinten an)
+#### Version 1.0
+* finale Version zum 19.9.2017
 
-Vorschlag für Features und Roadmap (Philipp):
-1. flache Ebene, Kasten-Tank, eine Sorte Shells (Kreis), one hit-nur ziel treffen, single player, fixed position
-2. 2-player, turn-based
-3. Health + Damage
-4. terrainmodifikation / sound
-5. simple Menuführung  (in Abhängigkeit der Möglichkeiten)
-6. Level u./o. Speicher-Feature u./o. bewegliche Tanks u./o. verschiedene Shells
-   (bzgl. der Shells könnte ich mir für den Anfang was in Richtung
-       armor-piercing und high-explosive vorstellen, die Schadensmodifikation in
-       Abhängigkeit des Aufschlagsbereiches erhalten)
-7. Game-Modes: turn-based multiplayer, real-time 2-player, stop-watch
-8. KI
--
+#### Version 1.0.1
+* erstellt am 22.09.2017
+* minimale Änderungen: Änderung zweier Werte in EffectScript.cs, Änderung eines Label-Textes
 
-Florian:
-Features:
-verschiedene arten von fahrzeugen(panzer(schwer, langsam),jeeps(schnell, hält wenig aus), flugzeuge(schwer zu treffen, one-shot-kill), schiffe(sehr begrenzter bewegungsraum(wasser am rand oderso), schwere waffen))
-spezialangriffe(externe feuerquellen, starke windbeinflussung)
-Wetter(wind, nebel, regen(senkt reichweite), sandsturm(schädigt))
-Teams(koop gegen Ki, mehrspieler 2 vs 2 online)
-terrain-physik(einsturz wenn unterhölt usw.)
-terrainattacken(erdbeben)
-3d-grafik(killcams, matchvorschau)
+**Bei beiden Versionen kann es bei falscher Konfiguration des Systems, wie z.B.
+nicht ordnungsgemäßer Installation einer ausreichend neuen Version von Blender(2.78c +)
+zu unvollständigen Builds kommen (fehlende Meshes), weswegen zu beiden Versionen separate Builds
+zur Verfügung stehen. Sollten sonstige Fehler autreten bitte Mail an bous4501@uni-trier.de**
+
+
+## Builds
+* Version 1.0: https://seafile.rlp.net/d/5b4efdc5900a4674bc7c/
+* Version 1.0.1: https://seafile.rlp.net/d/869b41f983ca40069fb4/
+
+---
+Philipp Bous 22.09.2017
