@@ -81,6 +81,24 @@ public class BarrelAngle : MonoBehaviour
 
     }
 
+    public void increaseBarrelAngle(){
+        barrelAngle = Vector3.Angle(barrel.transform.up, origin.transform.forward);
+        originalRot = barrel.transform.rotation;
+        if (barrelAngle < maxAnglePosositive)
+        {
+            barrel.transform.rotation = originalRot * Quaternion.AngleAxis(-1, Vector3.left);
+        }
+    }
+
+    public void decreaseBarrelAngle(){
+        barrelAngle = Vector3.Angle(barrel.transform.up, origin.transform.forward);
+        originalRot = barrel.transform.rotation;
+        if (barrelAngle > minAnglePositive)
+        {
+            barrel.transform.rotation = originalRot * Quaternion.AngleAxis(1, Vector3.left);
+        }
+    }
+
 	public float getBarrelAngle(){
 		return barrelAngle;
 	}
